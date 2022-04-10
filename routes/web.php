@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('dashboard.dashboard', );
 });
 Route::get('/projects', function () {
-    return view('projects.projects');
+    return view('project.projects');
 });
 Route::get('/payments', function () {
     return view('payments.payments');
