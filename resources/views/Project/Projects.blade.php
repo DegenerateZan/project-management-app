@@ -58,11 +58,11 @@
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                          <li><a class="dropdown-item tampilmodalubahproyek" dataid="" href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject">Ubah</a></li>
-                                                          <li><a class="dropdown-item" href="" style="color:red;">Hapus</a></li>
+                                                          <li><a class="dropdown-item tampilmodalubahproyek" dataid="" href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject">Edit</a></li>
+                                                          <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
                                                           <li><a class="dropdown-item" href="
                                                             /tasks
-                                                            " style="color:blue">Tampilkan Task</a></li>
+                                                            " style="color:blue">Show Task</a></li>
 
                                     </ul>
                                   </div>

@@ -37,24 +37,24 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Nama Task</th>
-                            <th>Deskripsi Task</th>
-                            <th>Dikerjakan Oleh</th>
+                            <th>Task Name</th>
+                            <th>Deskription Task</th>
+                            <th>Work By</th>
                             <th>Deadline task</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Nama Task</th>
-                            <th>Deskripsi Task<th>
-                            <th>Dikerjakan Oleh</th>
+                            <th>Task Name</th>
+                            <th>Deskription Task</th>
+                            <th>Work By</th>
                             <th>Deadline task</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         <tr>
                             <td>Managemen Hotel</td>
-                            <td>Tidak ada</td>
+                            <td>Nothing</td>
                             <td>Supratman</td>
                             <td>2022/09/21</td>
                         </tr>
@@ -68,7 +68,7 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalToggleLabel">Buat task</h5>
+                          <h5 class="modal-title" id="exampleModalToggleLabel">Create task</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -76,12 +76,12 @@
                               <div class="container">
                                 <div class="row">
                                     <div class="col-sm">
-                                    <label for="nama-proyekT" class="form-label">Dari Proyek :</label>
+                                    <label for="nama-proyekT" class="form-label">From Project :</label>
                                       <input type="hidden" id="id-pr" name="id-pr" value="">
                                           <input type="text" id="nama-proyekT" class="form-control" value="" readonly>
                                     </div>
                                     <div class="col-sm">
-                                    <label for="deadline-proyek" class="form-label">Tgl Deadline proyek :</label>
+                                    <label for="deadline-proyek" class="form-label">Deadline project :</label>
                                     <input type="date" id="deadline-proyek" class="form-control" value="" readonly>
                           
                                     </div>
@@ -94,7 +94,7 @@
 
                                   <div class="row">
                                       <div class="col-sm">
-                                          <label for="nama-task" class="form-label">Nama task :</label>
+                                          <label for="nama-task" class="form-label">Task Name:</label>
                                           <input type="teks" id="nama-task" name="nama_task" class="form-control">
                   
                                       </div>
@@ -105,13 +105,13 @@
                                   </div>
                                   <div class="row">
                                       <div class="col-sm">
-                                          <label for="deadlinetask" class="form-label">Deadline Pengerjaan:</label>
+                                          <label for="deadlinetask" class="form-label">Due Date:</label>
                                           <input type="date" id="deadlinetask" name="deadlinetask" class="form-control">
                   </div>
                                       </div>
                                        <div class="row">
                                          <div class="col-sm">
-                                              <label for="destask" class="form-label">Deskripsi task :</label>
+                                              <label for="destask" class="form-label">Description task :</label>
                                               <input type="text" id="destask" name="detask" class="form-control">
                                      </div>
                   
@@ -124,7 +124,7 @@
                                   
                                   <div class="modal-footer footer-proyek">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Tambah Task</button>
+                          <button type="submit" class="btn btn-primary">Add Task</button>
                           </form>
                       </div>
                       </div>
