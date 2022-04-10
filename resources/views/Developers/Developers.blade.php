@@ -11,7 +11,7 @@
         <div class="card-header">
             Data Developers
             <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
-                <span class="mr-2">Tambah Developer Baru</span>
+                <span class="mr-2">Add new Developer</span>
              <i class="fas fa-plus-circle float-right "></i>
 
          </div>
@@ -25,20 +25,20 @@
                 <thead>
                     <tr>
                                           
-                        <th>Nama Dev.</th>
-                        <th>No. Telp.</th>
-                        <th>Alamat</th>
+                        <th>Dev. Name</th>
+                        <th>Tel. Number</th>
+                        <th>Address</th>
                         <th>Email</th>
-                        <th>No. Rekening</th>
+                        <th>Account Number</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Nama Dev.</th>
-                        <th>No. HP</th>
-                        <th>Alamat</th>
+                        <th>Dev. Name</th>
+                        <th>Tel. Number</th>
+                        <th>Address</th>
                         <th>Email</th>
-                        <th>No. Rekening</th>
+                        <th>Account Number</th>
                        
                     </tr>
                 </tfoot>
@@ -48,7 +48,22 @@
                         <td>08984638737</td>
                         <td>Bogor</td>
                         <td>supra@gmail.com</td>
-                        <td>8387234683764</td>
+                        <td>8387234683764
+
+                            <div class="dropdown" style="float: right;">
+                                <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                      <li><a class="dropdown-item tampilmodalubahproyek" dataid="" href="#" data-bs-toggle="modal" data-bs-target="#formmodaldev">Edit</a></li>
+                                                      <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
+
+
+                                </ul>
+                              </div>
+
+
+                        </td>
                     </tr>
 
 
@@ -60,30 +75,31 @@
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="formmodallabel">Tambah Dev Baru</h5>
+                              <h5 class="modal-title" id="formmodallabel">Add new Dev</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body p-6">
 
                                   <form id="buatubah" action="" method="post">
-                                      <label for="nama-client" class="form-label">Nama Developer:</label>
-                                      <input type="text" id="nama-client" name="nama-dev" class="form-control" value="" />
-                                          <input type="hidden" name="id" id="id-client-1" value="" readonly>
+
                                       <div class="container">
+                                        <label for="nama-client" class="form-label">Dev. Name:</label>
+                                        <input type="text" id="nama-client" name="nama-dev" class="form-control" value="" />
+                                            <input type="hidden" name="id" id="id-client-1" value="" readonly>
                                       <div class="row">
                                           <div class="col-sm">
-                                              <label for="no-rek" class="form-label">No. Rekening:</label>
+                                              <label for="no-rek" class="form-label">Account Number:</label>
                                               <input type="number" id="no-rek" name="nohp" class="form-control">
                       
                                           </div>
                                            <div class="col-sm">
-                                                  <label for="alamat" class="form-label">No. Telp. :</label>
+                                                  <label for="alamat" class="form-label">Tel. Number :</label>
                                                   <input type="number" id="alamat" name="alamat" class="form-control">
                                          </div>
                                       </div>
                                       <div class="row">
                                           <div class="col-sm">
-                                              <label for="nama-instansi" class="form-label">Alamat :</label>
+                                              <label for="nama-instansi" class="form-label">Address :</label>
                                               <input type="text" id="nama-instansi" name="namaper" class="form-control">
                       
                                           </div>
@@ -95,7 +111,7 @@
                                       </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Tambah Developer</button>
+                              <button type="submit" class="btn btn-primary">Add Developer</button>
                               </form>
                             </div>
                           </div>
