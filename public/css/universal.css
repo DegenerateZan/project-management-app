@@ -1,0 +1,36 @@
+button#dropdownMenuButton1 {
+    background-color: transparent;
+    border: none;
+}
+
+button#dropdownMenuButton1:hover {
+    background-color: rgba(220, 215, 215, 0.883);
+    border-radius: 2px;
+    
+}
+
+tbody tr:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+.createnew:hover {
+    border-radius: 2px;
+    border: 1px solid ;
+}
+.createnew {
+    border-radius: 2px;
+    border: 1px solid transparent ;
+    transition: 0.2s;
+}
+
+.createnew span.mr-2 {
+    margin: 2px;
+}
+
+.sidebar-left-nav:hover {
+    -webkit-transform: translate3d(-100%, 0px, 0px);
+    transform: translate3d(-100%, 0px, 0px);
+    visibility: visible;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+  }
