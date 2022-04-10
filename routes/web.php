@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard.dashboard', );
 });
 Route::get('/projects', function () {
