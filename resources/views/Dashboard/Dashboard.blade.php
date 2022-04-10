@@ -21,7 +21,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Pendapatan Total : </div>
+                                Total Revenue : </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.
                                 <?= "0" ?>
                             </div>
@@ -142,7 +142,7 @@
                                 <thead>
                                   <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
+                                    <th scope="col">Name</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Deadline</th>
                                   </tr>
@@ -151,7 +151,7 @@
                                   <tr>
                                     <th scope="row">1</th>
                                     <td>login</td>
-                                    <td>Belum Selesai</td>
+                                    <td>Incomplete</td>
                                     <td>12 Maret 2023</td>
                                   </tr>
 
@@ -179,11 +179,11 @@
                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Pilihan :</div>
+                            <div class="dropdown-header">Option :</div>
                             <a class="dropdown-item" href="#"></a>
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Tampilkan Seluruh Project</a>
+                            <a class="dropdown-item" href="/developers">Tampilkan Seluruh Project</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                                 <thead>
                                   <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Task</th>
+                                    <th scope="col">Project</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Deadline</th>
                                   </tr>
@@ -205,7 +205,7 @@
                                   <tr>
                                     <th scope="row">1</th>
                                     <td>login</td>
-                                    <td>Belum Selesai</td>
+                                    <td>Incomplete</td>
                                     <td>12 Maret 2023</td>
                                   </tr>
 
