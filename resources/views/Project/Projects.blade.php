@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
 @section('isi')
+
+
+
+
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Projects</h1>
@@ -90,24 +94,24 @@
           <form action="" method="post" id="formbuatubah">
 
                       <div class="container">
-                        <label for="nama-client" class="form-label">From Client:</label>
-                        <select name="id_client" id="client-proyek" class="form-control" required >
+                        <label for="client-project" class="form-label">From Client:</label>
+                        <select name="id_client" id="client-project" class="form-control" required >
                                         <option value="">Choose Client</option>
                                         {{-- <?php foreach ($data["clients"] as $rowcat) : ?>
                                             <option value="<?= $rowcat["id_client"] ?>"><?= $rowcat["nama_client"]; ?></option>
                                         <?php endforeach; ?> --}}
                                     </select>
-                                    <input type="test" id="id-p" name="id_proyek">
+                                    <input type="text" id="id-project" name="id_project">
                   <div class="row">
                       <div class="col-sm">
-                          <label for="no-hp" class="form-label">Project Name :</label>
-                          <input type="text" id="namaproyek-u" name="nama_proyek" class="form-control">
+                          <label for="project-name" class="form-label">Project Name :</label>
+                          <input type="text" id="project-name" name="project-name" class="form-control">
   
                       </div>
                       
                       <div class="col-sm">
-                          <label for="kategori" class="form-label">Categori :</label>
-                          <select name="id_kategori" id="kategori" class="form-control" required>
+                          <label for="category" class="form-label">Categori :</label>
+                          <select name="id_category" id="category" class="form-control" required>
                               <option value="">Choose Category</option>
                               {{-- <?php foreach ($data["optioncategory"] as $rowcat) : ?>
                                   <option value="<?= $rowcat["id_kategori"] ?>"><?= $rowcat["nama_kategori"]; ?></option>
@@ -119,8 +123,8 @@
                      <div class="container">
                       <div class="row">
                       <div class="col-sm">
-                          <label for="tgl-deadline" class="form-label">Deadline</label>
-                          <input type="date" id="tgldeadline-u" name="tgl_deadline" class="form-control">
+                          <label for="deadline" class="form-label">Deadline</label>
+                          <input type="date" id="deadline" name="deadline" class="form-control">
   
                       </div>
                       <div class="col-sm">
@@ -135,8 +139,8 @@
                       </div>
                       <div class="row">
                       <div class="col-sm">
-                          <label for="hargaproyek" class="form-label">Project price :</label>
-                          <input type="number" id="hargaproyek-u" name="harga" class="form-control">
+                          <label for="projectprice" class="form-label">Project price :</label>
+                          <input type="number" id="projectprice" name="harga" class="form-control">
                                   
                       </div>
                       

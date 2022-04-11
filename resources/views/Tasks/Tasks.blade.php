@@ -92,12 +92,12 @@
                                 <div class="row">
                                     <div class="col-sm">
                                     <label for="nama-proyekT" class="form-label">From Project :</label>
-                                      <input type="hidden" id="id-pr" name="id-pr" value="">
-                                          <input type="text" id="nama-proyekT" class="form-control" value="" readonly>
+                                      <input type="hidden" id="id-pr" name="id-project" value="">
+                                          <input type="text" id="project-name" class="form-control" value="" readonly>
                                     </div>
                                     <div class="col-sm">
                                     <label for="deadline-proyek" class="form-label">Deadline project :</label>
-                                    <input type="date" id="deadline-proyek" class="form-control" value="" readonly>
+                                    <input type="date" id="deadline-project" class="form-control" value="" readonly>
                           
                                     </div>
                               </div>
@@ -110,7 +110,7 @@
                                   <div class="row">
                                       <div class="col-sm">
                                           <label for="nama-task" class="form-label">Task Name:</label>
-                                          <input type="teks" id="nama-task" name="nama_task" class="form-control">
+                                          <input type="teks" id="nama-task" name="task-name" class="form-control">
                   
                                       </div>
                                        <!-- <div class="col-sm">
@@ -125,10 +125,7 @@
                   </div>
                                       </div>
                                        <div class="row">
-                                         <div class="col-sm">
-                                              <label for="destask" class="form-label">Description task :</label>
-                                              <input type="text" id="destask" name="detask" class="form-control">
-                                     </div>
+
                   
                                      <div class="form-group">
                                         <label for="detailtask">Detail Task :</label>

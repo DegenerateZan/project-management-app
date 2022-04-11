@@ -4,14 +4,14 @@
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Settings</h1>
+        <h1 class="h3 mb-0 text-gray-800">Platform Settings</h1>
 
     </div>
 
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Category Settings
+            Platform Settings
             <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalplatform">
                <span class="mr-2">Add New Platform</span>
             <i class="fas fa-plus-circle float-right "></i>

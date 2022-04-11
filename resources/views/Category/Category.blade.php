@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Settings</h1>
+        <h1 class="h3 mb-0 text-gray-800">Category Settings</h1>
 
     </div>
 
@@ -72,8 +72,8 @@
                   
                   <div class="container">
                     <label for="nama-client" class="form-label">Category name :</label>
-                    <input type="text" id="nama-platform" name="nama" class="form-control">
-                        <input type="hidden" name="id" id="id-proyek" value="" readonly>
+                    <input type="text" id="nama-platform" name="category-name" class="form-control">
+                        <input type="hidden" name="id-category" id="id-category" value="" readonly>
                   </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

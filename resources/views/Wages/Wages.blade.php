@@ -106,14 +106,14 @@
                       </div>
                    
                               <div class="container">
-                                <label for="nama-proyekT" class="form-label">From Developer :</label>
-                                <input type="text" id="nama-proyekT" class="form-control" value="" >
-                                <input type="text" name="id_p" id="id-proyek-t" value="" readonly>
+                                <label for="dev-name" class="form-label">From Developer :</label>
+                                <input type="text" id="dev-name" class="form-control" value="" >
+                                <input type="id-developer" name="id-developer" id="id-developer" value="" readonly>
             
                               <div class="row">
                                   <div class="col-sm">
-                                      <label for="nominal" class="form-label">Salary Amount :</label>
-                                      <input type="teks" id="nominal" name="nomimnal" class="form-control">
+                                      <label for="salary-amount" class="form-label">Salary Amount :</label>
+                                      <input type="teks" id="salary-amount" name="salary-amount" class="form-control">
               
                                   </div>
                                    <!-- <div class="col-sm">
@@ -127,7 +127,7 @@
                                       <input type="number" id="tglpembayaran" name="payrolldeduction" class="form-control">
               </div>              <div class="col-sm">
                                   <label for="statupem">Payment Status :</label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="payment-status" id="" class="form-control">
                                         <option value="">Choose Status</option>
                                         <option value="1">Paid off</option>
                                         <option value="0">Not yet paid off</option>
@@ -138,15 +138,15 @@
                                    <div class="row">
               
                                  <div class="col-sm">
-                                    <label for="ketepemba"> Overtime Money :</label>
-                                    <input type="number" class="form-control" name="overtimemoney">
+                                    <label for="lembur"> Overtime Money :</label>
+                                    <input type="number" id="lembur" class="form-control" name="overtimemoney">
                                 </div>
                                    </div>
                                   <div class="row">
                                       <div class="col-sm">
                                     <label for="totalreceivesalary"> Total Received Salary :</label>
                                     <div class="form-group d-flex">
-                                    <p class="mr-1 mt-1">Rp.</p> <input type="number" class="form-control" name="totalreceivesalary" id="totalreceivesalary">
+                                    <p class="mr-1 mt-1">Rp.</p> <input type="number" class="form-control" name="total-receive-salary" id="totalreceivesalary">
                                   </div>
                                 </div>
                                 </div>

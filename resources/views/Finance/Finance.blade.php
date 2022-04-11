@@ -18,18 +18,18 @@
     </div>
     <div class="card-body">
       <div class="row g-1">
-        <div class="col-xxl-3">
+        <div class="col-xxl-12">
           <div class="row g-0 my-2">
             <div class="col-md-6 col-xxl-12">
-              <div class="border-xxl-bottom border-xxl-200 mb-2">
+              <div class="border-xxl-bottom border-xxl-200 mb-2" >
                 <h2 class="text-primary">Rp. 0</h2>
                 <h6 class="text-500 mb-0">Total Revenue</h6>
 
 
               </div>
             </div>
-            <div class="col-md-6 col-xxl-12 py-2">
-              <div class="row mx-0">
+            <div class="col-md-6 col-xxl-12 py-2" id="revenue">
+              <div class="row" style="width: 400px; justify-content:right">
                 <div class="col-6 border-end border-bottom py-3">
                   <h5 class="fw-normal text-600">Rp. 0</h5>
                   <h6 class="text-500 mb-0">total salary to be paid</h6>
@@ -38,7 +38,6 @@
                   <h5 class="fw-normal text-600">Rp. 0</h5>
                   <h6 class="text-500 mb-0">Remaining Income</h6>
                 </div>
-
                 </div>
               </div>
             </div>
