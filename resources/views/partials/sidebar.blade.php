@@ -4,8 +4,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                              </div>
-                <div class="sidebar-brand-text mx-3"><br><sup>Management <span></span></sup></div>
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Web Media <br><sup>Management <span >Software</span></sup></div>
             </a>
 
             <!-- Divider -->

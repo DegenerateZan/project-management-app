@@ -17,24 +17,24 @@
                     <thead>
                         <tr>
                                               
-                            <th>Nama Dev.</th>
-                            <th>Jumlah Gaji</th>
-                            <th>Potongan</th>
-                            <th>Tgl Gaji</th>
+                            <th>Dev. Name</th>
+                            <th>Salary Amount</th>
+                            <th>Payroll Deduction</th>
+                            <th>Payroll Date</th>
                             <th>Status</th>
-                            <th>Uang Lembur</th>
-                            <th>Jml Gaji Diterima</th>
+                            <th>Overtime Money</th>
+                            <th>Total Salary Received</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Nama Dev.</th>
-                            <th>Jumlah Gaji</th>
-                            <th>Potongan</th>
-                            <th>Tgl Gaji</th>
+                            <th>Dev. Name</th>
+                            <th>Salary Amount</th>
+                            <th>Payroll Deduction</th>
+                            <th>Payroll Date</th>
                             <th>Status</th>
-                            <th>Uang Lembur</th>
-                            <th>Jml Gaji Diterima</th>
+                            <th>Overtime Money</th>
+                            <th>Total Salary Received</th>
                            
                         </tr>
                     </tfoot>
@@ -44,15 +44,15 @@
                             <td>Rp. 6000000</td>
                             <td>1000000</td>
                             <td>12 Feb 2023</td>
-                            <td><span style="color: red">Belum Dibayar</span>
+                            <td><span style="color: red">not yet paid off</span>
                             
                                 <div class="dropdown" style="float: right;">
                                     <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                          <li><a class="dropdown-item" id="tombolgaji1" dataid="" href="#" >Belum Lunas</a></li>
-                                                          <li><a class="dropdown-item" id="tombolgaji2" href="">Lunas</a></li>
+                                                          <li><a class="dropdown-item" id="tombolgaji1" dataid="" href="#" >not yet paid off</a></li>
+                                                          <li><a class="dropdown-item" id="tombolgaji2" href="">Paid off</a></li>
                                      
     
                                     </ul>
@@ -83,7 +83,7 @@
                             <td>Rp. 6000000</td>
                             <td>1000000</td>
                             <td>12 Jan 2023</td>
-                            <td><span style="color:green">Sudah Dibayar</span></td>
+                            <td><span style="color:green">Paid off</span></td>
                             <td>Rp. 0</td>
                             <td>Rp. 5000000</td>
                         </tr>

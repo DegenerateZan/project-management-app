@@ -11,9 +11,9 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Pengaturan Kategori
+            Category Settings
             <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
-               <span class="mr-2">Tambah Kategori Baru</span>
+               <span class="mr-2">Add New Category</span>
             <i class="fas fa-plus-circle float-right "></i>
 
         </div>
@@ -23,16 +23,16 @@
                 <thead>
                     <tr>
                         <th>No.</th>                 
-                        <th>Nama Kategori</th>
-                        <th>aksi</th>
+                        <th>Category Name</th>
+                        <th>action</th>
   
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>No.</th>
-                        <th>Nama Kategori</th>
-                        <th>aksi</th>
+                        <th>No.</th>                 
+                        <th>Category Name</th>
+                        <th>action</th>
 
                        
                     </tr>
@@ -41,7 +41,7 @@
                     <tr>
                         <td>Superman</td>
                         <td>0812345678</td>
-                        <td><button class="success">Ubah</button>|<button class="danger">Hapus</button></td>
+                        <td><button class="success">Edit</button>|<button class="danger">Delete</button></td>
   
 
 
@@ -70,16 +70,16 @@
     <thead>
                     <tr>
                         <th>No.</th>                 
-                        <th>Nama Platform</th>
-                        <th>aksi</th>
+                        <th>Platform Name</th>
+                        <th>action</th>
     
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>No.</th>
-                        <th>Nama Kategori</th>
-                        <th>aksi</th>
+                        <th>No.</th>                 
+                        <th>Platform Name</th>
+                        <th>action</th>
     
                        
                     </tr>
@@ -88,7 +88,7 @@
                     <tr>
                         <td>1</td>
                         <td>Web</td>
-                        <td><button class="success">Ubah</button>|<button class="danger">Hapus</button></td>
+                        <td><button class="success">edit</button>|<button class="danger">Delete</button></td>
     
     
     
