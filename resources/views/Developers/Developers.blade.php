@@ -25,11 +25,11 @@
                 <thead>
                     <tr>
                                           
-                        <th>Dev. Name</th>
-                        <th>Tel. Number</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Account Number</th>
+                        <th data-sortable="false">Dev. Name</th>
+                        <th data-sortable="false">Tel. Number</th>
+                        <th data-sortable="false">Address</th>
+                        <th data-sortable="false">Email</th>
+                        <th data-sortable="false">Account Number</th>
                     </tr>
                 </thead>
                 <tfoot>

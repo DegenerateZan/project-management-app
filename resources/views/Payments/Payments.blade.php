@@ -23,11 +23,11 @@
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>From Project</th>
-                        <th>Amount</th>
-                        <th>Desciption Payment</th>
-                        <th>Payment Status</th>
-                        <th>Payment Date</th>
+                        <th data-sortable="false">From Project</th>
+                        <th data-sortable="false">Amount</th>
+                        <th data-sortable="false">Desciption Payment</th>
+                        <th data-sortable="false">Payment Status</th>
+                        <th data-sortable="false">Payment Date</th>
                     </tr>
                 </thead>
                 <tfoot>

@@ -20,13 +20,13 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Project Name</th>
-                            <th>Platform / Category</th>
+                            <th data-sortable="false">Project Name</th>
+                            <th data-sortable="false">Platform / Category</th>
                             
-                            <th>Deadline</th>
-                            <th>Price</th>
-                            <th>Status</th>
-                            <th>Manufacture Date</th>
+                            <th data-sortable="false">Deadline</th>
+                            <th data-sortable="false">Price</th>
+                            <th data-sortable="false">Status</th>
+                            <th data-sortable="false">Manufacture Date</th>
                             
                         </tr>
                     </thead>
@@ -74,12 +74,15 @@
                     </tbody>
                 </table>
 
+            </div>
+        </div>
+
         <!-- modal tambah proyek baru -->
 <div class="modal fade" id="formmodalproject" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="formmodallabel">Tambah Project Baru</h5>
+          <h5 class="modal-title" id="formmodallabel">Add new Project</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-6">
@@ -87,7 +90,7 @@
           <form action="" method="post" id="formbuatubah">
 
                       <div class="container">
-                        <label for="nama-client" class="form-label">Dari Client:</label>
+                        <label for="nama-client" class="form-label">From Client:</label>
                         <select name="id_client" id="client-proyek" class="form-control" required >
                                         <option value="">Choose Client</option>
                                         {{-- <?php foreach ($data["clients"] as $rowcat) : ?>
@@ -143,8 +146,8 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Add Project</button>
           </form>
+
         </div>
-      </div>
     </div>
   </div>
   
