@@ -2,11 +2,9 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Web Media <br><sup>Management <span >Software</span></sup></div>
+            <a class="sidebar-brand  align-items-center justify-content-center" href="index.html">
+
+                <div class="sidebar-brand-text ">Management</div>
             </a>
 
             <!-- Divider -->
@@ -32,7 +30,6 @@
                 <a class="nav-link collapsed" href="/clients" >
                     <i class="fas fa-fw fa-users"></i>
                     <span>Clients</span>
-                    <i class="fas fa-greater-than float-right"></i>
 
                 </a>
 
@@ -41,7 +38,6 @@
                 <a class="nav-link collapsed" href="/projects" >
                     <i class="fas fa-fw fa-briefcase"></i>
                     <span>Projects</span>
-                    <i class="fas fa-greater-than float-right"></i>
 
                 </a>
 
@@ -50,7 +46,6 @@
                 <a class="nav-link collapsed" href="/payments" >
                     <i class="fas fa-fw fa-money-bill"></i>
                     <span>Payments</span>
-                    <i class="fas fa-greater-than float-right"></i>
 
                 </a>
 
@@ -59,7 +54,6 @@
                 <a class="nav-link collapsed" href="/finance" >
                     <i class="fas fa-fw fa-money-bill"></i>
                     <span>Finance</span>
-                    <i class="fas fa-greater-than float-right"></i>
 
                 </a>
 
@@ -68,7 +62,6 @@
                 <a class="nav-link collapsed" href="/wages">
                     <i class="fas fa-fw fa-money-check" ></i>
                     <span>Wages</span>
-                    <i class="fas fa-greater-than float-right"></i>
                 </a>
 
             </li>
@@ -76,30 +69,35 @@
                 <a class="nav-link collapsed" href="/developers" >
                     <i class="fas fa-fw fa-users"></i>
                     <span>Developers</span>
-                    <i class="fas fa-greater-than float-right"></i>
 
                 </a>
 
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="/settings" >
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Settings</span>
-                    <i class="fas fa-greater-than float-right"></i>
 
-                </a>
-
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagessettings" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Projects Settings</span>
+                </a>
+                <div id="collapsePagessettings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+    
+                        <a class="collapse-item" href="/category">Category</a>
+                        <div class="collapse-divider"></div>
+                        <a class="collapse-item" href="/platform">Platform</a>
+
+
+                    </div>
+                </div>
+            </li>
+
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -124,11 +122,7 @@
 
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
+    
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

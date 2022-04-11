@@ -21,12 +21,12 @@
                     <thead>
                         <tr>
                                               
-                            <th>Name</th>
-                            <th>Tel. Number</th>
-                            <th>Address</th>
-                            <th>company name</th>
-                            <th>Email</th>
-                            <th>account number</th>
+                            <th data-sortable="false">Name</th>
+                            <th data-sortable="false">Tel. Number</th>
+                            <th data-sortable="false">Address</th>
+                            <th data-sortable="false">company name</th>
+                            <th data-sortable="false">Email</th>
+                            <th data-sortable="false">account number</th>
                         </tr>
                     </thead>
                     <tfoot>

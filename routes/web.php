@@ -44,8 +44,11 @@ Route::get('/login', function () {
 Route::get('/developers', function () {
     return view('developers.developers');
 });
-Route::get('/settings', function () {
-    return view('settings.settings');
+Route::get('/platform', function () {
+    return view('platform.platform');
+});
+Route::get('/category', function () {
+    return view('category.category');
 });
 Route::get('/recovery', function () {
     return view('recovery.recovery');

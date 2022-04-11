@@ -37,10 +37,10 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Task Name</th>
-                            <th>Deskription Task</th>
-                            <th>Work By</th>
-                            <th>Deadline task</th>
+                            <th data-sortable="false">Task Name</th>
+                            <th data-sortable="false">Deskription Task</th>
+                            <th data-sortable="false">Work By</th>
+                            <th data-sortable="false">Deadline task</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -56,7 +56,22 @@
                             <td>Managemen Hotel</td>
                             <td>Nothing</td>
                             <td>Supratman</td>
-                            <td>2022/09/21</td>
+                            <td>2022/09/21
+
+                                <div class="dropdown" style="float: right;">
+                                    <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                          <li><a class="dropdown-item"  dataid="" href="#" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Edit</a></li>
+                                                          <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
+                                     
+    
+                                    </ul>
+                                  </div>
+
+
+                            </td>
                         </tr>
 
 
