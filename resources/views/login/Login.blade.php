@@ -15,7 +15,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Login #8</title>
+    <title>{{ $title }}</title>
   </head>
   <body>
   

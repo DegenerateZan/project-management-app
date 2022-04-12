@@ -25,7 +25,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/clients" >
-                    <i class="fas fa-fw fa-users" style="color: pink"></i>
+                    <i class="fas fa-fw fa-users" style="color: rgb(236, 56, 56)"></i>
                     <span id="clients">Clients</span>
 
                 </a>
