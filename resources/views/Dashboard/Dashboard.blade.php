@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('isi')
+@section('container')
     
 
 <div class="container-fluid">

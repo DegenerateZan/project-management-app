@@ -119,7 +119,7 @@
                 
                 {{-- tempat diletakanya template dinamis --}}
                 
-                    @yield('isi')
+                    @yield('container')
              
                 <!-- /.container-fluid -->
 
