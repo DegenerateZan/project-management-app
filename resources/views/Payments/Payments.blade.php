@@ -109,13 +109,14 @@
        
                   <div class="container">
                     <label for="nama-proyekT" class="form-label">From Project :</label>
-                    <input type="text" id="nama-proyekT" class="form-control" value="" >
-                    <input type="text" name="id_p" id="id-proyek-t" value="" readonly>
+                    <input type="text" id="project-name" class="form-control" value="" >
+                    <input type="hidden" name="id-project" id="id-proyek-t" value="" readonly>
+                    <input type="hidden" name="id-payment" id="id-payment" value="" readonly>
 
                   <div class="row">
                       <div class="col-sm">
-                          <label for="nominal" class="form-label">Amount :</label>
-                          <input type="teks" id="nominal" name="nomimnal" class="form-control">
+                          <label for="amount" class="form-label">Amount :</label>
+                          <input type="teks" id="amount" name="amount" class="form-control">
   
                       </div>
                        <!-- <div class="col-sm">
@@ -125,8 +126,8 @@
                   </div>
                   <div class="row">
                       <div class="col-sm">
-                          <label for="deadlinetask" class="form-label">Payment Date:</label>
-                          <input type="date" id="tglpembayaran" name="tgl-pembayaran" class="form-control">
+                          <label for="paymentdate" class="form-label">Payment Date:</label>
+                          <input type="date" id="paymentdate" name="payment-date" class="form-control">
   </div>              <div class="col-sm">
                       <label for="statupem">Payment Status :</label>
                         <select name="" id="" class="form-control">
@@ -140,8 +141,8 @@
                        <div class="row">
   
                      <div class="form-group">
-                        <label for="ketepemba"> Desciption Payment :</label>
-                        <textarea class="form-control" name="ketepemba" id="ketepemba" rows="3"></textarea>
+                        <label for="description-payment"> Desciption Payment :</label>
+                        <textarea class="form-control" name="description-payment" id="description-payment" rows="3"></textarea>
                       </div>
                   </div>
       

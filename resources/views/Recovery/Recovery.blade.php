@@ -1,59 +1,77 @@
 
-<script src="js/jquery.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-   <!--Made with love by Mutiullah Samim -->
-   
-	<!--Bootsrap 4 CDN-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     
-    <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
 
-	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-</head>
-<body>
-<div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>Login</h3>
+    <title>Login #8</title>
+  </head>
+  <body>
+  
 
-			</div>
-			<div class="card-body">
-				<form>
-					<div class="input-group form-group">
-                        <div class="card-header">
-                            <p>Masukan Email mu untuk menerima Kode Pemulihan!</p>
-                        </div>
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
+  
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-md-2">
+          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3><strong>Recovery</strong></h3>
+              <p class="mb-4">Please enter your email to receive a Recovery code!</p>
+            </div>
+            <form action="#" method="post">
+              <div class="form-group first">
+                <label for="username">email</label>
+                <input type="text" class="form-control" id="username">
 
-						<input type="text" class="form-control" placeholder="Email">
-						
-					</div>
+              </div>
 
-					<div class="form-group">
-                        <button type="submit" class="btn float-right login_btn">Kirim</button>
-                        <a href="/login" class="btn float-left login_btn">Kembali</a>
-                    </div>
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-				
+              
+
+			  <div class="row flex">
+				<div class="col-sm">
+					<button type="submit" class="btn text-white btn-block btn-primary">Login Page</button>
+
 				</div>
-				<div class="d-flex justify-content-center">
+				<div class="col-sm">
+					<button type="submit" class="btn text-white btn-block btn-primary">Submit</button>
+
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</body>
+			  </div>
+
+              
+
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

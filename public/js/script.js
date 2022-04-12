@@ -7,8 +7,30 @@ $(function() {
         console.log('Buat Baru Dipencet !')
     
 
+
     
     });
+
+    
+    prosession = $(document).attr('title');
+        console.log(prosession);
+        
+    $("#projectsidebar").click(function(){  
+        console.log('project Di klik!')
+    if (prosession === "Projects"){
+        console.log('JS Prosession OK!')
+
+            console.log('JS terdeteksi sedang di halama projek')
+
+            $(location).prop('href', '#')
+
+    }else {
+        console.log('JS terdeteksi tidak di halama projek')
+        $(location).prop('href', '/projects')
+
+    };
+});
+
     $("#tombolgaji1").click(function(){
         if(confirm("Yakin ingin mengubah Gaji?")){
             $("#tombolgaji1").attr("href", "#");

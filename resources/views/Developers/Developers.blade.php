@@ -83,24 +83,24 @@
                                   <form id="buatubah" action="" method="post">
 
                                       <div class="container">
-                                        <label for="nama-client" class="form-label">Dev. Name:</label>
-                                        <input type="text" id="nama-client" name="nama-dev" class="form-control" value="" />
-                                            <input type="hidden" name="id" id="id-client-1" value="" readonly>
+                                        <label for="dev-name" class="form-label">Dev. Name:</label>
+                                        <input type="text" id="dev-name" name="developer-name" class="form-control" value="" />
+                                            <input type="hidden" name="id-developer" id="id-dev" value="" readonly>
                                       <div class="row">
                                           <div class="col-sm">
                                               <label for="no-rek" class="form-label">Account Number:</label>
-                                              <input type="number" id="no-rek" name="nohp" class="form-control">
+                                              <input type="number" id="no-rek" name="account-number" class="form-control">
                       
                                           </div>
                                            <div class="col-sm">
                                                   <label for="alamat" class="form-label">Tel. Number :</label>
-                                                  <input type="number" id="alamat" name="alamat" class="form-control">
+                                                  <input type="number" id="alamat" name="developer-tel-number" class="form-control">
                                          </div>
                                       </div>
                                       <div class="row">
                                           <div class="col-sm">
                                               <label for="nama-instansi" class="form-label">Address :</label>
-                                              <input type="text" id="nama-instansi" name="namaper" class="form-control">
+                                              <input type="text" id="nama-instansi" name="developer-address" class="form-control">
                       
                                           </div>
                                            <div class="col-sm">
