@@ -31,8 +31,8 @@
     <style>
         
 
-.sidebar-dark .nav-item .nav-link{
-    color: #fff;
+        .sidebar-dark .nav-item .nav-link a span {
+    color: black;
 }
     </style>
 
@@ -108,16 +108,8 @@
                         </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
+
+
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
                                     </a>
@@ -166,12 +158,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Siap untuk Keluar?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Quit?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Pilih "Logout" Dibawah Jika Anda Siap mengakhiri Session Sekarang.</div>
+                <div class="modal-body">Click the "Log out" button Below if you want to Quit the Current Session</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="/login">Logout</a>

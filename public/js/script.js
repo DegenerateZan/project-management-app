@@ -15,9 +15,20 @@ $(function() {
     prosession = $(document).attr('title');
         console.log(prosession);
         
+        namasection = "#".concat(prosession);
+
+        $(namasection).css("font-weight", "bold");
+
+        if (prosession === "project"){ 
+
+        }
+         else {
+        $("#collapsePagessettings").hide();
+         };
+
     $("#projectsidebar").click(function(){  
         console.log('project Di klik!')
-    if (prosession === "Projects"){
+    if (prosession === "project"){
         console.log('JS Prosession OK!')
 
             console.log('JS terdeteksi sedang di halama projek')
