@@ -16,7 +16,9 @@ $(function() {
         console.log(prosession);
         
         namasection = "#".concat(prosession);
+        namasectionicon = "#i-".concat(prosession);
 
+        $(namasectionicon).css("color", "black");
         $(namasection).css("font-weight", "bold");
 
         if (prosession === "project"){ 
