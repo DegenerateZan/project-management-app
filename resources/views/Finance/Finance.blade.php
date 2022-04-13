@@ -46,7 +46,7 @@
         
           <div class="tab-content">
             <!-- Find the JS file for the following chart at: src/js/charts/echarts/crm-revenue.js-->
-            <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+            <!-- If you are not using gulp b fased workflow, you can find the transpiled code at: public/assets/js/theme.js-->
             <div class="card-header">
               Finance History
             </div>

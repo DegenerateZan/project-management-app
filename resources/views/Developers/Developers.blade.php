@@ -12,7 +12,7 @@
             Data Developers
             <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
                 <span class="mr-2">Add new Developer</span>
-             <i class="fas fa-plus-circle float-right "></i>
+             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
 
          </div>
         </div>
@@ -70,7 +70,7 @@
                 </tbody>
             </table>
 
-                    <!-- modal tambah dev baru -->
+                    <!-- modal tambah f dev baru -->
                     <div class="modal fade" id="formmodaldev" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
@@ -104,8 +104,8 @@
                       
                                           </div>
                                            <div class="col-sm">
-                                                  <label for="email" class="form-label">Email :</label>
-                                                  <input type="email" id="email" name="email" class="form-control">
+                                                  <label for="email" class="form-label">Email :</label><br>
+                                                  <input type="email" id="email" name="email" class="form-control"><br>
                                          </div>
                                       </div>
                                       </div>

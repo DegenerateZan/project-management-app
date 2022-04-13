@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Projects</h1>
-    
+    {{--  --}}
         </div>
         <div class="card mb-4">
             <div class="card-header">
@@ -12,7 +12,7 @@
                 DataTable Projects
                 <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
                     <span class="mr-2">Add New Project</span>
-                 <i class="fas fa-plus-circle float-right "></i>
+                 <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
  
              </div>
             </div>
@@ -134,10 +134,11 @@
                       </div>
                       </div>
                       <div class="row">
-                      <div class="col-sm mt-3">
-                          <label for="projectprice" class="form-label">Project price :</label>
-                          <input type="number" id="projectprice" name="harga" class="form-control">
-                                  
+             <div class="col-sm">
+                          <label for="projectprice" class="form-label">Project price :</label><br>
+                          <div class="form-group d-flex">
+                            <p class="mr-1 mt-1">Rp.</p><input type="number" id="projectprice" name="harga" class="form-control"><br>
+                          </div>      
                       </div>
                       
               </div>
