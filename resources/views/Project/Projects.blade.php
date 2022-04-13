@@ -134,7 +134,7 @@
                       </div>
                       </div>
                       <div class="row">
-                      <div class="col-sm">
+                      <div class="col-sm mt-3">
                           <label for="projectprice" class="form-label">Project price :</label>
                           <input type="number" id="projectprice" name="harga" class="form-control">
                                   
@@ -142,7 +142,7 @@
                       
               </div>
               </div>
-        <div class="modal-footer">
+        <div class="modal-footer mt-3">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Add Project</button>
           </form>

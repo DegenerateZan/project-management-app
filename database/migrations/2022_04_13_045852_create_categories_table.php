@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name_clients');
-            $table->string('addres_clients');
-            $table->string('phone_number_clients');
-            $table->string('number_account_clients');
-            $table->string('email_clients');
-            $table->string('company_name_clients');
+            $table->string('name_category');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('categories');
     }
 };
