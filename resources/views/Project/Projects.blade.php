@@ -135,9 +135,10 @@
                       </div>
                       <div class="row">
                       <div class="col-sm">
-                          <label for="projectprice" class="form-label">Project price :</label>
-                          <input type="number" id="projectprice" name="harga" class="form-control">
-                                  
+                          <label for="projectprice" class="form-label">Project price :</label><br>
+                          <div class="form-group d-flex">
+                            <p class="mr-1 mt-1">Rp.</p><input type="number" id="projectprice" name="harga" class="form-control"><br>
+                          </div>      
                       </div>
                       
               </div>

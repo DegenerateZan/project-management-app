@@ -104,8 +104,8 @@
                       
                                           </div>
                                            <div class="col-sm">
-                                                  <label for="email" class="form-label">Email :</label>
-                                                  <input type="email" id="email" name="email" class="form-control">
+                                                  <label for="email" class="form-label">Email :</label><br>
+                                                  <input type="email" id="email" name="email" class="form-control"><br>
                                          </div>
                                       </div>
                                       </div>
