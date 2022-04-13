@@ -43,14 +43,15 @@
                         </tr>
                     </tfoot>
                     <tbody>
+                        @foreach($data as $project)
                         <tr>
-                            <td>Managemen Hotel</td>
-                            <td>Web Application / Instansi</td>
+                            <td>{{ $project->name_project }}</td>
+                            <td>{{ $project->category_id }}</td>
                             
-                            <td>2022/07/21</td>
-                            <td>Rp. 40000000</td>
-                            <td>Incomplete</td>
-                            <td>2022/04/25
+                            <td>{{ $project->deadline_project }}</td>
+                            <td>{{ $project->price_project }}</td>
+                            <td>{{ $project->status_project }}</td>
+                            <td>{{ $project->manufacture_date }}</td>
                             
 
                                 <div class="dropdown" style="float: right;">
@@ -66,10 +67,10 @@
 
                                     </ul>
                                   </div>
-
+                 
                             </td>
                         </tr>
-
+                    @endforeach
 
                     </tbody>
                 </table>
