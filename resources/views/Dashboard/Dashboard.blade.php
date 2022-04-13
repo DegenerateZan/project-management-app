@@ -191,7 +191,7 @@
                     <div class="chart-pie">
                         <!--  tempat Projects -->
 
-                        <div class="container-fluid">
+                        <div class="container-fluid" style="overflow-x:auto;">
                             <table class="table">
                                 <thead>
                                   <tr>

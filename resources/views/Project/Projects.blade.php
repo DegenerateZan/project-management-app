@@ -12,7 +12,7 @@
                 DataTable Projects
                 <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
                     <span class="mr-2">Add New Project</span>
-                 <i class="fas fa-plus-circle float-right "></i>
+                 <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
  
              </div>
             </div>
