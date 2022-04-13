@@ -41,12 +41,13 @@
                         </tr>
                     </tfoot>
                     <tbody>
+                      @foreach ($data as $clients)
                         <tr>
-                            <td>Superman</td>
-                            <td>0812345678</td>
-                            <td>Jakarta</td>
-                            <td>Mega Corp.</td>
-                            <td>super@gmail.com</td>
+                            <td>{{ $clients->name_clients }}</td>
+                            <td>{{ $clients->number_phone_clients}}</td>
+                            <td>{{ $clients->addres_clients}}</td>
+                            <td>{{ $clients->company_name_clients}}</td>
+                            <td>{{  $clients->number_account_clients }}</td>
                             <td>937493849384938
 
                                 <div class="dropdown" style="float: right;">
@@ -63,7 +64,7 @@
                             </td>
                         </tr>
 
-
+                        @endforeach
                     </tbody>
                 </table>
 

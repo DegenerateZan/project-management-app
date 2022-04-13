@@ -74,7 +74,7 @@
                     <input type="text" id="nama-platform" name="nama" class="form-control">
                         <input type="hidden" name="id" id="id-proyek" value="" readonly>
                   </div>
-        <div class="modal-footer">
+        <div class="modal-footer mt-3">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Add New Platform</button>
           </form>

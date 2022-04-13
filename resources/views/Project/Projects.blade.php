@@ -49,7 +49,7 @@
                             <td>{{ $project->category_id }}</td>
                             
                             <td>{{ $project->deadline_project }}</td>
-                            <td>{{ $project->price_project }}</td>
+                            <td>Rp.{{ $project->price_project }}</td>
                             <td>{{ $project->status_project }}</td>
                             <td>{{ $project->manufacture_date }}</td>
                             
