@@ -12,7 +12,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="/">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-home" id="i-Dashboard"></i>
                     <span id="Dashboard" >Dashboard</span></a>
             </li>
 
@@ -25,7 +25,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/clients" >
-                    <i class="fas fa-fw fa-users"></i>
+                    <i class="fas fa-fw fa-users" id="i-clients"></i>
                     <span id="clients">Clients</span>
 
                 </a>
@@ -34,7 +34,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" id="projectsidebar" href="/projects" data-toggle="collapse" data-target="#collapsePagessettings" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-briefcase"></i>
+                    <i class="fas fa-fw fa-briefcase" id="i-project"></i>
                     <span id="project">Projects</span>
                 </a>
                 <div id="collapsePagessettings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -51,7 +51,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/payments" >
-                    <i class="fas fa-fw fa-money-bill"></i>
+                    <i class="fas fa-fw fa-money-bill" id="i-payments"></i>
                     <span id="payments">Payments</span>
 
                 </a>
@@ -59,7 +59,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/finance" >
-                    <i class="fas fa-fw fa-wallet"></i>
+                    <i class="fas fa-fw fa-wallet" id="i-finance"></i>
                     <span id="finance">Finance</span>
 
                 </a>
@@ -67,14 +67,14 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/wages">
-                    <i class="fas fa-hand-holding-usd"></i>
+                    <i class="fas fa-hand-holding-usd" id="i-wages"></i>
                     <span id="wages">Wages</span>
                 </a>
 
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/developers" >
-                    <i class="fas fa-fw fa-users"></i>
+                    <i class="fas fa-fw fa-users" id="i-developer"></i>
                     <span id="developer">Developers</span>
 
                 </a>
