@@ -15,9 +15,9 @@
             DataTable Payments
             <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#modalpayment">
                 <span class="mr-2">Add New Payment</span>
-             <i class="fas fa-plus-circle float-right "></i>
+                <i class="fas fa-plus-circle float-right" style="margin-left: 5px ;"></i>
 
-         </div>
+            </div>
         </div>
         <div class="card-body" style="overflow-x:auto;"">
             <table id="datatablesSimple">
@@ -119,7 +119,7 @@
                           <input type="teks" id="amount" name="amount" class="form-control">
   
                       </div>
-                       <!-- <div class="col-sm">
+                       <!-- <div class="col-sm"
                               <label for="alamat" class="form-label">Status :</label>
                               <input type="text" id="alamat" name="alamat" class="form-control">
                      </div> -->

@@ -10152,6 +10152,7 @@ a.text-dark:focus {
     .table .thead-dark th {
         color: inherit;
         border-color: #e3e6f0;
+        user-zoom: none;
     }
 }
 
@@ -11096,6 +11097,7 @@ a:focus {
 
 .sidebar-dark .sidebar-brand {
     color: #fff;
+    
 }
 
 .sidebar-dark hr.sidebar-divider {
@@ -11107,30 +11109,31 @@ a:focus {
 }
 
 .sidebar-dark .nav-item .nav-link {
-    color: black;
+    color: #708090; 
+    transition: .3s;
 }
 .sidebar-dark .nav-item .nav-link a span {
-    color: black;
+    color: #708090;
 }
 
 .sidebar-dark .nav-item .nav-link i {
-    color: rgba(255, 255, 255, 0.3);
+    widht: 45%; 
 }
 
 .sidebar-dark .nav-item .nav-link:active,
 .sidebar-dark .nav-item .nav-link:focus,
 .sidebar-dark .nav-item .nav-link:hover {
-    font-weight: bold;
+    font-weight: bold;             
 }
 
 .sidebar-dark .nav-item .nav-link:active i,
 .sidebar-dark .nav-item .nav-link:focus i,
 .sidebar-dark .nav-item .nav-link:hover i {
-    color: #fff;
+    color: #000;
 }
 
 .sidebar-dark .nav-item .nav-link[data-toggle="collapse"]::after {
-    color: rgba(255, 255, 255, 0.5);
+    color: #000;
 }
 
 .sidebar-dark .nav-item.active .nav-link {

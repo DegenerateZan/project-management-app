@@ -4,7 +4,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand  align-items-center justify-content-center" href="/" style="transition: none;">
                 <img src="/img/logo 1.png" alt="" width="20%">
-                <div class="sidebar-brand-text ">Management</div>
+                <div class="sidebar-brand-text "><img src="/img/webmedia2.png" alt="" width="60%"></div>
             </a>
 
             <!-- Divider -->
@@ -12,7 +12,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="/">
-                    <i class="fas fa-home" style="color: blue"></i>
+                    <i class="fas fa-home"></i>
                     <span id="Dashboard" >Dashboard</span></a>
             </li>
 
@@ -25,7 +25,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/clients" >
-                    <i class="fas fa-fw fa-users" style="color: rgb(236, 56, 56)"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span id="clients">Clients</span>
 
                 </a>
@@ -34,7 +34,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" id="projectsidebar" href="/projects" data-toggle="collapse" data-target="#collapsePagessettings" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder" style="color: purple"></i>
+                    <i class="fas fa-fw fa-briefcase"></i>
                     <span id="project">Projects</span>
                 </a>
                 <div id="collapsePagessettings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -51,7 +51,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/payments" >
-                    <i class="fas fa-fw fa-money-bill" style="color: red"></i>
+                    <i class="fas fa-fw fa-money-bill"></i>
                     <span id="payments">Payments</span>
 
                 </a>
@@ -59,7 +59,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/finance" >
-                    <i class="fas fa-fw fa-wallet" style="color: rgb(0, 200, 204)"></i>
+                    <i class="fas fa-fw fa-wallet"></i>
                     <span id="finance">Finance</span>
 
                 </a>
@@ -67,14 +67,14 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/wages">
-                    <i class="fas fa-hand-holding-usd" style="color: rgb(192, 176, 0)"></i>
+                    <i class="fas fa-hand-holding-usd"></i>
                     <span id="wages">Wages</span>
                 </a>
 
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/developers" >
-                    <i class="fas fa-fw fa-users" style="color: rgb(255, 140, 32)"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span id="developer">Developers</span>
 
                 </a>
@@ -94,7 +94,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-sign-in-alt" style="color: rgb(0, 183, 255)"></i>
+                    <i class="fas fa-sign-in-alt"  rgb(0, 183, 255)"></i>
                     <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">

@@ -13,7 +13,7 @@
 
                 <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#modalwage">
                     <span class="mr-2">Add New wage</span>
-                 <i class="fas fa-plus-circle float-right "></i>
+                 <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
     
              </div>
             </div>
@@ -133,7 +133,7 @@
                                         <option value="1">Paid off</option>
                                         <option value="0">Not yet paid off</option>
                                     </select>
-                                    
+                                    {{--  --}}
             </div>
                                   </div>
                                    <div class="row">
