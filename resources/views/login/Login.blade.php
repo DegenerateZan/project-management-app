@@ -11,23 +11,33 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/universal.css">
     
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
     <title>{{ $title }}</title>
+
+
+    <style>
+      btn-primary:hover {
+        color: #36b9cc;
+      }
+    </style>
   </head>
   <body>
   
 
   
   <div class="content">
-    <div class="container">
+    <div class=" container">
       <div class="row">
-        <div class="col-md-6 order-md-2">
-          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
-        </div>
-        <div class="col-md-6 contents">
+             
+          <div class="col order-md-9 custom-margin">
+          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid" style="margin-top: -15%; margin-right: -300px">
+      </div>
+
+        <div class="col contents ">
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">
@@ -54,7 +64,7 @@
                 <span class="ml-auto"><a href="/recovery" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
-              <button type="submit" class="btn text-white btn-block btn-primary">Login</button>
+              <button type="submit" class="btn text-white btn-block btn-primary" style="color: #36b9cc;">Login</button>
 
 
             </form>
@@ -63,7 +73,6 @@
           
         </div>
         
-      </div>
     </div>
   </div>
 

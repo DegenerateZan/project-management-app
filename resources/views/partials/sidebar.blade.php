@@ -59,7 +59,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/finance" >
-                    <i class="fas fa-fw fa-money-bill" style="color: rgb(0, 200, 204)"></i>
+                    <i class="fas fa-fw fa-wallet" style="color: rgb(0, 200, 204)"></i>
                     <span id="finance">Finance</span>
 
                 </a>
@@ -67,7 +67,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/wages">
-                    <i class="fas fa-fw fa-money-check" style="color: rgb(192, 176, 0)"></i>
+                    <i class="fas fa-hand-holding-usd" style="color: rgb(192, 176, 0)"></i>
                     <span id="wages">Wages</span>
                 </a>
 

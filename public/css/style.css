@@ -6,6 +6,11 @@ p {
   color: #b3b3b3;
   font-weight: 300; }
 
+.btn-primary {
+  background-color: #36b9cc;
+}
+
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Roboto", sans-serif; }
@@ -155,11 +160,11 @@ h2 {
   background: #ccc; }
 
 .control input:checked ~ .control__indicator {
-  background: #38d39f; }
+  background: #36b9cc; }
 
 .control:hover input:not([disabled]):checked ~ .control__indicator,
 .control input:checked:focus ~ .control__indicator {
-  background: #4dd8a9; }
+  background: #36b9cc; }
 
 .control input:disabled ~ .control__indicator {
   background: #e6e6e6;
