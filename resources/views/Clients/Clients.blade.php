@@ -187,7 +187,7 @@
   
             </div>
 
-<!-- Akhir kumpulan Modal -->
+<!-- Akhir kumpulan Modal gor -->
 
             
             </div>

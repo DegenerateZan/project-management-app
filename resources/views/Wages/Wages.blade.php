@@ -133,7 +133,7 @@
                                         <option value="1">Paid off</option>
                                         <option value="0">Not yet paid off</option>
                                     </select>
-                                    
+                                    {{--  --}}
             </div>
                                   </div>
                                    <div class="row">

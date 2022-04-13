@@ -168,7 +168,7 @@
             </div>
         </div>
 
-        <!-- Pie Chart -->
+        <!-- Pie f Chart -->
         <div class="col-xl-4 col-lg-5">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->

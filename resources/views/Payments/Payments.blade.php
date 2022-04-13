@@ -119,7 +119,7 @@
                           <input type="teks" id="amount" name="amount" class="form-control">
   
                       </div>
-                       <!-- <div class="col-sm">
+                       <!-- <div class="col-sm"
                               <label for="alamat" class="form-label">Status :</label>
                               <input type="text" id="alamat" name="alamat" class="form-control">
                      </div> -->

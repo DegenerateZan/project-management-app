@@ -57,7 +57,7 @@
         </div>
     </div>
 
-
+{{--  --}}
     <!-- modal buat/ubah platform -->
 <div class="modal fade" id="formmodalplatform" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -70,7 +70,7 @@
                 </tbody>
             </table>
 
-                    <!-- modal tambah dev baru -->
+                    <!-- modal tambah f dev baru -->
                     <div class="modal fade" id="formmodaldev" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
