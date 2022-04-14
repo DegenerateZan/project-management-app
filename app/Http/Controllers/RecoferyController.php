@@ -8,6 +8,7 @@ class RecoferyController extends Controller
 {
    public function index(){
     return view('recovery.recovery',[
+
         "title" => "Recofery"
     ]);
    }

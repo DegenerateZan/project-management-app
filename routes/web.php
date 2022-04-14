@@ -13,6 +13,7 @@ use App\Http\Controllers\TasksController;
 use App\Http\Controllers\WagesController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\RecoferyController;
 
 /*
 |--------------------------------------------------------------------------

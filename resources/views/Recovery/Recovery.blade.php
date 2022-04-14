@@ -48,7 +48,10 @@
 
 			  <div class="row flex">
 				<div class="col-sm">
-					<button type="submit" class="btn text-white btn-block btn-primary">Login Page</button>
+          <a href="/login">
+					<button type="button" class="btn text-white btn-block btn-primary">Login Page</button>
+          </a>
+
 
 				</div>
 				<div class="col-sm">
