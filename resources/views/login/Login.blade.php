@@ -41,7 +41,7 @@
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">
-              <h3>Log in to <strong>Webmedia Managemen Software</strong></h3>
+              <h3>Log in to <strong>Webmedia Management Software</strong></h3>
               <p class="mb-4">This app can only be access by the member of Webmedia Corp.</p>
             </div>
             <form action="#" method="post">
