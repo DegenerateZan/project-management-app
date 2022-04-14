@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('category_id');
-            $table->string('name_project');
-            $table->string('price_project');
-            $table->date('deadline_project');
+            $table->string('name');
+            $table->string('price');
+            $table->date('deadline');
             $table->date('manufacture_date');
             $table->foreign('client_id')->references('id')->on('clients');
             $table->foreign('category_id')->references('id')->on('categories');

@@ -8,8 +8,8 @@ class PaymentsController extends Controller
 {
    public function index()
    {
-    return view('payments.payments',[
-        "title" => "payments"
+    return view('payment.payment',[
+        "title" => "payment"
     ]);
    }
 }

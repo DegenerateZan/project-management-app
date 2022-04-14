@@ -9,7 +9,7 @@ class FinanceController extends Controller
     public function index()
     {
         return view('finance.finance',[
-            "title" => "finance"
+            "title" => "Finance"
         ]);
     }
 }

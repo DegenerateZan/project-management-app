@@ -43,14 +43,14 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach($data as $project)
+                        @foreach($projects as $project)
                         <tr>
-                            <td>{{ $project->name_project }}</td>
-                            <td>{{ $project->category_id }}</td>
+                            <td>{{ $project->name }}</td>
+                            <td>{{ $project->category->name }}</td>
                             
-                            <td>{{ $project->deadline_project }}</td>
-                            <td>Rp.{{ $project->price_project }}</td>
-                            <td>{{ $project->status_project }}</td>
+                            <td>{{ $project->deadline }}</td>
+                            <td>Rp.{{ $project->price }}</td>
+                            <td>{{ $project->status}}</td>
                             <td>{{ $project->manufacture_date }}</td>
                             
 

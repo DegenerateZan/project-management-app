@@ -43,12 +43,12 @@
                     <tbody>
                       @foreach ($data as $clients)
                         <tr>
-                            <td>{{ $clients->name_clients }}</td>
-                            <td>{{ $clients->number_phone_clients}}</td>
-                            <td>{{ $clients->addres_clients}}</td>
-                            <td>{{ $clients->company_name_clients}}</td>
-                            <td>{{  $clients->number_account_clients }}</td>
-                            <td>937493849384938
+                            <td>{{ $clients->name}}</td>
+                            <td>{{ $clients->number_phone}}</td>
+                            <td>{{ $clients->addres}}</td>
+                            <td>{{ $clients->company_name}}</td>
+                            <td>{{ $clients->email}}</td>
+                            <td>{{  $clients->number_account}}</td>
 
                                 <div class="dropdown" style="float: right;">
                                     <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

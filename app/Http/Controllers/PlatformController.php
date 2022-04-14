@@ -9,7 +9,7 @@ class PlatformController extends Controller
    public function index()
    {
        return view('Platform.Platform',[
-           "title" => "platform"
+           "title" => "Platform"
        ]);
    }
 }

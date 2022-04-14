@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('project_platforms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('paltform_id');
+            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('paltform_id')->references('id')->on('platforms');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('project_platforms');
     }
 };

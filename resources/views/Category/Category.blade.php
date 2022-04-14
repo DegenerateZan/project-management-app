@@ -29,27 +29,32 @@
                     </tr>
                 </thead>
                 <tfoot>
+                    
                     <tr>
                         <th>No.</th>                 
-                        <th>Category Name</th>
+                        <th></th>
                         <th>action</th>
 
                        
                     </tr>
+                    
                 </tfoot>
                 <tbody>
+                    <?php $i= 1 ?>
+                    @foreach ($data as $category)
                     <tr>
-                        <td>1</td>
-                        <td>Instansi</td>
+                        <td>{{ $i }}</td>
+                        <td>{{ $category->name_category }}</td>
                         <td>
                             <a href="" data-bs-toggle="modal" data-bs-target="#formmodalclient" class="btn btn-success">Edit</a>|<a href="" class="btn btn-danger">Hapus</a></td>
   
 
 
 
-               
+                            
                     </tr>
-
+                    <?php $i++ ?>
+                    @endforeach
 
                 </tbody>
             </table>

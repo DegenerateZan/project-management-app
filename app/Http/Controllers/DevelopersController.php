@@ -8,8 +8,8 @@ class DevelopersController extends Controller
 {
    public function index()
    {
-    return view('developers.developers',[
-        "title" => "developer"
+    return view('developer.developer',[
+        "title" => "dDeveloper"
     ]);
    }
 }
