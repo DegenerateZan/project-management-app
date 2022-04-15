@@ -39,7 +39,7 @@ Route::get('/clients',[ClientsController::class,'index']);
 // wages
 Route::get('/wages',[WagesController::class, 'index']);
 // finance
-Route::get('/finance',[FinanceController::class,'index']);
+Route::get('/finances',[FinanceController::class,'index']);
 // login
 Route::get('/login', [LoginController::class, 'index']);
 // developer
@@ -47,6 +47,6 @@ Route::get('/developers', [DevelopersController::class,'index']);
 // platform
 Route::get('/platform', [PlatformController::class, 'index']);
 // category
-Route::get('/category',[CategoryController::class ,'index']);
+Route::get('/categories',[CategoryController::class ,'index']);
 // recofery
 Route::get('/recovery', [RecoferyController::class, 'index']);

@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_project');
-            $table->string('task_name');
-            $table->string('task_description');
-            $table->date('task_deadline');
+            $table->string('name');
+            $table->string('description');
+            $table->date('deadline');
             $table->foreign('id_project')->references('id')->on('projects');
             $table->timestamps();
         });
