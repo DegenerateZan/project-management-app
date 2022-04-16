@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('task_detail', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_task');
+            $table->unsignedBigInteger('task_id');
+            $table->string('description_task');
             $table->boolean('task_status');
-            $table->foreign('id_task')->references('id')->on('tasks');
+            $table->foreign('task_id')->references('id')->on('tasks');
 
             $table->timestamps();
         });

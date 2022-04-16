@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('work', function (Blueprint $table) {
+        Schema::create('salaries', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('developer_id');
-            $table->unsignedBigInteger('task_id');
-
-            $table->foreign('developer_id')->references('id')->on('developers');
-            $table->foreign('task_id')->references('id')->on('tasks');
+            $table->decimal('basic_salary');
+            $table->decimal('total_salary_received');
+            $table->decimal('payroll_status');
+            $table->date('payroll_date');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('work');
+        Schema::dropIfExists('salaries');
     }
 };

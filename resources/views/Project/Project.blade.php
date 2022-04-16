@@ -50,7 +50,11 @@
                             
                             <td>{{ $project->deadline }}</td>
                             <td>Rp.{{ $project->price }}</td>
-                            <td>{{ $project->status}}</td>
+                           @if ()
+                               
+                           @else
+                               
+                           @endif
                             <td>{{ $project->manufacture_date }}</td>
                             
 
