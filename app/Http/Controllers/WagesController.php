@@ -10,6 +10,9 @@ class WagesController extends Controller
     {
       return view('wages.wages',[
           "title" => "Wages"
+          
       ]);
+
+      // this is a mistake btw
     }
 }

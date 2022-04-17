@@ -17,7 +17,7 @@ $(function() {
 
 
 
-    //
+    //modal payments
 
 
 });
