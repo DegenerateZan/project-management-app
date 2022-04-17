@@ -10,6 +10,16 @@ class Developers extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
+    // Fillable data only 
+    protected $fillable = [
+
+        'name',
+        'account_number',
+        'telephone_number',
+        'address',
+        'email'
+
+    ];
 
     public function Work(){
         return $this->belongsToMany(Work::class);

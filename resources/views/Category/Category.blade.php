@@ -12,7 +12,7 @@
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             Category Settings
-            <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
+            <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalcategory">
                <span class="mr-2">Add New Category</span>
             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
 
@@ -64,7 +64,7 @@
 
 {{--  --}}
     <!-- modal buat/ubah platform -->
-<div class="modal fade" id="formmodalplatform" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="formmodalcategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

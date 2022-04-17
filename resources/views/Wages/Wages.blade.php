@@ -49,10 +49,18 @@
                             <td>Rp. 6000000</td>
                             <td>1000000</td>
                             <td>12 Feb 2023</td>
-                            <td><span style="color: red">not yet paid off</span>
+
+                            <td>
+
+
+    
+
+                            </td>
+
+                            {{-- <td><span style="color: red">not yet paid off</span>
                             
                                 
-                            </td>
+                            </td> --}}
                             <td>Rp. 0</td>
                             <td>Rp. 5000000
 
