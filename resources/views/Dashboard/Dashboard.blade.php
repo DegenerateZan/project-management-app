@@ -196,7 +196,7 @@
                         <!--  tempat Projects -->
 
                         <div class="container-fluid" style="overflow-x:auto;">
-                            <table class="table">
+                            <table class="table" id="custom2">
                                 <thead>
                                   <tr>
                                     <th scope="col">#</th>
