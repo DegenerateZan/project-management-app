@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Wages extends Controller
+class WagesController extends Controller
 {
     public function index()
     {
-        return view('salary.salary',[
-            'title' => 'wages'
-        ]);
+      return view('wages.wages',[
+          "title" => "Wages"
+          
+      ]);
+
+
+
     }
 }

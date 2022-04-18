@@ -3,13 +3,17 @@
 
 $(function() {
 
-    $("#createnew").click(function(){
-        console.log('Buat Baru Dipencet !')
     
+
+    $("#createnew").click(function(){
+        console.log('Buat Client Baru Dipencet !')
+        $("#buatubah").attr("href")
 
 
     
     });
+
+    
 
     
     prosession = $(document).attr('title');
@@ -21,10 +25,8 @@ $(function() {
         $(namasectionicon).css("color", "black");
         $(namasection).css("font-weight", "bold");
 
-        if (prosession === "project"){ 
+        if (prosession !== "project"){ 
 
-        }
-         else {
         $("#collapsePagessettings").hide();
          };
 
