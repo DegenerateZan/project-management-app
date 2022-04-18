@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class FinanceSeeder extends Seeder
 {
@@ -14,6 +15,11 @@ class FinanceSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('finances')->insert([
+            'amount' => 12.0000,
+            'mutation' => 'Debit',
+            'description' => 'Beli Meja',
+            'date' => '2020-02-02',
+        ]);
     }
 }

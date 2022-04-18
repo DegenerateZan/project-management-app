@@ -10,7 +10,7 @@
             <!-- Divider -->
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item mt-3">
                 <a class="nav-link" href="/">
                     <i class="fas fa-home" id="i-Dashboard"></i>
                     <span id="Dashboard" >Dashboard</span></a>
@@ -40,7 +40,7 @@
                 <div id="collapsePagessettings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="/categories">Category</a>
+                        <a class="collapse-item" href="/category">Category</a>
                         <div class="collapse-divider"></div>
                         <a class="collapse-item" href="/platform">Platform</a>
 

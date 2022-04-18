@@ -44,7 +44,7 @@
                     @foreach ($data as $category)
                     <tr>
                         <td>{{ $i }}</td>
-                        <td>{{ $category->name_category }}</td>
+                        <td>{{ $category->name}}</td>
                         <td>
                             <a href="" data-bs-toggle="modal" data-bs-target="#formmodalclient" class="btn btn-success">Edit</a>|<a href="" class="btn btn-danger">Hapus</a></td>
   

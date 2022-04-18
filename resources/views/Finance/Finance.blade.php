@@ -69,9 +69,9 @@
               </tfoot>
               <tbody>
                   <tr>
-                      <td>Rp. 0</td>
-                      <td>Rp. 5000000 Keuangan Telah di bayarkan ke Gaji</td>
-                      <td></td>
+                      <td>Rp.5000000</td>
+                      <td>Keuangan Telah di bayarkan ke Gaji</td>
+                      <td>Debit</td>
                       <td>2022/10/11</td>
                   </tr>
 

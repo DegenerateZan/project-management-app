@@ -10,7 +10,7 @@ class Project extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function Client()
+    public function client()
     {
         return $this->belongsTo(Client::class);
     }

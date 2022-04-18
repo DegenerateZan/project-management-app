@@ -48,6 +48,6 @@ Route::get('/developers', [DevelopersController::class,'index']);
 // platform
 Route::get('/platform', [PlatformController::class, 'index']);
 // category
-Route::get('/categories',[CategoryController::class ,'index']);
+Route::get('/category', [CategoryController::class ,'index']);
 // recofery
 Route::get('/recovery', [RecoferyController::class, 'index']);

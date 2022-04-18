@@ -20,7 +20,7 @@
             </div>
             <div class="card">
                 <div class="container">
-                    <div class="heading-t-project">
+                    <div class="heading-t-project mt-3">
                         <h4>From Project : Managemen Hotel</h4>
                     </div>
                     <div class="d-sm-flex">

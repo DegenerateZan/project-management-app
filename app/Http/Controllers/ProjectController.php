@@ -11,15 +11,12 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with('category')->get();
-        //  return dd($projects);
-        $clients = Project::with('Client')->get();
-        // return dd($clients);
+        
+   
 
         return view('project.project',[
             "title" => "project",
-            'projects' => $projects,
-            'clients' => $clients
+            'projects' => Project::with('category')->with('client')->get()
         ]);
     }
 }

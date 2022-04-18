@@ -46,22 +46,18 @@
                     <tbody>
                         @foreach($projects as $project)
                         <tr>
-                            @foreach ($clients as $client)
-                                <td>{{ $client->name }}</td>
-                            @endforeach
+                            <td>{{ $project->client->name_client }}</td>
                             <td>{{ $project->name }}</td>
                             <td>{{ $project->category->name }}</td>
                             
                             <td>{{ $project->deadline }}</td>
                             <td>Rp.{{ $project->price }}</td>
 
-                           @if ($project->status === 0)
-
-                           <td>On Progress</td>
-                               
-                           @else
-                               <td>Finish</td>
-                            </td>
+                         @if ($project->status === 0)
+                             <td>On Progress</td>
+                         @else
+                             <td>Finsh</td>
+                         @endif
                             <td>{{ $project->manufacture_date }}</td>
                             
 
