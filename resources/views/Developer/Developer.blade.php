@@ -43,12 +43,13 @@
                     </tr>
                 </tfoot>
                 <tbody>
+                    @foreach ($developers as $developer)
                     <tr>
-                        <td>Supratman</td>
-                        <td>08984638737</td>
-                        <td>Bogor</td>
-                        <td>supra@gmail.com</td>
-                        <td>8387234683764
+                        <td>{{ $developer->name }}</td>
+                        <td>{{ $developer->telephone_number }}</td>
+                        <td>{{ $developer->address }}</td>
+                        <td>{{ $developer->email }}</td>
+                        <td>{{ $developer->account_number }}</td>
 
                             <div class="dropdown" style="float: right;">
                                 <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,7 +66,7 @@
 
                         </td>
                     </tr>
-
+                    @endforeach
 
                 </tbody>
             </table>

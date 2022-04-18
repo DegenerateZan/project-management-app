@@ -20,8 +20,9 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
+                            <th data-sortable="false">Client</th>
                             <th data-sortable="false">Project Name</th>
-                            <th data-sortable="false">Platform / Category</th>
+                            <th data-sortable="false">Category</th>
                             
                             <th data-sortable="false">Deadline</th>
                             <th data-sortable="false">Price</th>
@@ -33,7 +34,7 @@
                     <tfoot>
                         <tr>
                             <th>Project Name</th>
-                            <th>Platform / Category</th>
+                            <th>Category</th>
                             
                             <th>Deadline</th>
                             <th>Price</th>
@@ -45,15 +46,20 @@
                     <tbody>
                         @foreach($projects as $project)
                         <tr>
+                            @foreach ($clients as $client)
+                                <td>{{ $client->name }}</td>
+                            @endforeach
                             <td>{{ $project->name }}</td>
                             <td>{{ $project->category->name }}</td>
                             
                             <td>{{ $project->deadline }}</td>
                             <td>Rp.{{ $project->price }}</td>
-                           @if ()
+                           @if ($project->status === 0)
+
+                           <td>On Progress</td>
                                
                            @else
-                               
+                               <td>Finish</td>
                            @endif
                             <td>{{ $project->manufacture_date }}</td>
                             

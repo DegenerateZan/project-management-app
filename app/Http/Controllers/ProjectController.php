@@ -13,10 +13,13 @@ class ProjectController extends Controller
     {
         $projects = Project::with('category')->get();
         //  return dd($projects);
+        $clients = Project::with('Client')->get();
+        // return dd($clients);
 
         return view('project.project',[
             "title" => "project",
-            'projects' => $projects
+            'projects' => $projects,
+            'clients' => $clients
         ]);
     }
 }

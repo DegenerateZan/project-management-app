@@ -37,7 +37,7 @@ Route::get('/tasks', [TasksController::class,'index']);
 // clients
 Route::get('/clients',[ClientsController::class,'index']);
 // wages
-Route::get('/wages',[WagesController::class, 'index']);
+Route::get('/wages',[WagesController::class,'index']);
 // finance
 Route::get('/finances',[FinanceController::class,'index']);
 // login

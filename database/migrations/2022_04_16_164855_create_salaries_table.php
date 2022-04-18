@@ -22,6 +22,7 @@ return new class extends Migration
             $table->decimal('payroll_status');
             $table->date('payroll_date');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('developer_id')->references('id')->on('developers');
             $table->timestamps();
         });
     }
