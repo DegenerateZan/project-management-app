@@ -64,6 +64,11 @@
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
+
+                                    {{-- Catatan Dari Setup Project 
+                                        untuk mendapatakan presentase 
+                                        Rumusnya adalah (bagian yang telah selesai) / (total bagian x 100 ) --}}
+
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
                                 </div>
                                 <div class="col">
@@ -138,7 +143,7 @@
 
                         
                         <div class="container-fluid">
-                            <table class="table">
+                            <table class="table" id="custom">
                                 <thead>
                                   <tr>
                                     <th scope="col">#</th>

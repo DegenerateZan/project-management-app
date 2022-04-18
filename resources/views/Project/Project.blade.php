@@ -50,11 +50,13 @@
                             
                             <td>{{ $project->deadline }}</td>
                             <td>Rp.{{ $project->price }}</td>
-                           @if ()
-                               
+                            <td>
+                           @if ($project->status == 0)
+                               <span style="color: red">Incomplete</span>
                            @else
-                               
+                           <span style="color: green">Completed</span>
                            @endif
+                            </td>
                             <td>{{ $project->manufacture_date }}</td>
                             
 

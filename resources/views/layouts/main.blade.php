@@ -173,6 +173,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -187,10 +188,17 @@
     <!-- Page level plugins -->
 
     <!-- modified able js script -->
-    <script src="js/datatables-simple-demo.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/datatables-simple-demo.js">
 
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/modal-ajax.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous">
+                let myTable = document.querySelector("#custom");
+        let dataTable = new DataTable(myTable, {
+            searchable: true
+        });
+    </script>
     <script src="js/jquery.js"></script>
 
 </body>

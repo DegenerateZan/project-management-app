@@ -25,8 +25,8 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/clients" >
-                    <i class="fas fa-fw fa-users" id="i-clients"></i>
-                    <span id="clients">Clients</span>
+                    <i class="fas fa-fw fa-users" id="i-Clients"></i>
+                    <span id="Clients">Clients</span>
 
                 </a>
 
@@ -40,7 +40,7 @@
                 <div id="collapsePagessettings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="/category">Category</a>
+                        <a class="collapse-item" href="/categories">Category</a>
                         <div class="collapse-divider"></div>
                         <a class="collapse-item" href="/platform">Platform</a>
 
@@ -58,9 +58,9 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/finance" >
-                    <i class="fas fa-fw fa-wallet" id="i-finance"></i>
-                    <span id="finance">Finance</span>
+                <a class="nav-link collapsed" href="/finances" >
+                    <i class="fas fa-fw fa-wallet" id="i-Finance"></i>
+                    <span id="Finance">Finance</span>
 
                 </a>
 
@@ -74,8 +74,8 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/developers" >
-                    <i class="fas fa-fw fa-users" id="i-developer"></i>
-                    <span id="developer">Developers</span>
+                    <i class="fas fa-fw fa-users" id="i-Developers"></i>
+                    <span id="Developers">Developers</span>
 
                 </a>
 
