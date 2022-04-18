@@ -24,7 +24,7 @@
                     <tr>
                         <th data-sortable="false">No.</th>                 
                         <th data-sortable="false">Platform Name</th>
-                        <th data-sortable="false">action</th>
+                        <th data-sortable="false">Action</th>
   
                     </tr>
                 </thead>
@@ -32,7 +32,7 @@
                     <tr>
                         <th>No.</th>                 
                         <th>Platform Name</th>
-                        <th>action</th>
+                        <th>Action</th>
 
                        
                     </tr>
@@ -42,9 +42,10 @@
                         <td>1</td>
                         <td>Web</td>
                         <td>
-                            <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn btn-success">Edit</a>|<a href="" class="btn btn-danger">Hapus</a></td>
-  
-
+                            <span style="margin-left: -5%">
+                            <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="deleteplatform" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                            </span>
+                        </td>
 
 
                
@@ -57,6 +58,42 @@
 
         </div>
     </div>
+<!-- Modal hapus -->
+<div class="modal fade" id="formmodalhapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header flex text-danger">
+          <h5 class="modal-title " id="formmodallabel">Warning</h5> <i class="fas fa-exclamation-circle mt-2 ml-1"></i>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-6">
+
+            <div class="container true">
+                <p>
+                    <span class="text-danger">Warning!</span>, this Platform Data Cannot Be deleted because is being used by a project(s)!
+                    <br>you can Edit the only Platform of it</p>
+            </div>
+            <div class="container false">
+                <p>
+                    You sure you want to delete this Category?
+                    <br> <span class="text-danger">You cannot Undo the Process!.</span></p>
+                    <a href="#" class="btn btn-danger">Yes, i'm Sure!</a>
+            </div>
+        <div class="modal-footer mt-3">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+
+
+</div>
+
 <!-- modal buat/ubah platform -->
 <div class="modal fade" id="formmodalplatform" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

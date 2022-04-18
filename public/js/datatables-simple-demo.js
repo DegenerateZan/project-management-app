@@ -6,4 +6,24 @@ window.addEventListener('DOMContentLoaded', event => {
     if (datatablesSimple) {
         new simpleDatatables.DataTable(datatablesSimple);
     }
+
+    const customdatatablesSimple = document.getElementById('custom');
+    if (customdatatablesSimple) {
+        new simpleDatatables.DataTable(customdatatablesSimple, {
+            searchable: false,
+            perPage: 4
+
+        });
+        $('.dataTable-dropdown').hide();
+    }
+
+    const custom2datatablesSimple = document.getElementById('custom2');
+    if (custom2datatablesSimple) {
+        new simpleDatatables.DataTable(custom2datatablesSimple, {
+            searchable: false,
+            perPage: 4
+
+        });
+        $('.dataTable-dropdown').hide();
+    }
 });
