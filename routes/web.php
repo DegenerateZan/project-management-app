@@ -14,6 +14,7 @@ use App\Http\Controllers\WagesController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\RecoferyController;
+use App\Http\Controllers\SalaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::get('/tasks', [TasksController::class,'index']);
 // clients
 Route::get('/clients',[ClientsController::class,'index']);
 // wages
-Route::get('/wages',[WagesController::class,'index']);
+Route::get('/salary',[SalaryController::class,'index']);
 // finance
 Route::get('/finances',[FinanceController::class,'index']);
 // login
