@@ -71,11 +71,11 @@
                                         untuk mendapatakan presentase 
                                         Rumusnya adalah (bagian yang telah selesai) / (total bagian x 100 ) --}}
 
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $tasks }}%</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: {{ $tasks }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -114,13 +114,13 @@
 
         <!-- Area Chart -->
         <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4 h-auto">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
                 </div>
                 <!-- Card Body -->
-                    <div class="chart-area">
+                    
                     
 
                         <!-- <div class="fail-to-load" style="margin: auto; width:fit-content ;">
@@ -137,13 +137,15 @@
                             <table class="table" id="custom">
                                 <thead>
                                   <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Deadline</th>
+                                    <th data-sortable="false">#</th>
+                                    <th data-sortable="false">Name</th>
+                                    <th data-sortable="false">Status</th>
+                                    <th data-sortable="false">Deadline</th>
                                   </tr>
                                 </thead>
                                 <tbody>
+
+
                                     <?php  $i= 1; ?>
                                     @foreach ($projectall as $item)    
                                     <tr>
@@ -161,7 +163,7 @@
 
                                 </tbody>
                               </table>
-                        </div>
+                   
 
 
 
@@ -177,41 +179,31 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Option :</div>
-                            <a class="dropdown-item" href="#"></a>
+                    <h6 class="m-0 font-weight-bold text-primary">Tasks</h6>
 
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/developers">Tampilkan Seluruh Project</a>
-                        </div>
-                    </div>
                 </div>
                 <!-- Card Body -->
-                    <div class="chart-pie">
+                   
                         <!--  tempat Projects -->
 
-                        <div class="container-fluid" style="overflow-x:auto;">
-                            <table class="table" id="custom2">
+                        <div class="" style="overflow-x:auto;">
+                            <table class="table" id="custom2" style="margin-top: -3%">
                                 <thead>
                                   <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Project</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Deadline</th>
+                                    <th data-sortable="false">#</th>
+                                    <th data-sortable="false">Project</th>
+                                    <th data-sortable="false">Status</th>
+                                    <th data-sortable="false">Deadline</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <th scope="row">1</th>
+                                    <th>1</th>
                                     <td>login</td>
                                     <td>Incomplete</td>
                                     <td>12 Maret 2023</td>
                                   </tr>
+
 
                                 </tbody>
                               </table>
@@ -220,7 +212,7 @@
 
                         
                         <!-- Ahir tempat Proyek -->
-                    </div>
+           
                     <div class="mt-4 text-center small">
                         <span class="mr-2">
                         </span>

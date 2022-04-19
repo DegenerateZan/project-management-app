@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id');
             $table->string('name');
             $table->string('description');
+            $table->boolean('task_status');
             $table->date('deadline');
             $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
