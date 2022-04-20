@@ -32,10 +32,12 @@ use App\Models\Developers;
 Route::get('/',[DashboardController::class,'index']);
 // project
 Route::get('/projects', [ProjectController::class,'index']);
+Route::post('/clients/store',[ClientsController::class, 'store']);
 // payments
 Route::get('/payments', [PaymentsController::class, 'index']);
 // tasks
 Route::get('/tasks', [TasksController::class,'index']);
+Route::post('/clients/store',[ClientsController::class, 'store']);
 // clients
 Route::get('/clients',[ClientsController::class,'index']);
 Route::post('/clients/store',[ClientsController::class, 'store']);
@@ -52,7 +54,9 @@ Route::get('/developers', [DevelopersController::class,'index']);
 Route::post('/developer/store', [DevelopersController::class,'store']);
 // platform
 Route::get('/platform', [PlatformController::class, 'index']);
+Route::post('/clients/store',[ClientsController::class, 'store']);
 // category
 Route::get('/category', [CategoryController::class ,'index']);
+Route::post('/clients/store',[ClientsController::class, 'store']);
 // recofery
 Route::get('/recovery', [RecoferyController::class, 'index']);

@@ -1,72 +1,74 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container-fluid">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Clients</h1>
-    
+
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            Data Clients
+            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
+                <span class="mr-2">Add Clients</span>
+             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
+
+         </div>
         </div>
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Data Clients
-                <div class="createnew float-right d-sm-flex align-items-center"  style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
-                      
-                    
-                        <span class="mr-2">Add Client</span>
-                        <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
 
-                </div>
-            </div>
-            <div class="card-body" style="overflow-x:auto;"">
-                <table id="datatablesSimple">
-                    <thead>
-                        <tr>
-                                              
-                            <th data-sortable="false">Name</th>
-                            <th data-sortable="false">Tel. Number</th>
-                            <th data-sortable="false">Address</th>
-                            <th data-sortable="false">company name</th>
-                            <th data-sortable="false">Email</th>
-                            <th data-sortable="false">account number</th>
-                            <th data-sortable="false"></th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Tel. Number</th>
-                            <th>Address</th>
-                            <th>company name</th>
-                            <th>Email</th>
-                            <th>account number</th>
-                            <th></th>
-                           
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                      @foreach ($data as $clients)
-                        <tr>
-                            <td>{{ $clients->name_client}}</td>
-                            <td>{{ $clients->number_phone}}</td>
-                            <td>{{ $clients->addres}}</td>
-                            <td>{{ $clients->company_name}}</td>
-                            <td>{{ $clients->email}}</td>
-                            <td>{{  $clients->number_account}}
 
-                            <td>
-                                <span style="margin-left: -5%">
-                                    <a href="" data-bs-toggle="modal" data-bs-target="#formmodalclient" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+
+      
+        <div class="card-body" style="overflow-x:auto;"">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                                          
+                        <th data-sortable="false">Name</th>
+                        <th data-sortable="false">Tel.Number</th>
+                        <th data-sortable="false">Address</th>
+                        <th data-sortable="false">Email</th>
+                        <th data-sortable="false">Account Number</th>
+                        <th data-sortable="false">Company</th>
+                        <th data-sortable="false"></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Dev. Name</th>
+                        <th>Tel. Number</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Account Number</th>
+                        <th></th>
+                       
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach ($data as $clients)
+                    <tr>
+                        <td>{{ $clients->name_client }}</td>
+                        <td>{{ $clients->number_phone }}</td>
+                        <td>{{ $clients->addres }}</td>
+                        <td>{{ $clients->email }}</td>
+                        <td>{{ $clients->number_account }}</td>
+                        <td>{{ $clients->company_name }}
+                        
+
+                        <td>
+                            <span style="margin-left: -5%">
+                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
                                 </span>
-                          </td>
+                        </td>
 
 
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
+                    @endforeach
 
-                        @endforeach
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
 
 <!-- Kumpulan Modal -->
  
