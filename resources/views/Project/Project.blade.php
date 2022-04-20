@@ -9,9 +9,9 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                DataTable Projects
-                <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
-                    <span class="mr-2">Add New Project</span>
+                Data Projects
+                <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
+                    <span class="mr-2">Add Project</span>
                  <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
  
              </div>
@@ -28,6 +28,7 @@
                             <th data-sortable="false">Price</th>
                             <th data-sortable="false">Status</th>
                             <th data-sortable="false">Manufacture Date</th>
+                            <th data-sortable="false"></th>
                             
                         </tr>
                     </thead>
@@ -40,6 +41,7 @@
                             <th>Price</th>
                             <th>Status</th>
                             <th>Manufacture Date</th>
+                            <th></th>
                      
                         </tr>
                     </tfoot>
@@ -58,22 +60,16 @@
                          @else
                              <td>Finsh</td>
                          @endif
-                            <td>{{ $project->manufacture_date }}
-                                <div class="dropdown" style="float: right;">
-                                    <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                          <li><a class="dropdown-item tampilmodalubahproyek" dataid="" href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject">Edit</a></li>
-                                                          <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
-                                                          <li><a class="dropdown-item" href="
-                                                            /tasks
-                                                            " style="color:blue">Show Task</a></li>
-
-                                    </ul>
-                                  </div>
-                 
+                            <td>{{ $project->manufacture_date }}</td>
+                            
+                            <td>
+                                <span style="margin-left: -5%">
+                                    <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                </span>
                             </td>
+    
+                 
+                            
                         </tr>
                     @endforeach
 

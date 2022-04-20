@@ -10,8 +10,8 @@
     <div class="card mb-4">
         <div class="card-header">
             Data Developers
-            <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
-                <span class="mr-2">Add new Developer</span>
+            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
+                <span class="mr-2">Add Developer</span>
              <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
 
          </div>
@@ -30,6 +30,7 @@
                         <th data-sortable="false">Address</th>
                         <th data-sortable="false">Email</th>
                         <th data-sortable="false">Account Number</th>
+                        <th data-sortable="false"></th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -39,6 +40,7 @@
                         <th>Address</th>
                         <th>Email</th>
                         <th>Account Number</th>
+                        <th></th>
                        
                     </tr>
                 </tfoot>
@@ -51,17 +53,11 @@
                         <td>{{ $developer->email }}</td>
                         <td>{{ $developer->account_number }}
 
-                            <div class="dropdown" style="float: right;">
-                                <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                      <li><a class="dropdown-item tampilmodalubahproyek" dataid="" href="#" data-bs-toggle="modal" data-bs-target="#formmodaldev">Edit</a></li>
-                                                      <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
-
-
-                                </ul>
-                              </div>
+                        <td>
+                            <span style="margin-left: -5%">
+                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                </span>
+                        </td>
 
 
                         </td>

@@ -13,14 +13,19 @@
   // Close any open menu accordions when window is resized below 768px
   $(window).resize(function() {
     if ($(window).width() < 768) {
+            console.log("halaman dibawah 480!");
+
       $('.sidebar .collapse').collapse('hide');
+      $('#logo').attr('width','50%');
     };
     
     // Toggle the side navigation when window is resized below 480px
     if ($(window).width() < 480 && !$(".sidebar").hasClass("toggled")) {
+      console.log("halaman dibawah 480!");
       $("body").addClass("sidebar-toggled");
       $(".sidebar").addClass("toggled");
       $('.sidebar .collapse').collapse('hide');
+      $('#logo').attr('width','50%');
     };
   });
 
