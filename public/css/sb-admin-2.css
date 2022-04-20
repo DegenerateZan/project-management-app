@@ -618,6 +618,9 @@ pre code {
     .container-lg {
         max-width: 960px;
     }
+    .card {
+        height: max-content;
+    }
 }
 
 @media (min-width: 1200px) {

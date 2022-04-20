@@ -12,9 +12,11 @@ window.addEventListener('DOMContentLoaded', event => {
         new simpleDatatables.DataTable(customdatatablesSimple, {
             searchable: false,
             perPage: 4
+            
 
         });
         $('.dataTable-dropdown').hide();
+        $('.dataTable-info').hide();
     }
 
     const custom2datatablesSimple = document.getElementById('custom2');
@@ -25,5 +27,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
         });
         $('.dataTable-dropdown').hide();
+        $('.dataTable-info').hide();
     }
 });

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('task_id');
             $table->string('description_task');
-            $table->boolean('task_status');
             $table->foreign('task_id')->references('id')->on('tasks');
 
             $table->timestamps();
