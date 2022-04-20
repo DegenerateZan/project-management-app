@@ -11,9 +11,9 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Platform Settings
-            <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalplatform">
-               <span class="mr-2">Add New Platform</span>
+            Data Platform
+            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalplatform">
+               <span class="mr-2">Add Platform</span>
             <i class="fas fa-plus-circle float-right" style="margin-left: 5px ;"></i>
 
         </div>
@@ -43,9 +43,9 @@
                         <td>Web</td>
                         <td>
                             <span style="margin-left: -5%">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="deleteplatform" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                              <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="deleteplatform" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
                             </span>
-                        </td>
+                          </td>
 
 
                

@@ -23,6 +23,8 @@ if (Project::where('status', '=' , 0)->count() != 0){
     // looping pencarian semua tasks dari project yang belum selesai
     foreach($searchunfinishedproject as $a){
         $id_p = $a['id'];
+        // pengkondisisan pencarian jika taks yag dimiliki project
+        if(Project::where('project_id', '=', $id_p)->count() != 0){
         // dibawah yaitu logic untuk menghitung task 
         $countedrowfinished = Tasks::where('task_status', 1)->where('project_id', '=', $id_p)->count();
         $countedtotaltasks = Tasks::where('id', '=', $id_p)->count(); // mencari total task berdasarkan id tertentu
@@ -30,12 +32,14 @@ if (Project::where('status', '=' , 0)->count() != 0){
         //penambahan jumlah ke variable master dari hasil looping
         $taskfinish += $countedrowfinished;
         $totaltasks += $countedtotaltasks;
-    }
+        }
+    
     
     echo $taskfinish;
     echo $totaltasks;
     // diabwah adalah logic rumus mencari presentase
     $substasks = $taskfinish / $totaltasks * 100;
+}
 } else {
     $substasks = 0;
 }

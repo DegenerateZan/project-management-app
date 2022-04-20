@@ -12,9 +12,9 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            DataTable Payments
-            <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#modalpayment">
-                <span class="mr-2">Add New Payment</span>
+            Data Payments
+            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#modalpayment">
+                <span class="mr-2">Add Payment</span>
                 <i class="fas fa-plus-circle float-right" style="margin-left: 5px ;"></i>
 
             </div>
@@ -28,6 +28,7 @@
                         <th data-sortable="false">Desciption Payment</th>
                         <th data-sortable="false">Payment Status</th>
                         <th data-sortable="false">Payment Date</th>
+                        <th data-sortable="false"></th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -37,6 +38,7 @@
                         <th>Desciption Payment</th>
                         <th>Payment Status</th>
                         <th>Payment Date</th>
+                        <th></th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -48,17 +50,11 @@
                         <td>Not yet Paid off</td>
                         <td>12 Jun 2023
 
-                            <div class="dropdown" style="float: right;">
-                                <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                      <li><a class="dropdown-item tampilmodalubahproyek" dataid="" href="#" data-bs-toggle="modal" data-bs-target="#modalpayment">Edit</a></li>
-                                                      <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
-
-
-                                </ul>
-                              </div>
+                            <td>
+                                <span style="margin-left: -5%">
+                                    <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#modalpayment" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                    </span>
+                            </td>
 
                         </td>
                     </tr>
@@ -68,22 +64,7 @@
                         <td>Rp. 5000000</td>
                         <td>DP Proyek</td>
                         <td>Paid off</td>
-                        <td>12 Juni 2023
-
-                            <div class="dropdown" style="float: right;">
-                                <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item tampilmodalubahproyek" dataid="" href="#" data-bs-toggle="modal" data-bs-target="#modalpayment">Edit</a></li>
-                                    <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
-
-                                 
-
-                                </ul>
-                              </div>
-
-                        </td>
+                        <td>12 Juni 2023</td>
                     </tr>
 
 

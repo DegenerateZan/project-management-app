@@ -9,10 +9,10 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                DataTable Developers Wages
+                Data Developers Wages
 
-                <div class="createnew float-right d-sm-flex align-items-center" id="createnew" data-bs-toggle="modal" data-bs-target="#modalwage">
-                    <span class="mr-2">Add New wage</span>
+                <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#modalwage">
+                    <span class="mr-2">Add wage</span>
                  <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
     
              </div>
@@ -29,6 +29,7 @@
                             <th data-sortable="false">Status</th>
                             <th data-sortable="false">Overtime Money</th>
                             <th data-sortable="false">Total Salary Received</th>
+                            <th data-sortable="false"></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -40,6 +41,7 @@
                             <th>Status</th>
                             <th>Overtime Money</th>
                             <th>Total Salary Received</th>
+                            <th></th>
                            
                         </tr>
                     </tfoot>
@@ -62,23 +64,14 @@
                                 
                             </td> --}}
                             <td>Rp. 0</td>
-                            <td>Rp. 5000000
+                            <td>Rp. 5000000</td>
 
 
 <!-- Tombol Pilihan hanya Bisa jika Status pembayaran Belum lunas -->
-
-                                <div class="dropdown" style="float: right;">
-                                    <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                          <li><a class="dropdown-item"  dataid="" href="#" data-bs-toggle="modal" data-bs-target="#modalwage">Edit</a></li>
-                                                          <li><a class="dropdown-item" href="" style="color:red;">Delete</a></li>
-                                     
-    
-                                    </ul>
-                                  </div>
-
+                            <td>
+                                <span style="margin-left: -5%">
+                                    <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#modalwage" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                </span>
                             </td>
                         </tr>
                         <tr>

@@ -3,7 +3,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand  align-items-center justify-content-center" href="/" style="transition: none;">
-                <img src="/img/logo 1.png" alt="" width="20%">
+                <img src="/img/logo 1.png" alt="" width="20%" class="img" id="logo">
                 <div class="sidebar-brand-text "><img src="/img/webmedia2.png" alt="" width="60%"></div>
             </a>
 
@@ -24,7 +24,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/clients" >
+                <a class="nav-link collapsed" href="/clients">
                     <i class="fas fa-fw fa-users" id="i-Clients"></i>
                     <span id="Clients">Clients</span>
 
@@ -66,9 +66,9 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/wages">
-                    <i class="fas fa-hand-holding-usd" id="i-wages"></i>
-                    <span id="wages">Wages</span>
+                <a class="nav-link collapsed" href="/salary">
+                    <i class="fas fa-hand-holding-usd" id="i-salary"></i>
+                    <span id="salary ">Wages</span>
                 </a>
 
             </li>
