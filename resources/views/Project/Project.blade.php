@@ -58,9 +58,7 @@
                          @else
                              <td>Finsh</td>
                          @endif
-                            <td>{{ $project->manufacture_date }}</td>
-                            
-
+                            <td>{{ $project->manufacture_date }}
                                 <div class="dropdown" style="float: right;">
                                     <button class="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -100,13 +98,14 @@
                       <div class="container">
                         <label for="client-project" class="form-label">From Client:</label>
                         <select name="id_client" id="client-project" class="form-control" required >
-                                        <option value="">Choose Client</option>
-                                        {{-- <?php foreach ($data["clients"] as $rowcat) : ?>
-                                            <option value="<?= $rowcat["id_client"] ?>"><?= $rowcat["nama_client"]; ?></option>
-                                        <?php endforeach; ?> --}}
+                                        <option value="">-- Select Clients --</option>
+                                        @foreach ($clients as $client)
+                                        <option value="{{ $client->id }}">{{ $client->name_client }}</option>
+                                        @endforeach
+                                        
                                     </select>
                                     <input type="hidden" id="id-project" name="id_project">
-                  <div class="row">
+                  <div class="row mt-3">
                       <div class="col-sm">
                           <label for="project-name" class="form-label">Project Name :</label>
                           <input type="text" id="project-name" name="project-name" class="form-control">
@@ -116,16 +115,16 @@
                       <div class="col-sm">
                           <label for="category" class="form-label">Categori :</label>
                           <select name="id_category" id="category" class="form-control" required>
-                              <option value="">Choose Category</option>
-                              {{-- <?php foreach ($data["optioncategory"] as $rowcat) : ?>
-                                  <option value="<?= $rowcat["id_kategori"] ?>"><?= $rowcat["nama_kategori"]; ?></option>
-                              <?php endforeach; ?> --}}
-                          </select>
+                            <option value="">-- Select Category --</option>
+                            @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name}}</option>
+                            @endforeach
+                        </select>
                       </div>
                   </div>
                       </div>     
                      <div class="container">
-                      <div class="row">
+                      <div class="row mt-3">
                       <div class="col-sm">
                           <label for="deadline" class="form-label">Deadline</label>
                           <input type="date" id="deadline" name="deadline" class="form-control">
@@ -134,20 +133,21 @@
                       <div class="col-sm">
                           <label for="platform" class="form-label">Platform</label>
                           <select name="id_platform" id="platform" class="form-control">
-                            <option value="">Choose Platform</option>
-                            {{-- <?php foreach ($data["optionplatform"] as $rowplat) : ?>
-                              <option value="<?= $rowplat["id_platform"] ?>"><?= $rowplat["nama_platform"]; ?></option>
-                            <?php endforeach; ?> --}}
-                          </select>
+                            <option value="">-- Select Platfroms --</option>
+                                        @foreach ($platforms as $platform)
+                                        <option value="{{ $platform->id }}">{{ $platform->name}}</option>
+                                        @endforeach
+                                        
+                                    </select>
                       </div>
                       </div>
                       <div class="row">
-             <div class="col-sm">
-                          <label for="projectprice" class="form-label">Project price :</label><br>
-                          <div class="form-group d-flex">
-                            <p class="mr-1 mt-1">Rp.</p><input type="number" id="projectprice" name="harga" class="form-control"><br>
-                          </div>      
-                      </div>
+                        <div class="col-sm mt-4">
+                            <label for="project-name" class="form-label">Project Price :</label>
+                           <input type="text" id="price" name="price" class="form-control">
+    
+                        </div>
+                        
                       
               </div>
               </div>

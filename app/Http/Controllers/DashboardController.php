@@ -13,19 +13,14 @@ class DashboardController extends Controller
  public function index()
  {
 
-    $totaltasks = Tasks::all();
-    $taskfinish = Tasks::where('status, 1')->get();
-    $substasks = $taskfinish / $totaltasks * 100;
-
-    // $developer =Developers::count();
-    // dd($developer);
+    
     return view('dashboard.dashboard',[
         "title" => "Dashboard",
         "project" => Project::count(),
         "projectall" => Project::all(),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
-        "tasks" => $substasks
+        
          
 
     ]);

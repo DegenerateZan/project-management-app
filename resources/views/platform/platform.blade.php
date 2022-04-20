@@ -38,18 +38,19 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Web</td>
-                        <td>
-                            <span style="margin-left: -5%">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="deleteplatform" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
-                            </span>
-                        </td>
-
-
-               
-                    </tr>
+                  <?php $i=1  ?>
+                  @foreach ($categories as $category)
+                  <tr>
+                      <td>{{ $i }}</td>
+                      <td>{{ $category->name }}</td>
+                      <td>
+                          <span style="margin-left: -5%">
+                          <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="deleteplatform" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                          </span>
+                      </td>
+                  </tr>     
+                  <?php $i++ ?>
+                  @endforeach
 
 
                 </tbody>

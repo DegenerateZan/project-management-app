@@ -108,12 +108,12 @@
           </div>
        
                   <div class="container">
-                    <label for="nama-proyekT" class="form-label">From Project :</label>
+                    <label for="project-name" class="form-label">From Project :</label>
                     <input type="text" id="project-name" class="form-control" value="" >
                     <input type="hidden" name="id-project" id="id-proyek-t" value="" readonly>
                     <input type="hidden" name="id-payment" id="id-payment" value="" readonly>
 
-                  <div class="row">
+                  <div class="row mt-2">
                       <div class="col-sm">
                           <label for="amount" class="form-label">Amount :</label>
                           <input type="teks" id="amount" name="amount" class="form-control">
@@ -124,7 +124,7 @@
                               <input type="text" id="alamat" name="alamat" class="form-control">
                      </div> -->
                   </div>
-                  <div class="row">
+                  <div class="row mt-3">
                       <div class="col-sm">
                           <label for="paymentdate" class="form-label">Payment Date:</label>
                           <input type="date" id="paymentdate" name="payment-date" class="form-control">
@@ -140,14 +140,14 @@
                       </div>
                        <div class="row">
   
-                     <div class="form-group">
+                     <div class="form-group mt-3">
                         <label for="description-payment"> Desciption Payment :</label>
                         <textarea class="form-control" name="description-payment" id="description-payment" rows="3"></textarea>
                       </div>
                   </div>
       
                   
-                  <div class="modal-footer footer-proyek">
+                  <div class="modal-footer footer-proyek mt-3">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Add Payment</button>
           </form>

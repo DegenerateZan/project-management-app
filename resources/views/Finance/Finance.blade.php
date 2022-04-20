@@ -21,6 +21,7 @@
         <div class="col-xxl-12">
           <div class="row g-0 my-2">
             <div class="col-md-6 col-xxl-12">
+              
               <div class="border-xxl-bottom border-xxl-200 mb-2" >
                 <h2 class="text-primary">Rp. 0</h2>
                 <h6 class="text-500 mb-0">Total Revenue</h6>

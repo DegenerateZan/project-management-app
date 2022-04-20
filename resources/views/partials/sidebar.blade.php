@@ -66,7 +66,7 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/wages">
+                <a class="nav-link collapsed" href="/salary">
                     <i class="fas fa-hand-holding-usd" id="i-wages"></i>
                     <span id="wages">Wages</span>
                 </a>
