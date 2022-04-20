@@ -54,6 +54,7 @@ if (Project::where('status', '=' , 0)->count() != 0){
         "projectall" => Project::all(),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
+        "tasks" => $substasks
         
          
 
