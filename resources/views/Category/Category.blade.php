@@ -41,10 +41,10 @@
                 </tfoot>
                 <tbody>
                     <?php $i= 1 ?>
-                    @foreach ($data as $category)
+                    @foreach ($categories as $category)
                     <tr>
                         <td>{{ $i }}</td>
-                        <td>{{ $category->name_category }}</td>
+                        <td>{{ $category->name }}</td>
                         <td>
                             <span style="margin-left: -5%">
                                 <a href="" data-bs-toggle="modal" data-bs-target="#formmodalcategory" class="btn text-success" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
@@ -102,7 +102,7 @@
 
 
 
-    <!-- modal buat/ubah platform -->
+    <!-- modal buat/ubah category -->
 <div class="modal fade" id="formmodalcategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -119,7 +119,7 @@
                     <input type="text" id="nama-platform" name="category-name" class="form-control">
                         <input type="hidden" name="id-category" id="id-category" value="" readonly>
                   </div>
-        <div class="modal-footer">
+        <div class="modal-footer mt-3">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Add New Category</button>
           </form>

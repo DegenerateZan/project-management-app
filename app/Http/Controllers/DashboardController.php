@@ -13,6 +13,9 @@ class DashboardController extends Controller
  public function index()
  {
 
+
+    
+
     $taskfinish = 0;
     $totaltasks = 0;
     
@@ -44,13 +47,14 @@ if (Project::where('status', '=' , 0)->count() != 0){
     $substasks = 0;
 }
 
+
     return view('dashboard.dashboard',[
         "title" => "Dashboard",
         "project" => Project::count(),
         "projectall" => Project::all(),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
-        "tasks" => $substasks
+        
          
 
     ]);

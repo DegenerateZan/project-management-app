@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('finances', function (Blueprint $table) {
             $table->id();
+            $table->decimal('finance_amount');
             $table->decimal('amount');
             $table->string('mutation');
             $table->string('description');

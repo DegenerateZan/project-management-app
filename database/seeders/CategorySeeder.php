@@ -16,9 +16,12 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            'name' => 'java script'
-        ]);
+        $categories = ['php','golang','javascript'];
+        foreach ($categories as $category) {
+            DB::table('categories')->insert([
+                'name' => $category
+            ]);
+        }
 
     }
 }

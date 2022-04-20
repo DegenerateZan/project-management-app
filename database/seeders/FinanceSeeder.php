@@ -16,6 +16,7 @@ class FinanceSeeder extends Seeder
     public function run()
     {
         DB::table('finances')->insert([
+            'finance_amount' => 120000,
             'amount' => 12.0000,
             'mutation' => 'Debit',
             'description' => 'Beli Meja',

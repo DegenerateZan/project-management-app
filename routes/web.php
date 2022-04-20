@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\RecoferyController;
 use App\Http\Controllers\SalaryController;
+use App\Models\Developers;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,9 @@ Route::get('/payments', [PaymentsController::class, 'index']);
 Route::get('/tasks', [TasksController::class,'index']);
 // clients
 Route::get('/clients',[ClientsController::class,'index']);
+Route::post('/clients/store',[ClientsController::class, 'store']);
+Route::get('/clients/delete/{id}',[ClientsController::class, 'delete']);
+
 // wages
 Route::get('/salary',[SalaryController::class,'index']);
 // finance
@@ -45,6 +49,7 @@ Route::get('/finances',[FinanceController::class,'index']);
 Route::get('/login', [LoginController::class, 'index']);
 // developer
 Route::get('/developers', [DevelopersController::class,'index']);
+Route::post('/developer/store', [DevelopersController::class,'store']);
 // platform
 Route::get('/platform', [PlatformController::class, 'index']);
 // category

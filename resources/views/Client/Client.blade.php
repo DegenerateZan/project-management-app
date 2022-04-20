@@ -52,7 +52,7 @@
                             <td>{{ $clients->addres}}</td>
                             <td>{{ $clients->company_name}}</td>
                             <td>{{ $clients->email}}</td>
-                            <td>{{  $clients->number_account}}</td>
+                            <td>{{  $clients->number_account}}
 
                             <td>
                                 <span style="margin-left: -5%">
@@ -81,35 +81,43 @@
         </div>
         <div class="modal-body p-6">
 
-              <form id="buatubah" action="" method="post">
+              <form id="buatubah" action="/clients/store" method="post">
+                @csrf
                   <div class="container">
                     <label for="nama-client" class="form-label">Name :</label>
-                    <input type="text" id="nama-client" name="client-name" class="form-control" value="" />
+                    <input type="text" id="nama-client" name="name_client" class="form-control" value="" />
                         <input type="hidden" name="id" id="id-client-1" value="" readonly>
-                  <div class="row">
+                  <div class="row mt-3">
                       <div class="col-sm">
                           <label for="tel-number" class="form-label">Tel. Number :</label>
-                          <input type="number" id="tel-number" name="tel-number" class="form-control">
+                          <input type="number" id="tel-number" name="number_phone" class="form-control">
   
                       </div>
                        <div class="col-sm">
                               <label for="address" class="form-label">Address :</label>
-                              <input type="text" id="address" name="address" class="form-control">
+                              <input type="text" id="address" name="addres" class="form-control">
                      </div>
                   </div>
-                  <div class="row">
-                      <div class="col-sm">
-                          <label for="company-name" class="form-label">Company Name :</label>
-                          <input type="text" id="company-name" name="company-name" class="form-control">
-  
-                      </div>
+                
+                      <div class="row mt-3">
+                        <div class="col-sm">
+                            <label for="number_account" class="form-label">Number Account :</label>
+                            <input type="text" id="number_account" name="number_account" class="form-control">
+    
+                        </div>
                        <div class="col-sm">
                               <label for="email" class="form-label">Email :</label><br>
                               <input type="email" id="email" name="email" class="form-control"><br>
                      </div>
+                     <div class="row  mt-6">
+                      <div class="col-sm">
+                          <label for="company-name" class="form-label">Company Name :</label>
+                          <input type="text" id="company-name" name="company_name" class="form-control">
+  
+                      </div>
                   </div>
                   </div>
-        <div class="modal-footer">
+        <div class="modal-footer mt-5">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Add New Client</button>
           </form>

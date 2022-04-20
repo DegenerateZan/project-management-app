@@ -51,7 +51,7 @@
                         <td>{{ $developer->telephone_number }}</td>
                         <td>{{ $developer->address }}</td>
                         <td>{{ $developer->email }}</td>
-                        <td>{{ $developer->account_number }}</td>
+                        <td>{{ $developer->account_number }}
 
                         <td>
                             <span style="margin-left: -5%">
@@ -77,27 +77,27 @@
                             </div>
                             <div class="modal-body p-6">
 
-                                  <form id="buatubah" action="" method="post">
-
+                                  <form id="buatubah" action="/developer/store" method="post">
+                                        @csrf
                                       <div class="container">
                                         <label for="dev-name" class="form-label">Dev. Name:</label>
-                                        <input type="text" id="dev-name" name="developer-name" class="form-control" value="" />
-                                            <input type="hidden" name="id-developer" id="id-dev" value="" readonly>
+                                        <input type="text" id="dev-name" name="name" class="form-control" value="" />
+                                            <input type="hidden" name="id" id="id-dev" value="" readonly>
                                       <div class="row">
                                           <div class="col-sm">
                                               <label for="no-rek" class="form-label">Account Number:</label>
-                                              <input type="number" id="no-rek" name="account-number" class="form-control">
+                                              <input type="number" id="no-rek" name="account_number" class="form-control">
                       
                                           </div>
                                            <div class="col-sm">
-                                                  <label for="alamat" class="form-label">Tel. Number :</label>
-                                                  <input type="number" id="alamat" name="developer-tel-number" class="form-control">
+                                                  <label for="telephone_number" class="form-label">Tel. Number :</label>
+                                                  <input type="number" id="telephone_number" name="telephone_number" class="form-control">
                                          </div>
                                       </div>
                                       <div class="row">
                                           <div class="col-sm">
                                               <label for="nama-instansi" class="form-label">Address :</label>
-                                              <input type="text" id="nama-instansi" name="developer-address" class="form-control">
+                                              <input type="text" id="nama-instansi" name="address" class="form-control">
                       
                                           </div>
                                            <div class="col-sm">
