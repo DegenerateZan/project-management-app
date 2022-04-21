@@ -52,13 +52,28 @@ class ClientsController extends Controller
     }
     public function delete($id)
     {
-        dd($id);
+        
         $clients = Client::find($id);
         $clients->delete();
-    
+        echo "<script>document.location.href = '/clients';
+        </script>";
         
         
 
+    }
+
+    public function update(){
+        dd($_POST);
+    }
+
+    public function getclient($id){
+
+        //$a = var_dump($request);
+        
+        $resultget = Client::find($id);
+        echo json_encode($resultget);
+       
+        
     }
 
 }

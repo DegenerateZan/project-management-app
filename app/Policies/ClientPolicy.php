@@ -68,6 +68,12 @@ class ClientPolicy
         //
     }
 
+    public function getclient(User $user, Client $client)
+    {
+
+        //
+    }
+
     /**
      * Determine whether the user can restore the model.
      *

@@ -39,7 +39,9 @@ Route::get('/tasks', [TasksController::class,'index']);
 // clients
 Route::get('/clients',[ClientsController::class,'index']);
 Route::post('/clients/store',[ClientsController::class, 'store']);
+Route::post('/clients/update',[ClientsController::class, 'update']);
 Route::get('/clients/delete/{id}',[ClientsController::class, 'delete']);
+Route::get('/clients/getclient/{id}',[ClientsController::class, 'getclient']);
 
 // wages
 Route::get('/salary',[SalaryController::class,'index']);

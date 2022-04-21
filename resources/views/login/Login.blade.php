@@ -23,6 +23,10 @@
       btn-primary:hover {
         color: #36b9cc;
       }
+
+      
+
+
     </style>
   </head>
   <body>
@@ -30,16 +34,15 @@
 
   
   <div class="content">
-    <div class=" container">
-      <div class="row">
-             
-          <div class="col order-md-9 custom-margin">
+    <div class="container">
+      <div class="row">  
+        <div class="col order-md-9 custom-margin setting">
           <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid" style="margin-top: -15%; margin-right: -300px">
-      </div>
+        </div>
 
-        <div class="col contents ">
+        <div class="col contents setting-isi">
           <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 mt-5">
               <div class="mb-4">
               <h3>Log in to <strong>Webmedia Management Software</strong></h3>
               <p class="mb-4">This app can only be access by the member of Webmedia Corp.</p>

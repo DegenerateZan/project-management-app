@@ -20,11 +20,10 @@
 
 
       
-        <div class="card-body" style="overflow-x:auto;"">
+        <div class="card-body" style="overflow-x:auto;">
             <table id="datatablesSimple">
                 <thead>
-                    <tr>
-                                          
+                    <tr>                  
                         <th data-sortable="false">Dev. Name</th>
                         <th data-sortable="false">Tel. Number</th>
                         <th data-sortable="false">Address</th>
@@ -41,7 +40,6 @@
                         <th>Email</th>
                         <th>Account Number</th>
                         <th></th>
-                       
                     </tr>
                 </tfoot>
                 <tbody>
@@ -51,15 +49,13 @@
                         <td>{{ $developer->telephone_number }}</td>
                         <td>{{ $developer->address }}</td>
                         <td>{{ $developer->email }}</td>
-                        <td>{{ $developer->account_number }}
+                        <td>{{ $developer->account_number }}</td>
 
                         <td>
                             <span style="margin-left: -5%">
-                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
-                                </span>
-                        </td>
-
-
+                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                            </span>
                         </td>
                     </tr>
                     @endforeach
