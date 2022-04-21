@@ -17,10 +17,7 @@ $(function() {
           })
           .then((willDelete) => {
             if (willDelete) {
-              window.location = "developer/delete/"+ id +"",
-              swal("Poof! Your imaginary file has been deleted!", {
-                icon: "success",
-              });
+              window.location = "developer/delete/"+ id +""
             } else {
               swal("Your imaginary file is safe!");
             }

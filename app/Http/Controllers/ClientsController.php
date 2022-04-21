@@ -38,7 +38,7 @@ class ClientsController extends Controller
        $client->company_name = $request->company_name;
 
       if ($client->save()) {
-        return redirect('/clients')->with('toast_success', 'Client Created Successfully!');
+        return redirect('/clients')->with('success', 'Client Created Successfully!');
         
      }else{
 
@@ -54,7 +54,9 @@ class ClientsController extends Controller
         
         $clients = Client::find($id);
         if($clients->delete()){
-            return redirect('/clients')->with('toast_success', 'Client Created Successfully!');
+            return redirect('/clients')->with('toast_success', 'Client delete Successfully!');
+        }else{
+            return redirect('/clients')->with('toast_erro', 'Client Failed Delete!');
         }
         
     
