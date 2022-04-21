@@ -5,13 +5,13 @@
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Category Settings</h1>
-
+        <span class="mr-5">Data Category</span>
     </div>
 
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Data Category
+            
             <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalcategory">
                <span class="mr-2">Add Category</span>
             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>

@@ -2,23 +2,6 @@
 
 @section('container')
 
-<div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Clients</h1>
-
-    </div>
-    <div class="card mb-4">
-        <div class="card-header">
-            Data Clients
-            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
-                <span class="mr-2">Add Clients</span>
-             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
-
-         </div>
-        </div>
-
-                </div>
-            </div>
 
 <!-- modal ubah client -->
 <div class="modal fade" id="formmodalubahclient" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
@@ -77,6 +60,28 @@
   
             </div>
     </div>
+    
+
+
+
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+        <span class="mr-4">Data Clients</span>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            
+            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
+                <span class="mr-2">Add Clients</span>
+             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
+
+         </div>
+        </div>
+
+                <!-- end modal uba -->
+      
+
 
 
             <div class="card-body" style="overflow-x:auto;">
@@ -179,7 +184,8 @@
   </div>
   
             </div>
-
+            </div>
+            
 
 
 
@@ -190,12 +196,12 @@
 
 
 <!-- Akhir kumpulan Modal gor -->
-
-            
+     
             </div>
                  
          </div>
              </div>
+             
 
  @include('sweetalert::alert')
 @endsection

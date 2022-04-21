@@ -5,11 +5,11 @@
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Developers</h1>
-
+        <span class="mr-4">Data Developers</span> 
     </div>
     <div class="card mb-4">
         <div class="card-header">
-            Data Developers
+            
             <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
                 <span class="mr-2">Add Developer</span>
              <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
