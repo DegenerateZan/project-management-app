@@ -41,7 +41,7 @@ class DevelopersController extends Controller
          $developer->email = $request->email;
 
         if ($developer->save()) {
-         return redirect('/developers')->with('toast_success', 'Developer Created Successfully!');    
+         return redirect('/developers')->with('success', 'Developer Created Successfully!');    
         } else {
            
         }
@@ -55,7 +55,7 @@ class DevelopersController extends Controller
    {
      $developer = Developers::find($id);
      if ($developer->delete()) {
-      return redirect('/developers');
+      return redirect('/developers')->with('success', 'Developer deleted Successfully!');
      }
    }
 }
