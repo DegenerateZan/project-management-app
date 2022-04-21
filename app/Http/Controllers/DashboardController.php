@@ -19,6 +19,8 @@ class DashboardController extends Controller
     $taskfinish = 0;
     $totaltasks = 0;
     
+// pengkondisian jika ada project di table project
+if(Project::count() != 0){
     //pencarian project yang tidak selesai
     $searchunfinishedproject = Project::where('status', '=' , 0)->get(['id']);
     // pengkondisian jika hasil pencarian project yang tidak selesai itu tidak 0 atau kosong 
@@ -42,6 +44,7 @@ if (Project::where('status', '=' , 0)->count() != 0){
     echo $totaltasks;
     // diabwah adalah logic rumus mencari presentase
     $substasks = $taskfinish / $totaltasks * 100;
+}
 }
 } else {
     $substasks = 0;

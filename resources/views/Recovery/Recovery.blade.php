@@ -26,11 +26,11 @@
   <div class="content">
     <div class="container">
       <div class="row">
-        <div class="col order-md-9 custom-margin">
+        <div class="col order-md-9 custom-margin setting">
           <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid" style="margin-top: -15%; margin-right: -300px">
       </div>
 
-        <div class="col contents ">
+        <div class="col contents setting-isi mt-5">
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">

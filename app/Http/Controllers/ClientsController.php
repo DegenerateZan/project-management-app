@@ -65,4 +65,18 @@ class ClientsController extends Controller
 
     }
 
+    public function update(){
+        dd($_POST);
+    }
+
+    public function getclient($id){
+
+        //$a = var_dump($request);
+        
+        $resultget = Client::find($id);
+        echo json_encode($resultget);
+       
+        
+    }
+
 }

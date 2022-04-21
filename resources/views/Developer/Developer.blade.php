@@ -5,11 +5,11 @@
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Developers</h1>
-
+        <span class="mr-4">Data Developers</span> 
     </div>
     <div class="card mb-4">
         <div class="card-header">
-            Data Developers
+            
             <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
                 <span class="mr-2">Add Developer</span>
              <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
@@ -20,11 +20,10 @@
 
 
       
-        <div class="card-body" style="overflow-x:auto;"">
+        <div class="card-body" style="overflow-x:auto;">
             <table id="datatablesSimple">
                 <thead>
-                    <tr>
-                                          
+                    <tr>                  
                         <th data-sortable="false">Dev. Name</th>
                         <th data-sortable="false">Tel. Number</th>
                         <th data-sortable="false">Address</th>
@@ -41,7 +40,6 @@
                         <th>Email</th>
                         <th>Account Number</th>
                         <th></th>
-                       
                     </tr>
                 </tfoot>
                 <tbody>
@@ -51,15 +49,13 @@
                         <td>{{ $developer->telephone_number }}</td>
                         <td>{{ $developer->address }}</td>
                         <td>{{ $developer->email }}</td>
-                        <td>{{ $developer->account_number }}
+                        <td>{{ $developer->account_number }}</td>
 
                         <td>
                             <span style="margin-left: -5%">
-                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="deletedev" data-id="{{ $developer->id }}" data-name="{{ $developer->name }}"><i class="fas fa-trash-alt down"></i></a>
-                                </span>
-                        </td>
-
-
+                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                            </span>
                         </td>
                     </tr>
                     @endforeach
