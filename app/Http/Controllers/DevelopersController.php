@@ -41,19 +41,21 @@ class DevelopersController extends Controller
          $developer->email = $request->email;
 
         if ($developer->save()) {
-            echo "<script>
-                 alert('add developer success');
-                 document.location.href = '/developers';
-                </script>";
+         return redirect('/developers')->with('toast_success', 'Developer Created Successfully!');    
         } else {
-            echo "<script>
-            alert('add developer failed');
-            document.location.href = '/developers';
-           </script>";
+           
         }
         
 
 
 
+   }
+
+   public function delete($id)
+   {
+     $developer = Developers::find($id);
+     if ($developer->delete()) {
+      return redirect('/developers');
+     }
    }
 }

@@ -52,6 +52,7 @@ Route::get('/login', [LoginController::class, 'index']);
 // developer
 Route::get('/developers', [DevelopersController::class,'index']);
 Route::post('/developer/store', [DevelopersController::class,'store']);
+Route::get('/developer/delete/{id}', [DevelopersController::class,'delete']);
 // platform
 Route::get('/platform', [PlatformController::class, 'index']);
 Route::post('/clients/store',[ClientsController::class, 'store']);
@@ -60,3 +61,6 @@ Route::get('/category', [CategoryController::class ,'index']);
 Route::post('/clients/store',[ClientsController::class, 'store']);
 // recofery
 Route::get('/recovery', [RecoferyController::class, 'index']);
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

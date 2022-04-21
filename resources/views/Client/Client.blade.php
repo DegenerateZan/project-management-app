@@ -58,7 +58,8 @@
 
                         <td>
                             <span style="margin-left: -5%">
-                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodalclient" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|
+                                <a href="#" class="btn text-danger" data-id="{{ $clients->id }}" id="deleteclients" data-name="{{ $clients->name_client }}"><i class="fas fa-trash-alt"></i></a>
                                 </span>
                         </td>
 
@@ -92,7 +93,7 @@
                   <div class="row mt-3">
                       <div class="col-sm">
                           <label for="tel-number" class="form-label">Tel. Number :</label>
-                          <input type="number" id="tel-number" name="number_phone" class="form-control">
+                          <input type="text" id="tel-number" name="number_phone" class="form-control">
   
                       </div>
                        <div class="col-sm">
@@ -135,7 +136,11 @@
             
             </div>
                  
-                    </div>
-            </div>
+         </div>
+             </div>
 
+ @include('sweetalert::alert')
 @endsection
+
+
+
