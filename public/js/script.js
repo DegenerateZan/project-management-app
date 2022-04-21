@@ -3,6 +3,48 @@
 
 $(function() {
 
+
+
+    $("#deletedev").click(function(){ 
+        var id = $(this).attr('data-id')
+        var name = $(this).attr('data-name')
+        swal({
+            title: "Are you sure?",
+            text: "will delete developer "+ name +" data ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              window.location = "developer/delete/"+ id +"",
+              swal("Poof! Your imaginary file has been deleted!", {
+                icon: "success",
+              });
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });        
+    });
+    $("#deleteclients").click(function(){ 
+        var id = $(this).attr('data-id')
+        var name = $(this).attr('data-name')
+        swal({
+            title: "Are you sure?",
+            text: "will delete client "+ name +" data ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              window.location = "clients/delete/"+ id +""
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });        
+    });
+
     
 
     $("#createnew").click(function(){

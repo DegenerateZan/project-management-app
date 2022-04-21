@@ -60,7 +60,7 @@
                          @else
                              <td>Finsh</td>
                          @endif
-                            <td>{{ $project->manufacture_date }}</td>
+                            <td>{{ $project->manufacture_date }}
                             
                             <td>
                                 <span style="margin-left: -5%">
@@ -68,7 +68,7 @@
                                 </span>
                             </td>
     
-                 
+                        </td>
                             
                         </tr>
                     @endforeach

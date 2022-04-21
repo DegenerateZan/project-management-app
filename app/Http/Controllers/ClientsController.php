@@ -38,25 +38,26 @@ class ClientsController extends Controller
        $client->company_name = $request->company_name;
 
       if ($client->save()) {
-          echo "<script>
-               alert('add client success');
-               document.location.href = '/clients';
-              </script>";
-      } else {
-          echo "<script>
-          alert('add client failed');
-          document.location.href = '/clients';
-         </script>";
-      }
+        return redirect('/clients')->with('toast_success', 'Client Created Successfully!');
+        
+     }else{
+
+         return redirect('/clients')->with('toast_erro', 'Client Failed Created!');
+     }
+     
+
+      
       
     }
     public function delete($id)
     {
         
         $clients = Client::find($id);
-        $clients->delete();
-        echo "<script>document.location.href = '/clients';
-        </script>";
+        if($clients->delete()){
+            return redirect('/clients')->with('toast_success', 'Client Created Successfully!');
+        }
+        
+    
         
         
 

@@ -1,20 +1,21 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container-fluid">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Clients</h1>
-    
+
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            Data Clients
+            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
+                <span class="mr-2">Add Clients</span>
+             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
+
+         </div>
         </div>
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Data Clients
-                <div class="createnew float-right d-sm-flex align-items-center"  style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalclient">
-                      
-                    
-                        <span class="mr-2">Add Client</span>
-                        <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
 
                 </div>
             </div>
@@ -141,7 +142,7 @@
                   <div class="row mt-3">
                       <div class="col-sm">
                           <label for="tel-number" class="form-label">Tel. Number :</label>
-                          <input type="number" id="tel-number" name="number_phone" class="form-control">
+                          <input type="text" id="tel-number" name="number_phone" class="form-control">
   
                       </div>
                        <div class="col-sm">
@@ -193,7 +194,11 @@
             
             </div>
                  
-                    </div>
-            </div>
+         </div>
+             </div>
 
+ @include('sweetalert::alert')
 @endsection
+
+
+
