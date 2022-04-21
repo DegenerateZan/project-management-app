@@ -41,7 +41,7 @@
                 </tfoot>
                 <tbody>
                     <?php $i= 1 ?>
-                    @foreach ($categories as $category)
+                    @foreach ($data as $category)
                     <tr>
                         <td>{{ $i }}</td>
                         <td>{{ $category->name }}</td>
