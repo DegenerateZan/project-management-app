@@ -121,7 +121,7 @@
                             <td style="min-width: 100px">
                                 <span style="margin-left: -5%;">
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#formmodalubahclient" data-id="{{ $clients->id }}" class="btn tampilmodalubah" id="action" style="color: rgb(41, 0, 205);"><i class="fas fa-edit"></i></a>
-                                    |<a href="/clients/delete/{{ $clients->id }}" class="btn text-danger" id="action" data-id="{{ $clients->id }}"><i class="fas fa-trash-alt"></i></a>
+                                    |<a href="#" class="btn text-danger"  data-id="{{ $clients->id }}"  data-name="{{ $clients->name_client }}"  id="deleteclients"><i class="fas fa-trash-alt"></i></a>
                                 </span>
                             </td>
                         </tr>

@@ -32,12 +32,14 @@ use App\Models\Developers;
 Route::get('/',[DashboardController::class,'index']);
 // project
 Route::get('/projects', [ProjectController::class,'index']);
-Route::post('/clients/store',[ClientsController::class, 'store']);
+Route::post('/projects/store',[ProjectController::class, 'store']);
+Route::get('projects/delete/{id}',[ProjectController::class, 'delete']);
+Route::get('/projects/getProject/{id}',[ProjectController::class, 'getProject']);
 // payments
 Route::get('/payments', [PaymentsController::class, 'index']);
 // tasks
 Route::get('/tasks', [TasksController::class,'index']);
-Route::post('/clients/store',[ClientsController::class, 'store']);
+Route::post('/tasks/store',[ClientsController::class, 'store']);
 // clients
 Route::get('/clients',[ClientsController::class,'index']);
 Route::post('/clients/store',[ClientsController::class, 'store']);
@@ -53,8 +55,9 @@ Route::get('/finances',[FinanceController::class,'index']);
 Route::get('/login', [LoginController::class, 'index']);
 // developer
 Route::get('/developers', [DevelopersController::class,'index']);
-Route::post('/developer/store', [DevelopersController::class,'store']);
+Route::post('/developers/store', [DevelopersController::class,'store']);
 Route::get('/developer/delete/{id}', [DevelopersController::class,'delete']);
+Route::get('/developers/getDeveloper/{id}', [DevelopersController::class,'getDeveloper']);
 // platform
 Route::get('/platform', [PlatformController::class, 'index']);
 Route::post('/clients/store',[ClientsController::class, 'store']);
@@ -65,4 +68,4 @@ Route::post('/clients/store',[ClientsController::class, 'store']);
 Route::get('/recovery', [RecoferyController::class, 'index']);
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

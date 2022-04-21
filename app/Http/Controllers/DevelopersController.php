@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Developers;
 use Illuminate\Http\Request;
+use PDO;
 
 class DevelopersController extends Controller
 {
@@ -19,9 +20,14 @@ class DevelopersController extends Controller
 
     ]);
    }
+   public function getDeveloper($id)
+   {
+      $results = Developers::find($id);
+      echo json_encode($results);
+   }
    public function store(Request $request)
    {
-    //    dd($request);
+      //  dd($request);
 
          $request->validate([
             'name' => 'required',
@@ -40,6 +46,7 @@ class DevelopersController extends Controller
          $developer->telephone_number = $request->telephone_number;
          $developer->email = $request->email;
 
+       
         if ($developer->save()) {
          return redirect('/developers')->with('success', 'Developer Created Successfully!');    
         } else {
@@ -53,9 +60,10 @@ class DevelopersController extends Controller
 
    public function delete($id)
    {
+   
      $developer = Developers::find($id);
      if ($developer->delete()) {
-      return redirect('/developers')->with('success', 'Developer deleted Successfully!');
+        return redirect('/developers')->with('toast_success', 'Developer delete Successfully!');
      }
    }
 }

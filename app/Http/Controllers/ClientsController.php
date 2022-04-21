@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use PDO;
 
 class ClientsController extends Controller
 {
@@ -51,8 +52,10 @@ class ClientsController extends Controller
     }
     public function delete($id)
     {
+      
         
         $clients = Client::find($id);
+        // $eror = PDO::ATTR_ERRMODE;
         if($clients->delete()){
             return redirect('/clients')->with('toast_success', 'Client delete Successfully!');
         }else{

@@ -10,7 +10,7 @@
     <div class="card mb-4">
         <div class="card-header">
             
-            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
+            <div class="createnewdeveloper float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodaldev">
                 <span class="mr-2">Add Developer</span>
              <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
 
@@ -53,8 +53,8 @@
 
                         <td>
                             <span style="margin-left: -5%">
-                                <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>
-                                <a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                <a  href="#" data-id="{{ $developer->id }}" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn updatedeveloper" id="buttonupdatedeveloper" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|
+                                <a href="#" class="btn text-danger" id="deletedev" data-id="{{ $developer->id }}" data-name="{{ $developer->name }}" ><i class="fas fa-trash-alt"></i></a>
                             </span>
                         </td>
                     </tr>
@@ -73,16 +73,16 @@
                             </div>
                             <div class="modal-body p-6">
 
-                                  <form id="buatubah" action="/developer/store" method="post">
+                                  <form id="buatubahd" action="/developers/store" method="post">
                                         @csrf
-                                      <div class="container">
+                                      <div class="container mt-3">
                                         <label for="dev-name" class="form-label">Dev. Name:</label>
-                                        <input type="text" id="dev-name" name="name" class="form-control" value="" />
-                                            <input type="hidden" name="id" id="id-dev" value="" readonly>
-                                      <div class="row">
+                                        <input type="text" id="name" name="name" class="form-control" value="">
+                                            <input type="hidden" name="id" id="id" value="" readonly>
+                                      <div class="row mt-4">
                                           <div class="col-sm">
                                               <label for="no-rek" class="form-label">Account Number:</label>
-                                              <input type="number" id="no-rek" name="account_number" class="form-control">
+                                              <input type="number" id="account_number" name="account_number" class="form-control">
                       
                                           </div>
                                            <div class="col-sm">
@@ -90,10 +90,10 @@
                                                   <input type="number" id="telephone_number" name="telephone_number" class="form-control">
                                          </div>
                                       </div>
-                                      <div class="row">
+                                      <div class="row mt-3">
                                           <div class="col-sm">
                                               <label for="nama-instansi" class="form-label">Address :</label>
-                                              <input type="text" id="nama-instansi" name="address" class="form-control">
+                                              <input type="text" id="address" name="address" class="form-control">
                       
                                           </div>
                                            <div class="col-sm">

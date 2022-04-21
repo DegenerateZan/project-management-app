@@ -4,6 +4,7 @@
 $(function() {
 
 
+    // delete developer
 
     $("#deletedev").click(function(){ 
         var id = $(this).attr('data-id')
@@ -19,16 +20,36 @@ $(function() {
             if (willDelete) {
               window.location = "developer/delete/"+ id +""
             } else {
-              swal("Your imaginary file is safe!");
+                window.location = "/developers"
             }
           });        
     });
+    // delete project
+    $("#deletepro").click(function(){ 
+        var id = $(this).attr('data-id')
+        var name = $(this).attr('data-name')
+        swal({
+            title: "Are you sure?",
+            text: "will delete project "+ name +" ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              window.location = "projects/delete/"+ id +""
+            } else {
+                window.location = "/projects"
+            }
+          });        
+    });
+    // delete clients
     $("#deleteclients").click(function(){ 
         var id = $(this).attr('data-id')
         var name = $(this).attr('data-name')
         swal({
             title: "Are you sure?",
-            text: "will delete client "+ name +" data ?",
+            text: "will delete client "+ name +" ?",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -37,7 +58,7 @@ $(function() {
             if (willDelete) {
               window.location = "clients/delete/"+ id +""
             } else {
-              swal("Your imaginary file is safe!");
+                window.location = "/clients"
             }
           });        
     });

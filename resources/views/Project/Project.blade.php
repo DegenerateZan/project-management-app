@@ -11,7 +11,7 @@
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 
-                <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
+                <div class="createnewp float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
                     <span class="mr-2">Add Project</span>
                  <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
  
@@ -65,7 +65,8 @@
                             
                             <td>
                                 <span style="margin-left: -5%">
-                                    <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                    <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}"><i class="fas fa-edit"></i></a>
+                                       |<a href="#" class="btn text-danger" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}"><i class="fas fa-trash-alt"></i></a> 
                                 </span>
                             </td>
     
@@ -90,28 +91,26 @@
         </div>
         <div class="modal-body p-6">
 
-          <form action="" method="post" id="formbuatubah">
-
+          <form action="/projects/store" method="post" id="formbuatubah">
+                     @csrf
                       <div class="container">
                         <label for="client-project" class="form-label">From Client:</label>
-                        <select name="id_client" id="client-project" class="form-control" required >
+                        <select id="client_id" class="form-control" name="client_id" required >
                                         <option value="">-- Select Clients --</option>
                                         @foreach ($clients as $client)
                                         <option value="{{ $client->id }}">{{ $client->name_client }}</option>
                                         @endforeach
                                         
                                     </select>
-                                    <input type="hidden" id="id-project" name="id_project">
+                                    <input type="hidden" id="id" name="id">
                   <div class="row mt-3">
                       <div class="col-sm">
                           <label for="project-name" class="form-label">Project Name :</label>
-                          <input type="text" id="project-name" name="project-name" class="form-control">
-  
+                          <input type="text" id="name" name="name" class="form-control">
                       </div>
-                      
-                      <div class="col-sm">
+                      <div class="col-sm">`
                           <label for="category" class="form-label">Categori :</label>
-                          <select name="id_category" id="category" class="form-control" required>
+                          <select id="category" name="category_id" class="form-control" required>
                             <option value="">-- Select Category --</option>
                             @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name}}</option>
@@ -128,21 +127,23 @@
   
                       </div>
                       <div class="col-sm">
-                          <label for="platform" class="form-label">Platform</label>
-                          <select name="id_platform" id="platform" class="form-control">
-                            <option value="">-- Select Platfroms --</option>
-                                        @foreach ($platforms as $platform)
-                                        <option value="{{ $platform->id }}">{{ $platform->name}}</option>
-                                        @endforeach
-                                        
-                                    </select>
-                      </div>
+                        <label for="platform" class="form-label">Project Status</label>
+                        <select id="status" class="form-control" name="status">
+                          <option value="0">On Progress</option>
+                            <option value="1">Finish</option>  
+                         </select>
+                    </div>
                       </div>
                       <div class="row">
-                        <div class="col-sm mt-4">
+                        <div class="col-sm mt-3">
+                            <label for="manufacture_date" class="form-label">Manufacture Date :</label>
+                           <input type="date" id="manufacture_date" name="manufacture_date" class="form-control">
+                        </div>
+                      
+                      <div class="row">
+                        <div class="col-sm mt-3">
                             <label for="project-name" class="form-label">Project Price :</label>
                            <input type="text" id="price" name="price" class="form-control">
-    
                         </div>
                         
                       
@@ -161,5 +162,5 @@
         </div>
 
     </div>
-
+ @include('sweetalert::alert')
 @endsection
