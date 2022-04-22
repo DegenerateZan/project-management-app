@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\RecoferyController;
 use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\TaskController;
 use App\Models\Category;
 use App\Models\Developers;
 
@@ -30,17 +31,23 @@ use App\Models\Developers;
 
 */
 // dasboard
-Route::get('/',[DashboardController::class,'index']);
+Route::controller(DashboardController::class)->group(function(){
+Route::get('/','index');
+});
 // project
 Route::get('/projects', [ProjectController::class,'index']);
 Route::post('/projects/store',[ProjectController::class, 'store']);
 Route::get('projects/delete/{id}',[ProjectController::class, 'delete']);
 Route::get('/projects/getProject/{id}',[ProjectController::class, 'getProject']);
 // payments
-Route::get('/payments', [PaymentsController::class, 'index']);
+Route::controller(PaymentsController::class)->group(function(){
+Route::get('/payments','index');
+});
 // tasks
-Route::get('/tasks', [TasksController::class,'index']);
-Route::post('/tasks/store',[ClientsController::class, 'store']);
+Route::controller(TaskController::class)->group(function(){
+Route::get('/tasks', 'index');
+Route::post('/tasks/store', 'store');
+});
 // clients
 Route::controller(ClientsController::class)->group(function(){
 Route::get('/clients','index');
@@ -52,11 +59,17 @@ Route::get('/clients/getclient/{id}','getclient');
 
 
 // wages
-Route::get('/salary',[SalaryController::class,'index']);
+Route::controller(SalaryController::class)->group(function(){
+Route::get('/salary','index');
+});
 // finance
-Route::get('/finances',[FinanceController::class,'index']);
+Route::controller(FinanceController::class)->group(function(){
+Route::get('/finances','index');
+});
 // login
-Route::get('/login', [LoginController::class, 'index']);
+Route::controller(LoginController::class)->group(function(){
+Route::get('/login','index');
+});
 // developer
 Route::controller(DevelopersController::class)->group(function(){
 Route::get('/developers', 'index');
@@ -72,10 +85,11 @@ Route::post('/clients/store', 'store');
 // category
 Route::controller(Category::class)->group(function(){
 Route::get('/category', 'index');
-Route::post('/clients/store', 'store');
+Route::post('/clients/store','store');
 });
 // recofery
-Route::get('/recovery', [RecoferyController::class, 'index']);
-
+Route::controller(RecoferyController::class)->group(function(){
+Route::get('/recovery','index');
+});
 
 
