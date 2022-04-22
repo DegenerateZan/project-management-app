@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('client_id')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->string('price');
             $table->date('deadline');
             $table->date('manufacture_date');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
