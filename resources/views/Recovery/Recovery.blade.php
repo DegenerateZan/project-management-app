@@ -17,7 +17,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Login #8</title>
+    <title>Recovery</title>
   </head>
   <body>
   
@@ -30,7 +30,7 @@
           <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid" style="margin-top: -15%; margin-right: -300px">
       </div>
 
-        <div class="col contents setting-isi mt-5">
+        <div class="col contents setting-isi mt-10">
           <div class="row justify-content-center">
             <div class="col-md-8">
               <div class="mb-4">
@@ -49,13 +49,10 @@
 			  <div class="row flex">
 				<div class="col-sm">
           <a href="/login">
-					<button type="button" class="btn text-white btn-block btn-primary">Login Page</button>
+					<button type="button" class="btn text-white btn-block btn-primary setting-button1">Login Page</button>
+          
           </a>
-
-
-				</div>
-				<div class="col-sm">
-					<button type="submit" class="btn text-white btn-block btn-primary">Submit</button>
+          <button type="submit" class="btn text-white btn-block btn-primary setting-button">Submit</button>
 
 				</div>
 			  </div>

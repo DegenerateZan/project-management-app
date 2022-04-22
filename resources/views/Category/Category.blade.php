@@ -12,7 +12,7 @@
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             
-            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalcategory">
+            <div class=" float-right d-sm-flex align-items-center" style="padding: 5px" id="createnewc" data-bs-toggle="modal" data-bs-target="#formmodalcategory">
                <span class="mr-2">Add Category</span>
             <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
 
@@ -47,7 +47,7 @@
                         <td>{{ $category->name }}</td>
                         <td>
                             <span style="margin-left: -5%">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#formmodalcategory" class="btn text-success" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                <a href="" data-bs-toggle="modal"  dataid="{{ $category->id }}"  data-bs-target="#formmodalcategory" class="btn text-success edit-category"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
                                 </span>
                         </td>
 
@@ -69,7 +69,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header flex text-danger">
-          <h5 class="modal-title " id="formmodallabel">Warning</h5> <i class="fas fa-exclamation-circle mt-2 ml-1"></i>
+          <h5 class="modal-title " id="modallabelca">Warning</h5> <i class="fas fa-exclamation-circle mt-2 ml-1"></i>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-6">
@@ -107,7 +107,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="formmodallabel">Add new Category</h5>
+          <h5 class="modal-title" id="modallabel">Add new Category</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-6">
@@ -116,8 +116,8 @@
                   
                   <div class="container">
                     <label for="nama-client" class="form-label">Category name :</label>
-                    <input type="text" id="nama-platform" name="category-name" class="form-control">
-                        <input type="hidden" name="id-category" id="id-category" value="" readonly>
+                    <input type="text" id="nama-category" name="category-name" class="form-control">
+                        <input type="hidden" name="id-category" id="id-c" value="" readonly>
                   </div>
         <div class="modal-footer mt-3">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

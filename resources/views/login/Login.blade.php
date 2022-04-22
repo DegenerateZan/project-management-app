@@ -40,7 +40,7 @@
           <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid" style="margin-top: -15%; margin-right: -300px">
         </div>
 
-        <div class="col contents setting-isi">
+        <div class="col contents setting-isi1">
           <div class="row justify-content-center">
             <div class="col-md-8 mt-5">
               <div class="mb-4">

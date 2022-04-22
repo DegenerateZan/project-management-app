@@ -66,4 +66,8 @@ class DevelopersController extends Controller
         return redirect('/developers')->with('toast_success', 'Developer delete Successfully!');
      }
    }
+
+   public function update(){
+      
+   }
 }

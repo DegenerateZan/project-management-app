@@ -168,5 +168,65 @@ $(function() {
 
     //modal payments
 
+    //modal category
+
+    $("#createnewc").click(function(){
+        console.log('modal buat Category')
+
+        $('#modallabel').html('Add New Category');
+
+        $('#nama-category').val(null);
+        $('#id-c').val(null);
+
+    } );
+
+    $(".edit-category").click(function(){
+        console.log('modal ubah Category')
+        $('#modallabel').html('Edit Existing category');
+        $('.modal-footer button[type=submit]').html('Change Category');
+        const id = this.getAttribute('dataid');
+        console.log(id);
+        $.ajax({
+            url: '/category/getCategory/'.concat(id),
+            datatype: 'json',
+            success: function(data) {
+                var category = JSON.parse(data);
+                console.log(category);
+                $('#nama-category').val(category.name);
+                $('#id-c').val(category.id);
+
+            }
+            });
+    })
+    //modal platform
+
+    $("#createnew-p").click(function(){
+        $('#labelmodal').html('Add New Platform');
+
+        $('#nama-platform').val(null);
+        $('#id-p').val(null);
+
+    } );
+
+    $(".edit-platform").click(function(){
+        $('#labelmodal').html('Edit Existing Platform');
+        $('.modal-footer button[type=submit]').html('Change Platform');
+        var id = this.getAttribute('dataid');
+        console.log(id);
+        $.ajax({
+            url: '/platform/getPlatform/'.concat(id),
+            datatype: 'json',
+            success: function(data) {
+                var platform = JSON.parse(data);
+                console.log(platform);
+                // $('#nama-platform').val(platform.name);
+                // $('#id-p').val(platform.id);
+
+            }
+            });
+    })
+
+
+
 
 });

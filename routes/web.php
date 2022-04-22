@@ -39,6 +39,7 @@ Route::get('/projects/getProject/{id}',[ProjectController::class, 'getProject'])
 Route::get('/payments', [PaymentsController::class, 'index']);
 // tasks
 Route::get('/tasks', [TasksController::class,'index']);
+Route::get('/tasks/{id}', [TasksController::class,'show']);
 Route::post('/tasks/store',[ClientsController::class, 'store']);
 // clients
 Route::get('/clients',[ClientsController::class,'index']);
@@ -60,10 +61,14 @@ Route::get('/developer/delete/{id}', [DevelopersController::class,'delete']);
 Route::get('/developers/getDeveloper/{id}', [DevelopersController::class,'getDeveloper']);
 // platform
 Route::get('/platform', [PlatformController::class, 'index']);
+Route::get('/platform/getPlatform/{id}', [PlatformController::class,'getPlatform']);
+
+
 Route::post('/clients/store',[ClientsController::class, 'store']);
 // category
 Route::get('/category', [CategoryController::class ,'index']);
-Route::post('/clients/store',[ClientsController::class, 'store']);
+Route::get('/category/getCategory/{id}', [CategoryController::class,'getCategory']);
+
 // recofery
 Route::get('/recovery', [RecoferyController::class, 'index']);
 

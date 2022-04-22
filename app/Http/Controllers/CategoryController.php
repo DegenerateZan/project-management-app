@@ -14,4 +14,14 @@ class CategoryController extends Controller
             "data" => Category::all()
         ]);
     }
+
+    public function getCategory($id){
+
+        //$a = var_dump($request);
+        
+        $resultget = Category::find($id);
+        echo json_encode($resultget);
+       
+        
+    }
 }
