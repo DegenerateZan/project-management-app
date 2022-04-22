@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\RecoferyController;
 use App\Http\Controllers\SalaryController;
+use App\Models\Category;
 use App\Models\Developers;
 
 /*
@@ -41,11 +42,14 @@ Route::get('/payments', [PaymentsController::class, 'index']);
 Route::get('/tasks', [TasksController::class,'index']);
 Route::post('/tasks/store',[ClientsController::class, 'store']);
 // clients
-Route::get('/clients',[ClientsController::class,'index']);
-Route::post('/clients/store',[ClientsController::class, 'store']);
-Route::post('/clients/update',[ClientsController::class, 'update']);
-Route::get('/clients/delete/{id}',[ClientsController::class, 'delete']);
-Route::get('/clients/getclient/{id}',[ClientsController::class, 'getclient']);
+Route::controller(ClientsController::class)->group(function(){
+Route::get('/clients','index');
+Route::post('/clients/store', 'store');
+Route::post('/clients/update', 'update');
+Route::get('/clients/delete/{id}','delete');
+Route::get('/clients/getclient/{id}','getclient');
+});
+
 
 // wages
 Route::get('/salary',[SalaryController::class,'index']);
@@ -54,16 +58,22 @@ Route::get('/finances',[FinanceController::class,'index']);
 // login
 Route::get('/login', [LoginController::class, 'index']);
 // developer
-Route::get('/developers', [DevelopersController::class,'index']);
-Route::post('/developers/store', [DevelopersController::class,'store']);
-Route::get('/developer/delete/{id}', [DevelopersController::class,'delete']);
-Route::get('/developers/getDeveloper/{id}', [DevelopersController::class,'getDeveloper']);
+Route::controller(DevelopersController::class)->group(function(){
+Route::get('/developers', 'index');
+Route::post('/developers/store','store');
+Route::get('/developer/delete/{id}','delete');
+Route::get('/developers/getDeveloper/{id}','getDeveloper');
+});
 // platform
-Route::get('/platform', [PlatformController::class, 'index']);
-Route::post('/clients/store',[ClientsController::class, 'store']);
+Route::controller(PlatformController::class)->group(function(){
+Route::get('/platform', 'index');
+Route::post('/clients/store', 'store');
+});
 // category
-Route::get('/category', [CategoryController::class ,'index']);
-Route::post('/clients/store',[ClientsController::class, 'store']);
+Route::controller(Category::class)->group(function(){
+Route::get('/category', 'index');
+Route::post('/clients/store', 'store');
+});
 // recofery
 Route::get('/recovery', [RecoferyController::class, 'index']);
 

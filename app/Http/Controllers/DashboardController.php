@@ -29,7 +29,7 @@ class DashboardController extends Controller
 //     foreach($searchunfinishedproject as $a){
 //         $id_p = $a['id'];
 //         // pengkondisisan pencarian jika taks yag dimiliki project
-//         if(Project::where('project_id', '=', $id_p)->count() != 0){
+//         if(Project::where('id', '=', $id_p)->count() != 0){
 //         // dibawah yaitu logic untuk menghitung task 
 //         $countedrowfinished = Tasks::where('task_status', 1)->where('project_id', '=', $id_p)->count();
 //         $countedtotaltasks = Tasks::where('id', '=', $id_p)->count(); // mencari total task berdasarkan id tertentu
@@ -57,7 +57,7 @@ class DashboardController extends Controller
         "projectall" => Project::all(),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
-        "tasks" => 50
+        "tasks" => 10
         
          
 
