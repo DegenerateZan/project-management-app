@@ -219,8 +219,8 @@ $(function() {
             success: function(data) {
                 var platform = JSON.parse(data);
                 console.log(platform);
-                // $('#nama-platform').val(platform.name);
-                // $('#id-p').val(platform.id);
+                $('#nama-platform').val(platform.name);
+                $('#id-p').val(platform.id);
 
             }
             });

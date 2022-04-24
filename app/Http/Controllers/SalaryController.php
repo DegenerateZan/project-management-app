@@ -8,7 +8,7 @@ class SalaryController extends Controller
 {
     public function index()
     {
-      return view('salary.salary',[
+      return view('Salary.Salary',[
           "title" => "salary"
           
       ]);

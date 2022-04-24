@@ -10,7 +10,7 @@ class FinanceController extends Controller
     public function index()
     {
     
-        return view('finance.finance',[
+        return view('Finance.Finance',[
             "title" => "Finance",
             "data" => Finance::all()
         ]);

@@ -47,30 +47,35 @@
               <h3>Log in to <strong>Webmedia Management Software</strong></h3>
               <p class="mb-4">This app can only be access by the member of Webmedia Corp.</p>
             </div>
-            <form action="#" method="post">
-              <div class="form-group first">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username">
-
-              </div>
-              <div class="form-group last mb-4">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password">
+            <form action="/login" method="post">
+              @csrf
+                <div class="form-group first">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" class="form-control  @error('email') is-invalid @enderror " id="username" autofocus required value="{{ old('username') }}">
+                  @error('email')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                  @enderror
+                </div>
+                <div class="form-group last mb-4">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" class="form-control" id="password" required>
+                  
+                </div>
                 
-              </div>
-              
-              <div class="d-flex mb-5 align-items-center">
-                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                  <input type="checkbox" checked="checked"/>
-                  <div class="control__indicator"></div>
-                </label>
-                <span class="ml-auto"><a href="/recovery" class="forgot-pass">Forgot Password</a></span> 
-              </div>
-
-              <button type="submit" class="btn text-white btn-block btn-primary" style="color: #36b9cc;">Login</button>
-
-
-            </form>
+                <div class="d-flex mb-5 align-items-center">
+                  <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                    <input type="checkbox" checked="checked"/>
+                    <div class="control__indicator"></div>
+                  </label>
+                  <span class="ml-auto"><a href="/recovery" class="forgot-pass">Forgot Password</a></span> 
+                </div>
+  
+                <button type="submit" class="btn text-white btn-block btn-primary" style="color: #36b9cc;">Login</button>
+  
+  
+              </form>
             </div>
           </div>
           

@@ -13,7 +13,7 @@ class DevelopersController extends Controller
 
     $developer = Developers::all();
 
-    return view('developer.developer',[
+    return view('Developer.Developer',[
        
         "title" => "Developers",
         "developers" => $developer

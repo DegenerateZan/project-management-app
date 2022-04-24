@@ -44,9 +44,9 @@ Route::controller(PaymentsController::class)->group(function(){
 Route::get('/payments','index');
 });
 // tasks
-Route::controller(TaskController::class)->group(function(){
-Route::get('/tasks', 'index');
-Route::get('/tasks/{id}','show');
+Route::controller(TasksController::class)->group(function(){
+Route::get('/tasks', 'false');
+Route::get('/tasks/from_project/{id}','show');
 Route::post('/tasks/store', 'store');
 });
 // clients
@@ -69,7 +69,9 @@ Route::get('/finances','index');
 });
 // login
 Route::controller(LoginController::class)->group(function(){
-Route::get('/login','index');
+    Route::get('/login', 'index')->name('login')->middleware('guest');
+    Route::post('/login', 'authenticate');
+    Route::post('/logout', 'logout');
 });
 // developer
 Route::controller(DevelopersController::class)->group(function(){
@@ -86,7 +88,7 @@ Route::get('/platform/getPlatform/{id}', 'getPlatform');
 
 });
 // category
-Route::controller(Category::class)->group(function(){
+Route::controller(CategoryController::class)->group(function(){
 Route::get('/category', 'index');
 Route::post('/clients/store', 'store');
 Route::get('/category/getCategory/{id}', 'getCategory');

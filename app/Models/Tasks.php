@@ -10,9 +10,7 @@ class Tasks extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    protected $table = "work";
-
-    // public function Work(){
-    //     return $this->belongsToMany(Work::class);
-    // }
+    public function Work(){
+        return $this->belongsToMany(Work::class);
+    }
 }

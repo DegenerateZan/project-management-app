@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+ $url = asset('')
+?>
 <head>
 
     <meta charset="utf-8">
@@ -16,7 +18,7 @@
     <title>{{ $title }}</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet">
@@ -24,9 +26,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Custom styles for this template-->
-    <link rel="stylesheet" href="css/simple-table.css">
-    <link rel="stylesheet" href="css/sb-admin-2.css">
-    <link rel="stylesheet" href="css/universal.css">
+    <link rel="stylesheet" href="{{ $url.'css/simple-table.css' }}">
+    <link rel="stylesheet" href="{{ $url.'css/sb-admin-2.css' }}">
+    <link rel="stylesheet" href="{{ $url.'css/universal.css' }}">
+
+    <link rel="icon" type="image/x-icon" href="$url.'/img/logo 1.png'">
+
         
     <style>
         
@@ -79,20 +84,23 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ "Nama User" }}</span>
-                            <img class="img-profile rounded-circle"
-                                src="img/undraw_profile.svg">
-                        </a>
+                            @auth
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->username }}</span>
+                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-
-
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
-                                    </a>
+                                    <li>
+                                        <form action="/logout" method="post">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+                                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                                            </button>
+                                        </form>
+                                    </li>
                                 </div>
+                            @endauth
                         </li>
 
                     </ul>
@@ -153,31 +161,31 @@
 
     <!-- Bootstrap core JavaScript-->
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ $url.'vendor/jquery/jquery.min.js' }}"></script>
+    <script src="{{ $url.'vendor/bootstrap/js/bootstrap.bundle.min.js' }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ $url.'vendor/jquery-easing/jquery.easing.min.js' }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="{{ $url.'js/sb-admin-2.min.js' }}"></script>
 
     <!-- Page level plugins -->
 
     <!-- modified able js script -->
-    <script src="js/datatables-simple-demo.js">
+    <script src="{{ $url.'js/datatables-simple-demo.js' }}">
 
     </script>
-    <script src="js/script.js"></script>
-    <script src="js/modal-ajax.js"></script>
+    <script src="{{ $url.'js/script.js' }}"></script>
+    <script src="{{ $url.'js/modal-ajax.js' }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous">
                 let myTable = document.querySelector("#custom");
         let dataTable = new DataTable(myTable, {
             searchable: true
         });
     </script>
-    <script src="js/jquery.js"></script>
+    <script src="{{ $url.'js/jquery.js' }}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
 

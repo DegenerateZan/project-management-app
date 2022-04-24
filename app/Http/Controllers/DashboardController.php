@@ -29,7 +29,7 @@ if (Project::where('status', '=' , 0)->count() != 0){
     foreach($searchunfinishedproject as $a){
         $id_p = $a['id'];
         // pengkondisisan pencarian jika taks yag dimiliki project
-        if(Project::where('id', '=', $id_p)->count() != 0){
+        if(Tasks::where('project_id', '=', $id_p)->count() != 0){
         // dibawah yaitu logic untuk menghitung task 
         $countedrowfinished = Tasks::where('project_id', '=', $id_p)->where('task_status', '=' , 1)->count();
         $countedtotaltasks = Tasks::where('id', '=', $id_p)->count(); // mencari total task berdasarkan id tertentu
@@ -40,10 +40,15 @@ if (Project::where('status', '=' , 0)->count() != 0){
         }
     
     
-    echo $taskfinish;
-    echo $totaltasks;
+    //var_dump( $taskfinish);
+    //var_dump( $totaltasks);
+    // untuk menghindari devision by zero error
+    if($taskfinish != 0 && $totaltasks != 0){
     // diabwah adalah logic rumus mencari presentase
     $substasks = $taskfinish / $totaltasks * 100;
+    } else {
+        $substasks = 0;
+    }
 }
 }
 } else {
@@ -51,7 +56,8 @@ if (Project::where('status', '=' , 0)->count() != 0){
 }
 
 
-    return view('dashboard.dashboard',[
+
+    return view('Dashboard.Dashboard',[
         "title" => "Dashboard",
         "project" => Project::count(),
         "projectall" => Project::all(),
