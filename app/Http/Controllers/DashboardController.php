@@ -31,7 +31,7 @@ if (Project::where('status', '=' , 0)->count() != 0){
         // pengkondisisan pencarian jika taks yag dimiliki project
         if(Project::where('id', '=', $id_p)->count() != 0){
         // dibawah yaitu logic untuk menghitung task 
-        $countedrowfinished = Tasks::where('task_status', 1)->where('project_id', '=', $id_p)->count();
+        $countedrowfinished = Tasks::where('project_id', '=', $id_p)->where('task_status', '=' , 1)->count();
         $countedtotaltasks = Tasks::where('id', '=', $id_p)->count(); // mencari total task berdasarkan id tertentu
 
         //penambahan jumlah ke variable master dari hasil looping
