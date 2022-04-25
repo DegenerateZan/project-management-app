@@ -8,7 +8,7 @@ class PaymentsController extends Controller
 {
    public function index()
    {
-    return view('payment.payment',[
+    return view('Payment.Payment',[
         "title" => "payments"
     ]);
    }

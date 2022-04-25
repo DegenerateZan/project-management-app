@@ -60,7 +60,12 @@
                             <td>
                                 <span style="margin-left: -5%">
                                     <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}"><i class="fas fa-edit"></i></a>
+
+                                    |<a href="/tasks/from_project/{{ $project->id }}" class="btn text-warning"><i class="fas fa-tasks"></i></a>
+                 
+
                                     |<a href="#" class="btn text-danger deletepro" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()"><i class="fas fa-trash-alt"></i></a> 
+
                                 </span>
                             </td>
     

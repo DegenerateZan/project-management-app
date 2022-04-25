@@ -13,7 +13,7 @@ class DevelopersController extends Controller
 
     $developer = Developers::all();
 
-    return view('developer.developer',[
+    return view('Developer.Developer',[
        
         "title" => "Developers",
         "developers" => $developer
@@ -65,5 +65,9 @@ class DevelopersController extends Controller
      if ($developer->delete()) {
         return redirect('/developers')->with('toast_success', 'Developer delete Successfully!');
      }
+   }
+
+   public function update(){
+      
    }
 }

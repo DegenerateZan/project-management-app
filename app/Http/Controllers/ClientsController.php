@@ -10,7 +10,7 @@ class ClientsController extends Controller
 {
  public function index()
  {
-    return view('client.client',[
+    return view('Client.Client',[
         "title" => "Clients",
         "data" => Client::all()
     ]);

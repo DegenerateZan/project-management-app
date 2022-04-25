@@ -3,7 +3,20 @@ body {
   background-color: #f8fafb; 
 
 }
-
+.setting-button {
+  float: right;
+  width: 45%;
+}
+.setting-button1{
+  float: left;
+  width: 45%;
+}
+.setting-isi {
+  margin-top: 150px;
+}
+.setting-isi1 {
+  margin-top: 10px;
+}
 p {
   color: #b3b3b3;
   font-weight: 300; }
@@ -228,6 +241,15 @@ h2 {
   }
   .setting-isi{
     justify-content: center;
-    margin: 5%; 
+    margin: 40% 5% 5% 5%;
+  }
+  .setting-button1{
+    width: 49%;
+    float: left;
+    margin-right: 2px;
+  }
+  .setting-button{
+    float: right;
+    width: 49%;
   }
 }

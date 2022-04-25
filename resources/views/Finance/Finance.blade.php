@@ -69,13 +69,14 @@
                   </tr>
               </tfoot>
               <tbody>
+                @foreach($data as $finance)
                   <tr>
-                      <td>Rp.5000000</td>
-                      <td>Keuangan Telah di bayarkan ke Gaji</td>
-                      <td>Debit</td>
+                      <td>Rp.{{ $finance->finance_amount }}</td>
+                      <td>{{ $finance->description }}</td>
+                      <td>{{ $finance->mutation }}</td>
                       <td>2022/10/11</td>
                   </tr>
-
+                @endforeach
 
               </tbody>
           </table>

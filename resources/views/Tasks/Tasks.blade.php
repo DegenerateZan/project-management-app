@@ -20,14 +20,20 @@
             <div class="card">
                 <div class="container">
                     <div class="heading-t-project mt-3">
-                        <h4>From Project : Managemen Hotel</h4>
+                        <h4>From Project : {{ $project -> name; }}</h4>
                     </div>
                     <div class="d-sm-flex">
-                        <div class="row">
-                            <h6 class="pe-4">Deadline : 13 Juni 2023</h5>
+                        <div class="row inline-block">
+                            <h6 class="pe-4">Deadline : 
+                                 @if ($bool_deadline_project == true)
+                                <span style="color: red">{{ $string_date.' (Past)' }}</span>
+                                @else
+                                <span>{{ $string_date }}</span>
+                                @endif
+                            </h5>
                         </div>
                         <div class="row">
-                            <h6>Status Project : <span style="color: red">Incomplete</span></h5>
+                            <h6>Status Project : <span style="color: ">{{ $project->statu }}</span></h5>
                         </div>
                     </div>
                 </div>
@@ -51,11 +57,13 @@
                         </tr>
                     </tfoot>
                     <tbody>
+
+                    @foreach($tasks as $task)
                         <tr>
-                            <td>Managemen Hotel</td>
-                            <td>Nothing</td>
+                            <td>{{ $task->name }}</td>
+                            <td>{{ $task->description }}</td>
                             <td>Supratman</td>
-                            <td>2022/09/21
+                            <td>{{ $task->deadline }}
 
 
 
@@ -68,7 +76,7 @@
                                     </span>
                             </td>
                         </tr>
-
+                    @endforeach
 
                     </tbody>
                 </table>
