@@ -8,8 +8,12 @@ class SalaryController extends Controller
 {
     public function index()
     {
-      return view('Salary.Salary',[
-          "title" => "salary"
+
+      
+      return view('salary.salary',[
+          "title" => "salary",
+          // "datasalary" => 
+
           
       ]);
 

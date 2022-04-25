@@ -52,22 +52,20 @@
                             <td>{{ $project->client->name_client }}</td>
                             <td>{{ $project->name }}</td>
                             <td>{{ $project->category->name }}</td>
-                            
                             <td>{{ $project->deadline }}</td>
                             <td>Rp.{{ $project->price }}</td>
-
-                         @if ($project->status === 0)
-                             <td>On Progress</td>
-                         @else
-                             <td>Finsh</td>
-                         @endif
+                            <td>{{ $project->status }}</td>
                             <td>{{ $project->manufacture_date }}
                             
                             <td>
                                 <span style="margin-left: -5%">
                                     <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}"><i class="fas fa-edit"></i></a>
+
                                     |<a href="/tasks/from_project/{{ $project->id }}" class="btn text-warning"><i class="fas fa-tasks"></i></a>
-                                       |<a href="#" class="btn text-danger" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}"><i class="fas fa-trash-alt"></i></a> 
+                 
+
+                                    |<a href="#" class="btn text-danger deletepro" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()"><i class="fas fa-trash-alt"></i></a> 
+
                                 </span>
                             </td>
     
@@ -92,7 +90,7 @@
         </div>
         <div class="modal-body p-6">
 
-          <form action="/projects/store" method="post" id="formbuatubah">
+          <form action="{{ route('project.store') }}" method="post" id="formbuatubah">
                      @csrf
                       <div class="container">
                         <label for="client-project" class="form-label">From Client:</label>
@@ -130,8 +128,9 @@
                       <div class="col-sm">
                         <label for="platform" class="form-label">Project Status</label>
                         <select id="status" class="form-control" name="status">
-                          <option value="0">On Progress</option>
-                            <option value="1">Finish</option>  
+                            <option value="On Progress">On Progress</option>
+                            <option value="Finish">Finish</option>
+                            <option value="Pending">Pending</option>  
                          </select>
                     </div>
                       </div>
@@ -164,4 +163,35 @@
 
     </div>
  @include('sweetalert::alert')
+@endsection
+@section('script')
+   <script>
+
+       
+    function deleteproject()
+    {
+      $('.deletepro').click(function () { 
+          var id = this.getAttribute('data-id');
+          var name = this.getAttribute('data-name');
+          console.log(id);
+          swal({
+        title: "Are you sure?",
+        text: "will delete project "+ name +"?" ,
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location = "projects/delete/".concat(id);
+        } else {
+            window.location = "/projects"
+        }
+      });        
+
+      });
+      
+      
+    }
+   </script>
 @endsection

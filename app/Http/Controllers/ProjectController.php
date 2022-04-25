@@ -1,17 +1,12 @@
-<?php
-
+<?php 
 namespace App\Http\Controllers;
-
-use App\Models\Category;
-use App\Models\Client;
-use App\Models\Platform;
 use App\Models\Project;
+use App\Models\Client;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Prophecy\Call\Call;
 
-class ProjectController extends Controller
-{
+class ProjectController extends Controller{
+
     public function index()
     {
         return view('Project.Project',[
@@ -19,60 +14,60 @@ class ProjectController extends Controller
             'projects' => Project::with('category')->with('client')->get(),
             'clients' => Client::all(),
             'categories' => Category::all(),
-            'platforms' => Platform::all()
         ]);
     }
-    public function getProject($id){
+    public function getProjectByid($id)
+    {
+        $projects = Project::find($id);
+        echo json_encode($projects);
+    }
+    public function delete($id)
+    {
+        $projects = Project::find($id);
+        if($projects->delete()){
+            return redirect('/projects')->with('toast_success', 'Projects Deleted Successfully!');  
+        }
+    }
 
-       //$a = var_dump($request);
-       $resultget = Project::find($id);
-       echo json_encode($resultget);
-   }
     public function store(Request $request)
     {
-    
-        // dd($request);
-        
-        $request->validate([
-            'client_id' => 'required',
-            'category_id' => 'required',
-            'status' => 'required',
-            'name' => 'required',
-            'manufacture_date' => 'required',
-            'price' => 'required',
-            'deadline' => 'required',
-            'manufacture_date' => 'required'
-         ]); 
+        //  dd($request);
+  
+           $request->validate([
+              'client_id' => 'required',
+              'category_id' => 'required',
+              'name' => 'required',
+              'deadline' => 'required',
+              'manufacture_date' => 'required',
+              'status' => 'required',
+              'price' => 'required'
+           ]); 
+  
+  
+           $projects = new Project();
+  
+           $projects->client_id = $request->client_id;
+           $projects->category_id = $request->category_id;
+           $projects->name = $request->name;
+           $projects->status = $request->status;
+           $projects->deadline = $request->deadline;
+           $projects->price = $request->price;
+           $projects->manufacture_date = $request->manufacture_date;
 
-         $project = new Project();
-         $project->client_id = $request->client_id;
-         $project->category_id = $request->category_id;
-         $project->name = $request->name;
-         $project->manufacture_date = $request->manufacture_date;
-         $project->status = $request->status;
-         $project->price = $request->price;
-         $project->deadline = $request->deadline;
-
-        
-      if ($project->save()) {
-        return redirect('/projects')->with('success', 'Projects Created Successfully!');
-        
-     }else{
-
-         return redirect('/projects')->with('toast_erro', 'Client Failed Created!');
+  
+         
+          if ($projects->save()) {
+           return redirect('/projects')->with('toast_success', 'Projects Created Successfully!');    
+          } else {
+             
+          }
+          
+  
+  
+  
      }
-     }
-     public function delete($id)
-     {
-        //  dd($id);
-         $project = Project::find($id);
-         if ($project->delete()) {
-            return redirect('/projects')->with('toast_success', 'Projects delete Successfully!');
-            
-         }else{
-    
-             return redirect('/projects')->with('toast_erro', 'Client Failed Delete!');
-         }
-     }
-    
 }
+
+
+
+?>

@@ -74,15 +74,6 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Supratman</td>
-                            <td>Rp. 6000000</td>
-                            <td>1000000</td>
-                            <td>12 Jan 2023</td>
-                            <td><span style="color:green">Paid off</span></td>
-                            <td>Rp. 0</td>
-                            <td>Rp. 5000000</td>
-                        </tr>
 
 
                     </tbody>

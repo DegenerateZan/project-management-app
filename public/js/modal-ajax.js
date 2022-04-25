@@ -95,7 +95,7 @@ $(function() {
         // console.log(id);
         $.ajax({
 
-            url: '/projects/getProject/'.concat(id),
+            url: '/projects/getProjectByid/'.concat(id),
             // method : 'GET',
             datatype: 'json',
             success: function(data) {
