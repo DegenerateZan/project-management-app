@@ -5,6 +5,11 @@
 
 $(function() {
 
+    $('.true').hide();
+    $('.false').hide();
+
+
+
     //modal client
     $('.createnew').on('click', function() {
         $('#formmodallabel').html('Add New Client');
@@ -198,6 +203,32 @@ $(function() {
             }
             });
     })
+
+    $(".delete-category").click(function(){
+        $('.loading').show();
+
+        $('.true').hide();
+        $('.false').hide();
+        var id = this.getAttribute('dataid');
+        console.log(id);
+        $.ajax({
+            url: '/category/checkproject/'.concat(id),
+            success: function(data) {
+                var category = JSON.parse(data);
+                console.log(data);
+                if (category > 0){
+                    $('.loading').hide();
+                    $('.true').show();
+                    $('.false').hide();
+                } else {
+                    $('.loading').hide();
+                    $('.true').hide();
+                    $('.false').show();
+                }
+            }
+        });
+    })
+
     //modal platform
 
     $("#createnew-p").click(function(){
@@ -226,6 +257,30 @@ $(function() {
             });
     })
 
+    $(".delete-platform").click(function(){
+        $('.loading').show();
+
+        $('.true').hide();
+        $('.false').hide();
+        var id = this.getAttribute('dataid');
+        console.log(id);
+        $.ajax({
+            url: '/platform/checkproject/'.concat(id),
+            success: function(data) {
+                var platform = JSON.parse(data);
+                console.log(data);
+                if (platform > 0){
+                    $('.loading').hide();
+                    $('.true').show();
+                    $('.false').hide();
+                } else {
+                    $('.loading').hide();
+                    $('.true').hide();
+                    $('.false').show();
+                }
+            }
+        });
+    })
 
 
 

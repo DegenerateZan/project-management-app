@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class CategoryController extends Controller
 {
@@ -23,5 +24,10 @@ class CategoryController extends Controller
         echo json_encode($resultget);
        
         
+    }
+
+    public function checkproject($id){
+        $resultget = Project::where('category_id', $id)->count();
+        echo $resultget;
     }
 }
