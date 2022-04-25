@@ -35,16 +35,18 @@ Route::controller(DashboardController::class)->group(function(){
 Route::get('/','index');
 });
 // project
-Route::get('/projects', [ProjectController::class,'index']);
-Route::post('/projects/store',[ProjectController::class, 'store']);
-Route::get('projects/delete/{id}',[ProjectController::class, 'delete']);
-Route::get('/projects/getProject/{id}',[ProjectController::class, 'getProject']);
+Route::controller(ProjectController::class)->group(function(){
+Route::get('/projects', 'index')->name('project.index');
+Route::post('/projects/store', 'store')->name('project.store');
+Route::get('projects/delete/{id}','delete')->name('project.delete');
+Route::get('/projects/getProjectByid/{id}', 'getProjectByid')->name('project.byid');
+});
 // payments
 Route::controller(PaymentsController::class)->group(function(){
 Route::get('/payments','index');
 });
 // tasks
-Route::controller(TaskController::class)->group(function(){
+Route::controller(TasksController::class)->group(function(){
 Route::get('/tasks', 'index');
 Route::post('/tasks/store', 'store');
 });
@@ -80,12 +82,12 @@ Route::get('/developers/getDeveloper/{id}','getDeveloper');
 // platform
 Route::controller(PlatformController::class)->group(function(){
 Route::get('/platform', 'index');
-Route::post('/clients/store', 'store');
+// Route::post('/clients/store', 'store');
 });
 // category
 Route::controller(Category::class)->group(function(){
 Route::get('/category', 'index');
-Route::post('/clients/store','store');
+// Route::post('/clients/store','store');
 });
 // recofery
 Route::controller(RecoferyController::class)->group(function(){

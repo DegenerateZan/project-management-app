@@ -6,62 +6,7 @@ $(function() {
 
     // delete developer
 
-    $("#deletedev").click(function(){ 
-        var id = $(this).attr('data-id')
-        var name = $(this).attr('data-name')
-        swal({
-            title: "Are you sure?",
-            text: "will delete developer "+ name +" data ?",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              window.location = "developer/delete/"+ id +""
-            } else {
-                window.location = "/developers"
-            }
-          });        
-    });
-    // delete project
-    $("#deletepro").click(function(){ 
-        var id = $(this).attr('data-id')
-        var name = $(this).attr('data-name')
-        swal({
-            title: "Are you sure?",
-            text: "will delete project "+ name +" ?",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              window.location = "projects/delete/"+ id +""
-            } else {
-                window.location = "/projects"
-            }
-          });        
-    });
-    // delete clients
-    $("#deleteclients").click(function(){ 
-        var id = $(this).attr('data-id')
-        var name = $(this).attr('data-name')
-        swal({
-            title: "Are you sure?",
-            text: "will delete client "+ name +" ?",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              window.location = "clients/delete/"+ id +""
-            } else {
-                window.location = "/clients"
-            }
-          });        
-    });
+   
 
     
 

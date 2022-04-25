@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->boolean('status');
+            $table->enum('status', ['Finish', 'Pending', 'On Progress']);
         });
     }
 
