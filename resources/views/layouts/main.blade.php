@@ -87,19 +87,14 @@
                         <li class="nav-item dropdown no-arrow">
                             @auth
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->username }}</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium">Welcome <span style="font-weight: bold; color: #000">{{ auth()->user()->name }}</span></span>
                                     <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <li>
-                                        <form action="/logout" method="post">
-                                            @csrf
-                                            <button type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
-                                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
-                                            </button>
-                                        </form>
-                                    </li>
+                                    <button type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                                    </button>
                                 </div>
                             @endauth
                         </li>
@@ -154,7 +149,11 @@
                 <div class="modal-body">Click the "Log out" button Below if you want to Quit the Current Session</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/login">Logout</a>
+                    
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Log Out</button>
+                    </form>
                 </div>
             </div>
         </div>
