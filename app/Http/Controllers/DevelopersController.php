@@ -67,7 +67,10 @@ class DevelopersController extends Controller
      }
    }
 
-   public function update(){
-      
+   public function update(Request $request, $id){
+      $developer = Developers::find($id);
+      if ($developer->update($request->all())) {
+         return redirect('/developers')->with('toast_success', 'Developer Update Successfully!');
+      }
    }
 }

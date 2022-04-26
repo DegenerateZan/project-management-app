@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Developers;
+use App\Models\Tasks;
 use App\Models\Finance;
 use App\Models\Project;
-use App\Models\Tasks;
+use App\Models\Developers;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -50,10 +50,10 @@ if (Project::where('status', '=' , 0)->count() != 0){
         $substasks = 0;
     }
 }
-}
+ }
 } else {
     $substasks = 0;
-}
+ }
 
 
 
@@ -63,7 +63,7 @@ if (Project::where('status', '=' , 0)->count() != 0){
         "projectall" => Project::all(),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
-        "tasks" => $substasks
+        "tasks" => 40
         
          
 

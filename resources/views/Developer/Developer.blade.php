@@ -54,7 +54,7 @@
                         <td>
                             <span style="margin-left: -5%">
                                 <a  href="#" data-id="{{ $developer->id }}" data-bs-toggle="modal" data-bs-target="#formmodaldev" class="btn updatedeveloper" id="buttonupdatedeveloper" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|
-                                <a href="#" class="btn text-danger" id="deletedev" data-id="{{ $developer->id }}" data-name="{{ $developer->name }}" ><i class="fas fa-trash-alt"></i></a>
+                                <a href="#" class="btn text-danger deldev"  data-id="{{ $developer->id }}" data-name="{{ $developer->name }}" onclick="deldev()" ><i class="fas fa-trash-alt"></i></a>
                             </span>
                         </td>
                     </tr>
@@ -120,3 +120,4 @@
 </div>
 @include('sweetalert::alert')
 @endsection
+<script src="js/developer.js"></script>

@@ -59,7 +59,7 @@ class ClientsController extends Controller
         if($clients->delete()){
             return redirect('/clients')->with('toast_success', 'Client delete Successfully!');
         }else{
-            return redirect('/clients')->with('toast_erro', 'Client Failed Delete!');
+            return redirect('/clients')->with('toast_erro', 'Client Failed Deleted!');
         }
         
     
@@ -68,8 +68,12 @@ class ClientsController extends Controller
 
     }
 
-    public function update(){
-        dd($_POST);
+    public function update(Request $request, $id){
+        // dd($request);
+        $clients = Client::find($id);
+        if ($clients->update($request->all())) {
+            return redirect('/clients')->with('toast_success', 'Client Update Successfully!');
+        }
     }
 
     public function getclient($id){
@@ -81,5 +85,6 @@ class ClientsController extends Controller
        
         
     }
+   
 
 }
