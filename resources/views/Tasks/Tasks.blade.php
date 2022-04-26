@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="container">
                     <div class="heading-t-project mt-3">
-                        <h4>From Project : {{ $project -> name; }}</h4>
+                        <h4>From Project : {{ $project->name; }}</h4>
                     </div>
                     <div class="d-sm-flex">
                         <div class="row inline-block">
@@ -33,7 +33,7 @@
                             </h5>
                         </div>
                         <div class="row">
-                            <h6>Status Project : <span style="color: ">{{ $project->statu }}</span></h5>
+                            <h6>Status Project : <span style="color: ">{{ $project->status }}</span></h5>
                         </div>
                     </div>
                 </div>

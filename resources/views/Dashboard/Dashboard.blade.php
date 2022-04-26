@@ -154,11 +154,7 @@
                                     <tr>
                                       <th scope="row">{{ $i }}</th>
                                       <td>{{ $item->name }}</td>
-                                      @if ($item->status === 0)
-                                          <td>On Progress</td>
-                                      @else
-                                         <td>Finsh</td>
-                                      @endif
+                                      <td>{{ $item->status }}</td>
                                       <td>{{ $item->deadline }}</td>
                                     </tr>
                                     <?php  $i++; ?>

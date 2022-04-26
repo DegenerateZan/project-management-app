@@ -19,7 +19,6 @@ class TasksController extends Controller
     $tasks = Tasks::all()->where('project_id', $parameter);
     $p_date = date_format(new DateTime($project['deadline']), 'd M Y');
 
-
     $now = new DateTime();
 
     if($p_date < $now) {
@@ -28,6 +27,7 @@ class TasksController extends Controller
 
     return view('tasks.tasks',[
       'project' => $project,
+      'title' => 'Tasks',
       'tasks' => $tasks,
       'string_date' => $p_date,
       'bool_deadline_project'=> $p_late

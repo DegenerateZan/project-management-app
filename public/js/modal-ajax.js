@@ -30,13 +30,10 @@ $(function() {
 
     $('.tampilmodalubah').on('click', function() {
         $('#formmodallabel').html('Change existing Client');
-        
-         $('#buatubah').attr('action', 'clients/update');
-
         $('.modal-footer button[type=submit]').html('Change Client')
-        $('#buatubah').attr('action', 'clients/update/');
-
+        
         const id = this.getAttribute('data-id'); // itS FUCKING WORK LETSGOOO
+        $('#buatubah').attr('action', 'clients/update/'.concat(id));
         // console.log(id);
         $.ajax({
             
@@ -94,9 +91,9 @@ $(function() {
     $('.tampilmodalubahp').on('click', function() {
         $('#formmodallabel').html('Change existing Project');
         $('.modal-footer button[type=submit]').html('Change Project')
-
+      
         const id = this.getAttribute('data-id'); // itS FUCKING WORK LETSGOOO
-        console.log(id);
+        $('#buatubah').attr('action', 'projects/update/'.concat(id));
         // console.log(id);
         $.ajax({
 
@@ -140,7 +137,7 @@ $(function() {
         $('#email').val(null);
         $('#id').val(null);
 
-        $('#buatubah').attr('action', '/projects/store');
+        $('#buatubahd').attr('action', '/developers/store');
 
 
     });
@@ -150,7 +147,7 @@ $(function() {
        $('.modal-footer button[type=submit]').html('Change Developer');
 
        const id = this.getAttribute('data-id');
-       console.log(id);
+       $('#buatubahd').attr('action', '/developer/update/'.concat(id));
     $.ajax({
         url: '/developers/getDeveloper/'.concat(id),
         datatype: 'json',

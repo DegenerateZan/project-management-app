@@ -37,9 +37,11 @@ Route::get('/','index');
 // project
 Route::controller(ProjectController::class)->group(function(){
 Route::get('/projects', 'index')->name('project.index');
+Route::post('/projects/update/{id}', 'update')->name('project.update');
 Route::post('/projects/store', 'store')->name('project.store');
 Route::get('projects/delete/{id}','delete')->name('project.delete');
 Route::get('/projects/getProjectByid/{id}', 'getProjectByid')->name('project.byid');
+Route::get('/Projects/getProjectsByidClients/{id}', 'getProjectsByidClients');
 });
 // payments
 Route::controller(PaymentsController::class)->group(function(){
@@ -56,7 +58,7 @@ Route::post('/tasks/store', 'store');
 Route::controller(ClientsController::class)->group(function(){
 Route::get('/clients','index');
 Route::post('/clients/store', 'store');
-Route::post('/clients/update', 'update');
+Route::post('/clients/update/{id}', 'update');
 Route::get('/clients/delete/{id}','delete');
 Route::get('/clients/getclient/{id}','getclient');
 });
@@ -80,7 +82,8 @@ Route::controller(LoginController::class)->group(function(){
 Route::controller(DevelopersController::class)->group(function(){
 Route::get('/developers', 'index');
 Route::post('/developers/store','store');
-Route::get('/developer/delete/{id}','delete');
+Route::get('/developers/delete/{id}','delete');
+Route::get('/developers/update/{id}','update');
 Route::get('/developers/getDeveloper/{id}','getDeveloper');
 });
 // platform

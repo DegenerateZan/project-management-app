@@ -66,6 +66,18 @@ class ProjectController extends Controller{
   
   
      }
+     public function getProjectsByidClients($id)
+     {
+         $projects = Project::where('client_id', $id)->count();
+         echo json_encode($projects);
+     }
+     public function update(Request $request, $id)
+     {
+        $projects = Project::find($id);
+        if ($projects->update($request->all())) {
+            return redirect('/projects')->with('toast_success', 'Projects Update Successfully!'); 
+        }
+     }
 }
 
 

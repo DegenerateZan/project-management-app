@@ -9,7 +9,7 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <i class="fas fa-table me-1"></i>
+            
                 
                 <div class="createnewp float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
                     <span class="mr-2">Add Project</span>
@@ -90,7 +90,7 @@
         </div>
         <div class="modal-body p-6">
 
-          <form action="{{ route('project.store') }}" method="post" id="formbuatubah">
+          <form id="buatubah" action="{{ route('project.store') }}" method="post" id="formbuatubah">
                      @csrf
                       <div class="container">
                         <label for="client-project" class="form-label">From Client:</label>
@@ -164,34 +164,4 @@
     </div>
  @include('sweetalert::alert')
 @endsection
-@section('script')
-   <script>
-
-       
-    function deleteproject()
-    {
-      $('.deletepro').click(function () { 
-          var id = this.getAttribute('data-id');
-          var name = this.getAttribute('data-name');
-          console.log(id);
-          swal({
-        title: "Are you sure?",
-        text: "will delete project "+ name +"?" ,
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          window.location = "projects/delete/".concat(id);
-        } else {
-            window.location = "/projects"
-        }
-      });        
-
-      });
-      
-      
-    }
-   </script>
-@endsection
+<script src="js/projects.js"></script>
