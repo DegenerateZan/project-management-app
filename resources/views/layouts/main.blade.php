@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{ $url.'css/simple-table.css' }}">
     <link rel="stylesheet" href="{{ $url.'css/sb-admin-2.css' }}">
     <link rel="stylesheet" href="{{ $url.'css/universal.css' }}">
+    <link rel="stylesheet" href="{{ $url.'css/decoration.css' }}">
 
     <link rel="icon" type="image/x-icon" href="$url.'/img/logo 1.png'">
 
