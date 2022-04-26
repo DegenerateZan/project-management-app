@@ -47,7 +47,7 @@
                         <td>{{ $category->name }}</td>
                         <td>
                             <span style="margin-left: -5%">
-                                <a href="" data-bs-toggle="modal"  dataid="{{ $category->id }}"  data-bs-target="#formmodalcategory" class="btn text-success edit-category"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                <a href="" data-bs-toggle="modal"  dataid="{{ $category->id }}"  data-bs-target="#formmodalcategory" class="btn text-success edit-category"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger delete-category" dataid="{{ $category->id; }}" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
                                 </span>
                         </td>
 
@@ -73,11 +73,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-6">
+            <div class="loading">
+              <div class="spinner">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+              <div class="rect4"></div>
+              <div class="rect5"></div>
+            </div>
+            <span class="h5">Loading Request...</span>
+          </div>
 
             <div class="container true">
                 <p>
                     <span class="text-danger">Warning!</span>, this Category Data Cannot Be deleted because is being used by a project(s)!
-                    <br>you can Edit the only Category of it</p>
+                    <br>you can only Edit the Category of it</p>
             </div>
             <div class="container false">
                 <p>

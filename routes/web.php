@@ -92,6 +92,8 @@ Route::get('/platform', 'index');
 
 Route::post('/clients/store', 'store');
 Route::get('/platform/getPlatform/{id}', 'getPlatform');
+Route::get('/platform/checkproject/{id}', 'checkproject');
+
 
 
 });
@@ -100,6 +102,9 @@ Route::controller(CategoryController::class)->group(function(){
 Route::get('/category', 'index');
 Route::post('/clients/store', 'store');
 Route::get('/category/getCategory/{id}', 'getCategory');
+Route::get('/category/checkproject/{id}', 'checkproject');
+
+
 });
 // recofery
 Route::controller(RecoferyController::class)->group(function(){

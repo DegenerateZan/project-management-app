@@ -10,6 +10,8 @@ class ProjectPlatfrom extends Model
     use HasFactory;
     protected $guarded = ['id'];
      
+    protected $table = 'project_platforms';
+
      public function project()
     {
         return $this->hasMany(Project::class);

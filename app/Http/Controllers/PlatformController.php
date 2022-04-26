@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\ProjectPlatfrom;
 use App\Models\Platform;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class PlatformController extends Controller
@@ -25,8 +26,9 @@ class PlatformController extends Controller
    
     
 }
-    public function checkproject(){
-        
+    public function checkproject($id){
+        $resultget = ProjectPlatfrom::where('paltform_id', $id)->count();
+        echo $resultget;
     }
 
 }

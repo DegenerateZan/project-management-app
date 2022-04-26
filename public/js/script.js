@@ -17,40 +17,6 @@ $(function() {
 
     
     });
-    // condition delete platform
-    $('#deleteplatform').click(function(){
-
-        $condition = false;
-
-        if ($condition === true){
-            $('.true').show();
-            $('.false').hide();
-
-        } else {
-            $('.true').hide();
-            $('.false').show();
-        }
-
-
-    });
-
-        // condition delete category
-        $('#deletecategory').click(function(){
-
-            $condition = false;
-    
-            if ($condition === true){
-                $('.true').show();
-                $('.false').hide();
-    
-            } else {
-                $('.true').hide();
-                $('.false').show();
-            }
-    
-    
-        });
-    
 
     
     prosession = $(document).attr('title');
