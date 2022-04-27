@@ -31,7 +31,9 @@ public function authenticate(Request $request)
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
 
-        return redirect()->intended('/');
+
+        return redirect()->intended('');
+
     }
 
     return back()->withErrors([
@@ -47,6 +49,6 @@ public function logout()
     
     request()->session()->regenerateToken();
 
-    return redirect('/');
+    return redirect('/login');
 }
 }
