@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('developer_id');
-            $table->decimal('basic_salary');
+            $table->decimal('salary_amount');
+            $table->decimal('payroll_deducation');
+            $table->decimal('overtime_money');
+            $table->boolean('payroll_status');
             $table->decimal('total_salary_received');
-            $table->decimal('payroll_status');
             $table->date('payroll_date');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('developer_id')->references('id')->on('developers');

@@ -147,7 +147,7 @@ $(function() {
        $('.modal-footer button[type=submit]').html('Change Developer');
 
        const id = this.getAttribute('data-id');
-       $('#buatubahd').attr('action', '/developer/update/'.concat(id));
+       $('#buatubahd').attr('action', '/developers/update/'.concat(id));
     $.ajax({
         url: '/developers/getDeveloper/'.concat(id),
         datatype: 'json',
@@ -163,6 +163,49 @@ $(function() {
             
         }
     });
+        
+    });
+
+    // modal salary
+    $('.createsalary').click(function(){
+        $('.modal-title').html('Add Salary');
+        $('.modal-footer button[type=submit]').html('Add ');
+        $('#id').val('')
+        $('#user_id').val('')
+        $('#salary_amount').val('')
+        $('#payroll_deducation').val('')
+        $('#developer_id').val('')
+        $('#payroll_status').val('')
+        $('#overtime_money').val('')
+        $('#payroll_date').val('')
+        $('#total_salary_received').val('')
+        // $('#addupdatesalary').attr('action', '/salary/store')
+        
+    });
+    $('.updatesalary').click(function () { 
+        $('.modal-title').html('Change existing Data Salary');
+        $('.modal-footer button[type=submit]').html('Change Salary');
+
+        const id = this.getAttribute('data-id')
+        $('#addupdatesalary').attr('action','/salary/update/'.concat(id));
+        $.ajax({
+            url: "/salary/getsalaryById/".concat(id),
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+               $('#id').val(data.id)
+               $('#user_id').val(data.user_id)
+               $('#salary_amount').val(data.salary_amount)
+               $('#payroll_deducation').val(data.payroll_deducation)
+               $('#developer_id').val(data.developer_id)
+               $('#payroll_status').val(data.payroll_status)
+               $('#overtime_money').val(data.overtime_money)
+               $('#payroll_date').val(data.payroll_date)
+               $('#total_salary_received').val(data.total_salary_received)
+               
+            }
+        });
+
         
     });
 

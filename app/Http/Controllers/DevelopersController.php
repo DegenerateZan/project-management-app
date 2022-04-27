@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Developers;
+use App\Models\Salary;
 use Illuminate\Http\Request;
 use PDO;
 
@@ -72,5 +73,11 @@ class DevelopersController extends Controller
       if ($developer->update($request->all())) {
          return redirect('/developers')->with('toast_success', 'Developer Update Successfully!');
       }
+   }
+   public function getsalaryByidDeveloper($id)
+   {
+      $salary = Salary::where('developer_id', $id)->count();
+      echo json_encode($salary);
+      
    }
 }

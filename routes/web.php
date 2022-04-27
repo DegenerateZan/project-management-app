@@ -67,6 +67,11 @@ Route::get('/clients/getclient/{id}','getclient');
 // wages
 Route::controller(SalaryController::class)->group(function(){
 Route::get('/salary','index');
+Route::get('/salary/getsalaryByidDeveloper/{id}', 'getsalaryByidDeveloper');
+Route::post('/salary/store', 'store')->name('salary.store');
+Route::get('/salary/getsalaryById/{id}', 'getsalaryById');
+Route::post('/salary/update/{id}', 'update');
+Route::get('/salary/delete/{id}','delete')->name('salary.delete');
 });
 // finance
 Route::controller(FinanceController::class)->group(function(){
@@ -83,14 +88,15 @@ Route::controller(DevelopersController::class)->group(function(){
 Route::get('/developers', 'index');
 Route::post('/developers/store','store');
 Route::get('/developers/delete/{id}','delete');
-Route::get('/developers/update/{id}','update');
+Route::post('/developers/update/{id}','update');
+Route::get('/developers/getsalaryByidDeveloper/{id}', 'getsalaryByidDeveloper');
 Route::get('/developers/getDeveloper/{id}','getDeveloper');
 });
 // platform
 Route::controller(PlatformController::class)->group(function(){
 Route::get('/platform', 'index');
 
-Route::post('/clients/store', 'store');
+// Route::post('/clients/store', 'store');
 Route::get('/platform/getPlatform/{id}', 'getPlatform');
 Route::get('/platform/checkproject/{id}', 'checkproject');
 
@@ -100,7 +106,7 @@ Route::get('/platform/checkproject/{id}', 'checkproject');
 // category
 Route::controller(CategoryController::class)->group(function(){
 Route::get('/category', 'index');
-Route::post('/clients/store', 'store');
+// Route::post('/clients/store', 'store');
 Route::get('/category/getCategory/{id}', 'getCategory');
 Route::get('/category/checkproject/{id}', 'checkproject');
 
