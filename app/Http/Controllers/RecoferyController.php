@@ -12,4 +12,24 @@ class RecoferyController extends Controller
         "title" => "Recofery"
     ]);
    }
+
+
+
+
+   public function codeverify(){
+    return view('recovery.codeverify',[
+
+        "title" => "Recofery"
+    ]);
+   }
+
+
+
+
+   public function resetpassword(){
+    return view('recovery.resetpassword',[
+
+        "title" => "Recofery"
+    ]);
+   }
 }
