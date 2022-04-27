@@ -106,14 +106,9 @@ Route::get('/platform/checkproject/{id}', 'checkproject');
 });
 // category
 Route::controller(CategoryController::class)->group(function(){
-<<<<<<< HEAD
-Route::get('/category', 'index')->middleware('auth');
-// Route::post('/clients/store', 'store');
-=======
 
 Route::get('/category', 'index')->middleware('auth');
 Route::post('/clients/store', 'store');
->>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
 Route::get('/category/getCategory/{id}', 'getCategory');
 Route::get('/category/checkproject/{id}', 'checkproject');
 
@@ -121,13 +116,9 @@ Route::get('/category/checkproject/{id}', 'checkproject');
 });
 // recofery
 Route::controller(RecoferyController::class)->group(function(){
-<<<<<<< HEAD
-Route::get('/recovery','index')->middleware('auth');
-=======
 Route::get('/recovery','index');
 Route::get('/codeverify','codeverify');
 Route::get('/resetpassword','resetpassword');
->>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
 });
 
 
