@@ -51,7 +51,7 @@ Route::get('/payments','index')->middleware('auth');
 Route::controller(TasksController::class)->group(function(){
 
 Route::get('/tasks', 'false');
-Route::get('/tasks/from_project/{id}','show');
+Route::get('/tasks/from_project/{id}','show')->middleware('auth');
 Route::post('/tasks/store', 'store');
 });
 // clients
@@ -66,6 +66,7 @@ Route::get('/clients/getclient/{id}','getclient');
 
 // wages
 Route::controller(SalaryController::class)->group(function(){
+
 Route::get('/salary','index')->middleware('auth');
 Route::get('/salary/getsalaryByidDeveloper/{id}', 'getsalaryByidDeveloper');
 Route::post('/salary/store', 'store')->name('salary.store');
@@ -105,8 +106,14 @@ Route::get('/platform/checkproject/{id}', 'checkproject');
 });
 // category
 Route::controller(CategoryController::class)->group(function(){
+<<<<<<< HEAD
 Route::get('/category', 'index')->middleware('auth');
 // Route::post('/clients/store', 'store');
+=======
+
+Route::get('/category', 'index')->middleware('auth');
+Route::post('/clients/store', 'store');
+>>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
 Route::get('/category/getCategory/{id}', 'getCategory');
 Route::get('/category/checkproject/{id}', 'checkproject');
 
@@ -114,7 +121,13 @@ Route::get('/category/checkproject/{id}', 'checkproject');
 });
 // recofery
 Route::controller(RecoferyController::class)->group(function(){
+<<<<<<< HEAD
 Route::get('/recovery','index')->middleware('auth');
+=======
+Route::get('/recovery','index');
+Route::get('/codeverify','codeverify');
+Route::get('/resetpassword','resetpassword');
+>>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
 });
 
 

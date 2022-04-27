@@ -4,7 +4,8 @@
          $('.deletec').click(function () { 
              var id = this.getAttribute('data-id');
              var name = this.getAttribute('data-name');
-             console.log(id);
+             console.log('modal delete c dipencet'.concat(id));
+
            $.ajax({
                url: "/Projects/getProjectsByidClients/".concat(id),
                dataType: "json",
@@ -20,7 +21,7 @@
                } else {
                    swal({
            title: "Are you sure?",
-           text: "will delete clients "+ name +"?" ,
+           text: "want to delete clients "+ name +"?" ,
            icon: "warning",
            buttons: true,
            dangerMode: true,

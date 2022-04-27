@@ -63,15 +63,15 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"><!-- -->
 
                     <!-- Sidebar Toggle (Topbar) -->
 
                     <!-- Topbar Search -->
-                    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+                    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button><!-- -->
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto"><!-- -->
 
 
 
@@ -81,9 +81,10 @@
                         <!-- Nav Item - Messages -->
 
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
+                        <div class="topbar-divider d-none d-sm-block"></div><!-- -->
+<!-- -->
                         <!-- Nav Item - User Information -->
+<<<<<<< HEAD
                         <li class="nav-item dropdown no-arrow">
                             @auth
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -102,10 +103,30 @@
                     </ul>
 
                 </nav>
+=======
+                        <li class="nav-item dropdown no-arrow"><!-- -->
+                            @auth<!-- -->
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><!-- -->
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium">Welcome <span style="font-weight: bold; color: #000">{{ auth()->user()->username }}</span></span><!-- -->
+                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg"><!-- -->
+                                </a><!-- -->
+                                <!-- Dropdown - User Information --><!-- -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><!-- -->
+                                    <button type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal"><!-- -->
+                                       <!-- --> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                                    </button><!-- -->
+                                </div><!-- -->
+                            @endauth<!-- -->
+                        </li><!-- -->
+<!-- -->
+                    </ul><!-- -->
+<!-- -->
+                </nav><!-- -->
+>>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
                 <!-- End of Topbar -->
-
+<!-- -->
                 <!-- Begin Page Content -->
-                
+                <!-- -->
                 {{-- tempat diletakanya template dinamis --}}
                 
                     @yield('container')
@@ -132,12 +153,36 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+    <a class="scroll-to-top rounded" href="#page-top"><!-- -->
+        <i class="fas fa-angle-up"></i><!-- -->
+    </a><!-- -->
 
     <!-- Logout Modal-->
+<<<<<<< HEAD
     
+=======
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><!-- -->
+        <div class="modal-dialog" role="document"><!-- -->
+            <div class="modal-content"><!-- -->
+                <div class="modal-header"><!-- -->
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Quit?</h5><!-- -->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><!-- -->
+                        <span aria-hidden="true">×</span><!-- -->
+                    </button><!-- -->
+                </div><!-- -->
+                <div class="modal-body">Click the "Log out" button Below if you want to Quit the Current Session</div><!-- -->
+                <div class="modal-footer"><!-- -->
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button><!-- -->
+                    <!-- -->
+                    <form action="/logout" method="post"><!-- -->
+                        @csrf<!-- -->
+                        <button type="submit" class="btn btn-primary">Log Out</button><!-- -->
+                    </form><!-- -->
+                </div><!-- -->
+            </div><!-- -->
+        </div> <!-- -->
+    </div> <!-- -->
+>>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
 
     <!-- Bootstrap core JavaScript-->
 
