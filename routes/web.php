@@ -32,11 +32,11 @@ use App\Models\Developers;
 */
 // dasboard
 Route::controller(DashboardController::class)->group(function(){
-Route::get('/','index');
+Route::get('/','index')->middleware('auth');
 });
 // project
 Route::controller(ProjectController::class)->group(function(){
-Route::get('/projects', 'index')->name('project.index');
+Route::get('/projects', 'index')->name('project.index')->middleware('auth');
 Route::post('/projects/update/{id}', 'update')->name('project.update');
 Route::post('/projects/store', 'store')->name('project.store');
 Route::get('projects/delete/{id}','delete')->name('project.delete');
@@ -45,18 +45,18 @@ Route::get('/Projects/getProjectsByidClients/{id}', 'getProjectsByidClients');
 });
 // payments
 Route::controller(PaymentsController::class)->group(function(){
-Route::get('/payments','index');
+Route::get('/payments','index')->middleware('auth');
 });
 // tasks
 Route::controller(TasksController::class)->group(function(){
 
 Route::get('/tasks', 'false');
-Route::get('/tasks/from_project/{id}','show');
+Route::get('/tasks/from_project/{id}','show')->middleware('auth');
 Route::post('/tasks/store', 'store');
 });
 // clients
 Route::controller(ClientsController::class)->group(function(){
-Route::get('/clients','index');
+Route::get('/clients','index')->middleware('auth');
 Route::post('/clients/store', 'store');
 Route::post('/clients/update/{id}', 'update');
 Route::get('/clients/delete/{id}','delete');
@@ -66,11 +66,11 @@ Route::get('/clients/getclient/{id}','getclient');
 
 // wages
 Route::controller(SalaryController::class)->group(function(){
-Route::get('/salary','index');
+Route::get('/salary','index')->middleware('auth');
 });
 // finance
 Route::controller(FinanceController::class)->group(function(){
-Route::get('/finances','index');
+Route::get('/finances','index')->middleware('auth');
 });
 // login
 Route::controller(LoginController::class)->group(function(){
@@ -80,7 +80,7 @@ Route::controller(LoginController::class)->group(function(){
 });
 // developer
 Route::controller(DevelopersController::class)->group(function(){
-Route::get('/developers', 'index');
+Route::get('/developers', 'index')->middleware('auth');
 Route::post('/developers/store','store');
 Route::get('/developers/delete/{id}','delete');
 Route::get('/developers/update/{id}','update');
@@ -88,7 +88,7 @@ Route::get('/developers/getDeveloper/{id}','getDeveloper');
 });
 // platform
 Route::controller(PlatformController::class)->group(function(){
-Route::get('/platform', 'index');
+Route::get('/platform', 'index')->middleware('auth');
 
 Route::post('/clients/store', 'store');
 Route::get('/platform/getPlatform/{id}', 'getPlatform');
@@ -99,7 +99,7 @@ Route::get('/platform/checkproject/{id}', 'checkproject');
 });
 // category
 Route::controller(CategoryController::class)->group(function(){
-Route::get('/category', 'index');
+Route::get('/category', 'index')->middleware('auth');
 Route::post('/clients/store', 'store');
 Route::get('/category/getCategory/{id}', 'getCategory');
 Route::get('/category/checkproject/{id}', 'checkproject');
@@ -109,6 +109,8 @@ Route::get('/category/checkproject/{id}', 'checkproject');
 // recofery
 Route::controller(RecoferyController::class)->group(function(){
 Route::get('/recovery','index');
+Route::get('/codeverify','codeverify');
+Route::get('/resetpassword','resetpassword');
 });
 
 
