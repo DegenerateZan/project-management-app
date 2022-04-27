@@ -33,7 +33,7 @@
   
 
   
-  <div class="content">
+  <div class="content" style="margin-top:7%;">
     <div class="container">
       <div class="row">  
         <div class="col order-md-9 custom-margin setting">

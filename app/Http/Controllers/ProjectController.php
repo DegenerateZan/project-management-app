@@ -57,7 +57,7 @@ class ProjectController extends Controller{
   
          
           if ($projects->save()) {
-           return redirect('/projects')->with('toast_success', 'Projects Created Successfully!');    
+           return redirect('/projects')->with('success', 'Projects Created Successfully!');    
           } else {
              
           }

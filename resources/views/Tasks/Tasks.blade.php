@@ -5,12 +5,11 @@
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tasks</h1>
+            <span class="mr-4">Data Tasks</span>
     
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                Data Task
                 <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
                     <span class="mr-2">Add Task</span>
                  <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
@@ -18,7 +17,7 @@
              </div>
             </div>
             <div class="card">
-                <div class="container">
+                <div class="container" style="margin-right: 20%">
                     <div class="heading-t-project mt-3">
                         <h4>From Project : {{ $project->name; }}</h4>
                     </div>
@@ -45,6 +44,7 @@
                             <th data-sortable="false">Task Name</th>
                             <th data-sortable="false">Deskription Task</th>
                             <th data-sortable="false">Work By</th>
+                            <th data-sortable="false">Status</th>
                             <th data-sortable="false">Deadline task</th>
                         </tr>
                     </thead>

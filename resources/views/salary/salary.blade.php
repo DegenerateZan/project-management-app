@@ -21,7 +21,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th data-sortable="false">User</th>                  
+                            {{-- <th data-sortable="false">User</th>                   --}}
                             <th data-sortable="false">Dev. Name</th>
                             <th data-sortable="false">Salary Amount</th>
                             <th data-sortable="false">Payroll Deduction</th>
@@ -48,7 +48,7 @@
                     <tbody>
                         @foreach ($salaries as $salary)
                         <tr>
-                            <td>{{ $salary->user->username }}</td>
+                            {{-- <td>{{ $salary->user->username }}</td> --}}
                             <td>{{ $salary->developer->name }}</td>
                             <td>Rp.{{ $salary->salary_amount }}</td>
                             <td>Rp.{{ $salary->payroll_deducation }}</td>

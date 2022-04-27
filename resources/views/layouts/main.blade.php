@@ -92,7 +92,7 @@
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <button type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+                                    <button type="submit" class="dropdown-item" onclick="logout()">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
                                     </button>
                                 </div>
@@ -137,27 +137,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Quit?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Click the "Log out" button Below if you want to Quit the Current Session</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    
-                    <form action="/logout" method="post">
-                        @csrf
-                        <button type="submit" class="btn btn-primary">Log Out</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Bootstrap core JavaScript-->
 
@@ -167,7 +147,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- Core plugin JavaScript-->
     <script src="{{ $url.'vendor/jquery-easing/jquery.easing.min.js' }}"></script>
-
+    <script src="{{ $url.'js/logout.js' }}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{ $url.'js/sb-admin-2.min.js' }}"></script>
 
