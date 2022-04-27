@@ -24,4 +24,8 @@ class Developers extends Model
     public function Work(){
         return $this->belongsToMany(Work::class);
     }
+    public function salary()
+    {
+        return $this->hasMany(Salary::class);
+    }
 }
