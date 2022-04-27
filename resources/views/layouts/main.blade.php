@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{ $url.'css/universal.css' }}">
     <link rel="stylesheet" href="{{ $url.'css/decoration.css' }}">
 
-    <link rel="icon" type="image/x-icon" href="$url.'/img/logo 1.png'">
+    <link rel="icon" type="image/x-icon" href="{{ $url.'/img/logo 1.png' }}">
 
         
     <style>
@@ -84,31 +84,11 @@
                         <div class="topbar-divider d-none d-sm-block"></div><!-- -->
 <!-- -->
                         <!-- Nav Item - User Information -->
-<<<<<<< HEAD
-                        <li class="nav-item dropdown no-arrow">
-                            @auth
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium">Welcome <span style="font-weight: bold; color: #000">{{ auth()->user()->name }}</span></span>
-                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                                </a>
-                                <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <button type="submit" class="dropdown-item" onclick="logout()">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
-                                    </button>
-                                </div>
-                            @endauth
-                        </li>
-
-                    </ul>
-
-                </nav>
-=======
                         <li class="nav-item dropdown no-arrow"><!-- -->
                             @auth<!-- -->
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><!-- -->
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium">Welcome <span style="font-weight: bold; color: #000">{{ auth()->user()->username }}</span></span><!-- -->
-                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg"><!-- -->
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium"><span style="">{{ auth()->user()->username }}</span></span><!-- -->
+                                    <img class="img-profile rounded-circle" src="{{ $url."img/undraw_profile.svg" }}"><!-- -->
                                 </a><!-- -->
                                 <!-- Dropdown - User Information --><!-- -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><!-- -->
@@ -122,7 +102,6 @@
                     </ul><!-- -->
 <!-- -->
                 </nav><!-- -->
->>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
                 <!-- End of Topbar -->
 <!-- -->
                 <!-- Begin Page Content -->
@@ -158,9 +137,6 @@
     </a><!-- -->
 
     <!-- Logout Modal-->
-<<<<<<< HEAD
-    
-=======
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><!-- -->
         <div class="modal-dialog" role="document"><!-- -->
             <div class="modal-content"><!-- -->
@@ -174,7 +150,7 @@
                 <div class="modal-footer"><!-- -->
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button><!-- -->
                     <!-- -->
-                    <form action="/logout" method="post"><!-- -->
+                    <form action="/logout"><!-- -->
                         @csrf<!-- -->
                         <button type="submit" class="btn btn-primary">Log Out</button><!-- -->
                     </form><!-- -->
@@ -182,7 +158,6 @@
             </div><!-- -->
         </div> <!-- -->
     </div> <!-- -->
->>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
 
     <!-- Bootstrap core JavaScript-->
 
