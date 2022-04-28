@@ -72,7 +72,7 @@
                   <span class="ml-auto"><a href="/recovery" class="forgot-pass">Forgot Password</a></span> 
                 </div>
   
-                <button type="submit" class="btn text-white btn-block btn-primary" style="color: #36b9cc;">Login</button>
+                <button type="submit" class="btn text-white btn-block btn-primary" style="color: #36b9cc; border-radius:10px;">Login</button>
   
   
               </form>

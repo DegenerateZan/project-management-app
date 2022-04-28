@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('developer_id');
             $table->decimal('salary_amount');
             $table->decimal('payroll_deducation');
@@ -23,7 +22,6 @@ return new class extends Migration
             $table->boolean('payroll_status');
             $table->decimal('total_salary_received');
             $table->date('payroll_date');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('developer_id')->references('id')->on('developers');
             $table->timestamps();
         });

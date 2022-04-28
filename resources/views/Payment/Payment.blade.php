@@ -11,18 +11,17 @@
     </div>
     <div class="card mb-4">
         <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            
             <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#modalpayment">
                 <span class="mr-2">Add Payment</span>
                 <i class="fas fa-plus-circle float-right" style="margin-left: 5px ;"></i>
 
             </div>
         </div>
-        <div class="card-body" style="overflow-x:auto;"">
+        <div class="card-body" style="overflow-x:auto;">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
+                        <th data-sortable="false">From User</th>
                         <th data-sortable="false">From Project</th>
                         <th data-sortable="false">Amount</th>
                         <th data-sortable="false">Desciption Payment</th>
@@ -43,6 +42,7 @@
                 </tfoot>
                 <tbody>
                     <tr>
+                        <td></td>
                         <td>Managemen Hotel</td>
 
                         <td>Rp. 40000000</td>
@@ -58,16 +58,6 @@
 
                         </td>
                     </tr>
-                    <tr>
-                        <td>Managemen Hotel</td>
-
-                        <td>Rp. 5000000</td>
-                        <td>DP Proyek</td>
-                        <td>Paid off</td>
-                        <td>12 Juni 2023</td>
-                    </tr>
-
-
                 </tbody>
             </table>
         </div>
@@ -81,19 +71,34 @@
         </div>
         <div class="modal-body">
           <form action="" method="post">
+            
           <div class="row">
             <div class="col-sm">
 
             </div>
 
           </div>
-       
+                  <input type="hidden" name="id" id="id">
+                  @csrf
                   <div class="container">
-                    <label for="project-name" class="form-label">From Project :</label>
-                    <input type="text" id="project-name" class="form-control" value="" >
-                    <input type="hidden" name="id-project" id="id-proyek-t" value="" readonly>
-                    <input type="hidden" name="id-payment" id="id-payment" value="" readonly>
-
+                      <div class="row">
+                      <div class="col-sm">
+                    <label for="projects">From Projects :</label>
+                    <select class="form-select" aria-label="Default select example" name="project_id">
+                        @foreach ($projects as $project)
+                        <option value="{{ $project->id }}">{{ $project->name }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="col-sm">
+                        <label for="projects">From Users :</label>
+                        <select class="form-select" aria-label="Default select example" name="project_id">
+                            @foreach ($projects as $project)
+                            <option value="{{ $project->id }}">{{ $project->name }}</option>
+                            @endforeach
+                          </select>
+                    </div>
+                </div>
                   <div class="row mt-2">
                       <div class="col-sm">
                           <label for="amount" class="form-label">Amount :</label>

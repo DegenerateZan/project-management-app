@@ -116,9 +116,13 @@ Route::get('/category/checkproject/{id}', 'checkproject');
 });
 // recofery
 Route::controller(RecoferyController::class)->group(function(){
+
 Route::get('/recovery','index');
+
+
 Route::get('/codeverify','codeverify');
 Route::get('/resetpassword','resetpassword');
+<
 });
 
 
