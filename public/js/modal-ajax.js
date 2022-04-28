@@ -254,26 +254,27 @@ $(function() {
 
         $('#modallabel').html('Add New Category');
 
-        $('#nama-category').val(null);
-        $('#id-c').val(null);
-
+        $('#name').val(null);
+        $('#id').val(null);
+        $('#addupdatecategory').attr('action', 'category/store');
     } );
 
-    $(".edit-category").click(function(){
+    $(".updatecategory").click(function(){
         console.log('modal ubah Category')
         $('#modallabel').html('Edit Existing category');
         $('.modal-footer button[type=submit]').html('Change Category');
         const id = this.getAttribute('dataid');
         console.log(id);
+        $('#addupdatecategory').attr('action', 'category/update/'.concat(id))
         $.ajax({
             url: '/category/getCategory/'.concat(id),
             datatype: 'json',
             success: function(data) {
                 var category = JSON.parse(data);
                 console.log(category);
-                $('#nama-category').val(category.name);
-                $('#id-c').val(category.id);
-
+                $('#name').val(category.name);
+                $('#id').val(category.id);
+       
             }
             });
     })
