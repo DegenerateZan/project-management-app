@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\CookieController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\DashboardController;
@@ -78,6 +80,9 @@ Route::get('/salary/delete/{id}','delete')->name('salary.delete');
 Route::controller(FinanceController::class)->group(function(){
 Route::get('/finances','index')->middleware('auth');
 });
+Route::controller(FinanceSettingController::class)->group(function(){
+Route::get('/financessettins','index');
+});
 // login
 Route::controller(LoginController::class)->group(function(){
     Route::get('/login', 'index')->name('login')->middleware('guest');
@@ -122,7 +127,7 @@ Route::get('/recovery','index');
 
 Route::get('/codeverify','codeverify');
 Route::get('/resetpassword','resetpassword');
-<
+
 });
 
 

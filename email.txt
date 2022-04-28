@@ -1,4 +1,4 @@
 
 // email dibawh adalah email untuk aplikasi agar bisa mengirim kodeverifikasi //
 email : canonrinso@gmail.com
-password : //felix jek lali password te bangke emang//
+password : canonrinso321
