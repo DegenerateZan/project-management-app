@@ -45,7 +45,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                              <a href="/projects" style="text-decoration: none;" class="text-success">Projects</a></div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                {{ $project }}
+                                {{ $totalprojects }}
                             </div>
                         </div>
                         <div class="col-auto">
@@ -150,7 +150,7 @@
 
 
                                     <?php  $i= 1; ?>
-                                    @foreach ($projectall as $item)    
+                                    @foreach ($project as $item)    
                                     <tr>
                                       <th scope="row">{{ $i }}</th>
                                       <td>{{ $item->name }}</td>

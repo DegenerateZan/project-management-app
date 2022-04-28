@@ -51,8 +51,8 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/payments" >
-                    <i class="fas fa-fw fa-money-bill" id="i-payments"></i>
-                    <span id="payments">Payments</span>
+                    <i class="fas fa-fw fa-money-bill" id="i-Payments"></i>
+                    <span id="Payments">Payments</span>
 
                 </a>
 

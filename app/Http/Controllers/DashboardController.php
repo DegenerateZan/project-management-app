@@ -61,8 +61,8 @@ if (Project::where('status', '=' , 0)->count() != 0){
 
     return view('Dashboard.Dashboard',[
         "title" => "Dashboard",
-        "project" => Project::count(),
-        "projectall" => Project::all()->where('status', '!=', "Finish"),
+        "project" => Project::all(),
+        "totalprojects" => Project::count(),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
         "tasks" => $substasks
