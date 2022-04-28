@@ -35,7 +35,9 @@
             <div class="col-md-8">
               <div class="mb-4">
               <h3><strong>Code Verify</strong></h3>
-              <span class="btn-success" >Codes has been Sended to {{  }} </span>
+              
+              @if()
+              <span class="btn-success" >Codes has been Sended to {{ $email }} </span>
               <p class="mb-4">Please enter the code from the email!</p>
             </div>
             <form action="#" method="post">

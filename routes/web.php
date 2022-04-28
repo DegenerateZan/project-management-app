@@ -15,7 +15,7 @@ use App\Http\Controllers\TasksController;
 use App\Http\Controllers\WagesController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-use App\Http\Controllers\RecoferyController;
+use App\Http\Controllers\RecoveryController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\TaskController;
 use App\Models\Category;
@@ -125,12 +125,18 @@ Route::get('/category/checkproject/{id}', 'checkproject');
 
 });
 // recofery
-Route::controller(RecoferyController::class)->group(function(){
+Route::controller(RecoveryController::class)->group(function(){
 
-Route::get('/recovery','index');
+Route::get('/recovery','getEmail');
+Route::post('/postemail','postEmail');
 
+});
 
-Route::get('/codeverify','codeverify');
+Route::controller(RecoveryController::class)->group(function(){
+
+});
+
+Route::controller(PasswordController::class)->group(function(){
 Route::get('/resetpassword','resetpassword');
 
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 
-class ForgotPasswordController extends Controller
+class RecoveryController extends Controller
 {
     public function getEmail()
     {
@@ -26,19 +27,17 @@ class ForgotPasswordController extends Controller
         $token = Str::random(60);
         $code = rand(10000,99999);
 
+
         DB::table('password_resets')->insert(
-            ['email' => $request->email, 'code' => $code , 'token' => $token, 'created_at' => Carbon::now()]
+            ['email' => $request->email, 'code' => $code, 'token' => $token, 'created_at' => Carbon::now()]
         );
 
-        Mail::send('auth.verify',['token' => $token], function($message) use ($request) {
-                //   $message->from($request->email);
-                //   $message->to('canonrinso@gmail.com');
-                //   $message->subject('Reset Password Notification');
+        Mail::send('recovery.Email.verify',['code' => $code], function($message) use ($request) {
                   $message->to($request->email);
                   $message->from('canonrinso@gmail.com');
                   $message->subject('Reset Password Notification');
         });
 
-        return back()->with('message', 'We have e-mailed your password Validation Code');
+        return redirect('/login')->with('message', 'We have e-mailed your password reset link!');
     }
 }
