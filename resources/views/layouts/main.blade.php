@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{ $url.'css/universal.css' }}">
     <link rel="stylesheet" href="{{ $url.'css/decoration.css' }}">
 
-    <link rel="icon" type="image/x-icon" href="$url.'/img/logo 1.png'">
+    <link rel="icon" type="image/x-icon" href="{{ $url.'/img/logo 1.png' }}">
 
         
     <style>
@@ -85,7 +85,7 @@
 <!-- -->
                         <!-- Nav Item - User Information -->
 
-                        <li class="nav-item dropdown no-arrow">
+                       <li class="nav-item dropdown no-arrow">
                             @auth
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 medium" style="text-transform: capitalize">{{ auth()->user()->username }}<span ></span></span>
@@ -141,6 +141,7 @@
 
     <!-- Logout Modal-->
 
+ 
 
     <!-- Bootstrap core JavaScript-->
 

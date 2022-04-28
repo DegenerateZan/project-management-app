@@ -106,6 +106,7 @@ Route::get('/platform/checkproject/{id}', 'checkproject');
 });
 // category
 Route::controller(CategoryController::class)->group(function(){
+
 Route::get('/category', 'index')->middleware('auth');
 Route::post('/clients/store', 'store');
 Route::get('/category/getCategory/{id}', 'getCategory');
@@ -121,7 +122,7 @@ Route::get('/recovery','index');
 
 Route::get('/codeverify','codeverify');
 Route::get('/resetpassword','resetpassword');
-
+<
 });
 
 

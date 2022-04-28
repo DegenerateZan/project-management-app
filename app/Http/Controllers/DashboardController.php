@@ -49,7 +49,9 @@ if (Project::where('status', '=' , 0)->count() != 0){
     } else {
         $substasks = 0;
     }
-}
+} // I know this is stupid and fucking retarded but i dont have choice bcus i have to chase deadline
+ } else {
+    $substasks = 0;
  }
 } else {
     $substasks = 0;
@@ -60,10 +62,10 @@ if (Project::where('status', '=' , 0)->count() != 0){
     return view('Dashboard.Dashboard',[
         "title" => "Dashboard",
         "project" => Project::count(),
-        "projectall" => Project::all(),
+        "projectall" => Project::all()->where('status', '!=', "Finish"),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
-        "tasks" => 40
+        "tasks" => $substasks
         
          
 

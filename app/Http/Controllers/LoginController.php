@@ -32,7 +32,7 @@ public function authenticate(Request $request)
         $request->session()->regenerate();
 
 
-        return redirect()->intended('');
+        return redirect()->intended('')->with('toast_success', 'Login Successfully!');
 
     }
 
