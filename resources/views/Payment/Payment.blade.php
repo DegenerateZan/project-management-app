@@ -11,7 +11,7 @@
     </div>
     <div class="card mb-4">
         <div class="card-header">
-            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#modalpayment">
+            <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createpayments" data-bs-toggle="modal" data-bs-target="#modalpayment">
                 <span class="mr-2">Add Payment</span>
                 <i class="fas fa-plus-circle float-right" style="margin-left: 5px ;"></i>
 
@@ -41,23 +41,30 @@
                     </tr>
                 </tfoot>
                 <tbody>
+                    @foreach ($payments as $payment)    
                     <tr>
-                        <td></td>
-                        <td>Managemen Hotel</td>
+                        <td>{{ $payment->user->username }}</td>
+                        <td>{{ $payment->project->name }}</td>
 
-                        <td>Rp. 40000000</td>
-                        <td>Project Price</td>
-                        <td>Not yet Paid off</td>
-                        <td>12 Jun 2023
+                        <td>Rp.{{ $payment->amount }}</td>
+                        <td>{{ $payment->description }}</td>
+                        @if ($payment->status > 0)
+                          <td>Paid Off</td>
+                        @else
+                            <td>Not Yet Paid Off</td>
+                        @endif
+                        <td>{{ $payment->date }}
 
                             <td>
                                 <span style="margin-left: -5%">
-                                    <a  href="#" dataid="" data-bs-toggle="modal" data-bs-target="#modalpayment" class="btn" id="action" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|<a href="#" class="btn text-danger" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                    <a  href="#" data-id="{{ $payment->id }}" data-bs-toggle="modal" data-bs-target="#modalpayment"  id="updatepay" style="color: rgb(41, 0, 205)" ><i class="fas fa-edit"></i></a>
+                                    |<a href="#" class="btn text-danger deletepay" id="action" data-name="{{ $payment->project->name }}" data-id="{{ $payment->id }}" onclick="deletepay()"><i class="fas fa-trash-alt"></i></a>
                                     </span>
                             </td>
 
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -70,7 +77,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="" method="post">
+          <form id="addupdatepay" action="{{ route('payments.store') }}" method="post">
             
           <div class="row">
             <div class="col-sm">
@@ -92,9 +99,9 @@
                     </div>
                     <div class="col-sm">
                         <label for="projects">From Users :</label>
-                        <select class="form-select" aria-label="Default select example" name="project_id">
-                            @foreach ($projects as $project)
-                            <option value="{{ $project->id }}">{{ $project->name }}</option>
+                        <select class="form-select" aria-label="Default select example" name="user_id">
+                            @foreach ($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->username }}</option>
                             @endforeach
                           </select>
                     </div>
@@ -113,10 +120,10 @@
                   <div class="row mt-3">
                       <div class="col-sm">
                           <label for="paymentdate" class="form-label">Payment Date:</label>
-                          <input type="date" id="paymentdate" name="payment-date" class="form-control">
+                          <input type="date" id="date" name="date" class="form-control">
   </div>              <div class="col-sm">
                       <label for="statupem">Payment Status :</label>
-                        <select name="" id="" class="form-control">
+                        <select name="status" id="status" class="form-control">
                             <option value="">Choose Status</option>
                             <option value="1">Paid off</option>
                             <option value="0">Not yet paid off</option>
@@ -128,7 +135,7 @@
   
                      <div class="form-group mt-3">
                         <label for="description-payment"> Desciption Payment :</label>
-                        <textarea class="form-control" name="description-payment" id="description-payment" rows="3"></textarea>
+                        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                       </div>
                   </div>
       
@@ -146,5 +153,6 @@
         </div>
     </div>
 
-
+@include('sweetalert::alert')
 @endsection
+<script src="js/payments.js"></script>

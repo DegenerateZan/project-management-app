@@ -46,6 +46,11 @@ Route::get('/Projects/getProjectsByidClients/{id}', 'getProjectsByidClients');
 // payments
 Route::controller(PaymentsController::class)->group(function(){
 Route::get('/payments','index')->middleware('auth');
+Route::post('/payments/store','store')->name('payments.store');
+Route::get('/payments/delete/{id}','delete');
+Route::post('/payments/update/{id}','update');
+Route::get('/payments/getdataPayments/{id}','getdataPayments');
+Route::get('/payments/getPaymentsByidproject/{id}','getPaymentsByidproject');
 });
 // tasks
 Route::controller(TasksController::class)->group(function(){
@@ -108,7 +113,7 @@ Route::get('/platform/checkproject/{id}', 'checkproject');
 Route::controller(CategoryController::class)->group(function(){
 
 Route::get('/category', 'index')->middleware('auth');
-Route::post('/clients/store', 'store');
+Route::post('/category/store', 'store');
 Route::get('/category/getCategory/{id}', 'getCategory');
 Route::get('/category/checkproject/{id}', 'checkproject');
 
@@ -122,7 +127,7 @@ Route::get('/recovery','index');
 
 Route::get('/codeverify','codeverify');
 Route::get('/resetpassword','resetpassword');
-<
+
 });
 
 

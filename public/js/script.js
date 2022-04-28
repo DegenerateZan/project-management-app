@@ -19,7 +19,7 @@ $(function() {
     });
 
     
-    prosession = $(document).attr('title');
+        prosession = $(document).attr('title');
         console.log(prosession);
         
         namasection = "#".concat(prosession);
@@ -48,25 +48,6 @@ $(function() {
 
     };
 });
-
-    $("#tombolgaji1").click(function(){
-        if(confirm("Yakin ingin mengubah Gaji?")){
-            $("#tombolgaji1").attr("href", "#");
-        }
-        else{
-            return false;
-        }
-    });
-
-    $("#tombolgaji2").click(function(){
-        if(confirm("Yakin ingin mengubah Gaji?")){
-            $("#tombolgaji2").attr("href", "#");
-        }
-        else{
-            return false;
-        }
-    });
-
 
     $('#orderModal').modal({
         keyboard: true,
