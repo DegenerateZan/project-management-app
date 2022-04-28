@@ -18,7 +18,7 @@
 
         </div>
         </div>
-        <div class="card-body" style="overflow-x:auto;"">
+        <div class="card-body" style="overflow-x:auto;">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
@@ -47,7 +47,8 @@
                         <td>{{ $category->name }}</td>
                         <td>
                             <span style="margin-left: -5%">
-                                <a href="" data-bs-toggle="modal"  dataid="{{ $category->id }}"  data-bs-target="#formmodalcategory" class="btn text-success edit-category"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger delete-category" dataid="{{ $category->id; }}" id="action" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                                <a href="" data-bs-toggle="modal"  data-id="{{ $category->id }}"  data-bs-target="#formmodalcategory" class="btn  updatecategory" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|
+                                <a href="#" class="btn text-danger deletecategory" data-id="{{ $category->id }}" id="action" onclick="deletecategory()" ><i class="fas fa-trash-alt"></i></a>
                                 </span>
                         </td>
 
@@ -122,12 +123,12 @@
         </div>
         <div class="modal-body p-6">
 
-              <form id="buatubah" action="" method="post">
-                  
+              <form id="addupdatecategory" action="{{ route('category.store') }}" method="post">
+                  @csrf
                   <div class="container">
                     <label for="nama-client" class="form-label">Category name :</label>
-                    <input type="text" id="nama-category" name="category-name" class="form-control">
-                        <input type="hidden" name="id-category" id="id-c" value="" readonly>
+                    <input type="text" id="name" name="name" class="form-control">
+                        <input type="hidden" name="id" id="id" value="" readonly>
                   </div>
         <div class="modal-footer mt-3">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -143,6 +144,7 @@
     </div>
 </div>
 
-
+@include('sweetalert::alert')
 
 @endsection
+<script src="js/category.js"></script>

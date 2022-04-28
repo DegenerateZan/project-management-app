@@ -42,6 +42,7 @@ Route::get('/projects', 'index')->name('project.index')->middleware('auth');
 Route::post('/projects/update/{id}', 'update')->name('project.update');
 Route::post('/projects/store', 'store')->name('project.store');
 Route::get('projects/delete/{id}','delete')->name('project.delete');
+Route::get('projects/getProjectByidcategory/{id}','getProjectByidcategory')->name('project.getProjectByidcategory');
 Route::get('/projects/getProjectByid/{id}', 'getProjectByid')->name('project.byid');
 Route::get('/Projects/getProjectsByidClients/{id}', 'getProjectsByidClients');
 });
@@ -118,10 +119,11 @@ Route::get('/platform/checkproject/{id}', 'checkproject');
 Route::controller(CategoryController::class)->group(function(){
 
 Route::get('/category', 'index')->middleware('auth');
-Route::post('/category/store', 'store');
+Route::post('/category/store', 'store')->name('category.store');
 Route::get('/category/getCategory/{id}', 'getCategory');
 Route::get('/category/checkproject/{id}', 'checkproject');
-
+Route::post('/category/update/{id}', 'update');
+Route::get('/category/delete/{id}', 'delete');
 
 });
 // recofery
