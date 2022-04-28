@@ -16,7 +16,7 @@
         }
     ?>
     <title>{{ $title }}</title>
-
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -84,11 +84,11 @@
                         <div class="topbar-divider d-none d-sm-block"></div><!-- -->
 <!-- -->
                         <!-- Nav Item - User Information -->
-<<<<<<< HEAD
+
                         <li class="nav-item dropdown no-arrow">
                             @auth
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium">Welcome <span style="font-weight: bold; color: #000">{{ auth()->user()->name }}</span></span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium" style="text-transform: capitalize">{{ auth()->user()->username }}<span ></span></span>
                                     <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                                 </a>
                                 <!-- Dropdown - User Information -->
@@ -103,26 +103,8 @@
                     </ul>
 
                 </nav>
-=======
-                        <li class="nav-item dropdown no-arrow"><!-- -->
-                            @auth<!-- -->
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><!-- -->
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 medium">Welcome <span style="font-weight: bold; color: #000">{{ auth()->user()->username }}</span></span><!-- -->
-                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg"><!-- -->
-                                </a><!-- -->
-                                <!-- Dropdown - User Information --><!-- -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><!-- -->
-                                    <button type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal"><!-- -->
-                                       <!-- --> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
-                                    </button><!-- -->
-                                </div><!-- -->
-                            @endauth<!-- -->
-                        </li><!-- -->
-<!-- -->
-                    </ul><!-- -->
-<!-- -->
-                </nav><!-- -->
->>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
+
+                   
                 <!-- End of Topbar -->
 <!-- -->
                 <!-- Begin Page Content -->
@@ -158,31 +140,7 @@
     </a><!-- -->
 
     <!-- Logout Modal-->
-<<<<<<< HEAD
-    
-=======
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><!-- -->
-        <div class="modal-dialog" role="document"><!-- -->
-            <div class="modal-content"><!-- -->
-                <div class="modal-header"><!-- -->
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Quit?</h5><!-- -->
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><!-- -->
-                        <span aria-hidden="true">×</span><!-- -->
-                    </button><!-- -->
-                </div><!-- -->
-                <div class="modal-body">Click the "Log out" button Below if you want to Quit the Current Session</div><!-- -->
-                <div class="modal-footer"><!-- -->
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button><!-- -->
-                    <!-- -->
-                    <form action="/logout" method="post"><!-- -->
-                        @csrf<!-- -->
-                        <button type="submit" class="btn btn-primary">Log Out</button><!-- -->
-                    </form><!-- -->
-                </div><!-- -->
-            </div><!-- -->
-        </div> <!-- -->
-    </div> <!-- -->
->>>>>>> adc9ed5e596a982d0fecfe15d085f0ab06e63f75
+
 
     <!-- Bootstrap core JavaScript-->
 

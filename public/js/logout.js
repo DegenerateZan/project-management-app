@@ -9,8 +9,6 @@ function logout(){
         if (willDelete) {
           window.location = '/logout'
           
-        } else {
-            window.location = '/';
         }
       });
 }

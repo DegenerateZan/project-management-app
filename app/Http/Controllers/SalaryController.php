@@ -14,7 +14,7 @@ class SalaryController extends Controller
      
      
       return view('salary.salary',[
-          "title" => "salary",
+          "title" => "Salary",
           "developers" => Developers::all(),          
           "salaries" => Salary::with('developer')->with('user')->get(),
           "users" => User::all()
@@ -25,14 +25,13 @@ class SalaryController extends Controller
     {
       // dd($request);
       $request->validate([
-        'user_id' => 'required',
+        // 'user_id' => 'required',
         'payroll_deducation' => 'required',
         'payroll_date' => 'required',
         // 'payroll_status' => 'required',
       ]);
 
       $salary = new Salary();
-      $salary->user_id = $request->user_id;
       $salary->developer_id = $request->developer_id;
       $salary->salary_amount = $request->salary_amount;
       $salary->payroll_deducation = $request->payroll_deducation;

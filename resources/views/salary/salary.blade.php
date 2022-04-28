@@ -93,12 +93,12 @@
                    
                       <input type="hidden" name="id" id="id" value="" readonly>
                               <div class="container">
-                                  <label for="user_id">User</label>
+                                  {{-- <label for="user_id">User</label>
                                   <select class="form-select" aria-label="Default select example" name="user_id" id="user_id">
                                       @foreach ($users as $user)
                                       <option value="{{ $user->id }}">{{ $user->username }}</option>
                                       @endforeach
-                                    </select>
+                                    </select> --}}
                                 <label for="developer_id">Developer</label>
                                 <select class="form-select" aria-label="Default select example" name="developer_id" id="developer_id">
                                     @foreach ($developers as $developer)
