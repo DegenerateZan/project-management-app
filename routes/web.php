@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\CookieController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\DashboardController;
@@ -13,7 +15,7 @@ use App\Http\Controllers\TasksController;
 use App\Http\Controllers\WagesController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-use App\Http\Controllers\RecoferyController;
+use App\Http\Controllers\RecoveryController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\TaskController;
 use App\Models\Category;
@@ -84,6 +86,9 @@ Route::get('/salary/delete/{id}','delete')->name('salary.delete');
 Route::controller(FinanceController::class)->group(function(){
 Route::get('/finances','index')->middleware('auth');
 });
+Route::controller(FinanceSettingController::class)->group(function(){
+Route::get('/financessettins','index');
+});
 // login
 Route::controller(LoginController::class)->group(function(){
     Route::get('/login', 'index')->name('login')->middleware('guest');
@@ -122,12 +127,18 @@ Route::get('/category/delete/{id}', 'delete');
 
 });
 // recofery
-Route::controller(RecoferyController::class)->group(function(){
+Route::controller(RecoveryController::class)->group(function(){
 
-Route::get('/recovery','index');
+Route::get('/recovery','getEmail');
+Route::post('/postemail','postEmail');
 
+});
 
-Route::get('/codeverify','codeverify');
+Route::controller(RecoveryController::class)->group(function(){
+
+});
+
+Route::controller(PasswordController::class)->group(function(){
 Route::get('/resetpassword','resetpassword');
 
 });

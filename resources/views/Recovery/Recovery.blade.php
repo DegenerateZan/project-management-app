@@ -36,11 +36,22 @@
               <div class="mb-4">
               <h3><strong>Recovery</strong></h3>
               <p class="mb-4">Please enter your email to receive a Recovery code!</p>
+              @if (session('status'))
+              <div class="alert alert-success" role="alert">
+                  {{ session('status') }}
+              </div>
+          @endif
             </div>
-            <form action="#" method="post">
+            <form action="/postemail" method="POST">
+              @csrf
               <div class="form-group first">
                 <label for="username">email</label>
-                <input type="text" class="form-control" id="username">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  placeholder="Email" autocomplete="email" autofocus>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
               </div>
 
