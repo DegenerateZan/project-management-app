@@ -49,14 +49,14 @@
                 </div>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="/payments" >
                     <i class="fas fa-fw fa-money-bill" id="i-Payments"></i>
                     <span id="Payments">Payments</span>
 
                 </a>
 
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/finances" >
                     <i class="fas fa-fw fa-wallet" id="i-Finance"></i>

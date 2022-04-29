@@ -36,9 +36,10 @@
               <div class="mb-4">
               <h3><strong>Code Verify</strong></h3>
               
-              @if()
+              @if(isset($message))
               <span class="btn-success" >Codes has been Sended to {{ $email }} </span>
               <p class="mb-4">Please enter the code from the email!</p>
+              @endif
             </div>
             <form action="#" method="post">
               <div class="form-group first">

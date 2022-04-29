@@ -13,6 +13,7 @@ use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\WagesController;
+use App\Http\Controllers\VerifyController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\RecoveryController;
@@ -47,7 +48,8 @@ Route::get('/Projects/getProjectsByidClients/{id}', 'getProjectsByidClients');
 });
 // payments
 Route::controller(PaymentsController::class)->group(function(){
-Route::get('/payments','index')->middleware('auth');
+Route::get('/payments', 'false');
+Route::get('/payments/from_project/{id}','show')->middleware('auth');
 Route::post('/payments/store','store')->name('payments.store');
 Route::get('/payments/delete/{id}','delete');
 Route::post('/payments/update/{id}','update');
@@ -132,8 +134,8 @@ Route::post('/postemail','postEmail');
 
 });
 
-Route::controller(RecoveryController::class)->group(function(){
-
+Route::controller(VerifyController::class)->group(function(){
+Route::get('/codeverify','index');
 });
 
 Route::controller(PasswordController::class)->group(function(){

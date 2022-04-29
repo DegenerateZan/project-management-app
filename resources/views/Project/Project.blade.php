@@ -18,7 +18,7 @@
              </div>
             </div>
             <div class="card-body" style="overflow-x:auto;"">
-                <table id="datatablesSimple">
+                <table id="datatablesSimple" class="custom-table-size">
                     <thead>
                         <tr>
                             <th data-sortable="false">Client</th>
@@ -29,7 +29,6 @@
                             <th data-sortable="false">Price</th>
                             <th data-sortable="false">Status</th>
                             <th data-sortable="false">Manufacture Date</th>
-                            <th data-sortable="false"></th>
                             
                         </tr>
                     </thead>
@@ -42,7 +41,6 @@
                             <th>Price</th>
                             <th>Status</th>
                             <th>Manufacture Date</th>
-                            <th></th>
                      
                         </tr>
                     </tfoot>
@@ -57,17 +55,43 @@
                             <td>{{ $project->status }}</td>
                             <td>{{ $project->manufacture_date }}
                             
-                            <td>
-                                <span style="margin-left: -5%">
-                                    <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}"><i class="fas fa-edit"></i></a>
 
-                                    |<a href="/tasks/from_project/{{ $project->id }}" class="btn text-warning"><i class="fas fa-tasks"></i></a>
-                 
+                                <div class="dropdown" style="float: right;">
+                                    <button class="btn dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                          <li>
+                                                              <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}">Edit</a>
+                                                          </li>              
+                                                          <li>
+                                                            <a href="#" class="btn text-danger deletepro dropdown-item" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()">Delete</a> 
+                                                        </li>
+                                                        <li>
+                                                            <a href="/tasks/from_project/{{ $project->id }}" class="btn text-warning dropdown-item">Show Tasks</a>
+                                                            </li>
+                                                            
+                                                            <li>
+                                                            <a href="/payments/from_project/{{ $project->id }}" class="btn text-primary dropdown-item">Show Payments</a>
+                                                        </li>
+                                    </ul>
+                                  </div>
+                                               
 
-                                    |<a href="#" class="btn text-danger deletepro" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()"><i class="fas fa-trash-alt"></i></a> 
 
-                                </span>
-                            </td>
+                                  {{-- <li>
+                                    <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}"><i class="fas fa-edit"></i>Edit</a>
+                                </li>
+                                <li>
+                                  <a href="#" class="btn text-danger deletepro" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()"><i class="fas fa-trash-alt"></i>Delete</a> 
+                              </li>
+                                <li>
+                                  <a href="/tasks/from_project/{{ $project->id }}" class="btn text-warning"><i class="fas fa-tasks"></i>Show Tasks</a>
+                                  </li>
+                                <li>
+                                  <a href="/payments/from_project/{{ $project->id }}" class="btn text-primary"><i class="fas fa-tasks"></i>Show Payments</a>
+                              </li> --}}
+
     
                         </td>
                             
