@@ -11,7 +11,7 @@ function deleteproject()
          if (data > 0) {
           swal({
             title: "Projects!",
-            text: "this projects  " + name +  " is being used in payments"  ,
+            text: "Warning!, this Projects Data Cannot Be deleted because is being used by a payments!you can only Edit the projects of it"  ,
             icon: "error",
             })
          } else {

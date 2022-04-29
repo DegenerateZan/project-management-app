@@ -30,4 +30,29 @@ class CategoryController extends Controller
         $resultget = Project::where('category_id', $id)->count();
         echo $resultget;
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+          "name" => "required"
+        ]);
+        $category = new Category();
+        $category->name = $request->name;
+        if($category->save()) {
+            return redirect('/category')->with('success', 'Category Created Successfully!');   
+        }
+    }
+    public function update(Request $request, $id)
+    {
+        $category = Category::find($id);
+        if ($category->update($request->all())) {
+            return redirect('/category')->with('toast_success', 'Category Created Successfully!');
+        }
+    }
+    public function delete($id)
+    {
+        $category = Category::find($id);
+        if ($category->delete()) {
+            return redirect('/category')->with('toast_success', 'Category Created Successfully!');
+        }
+    }
 }

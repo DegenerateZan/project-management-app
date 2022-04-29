@@ -12,7 +12,7 @@ function deldev()
             if (data > 0) {
                 swal({
                      title: "Developers!",
-                     text: "this developers is being used "+ data +" data salary",
+                     text: "Warning!, this Developers Data Cannot Be deleted because is being used by a salaries!you can only Edit the Developers of it",
                      icon: "error",
                      })
             } else {

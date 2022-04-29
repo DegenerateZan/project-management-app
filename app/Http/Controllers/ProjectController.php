@@ -78,6 +78,13 @@ class ProjectController extends Controller{
             return redirect('/projects')->with('toast_success', 'Projects Update Successfully!'); 
         }
      }
+     public function getProjectByidcategory($id){
+
+         $projects = Project::where('category_id', $id)->count();
+         echo json_encode($projects);
+
+
+     }
 }
 
 

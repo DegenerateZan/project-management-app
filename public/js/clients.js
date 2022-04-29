@@ -15,7 +15,7 @@
                if (projects > 0) {
                    swal({
                      title: "Clients!",
-                     text: "this clients is being used "+ data +" projects ",
+                     text: "Warning!, this Clients Data Cannot Be deleted because is being used by a Projects!you can only Edit the Clients of it",
                      icon: "error",
                   });
                } else {
