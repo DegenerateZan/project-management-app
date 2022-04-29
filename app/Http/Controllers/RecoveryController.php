@@ -38,6 +38,6 @@ class RecoveryController extends Controller
                   $message->subject('Reset Password Notification');
         });
 
-        return redirect('/login')->with('message', 'We have e-mailed your password reset link!');
+        return redirect('/codeverify')->with($message = true);
     }
 }

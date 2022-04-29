@@ -62,7 +62,11 @@
                         <tr>
                             <td>{{ $task->name }}</td>
                             <td>{{ $task->description }}</td>
-                            <td>Supratman</td>
+                            
+                        
+
+
+                            <td class="btn">Supratman</td>
                             <td>{{ $task->deadline }}
 
 
@@ -95,12 +99,12 @@
                                 <div class="row">
                                     <div class="col-sm">
                                     <label for="nama-proyekT" class="form-label">From Project :</label>
-                                      <input type="hidden" id="id-pr" name="id-project" value="">
-                                          <input type="text" id="project-name" class="form-control" value="" readonly>
+                                      <input type="hidden" id="id-pr" name="id-project" value="{{ $project->id }}">
+                                          <input type="text" id="project-name" class="form-control" value="{{ $project->name }}" readonly>
                                     </div>
                                     <div class="col-sm">
                                     <label for="deadline-proyek" class="form-label">Deadline project :</label>
-                                    <input type="date" id="deadline-project" class="form-control" value="" readonly>
+                                    <input type="date" id="deadline-project" class="form-control" value="{{ $project->deadline }}" readonly>
                           
                                     </div>
                               </div>

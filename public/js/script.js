@@ -5,10 +5,14 @@ $(function() {
 
 
     // delete developer
+    $('td').css("border-bottom", "1px solid #e3e6f0");
 
-     
+    // $('#dropdownMenuButton1').unbind(function(){});
 
-    
+    // $('#dropdownMenuButton1').click(function(){
+    //     $('.custom-table-size').css("margin-bottom", "50px");
+
+    // })
 
     $("#createnew").click(function(){
         console.log('Buat Client Baru Dipencet !')
