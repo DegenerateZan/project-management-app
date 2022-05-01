@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
+
 
 class RecoveryController extends Controller
 {
@@ -34,10 +36,10 @@ class RecoveryController extends Controller
 
         Mail::send('recovery.Email.verify',['code' => $code], function($message) use ($request) {
                   $message->to($request->email);
-                  $message->from('canonrinso@gmail.com');
+                  $message->from('webmediamanagementsoftware@gmail.com');
                   $message->subject('Reset Password Notification');
         });
-
-        return redirect('/codeverify')->with($message = true);
+        Session::flash('status','Email Sended Succesfully'); 
+        return redirect('/codeverify?email='. $request->email);
     }
 }

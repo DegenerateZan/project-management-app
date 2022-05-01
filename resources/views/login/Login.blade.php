@@ -49,6 +49,15 @@
             </div>
             <form action="/login" method="post">
               @csrf
+              @if (session('resetstatus'))
+              <div class="alert alert-success" role="alert">
+
+              <span class="text-success" >Password reset Succesfully</span>
+            </div>
+          
+              
+            
+            @endif
                 <div class="form-group first">
                   <label for="username">Username</label>
                   <input type="text" name="username" class="form-control  @error('email') is-invalid @enderror " id="username" autofocus required value="{{ old('username') }}">
@@ -57,6 +66,7 @@
                     {{ $message }}
                   </div>
                   @enderror
+
                 </div>
                 <div class="form-group last mb-4">
                   <label for="password">Password</label>

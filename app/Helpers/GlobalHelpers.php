@@ -11,6 +11,10 @@
 
         return DB::getPdo()->lastInsertId();
     }
+    // helper dibawah diperuntukan untuk menghapus table reset password
+    function deleteresetpassword(){
+        DB::table('password_resets')->truncate();
+    }
 
 
 

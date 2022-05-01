@@ -36,15 +36,30 @@
               <div class="mb-4">
               <h3><strong>Code Verify</strong></h3>
               
-              @if(isset($message))
-              <span class="btn-success" >Codes has been Sended to {{ $email }} </span>
-              <p class="mb-4">Please enter the code from the email!</p>
-              @endif
+              @if (session('status'))
+              <div class="alert alert-success" role="alert">
+                  {{ session('status') }}
+                <br>
+              <span class="text-success" >Codes has <br>been Sended to {{ $_GET['email'] }} </span>
             </div>
-            <form action="#" method="post">
+          </div>
+              
+            
+            @endif
+            <p class="mb-4">Please enter the Verification code from the email!</p>
+            <p class="mb-3">Protip : if you cannot receive any email you have to use <a href="https://mailtrap.io/">Mailtrap</a></p>
+            
+            <form action="/verify" method="post">
+              @csrf
               <div class="form-group first">
-                <label for="username">email</label>
-                <input type="text" class="form-control" id="username">
+                <label for="code">Vefication Code</label>
+                <input type="hidden" name="email" value="{{ $_GET['email'] }}">
+                <input type="text" name="code" class="form-control" id=code">
+                @error('code')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+                @enderror
 
               </div>
 
@@ -52,10 +67,7 @@
 
 			  <div class="row flex">
 				<div class="col-sm">
-          <a href="/login">
-					<button type="button" class="btn text-white btn-block btn-primary setting-button1">Login Page</button>
-          
-          </a>
+
           <button type="submit" class="btn text-white btn-block btn-primary setting-button">Submit</button>
 
 				</div>

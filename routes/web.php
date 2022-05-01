@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\ResetpasswordController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\DashboardController;
@@ -138,10 +139,12 @@ Route::post('/postemail','postEmail');
 
 Route::controller(VerifyController::class)->group(function(){
 Route::get('/codeverify','index');
+Route::post('/verify','verify');
 });
 
-Route::controller(PasswordController::class)->group(function(){
-Route::get('/resetpassword','resetpassword');
+Route::controller(ResetPasswordController::class)->group(function(){
+Route::get('/resetpassword/{token}','index');
+Route::post('/resetpassword','updatePassword');
 
 });
 
