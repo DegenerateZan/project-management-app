@@ -24,19 +24,19 @@
                             <th data-sortable="false">Client</th>
                             <th data-sortable="false">Project Name</th>
                             <th data-sortable="false">Category</th>
-                            
-                            <th data-sortable="false">Deadline</th>
                             <th data-sortable="false">Price</th>
-                            <th data-sortable="false">Status</th>
+                            <th data-sortable="false">Has Been Paid</th>      
+                            <th data-sortable="false">Remaining Project Price</th>    
+                            <th data-sortable="false">Status Pyment</th>                     
+                            <th data-sortable="false">Status Project</th>
+                            <th data-sortable="false">Deadline</th>
                             <th data-sortable="false">Manufacture Date</th>
-                            
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>Project Name</th>
                             <th>Category</th>
-                            
                             <th>Deadline</th>
                             <th>Price</th>
                             <th>Status</th>
@@ -50,9 +50,12 @@
                             <td>{{ $project->client->name_client }}</td>
                             <td>{{ $project->name }}</td>
                             <td>{{ $project->category->name }}</td>
-                            <td>{{ $project->deadline }}</td>
-                            <td>Rp.{{ $project->price }}</td>
+                            <td>Rp.{{ number_format($project->price, '2',',','.') }}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td>{{ $project->status }}</td>
+                            <td>{{ $project->deadline }}</td>
                             <td>{{ $project->manufacture_date }}
                             
 
@@ -62,17 +65,17 @@
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                           <li>
-                                                              <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}">Edit</a>
+                                                              <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item" id="action" data-id="{{ $project->id }}">Edit</a>
                                                           </li>              
                                                           <li>
                                                             <a href="#" class="btn text-danger deletepro dropdown-item" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()">Delete</a> 
                                                         </li>
                                                         <li>
-                                                            <a href="/tasks/from_project/{{ $project->id }}" class="btn text-warning dropdown-item">Show Tasks</a>
+                                                            <a href="/tasks/from_project/{{ $project->id }}" class=" dropdown-item">Show Tasks</a>
                                                             </li>
                                                             
                                                             <li>
-                                                            <a href="/payments/from_project/{{ $project->id }}" class="btn text-primary dropdown-item">Show Payments</a>
+                                                            <a href="/payments/from_project/{{ $project->id }}" class=" dropdown-item">Show Payments</a>
                                                         </li>
                                     </ul>
                                   </div>

@@ -59,9 +59,9 @@ Route::get('/payments/getPaymentsByidproject/{id}','getPaymentsByidproject');
 });
 // tasks
 Route::controller(TasksController::class)->group(function(){
-
 Route::get('/tasks', 'false');
 Route::get('/tasks/from_project/{id}','show')->middleware('auth');
+Route::get('/tasks/store','store')->name('tasks.store');
 Route::post('/tasks/store', 'store');
 });
 // clients

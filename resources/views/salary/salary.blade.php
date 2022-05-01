@@ -50,10 +50,10 @@
                         <tr>
                             {{-- <td>{{ $salary->user->username }}</td> --}}
                             <td>{{ $salary->developer->name }}</td>
-                            <td>Rp.{{ $salary->salary_amount }}</td>
-                            <td>Rp.{{ $salary->payroll_deducation }}</td>
-                            <td>Rp.{{ $salary->overtime_money }}</td>
-                            <td>Rp.{{ $salary->total_salary_received }}</td>
+                            <td>Rp. {{ number_format($salary->salary_amount, '2',',','.') }}</td>
+                            <td>Rp. {{ number_format($salary->payroll_deducation , '2',',','.') }}</td>
+                            <td>Rp. {{ number_format($salary->overtime_money,  '2',',','.') }}</td>
+                            <td>Rp. {{ number_format($salary->total_salary_received , '2',',','.') }}</td>
                             @if ($salary->payroll_status > 0 ) 
                                 <td>Paid off</td>
                             @else
