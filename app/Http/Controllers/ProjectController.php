@@ -32,7 +32,6 @@ class ProjectController extends Controller{
     public function store(Request $request)
     {
         //  dd($request);
-  
            $request->validate([
               'client_id' => 'required',
               'category_id' => 'required',

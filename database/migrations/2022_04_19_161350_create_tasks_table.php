@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('developer_id');
             $table->string('name');
             $table->string('description');
             $table->boolean('task_status');
             $table->date('deadline');
+            $table->foreign('developer_id')->references('id')->on('developers');
             $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });

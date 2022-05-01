@@ -68,8 +68,8 @@ $(function() {
     //modal projects
 
     $('.createnewp').on('click', function() {
-        $('#formmodallabel').html('Add New Client');
-        $('.modal-footer button[type=submit]').html('Add New Client')
+        $('#formmodallabel').html('Add New Project');
+        $('.modal-footer button[type=submit]').html('Add Project')
 
         $('#client_id').val(null);
         $('#category').val(null);

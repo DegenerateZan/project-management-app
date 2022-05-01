@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Tasks;
+use App\Models\Work;
 use DateTime;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,25 @@ class TasksController extends Controller
     ]);
 
   }
+  public function store(Request $request)
+  {
+  //  
+    $tasks = new Tasks();
+    $tasks->project_id = $request->project_id;
+    $tasks->name = $request->name;
+    $tasks->description = $request->description;
+    $tasks->task_status = $request->task_status;
+    $tasks->deadline = $request->deadline;
+    $tasks->save();
+    
+    // $work = new Work();
+    // $work->developer_id = $request->developer_id;
+    // $work->task_id = $request->task_id;
+    // $work->save();
+    return redirect('/tasks')->with('success', 'Task Created Successfully!');
 
 
-
+  }
 
   public function false(){
     echo "
