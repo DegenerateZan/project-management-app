@@ -32,7 +32,7 @@ if (Project::where('status', '=' , 0)->count() != 0){
         if(Tasks::where('project_id', '=', $id_p)->count() != 0){
         // dibawah yaitu logic untuk menghitung task 
         $countedrowfinished = Tasks::where('project_id', '=', $id_p)->where('task_status', '=' , 1)->count();
-        $countedtotaltasks = Tasks::where('id', '=', $id_p)->count(); // mencari total task berdasarkan id tertentu
+        $countedtotaltasks = Tasks::where('project_id', '=', $id_p)->count(); // mencari total task berdasarkan id tertentu
 
         //penambahan jumlah ke variable master dari hasil looping
         $taskfinish += $countedrowfinished;
