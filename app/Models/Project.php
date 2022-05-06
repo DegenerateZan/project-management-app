@@ -24,6 +24,6 @@ class Project extends Model
     }
     public function payments()
     {
-        return $this->hasMany(ProjectPlatfrom::class);
+        return $this->hasMany(Payment::class);
     }
 }

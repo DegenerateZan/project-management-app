@@ -3,15 +3,67 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\Client;
 use App\Models\Category;
+use App\Models\Payment;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller{
 
     public function index()
     {
+        $projects = Project::with('category')->with('client')->with('payments')->get();
+        // $projects = DB::table('projects')->
+        //     leftjoin('clients', 'clients.id', '=', 'projects.client_id')->
+        //     leftjoin('categories', 'categories.id', '=', 'projects.category_id')->get();
+
+        $payments_count = Payment::where('payment_status', '1')->count();
+        $payments = Payment::where('payment_status', '1')->get();
+            $loop = 1;
+
+            if ($payments_count < 1){
+            $payments_array = null;
+            goto skip;
+            }
+            
+            foreach($payments as $payment){
+                
+                $id_p = $payment->project_id;
+                // if (!isset($i[$id_p][$loop])){
+                //     break;
+                // }
+                
+                
+                
+                
+                $payments_array[$id_p][$loop] = $payment->amount;
+                // var_dump($payments_array);
+                $loop++;
+            }
+        //    die;
+            // foreach($projects as $project){
+            //     var_dump($project);
+            // }
+            // die;
+             
+        //     foreach($projects as $project){
+        //         // var_dump($project);
+                
+        //             foreach($payments as $payment){
+        //                 $id_p = $payment->project_id;
+        
+        //                 $payments_array[$id_p] = $payment->amount;
+        //                 echo $project->name . ' ' . $payments_array[$id_p] . ' ' . $id_p . '<br>' ;
+                        
+        //             }
+ 
+        // }
+        //     die;
+        skip:
         return view('Project.Project',[
             'title' => 'project',
-            'projects' => Project::with('category')->with('client')->get(),
+            'projects' => $projects,
+            // 'payments_array' => '',
+            'payments_array' => $payments_array,
             'clients' => Client::all(),
             'categories' => Category::all(),
         ]);
