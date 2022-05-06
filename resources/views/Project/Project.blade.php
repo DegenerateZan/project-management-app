@@ -35,25 +35,49 @@
                     </thead>
                     <tfoot>
                         <tr>
+                            <th>Client</th>
                             <th>Project Name</th>
                             <th>Category</th>
-                            <th>Deadline</th>
                             <th>Price</th>
-                            <th>Status</th>
+                            <th>Has Been Paid</th>      
+                            <th>Remaining Project Price</th>    
+                            <th>Status Pyment</th>                     
+                            <th>Status Project</th>
+                            <th>Deadline</th>
                             <th>Manufacture Date</th>
                      
                         </tr>
                     </tfoot>
                     <tbody>
+                        
                         @foreach($projects as $project)
+                        <?php $id_row = $project->id;
+                        
+
+                         ?>
                         <tr>
+                            
                             <td>{{ $project->client->name_client }}</td>
                             <td>{{ $project->name }}</td>
                             <td>{{ $project->category->name }}</td>
                             <td>Rp.{{ number_format($project->price, '2',',','.') }}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <?php $total= 0; // total semua payment dari project tertentu yang status nya sudah selesai
+                            if(isset($payments_array[$id_row])){
+                            foreach($payments_array[$id_row] as $payment){ 
+                                $total = $total + $payment;}
+                            }?>
+                            <td>Rp.{{ number_format($total, '2',',','.') }}</td>
+                            <td>Rp.{{ number_format($project->price - $total, '2',',','.') }}</td>
+                            <?php
+
+                            if($total < $project->price) {
+                                $payment_status = "Hasn't Paid off";
+                            } else {
+                                $payment_status = "Paid off";
+                            }
+
+                            ?>
+                            <td>{{ $payment_status }}</td>
                             <td>{{ $project->status }}</td>
                             <td>{{ $project->deadline }}</td>
                             <td>{{ $project->manufacture_date }}
