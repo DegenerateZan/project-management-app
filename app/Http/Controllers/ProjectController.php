@@ -16,8 +16,8 @@ class ProjectController extends Controller{
         //     leftjoin('clients', 'clients.id', '=', 'projects.client_id')->
         //     leftjoin('categories', 'categories.id', '=', 'projects.category_id')->get();
 
-        $payments_count = Payment::where('payment_status', '1')->count();
-        $payments = Payment::where('payment_status', '1')->get();
+        $payments_count = Payment::where('status', '1')->count();
+        $payments = Payment::where('status', '1')->get();
             $loop = 1;
 
             if ($payments_count < 1){

@@ -12,6 +12,7 @@ class LoginController extends Controller
 {
     public function index()
     {
+        deleteresetpassword(); 
         return view('login.Login',[
             "title" => "Login"
     ]);
