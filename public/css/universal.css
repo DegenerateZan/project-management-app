@@ -23,6 +23,17 @@ tbody tr:hover {
     transition: 0.2s;
 }
 
+.change-status {
+    border-radius: 2px;
+    border: 1px solid transparent ;
+    transition: 0.2s;
+}
+
+.change-status:hover {
+    border-radius: 2px;
+    border: 1px solid ;
+}
+
 .createnew span.mr-2 {
     margin: 2px;
 }
@@ -40,7 +51,10 @@ tbody tr:hover {
     margin-left: 5%;
 }
 
-
+.disabled {
+    pointer-events: none;
+    background-color: rgba(218, 218, 218, 0.3);
+}
 
 
 
