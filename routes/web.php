@@ -57,6 +57,8 @@ Route::get('/payments/delete/{id}','delete');
 Route::post('/payments/update/{id}','update');
 Route::get('/payments/getdataPayments/{id}','getdataPayments');
 Route::get('/payments/getPaymentsByidproject/{id}','getPaymentsByidproject');
+Route::get('/payments/changetopaidoff/{id}/{idproject}', "updatetopaidoff");
+Route::get('/payments/changetohasntpaidoff/{id}/{idproject}', 'updatetohasntpaidoff');
 });
 // tasks
 Route::controller(TasksController::class)->group(function(){

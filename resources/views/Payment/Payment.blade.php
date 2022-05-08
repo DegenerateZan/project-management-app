@@ -64,18 +64,39 @@
                         <tr>
                             <td>{{ $payment->project->name }}</td>
     
-                            <td>Rp.{{ $payment->amount }}</td>
+       
+                            <td>Rp.{{ number_format($payment->amount, '2',',','.') }}</td>
                             <td>{{ $payment->description }}</td>
-                            @if ($payment->status > 0)
-                              <td>Paid Off</td>
-                            @else
-                                <td>Not Yet Paid Off</td>
-                            @endif
+                            <?php
+                            if($payment->status > 0){
+
+                              
+                               $payment_status = '<span style="color: green">Paid Off</span>';
+                               $p_status = true;
+                            } else {
+                                $p_status = false;
+                                $payment_status = '<span style="color: red">Not Yet Paid Off</span>';
+                                }
+                                    ?>
+                             <td>
+                                
+                                <div class="btn-group" style="width: 60%">
+                                    <div class="change-status btn btn-sm dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                      {!! $payment_status !!}
+                                    </div>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li class="@if($p_status === true) disabled  @endif"><a class="dropdown-item" href="/payments/changetopaidoff/{{ $payment->id }}/{{ $project->id }} "><span style="color: green">Paid Off</span></a></li>
+                                      <li class=" @if($p_status === false) disabled @endif"><a class="dropdown-item" href="/payments/changetohasntpaidoff/{{ $payment->id }}/{{ $project->id }}"><span style="color: red">Not Yet Paid Off</span></a></li>
+                                    </ul>
+                                  </div>
+                                
+                                
+                                </td>
                             <td>{{ $payment->date }}
     
                                 <td>
                                     <span style="margin-left: -5%">
-                                        <a  href="#" data-id="{{ $payment->id }}" data-bs-toggle="modal" data-bs-target="#modalpayment"  id="updatepay" style="color: rgb(41, 0, 205)" ><i class="fas fa-edit"></i></a>
+                                        <a  href="#" class="updatepay" data-id="{{ $payment->id }}" data-bs-toggle="modal" data-bs-target="#modalpayment"  id="updatepay" style="color: rgb(41, 0, 205)" ><i class="fas fa-edit"></i></a>
                                         |<a href="#" class="btn text-danger deletepay" id="action" data-name="{{ $payment->project->name }}" data-id="{{ $payment->id }}" onclick="deletepay()"><i class="fas fa-trash-alt"></i></a>
                                         </span>
                                 </td>
@@ -103,13 +124,13 @@
                 </div>
     
               </div>
-                      <input type="hidden" name="id" id="id">
+                      
                       @csrf
                       <div class="container">
                           <div class="row">
                           <div class="col-sm">
                         <label for="projects">From Projects :</label>
-                        <select class="form-select" aria-label="Default select example" name="project_id">
+                        <select class="form-select" aria-label="Default select example" name="project_id" disabled>
                             @foreach ($projects as $project)
                             <option value="{{ $project->id }}">{{ $project->name }}</option>
                             @endforeach
@@ -117,11 +138,11 @@
                         </div>
                         <div class="col-sm">
                             <label for="projects">From Users :</label>
-                            <select class="form-select" aria-label="Default select example" name="user_id" disabled>
-                              
-                                <option value="{{ auth()->user()->id }}">{{ auth()->user()->username }}</option>
-                           
-                              </select>
+                            <input type="hidden" id="iduser" name="user_id" class="form-control" value="{{ auth()->user()->id }}" disabled>
+                            <input type="text" id="username" class="form-control" value="{{ auth()->user()->username }}" disabled>
+
+
+
                         </div>
                     </div>
                       <div class="row mt-2">
@@ -170,7 +191,5 @@
     </div>
             </div>
         </div>
-    
     @include('sweetalert::alert')
     @endsection
-    <script src="js/payments.js"></script>

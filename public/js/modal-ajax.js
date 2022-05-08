@@ -214,7 +214,7 @@ $(function() {
     //modal payments
     $('#createpayments').click(function () { 
         $('.modal-title').html('Add Payments');
-        $('.modal-footer button[type=submit]').html('Change Payments');
+        $('.modal-footer button[type=submit]').html('Add new Payments');
         const id = $(this).attr('data-id');
         $('#addupdatepay').attr('action', '/payments/store');
         $('#project_id').val(null)
@@ -226,7 +226,8 @@ $(function() {
 
     });
 
-    $('#updatepay').click(function () { 
+    $('.updatepay').click(function () {
+        console.log('update payments click!'); 
         $('.modal-title').html('Change existing Data Payments');
         $('.modal-footer button[type=submit]').html('Change Payments');
         const id = $(this).attr('data-id');
@@ -235,11 +236,11 @@ $(function() {
             url: "/payments/getdataPayments/".concat(id),
             dataType: "json",
             success: function (data) {
-                $('#project_id').val(data.project_id)
-                $('#user_id').val(data.user_id)
+                console.log(data);
                 $('#amount').val(data.amount)
                 $('#status').val(data.status)
                 $('#description').val(data.description)
+                
                 $('#date').val(data.date)
 
 

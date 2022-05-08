@@ -65,7 +65,7 @@ class PaymentsController extends Controller
        $paymnets->status = $request->status;
        $paymnets->description = $request->description;
        if ($paymnets->save()) {
-        return redirect('/payments')->with('success', ' Data Payment Created Successfully!');    
+        return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');    
        }
    }
    public function delete($id){
@@ -77,7 +77,7 @@ class PaymentsController extends Controller
    public function update(Request $request, $id){
        $payments = Payment::find($id);
        if ($payments->update($request->all())) {
-        return redirect('/payments')->with('toast_success', ' Data Payments Update Successfully!');
+        return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!');
        }
    }
    public function getdataPayments($id)
@@ -90,4 +90,16 @@ class PaymentsController extends Controller
        $payments = Payment::where('project_id', $id)->count();
        echo json_encode($payments);
    }
+   public function updatetopaidoff($id, $id_project){
+        $updatepaidoff = Payment::find($id);
+        if ($updatepaidoff->update(array('status'=>true))) {
+            return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span class="text-success"> Paid off </span> Update Successfully!');
+           }
+   }
+   public function updatetohasntpaidoff($id, $id_project){
+    $updatehasntpaidoff = Payment::find($id);
+    if ($updatehasntpaidoff->update(array('status'=>false))) {
+        return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span style="color red"> Hasnt paid off </span> Update Successfully!');
+       }
+}
 }

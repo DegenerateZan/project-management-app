@@ -71,13 +71,13 @@
                             <?php
 
                             if($total < $project->price) {
-                                $payment_status = "Hasn't Paid off";
+                                $payment_status = "<span class='text-warning'>Hasn't Paid off</span>";
                             } else {
-                                $payment_status = "Paid off";
+                                $payment_status = "<span class='text-success'>Paid off</span>";
                             }
 
                             ?>
-                            <td>{{ $payment_status }}</td>
+                            <td><?= $payment_status ?></td>
                             <td>{{ $project->status }}</td>
                             <td>{{ $project->deadline }}</td>
                             <td>{{ $project->manufacture_date }}
