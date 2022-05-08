@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('developers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_developer');
             $table->string('account_number')->default('kosong');
             $table->string('telephone_number');
             $table->string('address');

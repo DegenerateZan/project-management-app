@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->decimal('amount');
             $table->string('description');
-            $table->boolean('status');
+            $table->boolean('payment_status');
             $table->date('date');
             $table->foreign('project_id')->references('id')->on('projects');
             $table->foreign('user_id')->references('id')->on('users');

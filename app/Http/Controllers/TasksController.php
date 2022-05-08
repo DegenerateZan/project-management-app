@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Developers;
 use App\Models\Project;
 use App\Models\Tasks;
 use App\Models\Work;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TasksController extends Controller
 {
@@ -17,7 +19,8 @@ class TasksController extends Controller
  
   public function show($parameter){
     $project = Project::find($parameter);
-    $tasks = Tasks::all()->where('project_id', $parameter);
+    $tasks = Tasks::where('project_id' ,$parameter)->join('developers', 'tasks.developer_id', '=' , 'developers.id')->join('projects', 'tasks.project_id', '=' , 'projects.id')->get();
+    $developer = Developers::all();
     $p_date = date_format(new DateTime($project['deadline']), 'd M Y');
 
     $now = new DateTime();
@@ -30,6 +33,7 @@ class TasksController extends Controller
       'project' => $project,
       'title' => 'Tasks',
       'tasks' => $tasks,
+      'developer' => $developer,
       'string_date' => $p_date,
       'bool_deadline_project'=> $p_late
     ]);
@@ -37,32 +41,33 @@ class TasksController extends Controller
   }
   public function store(Request $request)
   {
-  //  
+    // dd($request);
     $tasks = new Tasks();
+    $tasks->developer_id = $request->developer_id;
     $tasks->project_id = $request->project_id;
-    $tasks->name = $request->name;
+    $tasks->name = $request->name_tasks;
     $tasks->description = $request->description;
     $tasks->task_status = $request->task_status;
     $tasks->deadline = $request->deadline;
-    $tasks->save();
+    if ($tasks->save()) {
+      return redirect('/tasks/from_project/'.$request->project_id)->with('success', 'Task Created Successfully!');
+    }
     
-    // $work = new Work();
-    // $work->developer_id = $request->developer_id;
-    // $work->task_id = $request->task_id;
-    // $work->save();
-    return redirect('/tasks')->with('success', 'Task Created Successfully!');
-
+  
 
   }
 
-  public function false(){
-    echo "
-      <script>
-          alert('Warning! you need to choose which project first to show Tasks!');
-          window.location.href = '/projects'
-      </script>
 
-    ";
-    die;
+  public function getataTasksByid($id)
+  {
+    $tasks = Tasks::find($id);
+    echo json_encode($tasks);
+  }
+  public function update(Request $request, $id)
+  {
+   $tasks = Tasks::find($id);
+   if ($tasks->update($request->all())) {
+    return redirect('/tasks/from_project/'.$request->project_id)->with('toast_success', 'Task Update  Successfully!');
+   }
   }
 }

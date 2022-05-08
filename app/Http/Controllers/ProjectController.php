@@ -99,7 +99,7 @@ class ProjectController extends Controller{
   
            $projects->client_id = $request->client_id;
            $projects->category_id = $request->category_id;
-           $projects->name = $request->name;
+           $projects->name_project = $request->name;
            $projects->status = $request->status;
            $projects->deadline = $request->deadline;
            $projects->price = $request->price;
