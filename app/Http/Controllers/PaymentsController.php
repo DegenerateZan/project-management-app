@@ -51,7 +51,8 @@ class PaymentsController extends Controller
 
 
    public function store(Request $request)
-   {
+   {    
+       dd($request);
        $request->validate([
            "project_id" => "required",
            "user_id" => "required"

@@ -11,7 +11,8 @@ $(function() {
 
 
     //modal client
-    $('.createnew').on('click', function() {
+    $(document).on('click','.createnew',function(){
+
         $('#formmodallabel').html('Add New Client');
         $('.modal-footer button[type=submit]').html('Add New Client')
 
@@ -28,7 +29,8 @@ $(function() {
 
     });
 
-    $('.tampilmodalubah').on('click', function() {
+    $(document).on('click','.tampilmodalubah',function(){
+
         $('#formmodallabel').html('Change existing Client');
         $('.modal-footer button[type=submit]').html('Change Client')
         
@@ -66,8 +68,8 @@ $(function() {
 
 
     //modal projects
+    $(document).on('click','.createnewp',function(){
 
-    $('.createnewp').on('click', function() {
         $('#formmodallabel').html('Add New Project');
         $('.modal-footer button[type=submit]').html('Add Project')
 
@@ -87,8 +89,8 @@ $(function() {
 
 
 
+    $(document).on('click','.tampilmodalubahp',function(){
 
-    $('.tampilmodalubahp').on('click', function() {
         $('#formmodallabel').html('Change existing Project');
         $('.modal-footer button[type=submit]').html('Change Project')
       
@@ -126,7 +128,8 @@ $(function() {
 
 
     //modal developer
-    $('.createnewdeveloper').on('click', function() {
+    $(document).on('click','.createnewdeveloper',function(){
+
         $('#formmodallabel').html('Add New Client');
         $('.modal-footer button[type=submit]').html('Add New Client')
 
@@ -142,7 +145,8 @@ $(function() {
 
     });
 
-    $('.updatedeveloper').click(function () { 
+    $(document).on('click','.updatedeveloper',function(){
+
        $('#formmodallabel').html('Change existing Developer');
        $('.modal-footer button[type=submit]').html('Change Developer');
 
@@ -167,7 +171,8 @@ $(function() {
     });
 
     // modal salary
-    $('.createsalary').click(function(){
+    $(document).on('click','.createsalary',function(){
+
         $('.modal-title').html('Add Salary');
         $('.modal-footer button[type=submit]').html('Add ');
         $('#id').val('')
@@ -182,7 +187,9 @@ $(function() {
         // $('#addupdatesalary').attr('action', '/salary/store')
         
     });
-    $('.updatesalary').click(function () { 
+
+    $(document).on('click','.updatesalary',function(){
+
         $('.modal-title').html('Change existing Data Salary');
         $('.modal-footer button[type=submit]').html('Change Salary');
 
@@ -212,7 +219,8 @@ $(function() {
 
 
     //modal payments
-    $('#createpayments').click(function () { 
+    $(document).on('click','#createpayments',function(){
+
         $('.modal-title').html('Add Payments');
         $('.modal-footer button[type=submit]').html('Add new Payments');
         const id = $(this).attr('data-id');
@@ -226,7 +234,9 @@ $(function() {
 
     });
 
-    $('.updatepay').click(function () {
+    $(document).on('click','.updatepay',function(){
+
+    
         console.log('update payments click!'); 
         $('.modal-title').html('Change existing Data Payments');
         $('.modal-footer button[type=submit]').html('Change Payments');
@@ -249,8 +259,8 @@ $(function() {
         
     });
     //modal category
+    $(document).on('click', "#createnewc",function(){
 
-    $("#createnewc").click(function(){
         console.log('modal buat Category')
 
         $('#modallabel').html('Add New Category');
@@ -260,11 +270,12 @@ $(function() {
         $('#addupdatecategory').attr('action', 'category/store');
     } );
 
-    $(".updatecategory").click(function(){
+
+    $(document).on('click', ".updatecategory",function(){
         console.log('modal ubah Category')
         $('#modallabel').html('Edit Existing category');
         $('.modal-footer button[type=submit]').html('Change Category');
-        const id = this.getAttribute('dataid');
+        const id = this.getAttribute('data-id');
         console.log(id);
         $('#addupdatecategory').attr('action', 'category/update/'.concat(id))
         $.ajax({
@@ -280,7 +291,8 @@ $(function() {
             });
     })
 
-    $(".delete-category").click(function(){
+    $(document).on('click', ".delete-category",function(){
+
         $('.loading').show();
 
         $('.true').hide();
@@ -307,7 +319,9 @@ $(function() {
 
     //modal platform
 
-    $("#createnew-p").click(function(){
+    $(document).on('click',"#createnew-p",function(){
+
+    
         $('#labelmodal').html('Add New Platform');
 
         $('#nama-platform').val(null);
@@ -315,7 +329,9 @@ $(function() {
 
     } );
 
-    $(".edit-platform").click(function(){
+    $(document).on('click',".edit-platform",function(){
+
+   
         $('#labelmodal').html('Edit Existing Platform');
         $('.modal-footer button[type=submit]').html('Change Platform');
         var id = this.getAttribute('dataid');
@@ -332,8 +348,9 @@ $(function() {
             }
             });
     })
+    
+    $(document).on('click',".delete-platform",function(){
 
-    $(".delete-platform").click(function(){
         $('.loading').show();
 
         $('.true').hide();

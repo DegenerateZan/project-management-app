@@ -130,7 +130,7 @@
                           <div class="row">
                           <div class="col-sm">
                         <label for="projects">From Projects :</label>
-                        <select class="form-select" aria-label="Default select example" name="project_id" disabled>
+                        <select class="form-select" aria-label="Default select example" name="project_id">
                             @foreach ($projects as $project)
                             <option value="{{ $project->id }}">{{ $project->name }}</option>
                             @endforeach
@@ -138,7 +138,7 @@
                         </div>
                         <div class="col-sm">
                             <label for="projects">From Users :</label>
-                            <input type="hidden" id="iduser" name="user_id" class="form-control" value="{{ auth()->user()->id }}" disabled>
+                            <input type="text" id="iduser" name="user_id" class="form-control" value="{{ auth()->user()->id }}" >
                             <input type="text" id="username" class="form-control" value="{{ auth()->user()->username }}" disabled>
 
 

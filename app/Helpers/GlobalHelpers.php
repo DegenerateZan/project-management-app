@@ -16,6 +16,8 @@
         DB::table('password_resets')->truncate();
     }
 
-
+    function checkpaymentstatus($id){
+        if(DB::table('payments')->where(''));
+    }
 
 ?>
