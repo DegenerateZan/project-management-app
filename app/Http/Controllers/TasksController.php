@@ -58,16 +58,22 @@ class TasksController extends Controller
   }
 
 
-  public function getataTasksByid($id)
-  {
-    $tasks = Tasks::find($id);
-    echo json_encode($tasks);
-  }
+  public function getTaskByid($id)
+    {
+        $projects = Tasks::find($id);
+        echo json_encode($projects);
+    }
   public function update(Request $request, $id)
   {
    $tasks = Tasks::find($id);
    if ($tasks->update($request->all())) {
     return redirect('/tasks/from_project/'.$request->project_id)->with('toast_success', 'Task Update  Successfully!');
    }
+  }
+  public function deleted($id){
+    $tasks = Tasks::find($id);
+    if ($tasks->delete()) {
+      return redirect('/tasks/from_project/'.$tasks->project_id)->with('toast_success', 'Task Update  Successfully!');
+    }
   }
 }

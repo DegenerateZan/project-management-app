@@ -22,7 +22,7 @@ return new class extends Migration
             $table->boolean('task_status');
             $table->date('deadline');
             $table->foreign('developer_id')->references('id')->on('developers');
-            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

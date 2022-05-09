@@ -107,7 +107,7 @@ $(function() {
                 console.log(project.name);
                 $('#client_id').val(project.client_id)
                 $('#category').val(project.category_id);
-                $('#name').val(project.name);
+                $('#name').val(project.name_project);
                 $('#deadline').val(project.deadline);
                 $('#status').val(project.status);
                 $('#manufacture_date').val(project.manufacture_date);
@@ -117,9 +117,27 @@ $(function() {
             }
 
         });
+    });
+    // modal tasks 
+    $('.tampilmodalubaht').click(function () { 
+        $('.modal-title').html('Change Task');
+        $('.modal-footer button[type=submit]').html('Change')
+        var id = $(this).attr('data-id');
+        $('.addupdatetasks').attr('action', 'tasks/update/'.concat(id));
+        $.ajax({
+            url: "/tasks/getTasksByid/".concat(id),
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                $('#id').val(data.id);
+                $('#name').val(data.name)
+                $('#developer_id').val(data.developer_id)
+                $('#description').val(data.description)
+                $('#status').val(data.task_status)
+                $('#date').val(data.deadline)
 
-
-
+           }
+        });
         
     });
 
@@ -280,84 +298,7 @@ $(function() {
             });
     })
 
-    $(".delete-category").click(function(){
-        $('.loading').show();
+  
 
-        $('.true').hide();
-        $('.false').hide();
-        var id = this.getAttribute('dataid');
-        console.log(id);
-        $.ajax({
-            url: '/category/checkproject/'.concat(id),
-            success: function(data) {
-                var category = JSON.parse(data);
-                console.log(data);
-                if (category > 0){
-                    $('.loading').hide();
-                    $('.true').show();
-                    $('.false').hide();
-                } else {
-                    $('.loading').hide();
-                    $('.true').hide();
-                    $('.false').show();
-                }
-            }
-        });
-    })
-
-    //modal platform
-
-    $("#createnew-p").click(function(){
-        $('#labelmodal').html('Add New Platform');
-
-        $('#nama-platform').val(null);
-        $('#id-p').val(null);
-
-    } );
-
-    $(".edit-platform").click(function(){
-        $('#labelmodal').html('Edit Existing Platform');
-        $('.modal-footer button[type=submit]').html('Change Platform');
-        var id = this.getAttribute('dataid');
-        console.log(id);
-        $.ajax({
-            url: '/platform/getPlatform/'.concat(id),
-            datatype: 'json',
-            success: function(data) {
-                var platform = JSON.parse(data);
-                console.log(platform);
-                $('#nama-platform').val(platform.name);
-                $('#id-p').val(platform.id);
-
-            }
-            });
-    })
-
-    $(".delete-platform").click(function(){
-        $('.loading').show();
-
-        $('.true').hide();
-        $('.false').hide();
-        var id = this.getAttribute('dataid');
-        console.log(id);
-        $.ajax({
-            url: '/platform/checkproject/'.concat(id),
-            success: function(data) {
-                var platform = JSON.parse(data);
-                console.log(data);
-                if (platform > 0){
-                    $('.loading').hide();
-                    $('.true').show();
-                    $('.false').hide();
-                } else {
-                    $('.loading').hide();
-                    $('.true').hide();
-                    $('.false').show();
-                }
-            }
-        });
-    })
-
-
-
+   
 });

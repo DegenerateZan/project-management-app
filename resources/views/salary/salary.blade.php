@@ -49,7 +49,7 @@
                         @foreach ($salaries as $salary)
                         <tr>
                             {{-- <td>{{ $salary->user->username }}</td> --}}
-                            <td>{{ $salary->developer->name }}</td>
+                            <td>{{ $salary->developer->name_developer }}</td>
                             <td>Rp. {{ number_format($salary->salary_amount, '2',',','.') }}</td>
                             <td>Rp. {{ number_format($salary->payroll_deducation , '2',',','.') }}</td>
                             <td>Rp. {{ number_format($salary->overtime_money,  '2',',','.') }}</td>
@@ -93,16 +93,10 @@
                    
                       <input type="hidden" name="id" id="id" value="" readonly>
                               <div class="container">
-                                  {{-- <label for="user_id">User</label>
-                                  <select class="form-select" aria-label="Default select example" name="user_id" id="user_id">
-                                      @foreach ($users as $user)
-                                      <option value="{{ $user->id }}">{{ $user->username }}</option>
-                                      @endforeach
-                                    </select> --}}
                                 <label for="developer_id">Developer</label>
                                 <select class="form-select" aria-label="Default select example" name="developer_id" id="developer_id">
                                     @foreach ($developers as $developer)
-                                    <option value="{{ $developer->id }}">{{ $developer->name }}</option>
+                                    <option value="{{ $developer->id }}">{{ $developer->name_developer }}</option>
                                     @endforeach
                                   </select>
                               <div class="row mt-2">
@@ -119,7 +113,7 @@
                               <div class="row mt-3">
                                   <div class="col-sm">
                                       <label for="deadlinetask" class="form-label">Payroll Deduction</label>
-                                      <input type="number" id="payroll_deducation" name="payroll_deducation" class="form-control">
+                                      <input type="text" id="payroll_deducation" name="payroll_deducation" class="form-control">
               </div>              <div class="col-sm">
                                   <label for="statupem">Payment Status :</label>
                                     <select name="payroll_status" id="payroll_status" class="form-control" name="payroll_status">
@@ -144,7 +138,7 @@
                                       <div class="col-sm">
                                     <label for="totalreceivesalary"> Total Received Salary :</label>
                                     <div class="form-group d-flex">
-                                   <input type="number" class="form-control" id="total_salary_received" name="total_salary_received">
+                                   <input type="text" class="form-control" id="total_salary_received" name="total_salary_received" value="{{ $salary->salary_amount - $salary->payroll_deducation + $salary->overtime_money}}">
                                   </div>
                                 </div>
                                 </div>
@@ -155,6 +149,7 @@
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       <button type="submit" class="btn btn-primary">Add Wage</button>
                       </form>
+                    </div>
                   </div>
                   </div>
                 </div>

@@ -52,6 +52,7 @@ class PaymentsController extends Controller
 
    public function store(Request $request)
    {
+    //    dd($request);
        $request->validate([
            "project_id" => "required",
            "user_id" => "required"
@@ -62,7 +63,7 @@ class PaymentsController extends Controller
        $paymnets->user_id = $request->user_id;
        $paymnets->amount = $request->amount;
        $paymnets->date = $request->date;
-       $paymnets->status = $request->status;
+       $paymnets->payment_status = $request->status;
        $paymnets->description = $request->description;
        if ($paymnets->save()) {
         return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');    

@@ -16,9 +16,9 @@
             </div>
             </div>
             <div class="card">
-                <div class="container" style="margin-right: 20%">
+                <div class="container" style="margin-right: 50%">
                     <div class="heading-t-project mt-3">
-                        <h4>From Project : {{ $project->name; }}</h4>
+                        <h4>From Project : {{ $project->name_project }}</h4>
                     </div>
                     <div class="d-sm-flex">
                         <div class="row inline-block">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body" style="overflow-x:auto;"">
+            <div class="card-body" style="overflow-x:auto;">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
@@ -62,7 +62,7 @@
 
                         @foreach ($payments as $payment)    
                         <tr>
-                            <td>{{ $payment->project->name }}</td>
+                            <td>{{ $payment->project->name_project }}</td>
     
        
                             <td>Rp.{{ number_format($payment->amount, '2',',','.') }}</td>
@@ -130,16 +130,16 @@
                           <div class="row">
                           <div class="col-sm">
                         <label for="projects">From Projects :</label>
-                        <select class="form-select" aria-label="Default select example" name="project_id" disabled>
                             @foreach ($projects as $project)
-                            <option value="{{ $project->id }}">{{ $project->name }}</option>
+                            <input type="hidden" class="form-control" name="project_id" value="{{ $project->id }}" readonly>
+                            <input type="text"  class="form-control" value="{{ $project->name_project }}" readonly>
                             @endforeach
                           </select>
                         </div>
                         <div class="col-sm">
                             <label for="projects">From Users :</label>
-                            <input type="hidden" id="iduser" name="user_id" class="form-control" value="{{ auth()->user()->id }}" disabled>
-                            <input type="text" id="username" class="form-control" value="{{ auth()->user()->username }}" disabled>
+                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}" class="form-control">
+                            <input type="text" id="username" class="form-control" value="{{ auth()->user()->username }}" readonly>
 
 
 

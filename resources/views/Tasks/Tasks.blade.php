@@ -10,11 +10,7 @@
             </div>
             <div class="card mb-4">
                 <div class="card-header">
-                    <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px;" id="createnew" onclick="adddetail()" >
-                        <span class="mr-2">Add Detail</span>
-                    <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
-                </div> 
-                    <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+                    <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="addtasks" data-bs-toggle="modal" data-bs-target="#modaltask">
                         <span class="mr-2">Add Task</span>
                     <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
                 </div>
@@ -22,7 +18,7 @@
                 <div class="card">
                     <div class="container" style="margin-right: 30%">
                         <div class="heading-t-project mt-3">
-                            <h4>From Project : {{ $project->name; }}</h4>
+                            <h4>From Project : {{ $project->name_project }}</h4>
                         </div>
                         <div class="d-sm-flex">
                             <div class="row inline-block">
@@ -64,6 +60,7 @@
                         @foreach($tasks as $task)
                             <tr>
                                 <td>{{ $task->name }}</td>
+                                <td>{{ $task['name_developer'] }}</td>
                                 <td>{{ $task->description }}</td>
                                 @if ($task->task_status > 0)
                                     <td>Finish</td>
@@ -74,8 +71,8 @@
 
                                 <td style="min-width: 100px">
                                     <span style="margin-left: -5%;">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#formmodaltask" data-id="{{ $task->id }}" class="btn tampilmodalubah" id="action" style="color: rgb(41, 0, 205);"><i class="fas fa-edit"></i></a>
-                                        |<a href="#" class="btn text-danger deletec"  data-id="{{ $task->id }}"  data-name="{{ $task->name_client }}" onclick="deleteclients()"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modaltask" data-id="{{ $task->id }}" class="tampilmodalubaht" id="action" style="color: rgb(41, 0, 205);"><i class="fas fa-edit"></i></a>
+                                        |<a href="#" class=" text-danger deletec"  data-id="{{ $task->id }}"  data-name="{{ $task->name }}" onclick="deletetasks()"><i class="fas fa-trash-alt"></i></a>
                                     </span>
                                 </td>
                             </tr>
@@ -109,7 +106,7 @@
                                               <select name="developer_id" id="developer_id" class="form-control">
                                                   <option value="">--Select Developers--</option>
                                                   @foreach ($developer as $item)    
-                                                  <option value="{{ $item->id }}">{{ $item->name_developers }}</option>
+                                                  <option value="{{ $item->id }}">{{ $item->name_developer}}</option>
                                                   @endforeach
                                               </select>
                                           </div>
@@ -155,17 +152,35 @@
                               <button type="submit" class="btn btn-primary">Add</button>
                               </form>
                           </div>
-                          
+                          </div>
+                        </div>
+                    </div>  
                 </div>
                 </div>
                 </div>
             </div>
         </div>
+        @include('sweetalert::alert')
     @endsection
    @section('script')
        <script>
-           function adddetail(){
-              console.log('oke');
+           function deletetasks(){
+             $('.deletec').click(function (e) { 
+                 id = $(this).attr('data-id');
+                 name = $(this).attr('data-name');
+                 swal({
+  text: "Are you Sure Deleted Tasks " + name + "?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    window.location = '/tasks/deleted/'.concat(id)
+  }
+});
+                 
+             });
            }
        </script>
    @endsection
