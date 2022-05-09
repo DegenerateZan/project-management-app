@@ -39,13 +39,14 @@
                 </tfoot>
                 <tbody>
                   <?php $i=1  ?>
-                  @foreach ($categories as $category)
+                  @foreach ($platforms as $platform)
                   <tr>
                       <td>{{ $i }}</td>
-                      <td>{{ $category->name }}</td>
+                      <td>{{ $platform->name }}</td>
                       <td>
                           <span style="margin-left: -5%">
-                          <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success edit-platform" dataid="{{ $category->id }}" id="action"><i class="fas fa-pencil-alt"></i></a>|<a href="#" class="btn text-danger delete-platform" id="deleteplatform" dataid="{{ $category->id }}" data-bs-toggle="modal" data-bs-target="#formmodalhapus"><i class="fas fa-trash-alt"></i></a>
+                          <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success edit-platform" data-id="{{ $platform->id }}" id="action"><i class="fas fa-pencil-alt"></i></a>|
+                          <a href="#" class=" text-danger delete-platform" data-name="{{ $platform->name }}" id="deleteplatform" data-id="{{ $platform->id }}" onclick="deleteplatform()"><i class="fas fa-trash-alt"></i></a>
                           </span>
                       </td>
                   </tr>     
@@ -114,11 +115,11 @@
         </div>
         <div class="modal-body p-6">
 
-              <form id="buatubah" action="#" method="post">
-                  
+              <form  action="/platform/store" method="post">
+                  @csrf
                   <div class="container">
                     <label for="nama-client" class="form-label">Platform Name :</label>
-                    <input type="text" id="nama-platform" name="nama" class="form-control">
+                    <input type="text" id="name" name="name" class="form-control">
                         <input type="hidden" name="id" id="id-p" value="" readonly>
                   </div>
         <div class="modal-footer mt-3">
@@ -129,7 +130,7 @@
       </div>
     </div>
   </div>
-  
+  @include('sweetalert::alert')
   
 
 
@@ -138,7 +139,6 @@
 </div>
 </div>
 
-
-
+<script src="js/platform.js"></script>
 @endsection
 

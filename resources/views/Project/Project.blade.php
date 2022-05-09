@@ -58,7 +58,7 @@
                         <tr>
                             
                             <td>{{ $project->client->name_client }}</td>
-                            <td>{{ $project->name }}</td>
+                            <td>{{ $project->name_project }}</td>
                             <td>{{ $project->category->name }}</td>
                             <td>Rp.{{ number_format($project->price, '2',',','.') }}</td>
                             <?php $total= 0; // total semua payment dari project tertentu yang status nya sudah selesai

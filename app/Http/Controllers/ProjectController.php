@@ -12,13 +12,9 @@ class ProjectController extends Controller{
     public function index()
     {
         $projects = Project::with('category')->with('client')->with('payments')->get();
-        // $projects = DB::table('projects')->
-        //     leftjoin('clients', 'clients.id', '=', 'projects.client_id')->
-        //     leftjoin('categories', 'categories.id', '=', 'projects.category_id')->get();
-
-        $payments_count = Payment::where('status', '1')->count();
-        $payments = Payment::where('status', '1')->get();
-            $loop = 1;
+        $payments_count = Payment::where('payment_status', '1')->count();
+        $payments = Payment::where('payment_status', '1')->get();
+        $loop = 1;
 
             if ($payments_count < 1){
             $payments_array = null;
@@ -99,7 +95,7 @@ class ProjectController extends Controller{
   
            $projects->client_id = $request->client_id;
            $projects->category_id = $request->category_id;
-           $projects->name = $request->name;
+           $projects->name_project = $request->name;
            $projects->status = $request->status;
            $projects->deadline = $request->deadline;
            $projects->price = $request->price;

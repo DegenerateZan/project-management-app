@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('client_id')->nullable();
             $table->unsignedBigInteger('category_id');
-            $table->string('name');
+            $table->string('name_project');
             $table->decimal('price');
             $table->date('deadline');
             $table->date('manufacture_date');

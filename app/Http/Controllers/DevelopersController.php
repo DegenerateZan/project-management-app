@@ -41,7 +41,7 @@ class DevelopersController extends Controller
 
          $developer = new Developers();
 
-         $developer->name = $request->name;
+         $developer->name_developer = $request->name;
          $developer->address = $request->address;
          $developer->account_number = $request->account_number;
          $developer->telephone_number = $request->telephone_number;

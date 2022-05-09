@@ -45,7 +45,7 @@
                 <tbody>
                     @foreach ($developers as $developer)
                     <tr>
-                        <td>{{ $developer->name }}</td>
+                        <td>{{ $developer->name_developer }}</td>
                         <td>{{ $developer->telephone_number }}</td>
                         <td>{{ $developer->address }}</td>
                         <td>{{ $developer->email }}</td>

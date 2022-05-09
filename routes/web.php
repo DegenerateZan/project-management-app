@@ -64,7 +64,10 @@ Route::get('/payments/changetohasntpaidoff/{id}/{idproject}', 'updatetohasntpaid
 Route::controller(TasksController::class)->group(function(){
 Route::get('/tasks', 'false');
 Route::get('/tasks/from_project/{id}','show')->middleware('auth');
+Route::post('/tasks/from_project/tasks/update/{id}','update')->middleware('auth');
+Route::get('/tasks/getTasksByid/{id}','getTaskByid')->middleware('auth');
 Route::get('/tasks/store','store')->name('tasks.store');
+Route::get('/tasks/deleted/{id}','deleted');
 Route::post('/tasks/store', 'store');
 });
 // clients
@@ -112,6 +115,10 @@ Route::get('/developers/getDeveloper/{id}','getDeveloper');
 // platform
 Route::controller(PlatformController::class)->group(function(){
 Route::get('/platform', 'index')->middleware('auth');
+Route::post('/platform/store', 'store')->middleware('auth')->name('platform.store');
+Route::get('/platform/delete/{id}', 'delete');
+Route::get('/platform/getPlatformByid/{id}', 'getplatform')->middleware('auth');
+Route::post('/platform/update/{id}', 'update')->middleware('auth');
 
 // Route::post('/clients/store', 'store');
 Route::get('/platform/getPlatform/{id}', 'getPlatform');

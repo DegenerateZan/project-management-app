@@ -24,12 +24,12 @@ class SalaryController extends Controller
     public function store(Request $request)
     {
       // dd($request);
-      $request->validate([
-        // 'user_id' => 'required',
-        'payroll_deducation' => 'required',
-        'payroll_date' => 'required',
-        // 'payroll_status' => 'required',
-      ]);
+      // $request->validate([
+      //   // 'user_id' => 'required',
+      //   'payroll_deducation' => 'required',
+      //   'payroll_date' => 'required',
+      //   // 'payroll_status' => 'required',
+      // ]);
 
       $salary = new Salary();
       $salary->developer_id = $request->developer_id;
