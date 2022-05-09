@@ -47,7 +47,7 @@
                         <td>{{ $category->name }}</td>
                         <td>
                             <span style="margin-left: -5%">
-                                <a href="" data-bs-toggle="modal"  data-id="{{ $category->id }}"  data-bs-target="#formmodalcategory" class="btn  updatecategory" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|
+                                <a href="" data-bs-toggle="modal"  data-id="{{ $category->id }}"  data-bs-target="#formmodalcategory" class="updatecategory btn" style="color: rgb(41, 0, 205)"><i class="fas fa-edit"></i></a>|
                                 <a href="#" class="btn text-danger deletecategory" data-id="{{ $category->id }}" id="action" onclick="deletecategory()" ><i class="fas fa-trash-alt"></i></a>
                                 </span>
                         </td>

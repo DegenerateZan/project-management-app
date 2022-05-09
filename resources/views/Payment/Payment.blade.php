@@ -134,7 +134,7 @@
                             <input type="hidden" class="form-control" name="project_id" value="{{ $project->id }}" readonly>
                             <input type="text"  class="form-control" value="{{ $project->name_project }}" readonly>
                             @endforeach
-                          </select>
+                       
                         </div>
                         <div class="col-sm">
                             <label for="projects">From Users :</label>
