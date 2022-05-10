@@ -21,22 +21,30 @@ class DashboardController extends Controller
     
 // pengkondisian jika ada project di table project
 if(Project::count() != 0){
+    //var_dump('table project ada!');
+
     //pencarian project yang tidak selesai
-    $searchunfinishedproject = Project::where('status', '=' , 0)->get(['id']);
+    $searchunfinishedproject = Project::where('status', '!=' , 'Finish')->get(['id']);
+    //var_dump($searchunfinishedproject);
+    
     // pengkondisian jika hasil pencarian project yang tidak selesai itu tidak 0 atau kosong 
-if (Project::where('status', '=' , 0)->count() != 0){
+if (Project::where('status', '!=' , 'Finish')->count() != 0){
+    //var_dump('table project dimana selain finish ada!');
+
     // looping pencarian semua tasks dari project yang belum selesai
     foreach($searchunfinishedproject as $a){
         $id_p = $a['id'];
+        //var_dump('id_project : '.$id_p);
         // pengkondisisan pencarian jika taks yag dimiliki project
-        if(Tasks::where('project_id', '=', $id_p)->count() != 0){
+        if(Tasks::where('project_id', '=', $id_p)->count() > 0 ){
+            //var_dump('task denagn id project ini ada!');
         // dibawah yaitu logic untuk menghitung task 
         $countedrowfinished = Tasks::where('project_id', '=', $id_p)->where('task_status', '=' , 1)->count();
         $countedtotaltasks = Tasks::where('project_id', '=', $id_p)->count(); // mencari total task berdasarkan id tertentu
 
         //penambahan jumlah ke variable master dari hasil looping
-        $taskfinish += $countedrowfinished;
-        $totaltasks += $countedtotaltasks;
+        $taskfinish = $taskfinish + $countedrowfinished;
+        $totaltasks = $totaltasks + $countedtotaltasks;
         }
     
     
@@ -57,15 +65,22 @@ if (Project::where('status', '=' , 0)->count() != 0){
     $substasks = 0;
  }
 
-
+ $finnance_count = Finance::count();
+ if ($finnance_count < 1){
+    $finance_amount = 0;
+    
+    } else {
+        $finance_amount = Finance::latest('updated_at')->first()->pluck('finance_amount');
+    }
 
     return view('Dashboard.Dashboard',[
         "title" => "Dashboard",
         "project" => Project::all(),
         "totalprojects" => Project::count(),
         "developers" => Developers::count(),
-        "finances" => Finance::all(),
-        "tasks" => $substasks
+        "finances" => $finance_amount,
+        "substacks" => $substasks,
+        "tasks" => Tasks::all()->where('task_status', '0')
         
          
 

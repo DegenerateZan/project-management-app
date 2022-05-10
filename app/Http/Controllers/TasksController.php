@@ -19,7 +19,10 @@ class TasksController extends Controller
  
   public function show($parameter){
     $project = Project::find($parameter);
-    $tasks = Tasks::where('project_id' ,$parameter)->join('developers', 'tasks.developer_id', '=' , 'developers.id')->join('projects', 'tasks.project_id', '=' , 'projects.id')->get();
+    //$tasks = Tasks::where('project_id' ,$parameter)->join
+    //('developers', 'tasks.developer_id', '=' , 'developers.id')->get();
+    $tasks = Tasks::all();
+    $developers_count = Developers::count();
     $developer = Developers::all();
     $p_date = date_format(new DateTime($project['deadline']), 'd M Y');
 
@@ -29,12 +32,28 @@ class TasksController extends Controller
     $p_late = true;
 }
 
+
+
+
+if ($developers_count < 1){
+$developers_array = null;
+goto skip;
+}
+
+foreach($developer as $d){    
+    $id_d = $d->id;
+    $developers_array[$id_d] = $d->name_developer;
+    
+}
+
+  skip:
     return view('tasks.tasks',[
       'project' => $project,
       'title' => 'Tasks',
       'tasks' => $tasks,
       'developer' => $developer,
       'string_date' => $p_date,
+      'developers_array' => $developers_array,
       'bool_deadline_project'=> $p_late
     ]);
 
@@ -45,7 +64,7 @@ class TasksController extends Controller
     $tasks = new Tasks();
     $tasks->developer_id = $request->developer_id;
     $tasks->project_id = $request->project_id;
-    $tasks->name = $request->name_tasks;
+    $tasks->name = $request->name;
     $tasks->description = $request->description;
     $tasks->task_status = $request->task_status;
     $tasks->deadline = $request->deadline;

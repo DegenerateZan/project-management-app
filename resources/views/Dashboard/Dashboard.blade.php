@@ -22,11 +22,11 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Total Revenue : </div>
-                                @foreach ($finances as $item)    
+                                  
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.
-                                    {{ $item->amount }}
+                                    {{ $finances }}
                                 </div>
-                                @endforeach
+                                
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -71,11 +71,11 @@
                                         untuk mendapatakan presentase 
                                         Rumusnya adalah (bagian yang telah selesai) / (total bagian x 100 ) --}}
 
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $tasks }}%</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $substacks }}%</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: {{ $tasks }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: {{ $substacks }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                     @foreach ($project as $item)    
                                     <tr>
                                       <th scope="row">{{ $i }}</th>
-                                      <td>{{ $item->name }}</td>
+                                      <td>{{ $item->name_project }}</td>
                                       <td>{{ $item->status }}</td>
                                       <td>{{ $item->deadline }}</td>
                                     </tr>
@@ -196,12 +196,20 @@
                                   </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($tasks as $task)
+                                    <?php $i = 1; ?>
                                   <tr>
-                                    <th>1</th>
-                                    <td>login</td>
-                                    <td>Incomplete</td>
-                                    <td>12 Maret 2023</td>
+                                    <th>{{ $i }}</th>
+                                    <td>{{ $task->name }}</td>
+                                    @if ($task->task_status > 0)
+                                    <td>Finish</td>
+                                @else
+                                    <td>On Progress</td>
+                                @endif
+                                    <td>{{ $task->deadline }}</td>
                                   </tr>
+                                  <?php $i++ ?>
+                                  @endforeach
 
 
                                 </tbody>

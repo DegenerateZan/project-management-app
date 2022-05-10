@@ -58,9 +58,10 @@
                         <tbody>
 
                         @foreach($tasks as $task)
+                        <?php $id_d = $task->developer_id ?>
                             <tr>
                                 <td>{{ $task->name }}</td>
-                                <td>{{ $task['name_developer'] }}</td>
+                                <td>{{ $developers_array[$id_d] }}</td>
                                 <td>{{ $task->description }}</td>
                                 @if ($task->task_status > 0)
                                     <td>Finish</td>
@@ -114,7 +115,7 @@
                                           <div class="row mt-3">
                                             <div class="col-sm">
                                                 <label for="name" class="form-label">Task Name</label>
-                                                <input type="teks" id="name" name="name_tasks" class="form-control">
+                                                <input type="teks" id="name" name="name" class="form-control">
                                             </div>
                                           </div>
                                           <div class="row mt-3">

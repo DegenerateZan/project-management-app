@@ -28,9 +28,6 @@ class ProjectController extends Controller{
                 //     break;
                 // }
                 
-                
-                
-                
                 $payments_array[$id_p][$loop] = $payment->amount;
                 // var_dump($payments_array);
                 $loop++;
