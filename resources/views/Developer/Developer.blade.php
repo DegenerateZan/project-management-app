@@ -77,28 +77,28 @@
                                         @csrf
                                       <div class="container mt-3">
                                         <label for="dev-name" class="form-label">Dev. Name:</label>
-                                        <input type="text" id="name" name="name" class="form-control" value="">
+                                        <input type="text" id="name" name="name" class="form-control" required>
                                             <input type="hidden" name="id" id="id" value="" readonly>
                                       <div class="row mt-4">
                                           <div class="col-sm">
                                               <label for="no-rek" class="form-label">Account Number:</label>
-                                              <input type="number" id="account_number" name="account_number" class="form-control">
+                                              <input type="text" id="account_number" name="account_number" class="form-control" required>
                       
                                           </div>
                                            <div class="col-sm">
                                                   <label for="telephone_number" class="form-label">Tel. Number :</label>
-                                                  <input type="number" id="telephone_number" name="telephone_number" class="form-control">
+                                                  <input type="text" id="telephone_number" name="telephone_number" class="form-control" required>
                                          </div>
                                       </div>
                                       <div class="row mt-3">
                                           <div class="col-sm">
                                               <label for="nama-instansi" class="form-label">Address :</label>
-                                              <input type="text" id="address" name="address" class="form-control">
+                                              <input type="text" id="address" name="address" class="form-control" required>
                       
                                           </div>
                                            <div class="col-sm">
                                                   <label for="email" class="form-label">Email :</label><br>
-                                                  <input type="email" id="email" name="email" class="form-control"><br>
+                                                  <input type="email" id="email" name="email" class="form-control" required><br>
                                          </div>
                                       </div>
                                       </div>

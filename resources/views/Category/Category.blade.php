@@ -126,9 +126,9 @@
               <form id="addupdatecategory" action="{{ route('category.store') }}" method="post">
                   @csrf
                   <div class="container">
-                    <label for="nama-client" class="form-label">Category name :</label>
-                    <input type="text" id="name" name="name" class="form-control">
-                        <input type="hidden" name="id" id="id" value="" readonly>
+                    <label for="category" class="form-label">Category name :</label>
+                    <input type="text" id="name" name="name" class="form-control" value="">
+                        <input type="hidden" name="id" id="id" value="">
                   </div>
         <div class="modal-footer mt-3">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

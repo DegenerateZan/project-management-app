@@ -4,8 +4,8 @@
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Platform Settings</h1>
-      <span class="mr-4">Data Platform</span>
+        <h2 class="h3 mb-0 text-gray-800">Platform Settings / <a href="/ProjectPlatform" class="text-gray-800" style="text-decoration: none;" >Platform Projects</a></h2>
+      <span class="mr-4">Data Platform </span>
     </div>
 {{--  --}}
     <div class="card mb-4">
@@ -18,7 +18,7 @@
 
         </div>
         </div>
-        <div class="card-body" style="overflow-x:auto;"">
+        <div class="card-body" style="overflow-x:auto;">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
@@ -45,7 +45,7 @@
                       <td>{{ $platform->name }}</td>
                       <td>
                           <span style="margin-left: -5%">
-                          <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn text-success edit-platform" data-id="{{ $platform->id }}" id="action"><i class="fas fa-pencil-alt"></i></a>|
+                          <a href="" data-bs-toggle="modal" data-bs-target="#formmodalplatform" class="btn edit-platform" data-id="{{ $platform->id }}" id="action" style="color: rgb(41, 0, 205);"><i class="fas fa-edit"></i></a>|
                           <a href="#" class=" text-danger delete-platform" data-name="{{ $platform->name }}" id="deleteplatform" data-id="{{ $platform->id }}" onclick="deleteplatform()"><i class="fas fa-trash-alt"></i></a>
                           </span>
                       </td>

@@ -12,6 +12,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectPlatfromController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\WagesController;
 use App\Http\Controllers\VerifyController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\TaskController;
 use App\Models\Category;
 use App\Models\Developers;
+use App\Models\ProjectPlatfrom;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,16 +119,24 @@ Route::controller(PlatformController::class)->group(function(){
 Route::get('/platform', 'index')->middleware('auth');
 Route::post('/platform/store', 'store')->middleware('auth')->name('platform.store');
 Route::get('/platform/delete/{id}', 'delete');
+Route::get('/getDataProjectPlatform/{id}', 'getDataProjectPlatform');
+Route::post('/ProjectPlatform/update/{id}', 'ProjectPlatformUpdate');
+Route::get('/ProjectPlatform', 'ProjectPlatform')->middleware('auth');
+Route::get('/ProjectPlatform/deleted/{id}', 'ProjectPlatformDeleted')->middleware('auth');
+Route::post('/ProjectPlatform/store', 'ProjectPlatformStore')->middleware('auth')->name('projectplatform.store');
 Route::get('/platform/getPlatformByid/{id}', 'getplatform')->middleware('auth');
 Route::post('/platform/update/{id}', 'update')->middleware('auth');
-
-// Route::post('/clients/store', 'store');
 Route::get('/platform/getPlatform/{id}', 'getPlatform');
 Route::get('/platform/checkproject/{id}', 'checkproject');
+Route::get('/getDataProjectPlatformByidPlatforms/{id}', 'getDataProjectPlatformByidPlatforms');
 
 
 
 });
+// projectplatform
+
+    
+
 // category
 Route::controller(CategoryController::class)->group(function(){
 

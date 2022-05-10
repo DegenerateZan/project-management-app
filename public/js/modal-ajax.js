@@ -145,8 +145,8 @@ $(function() {
 
     //modal developer
     $('.createnewdeveloper').on('click', function() {
-        $('#formmodallabel').html('Add New Client');
-        $('.modal-footer button[type=submit]').html('Add New Client')
+        $('#formmodallabel').html('Add New Developer');
+        $('.modal-footer button[type=submit]').html('Add')
 
         $('#name').val(null);
         $('#telephone_number').val(null);
@@ -172,7 +172,7 @@ $(function() {
         success: function(data) {
            var developer = JSON.parse(data);
            console.log(developer);
-           $('#name').val(developer.name);
+           $('#name').val(developer.name_developer);
            $('#address').val(developer.address);
            $('#telephone_number').val(developer.telephone_number);
            $('#account_number').val(developer.account_number);
@@ -282,15 +282,15 @@ $(function() {
         console.log('modal ubah Category')
         $('#modallabel').html('Edit Existing category');
         $('.modal-footer button[type=submit]').html('Change Category');
-        const id = this.getAttribute('dataid');
+        const id = this.getAttribute('data-id');
         console.log(id);
         $('#addupdatecategory').attr('action', 'category/update/'.concat(id))
         $.ajax({
             url: '/category/getCategory/'.concat(id),
             datatype: 'json',
             success: function(data) {
-                var category = JSON.parse(data);
-                console.log(category);
+                console.log(data);
+                var category = JSON.parse(data)
                 $('#name').val(category.name);
                 $('#id').val(category.id);
        
