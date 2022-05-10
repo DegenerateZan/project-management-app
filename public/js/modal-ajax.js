@@ -141,6 +141,28 @@ $(function() {
         
     });
 
+    $('.tampilmodalubaht').click(function () { 
+        $('.modal-title').html('Change Task');
+        $('.modal-footer button[type=submit]').html('Change')
+        var id = $(this).attr('data-id');
+        $('.addupdatetasks').attr('action', 'tasks/update/'.concat(id));
+        $.ajax({
+            url: "/tasks/getTasksByid/".concat(id),
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                $('#id').val(data.id);
+                $('#name').val(data.name)
+                $('#developer_id').val(data.developer_id)
+                $('#description').val(data.description)
+                $('#status').val(data.task_status)
+                $('#date').val(data.deadline)
+
+           }
+        });
+        
+    });
+
 
 
     //modal developer
