@@ -121,10 +121,12 @@ $(function() {
         });
     });
     // modal tasks 
-    $('.tampilmodalubaht').click(function () { 
+
+    $(document).on('click','.tampilmodalubaht',function(){
         $('.modal-title').html('Change Task');
         $('.modal-footer button[type=submit]').html('Change')
-        var id = $(this).attr('data-id');
+        id = this.getAttribute('data-id');
+        console.log(id);
         $('.addupdatetasks').attr('action', 'tasks/update/'.concat(id));
         $.ajax({
             url: "/tasks/getTasksByid/".concat(id),
