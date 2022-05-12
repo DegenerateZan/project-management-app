@@ -98,7 +98,7 @@
                   <form action="finance/store" method="post">
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label">Finance Amount</label>
-                      <input type="text" class="form-control"id="coba" name="FinanceAmount">
+                      <input type="text" class="form-control"id="amount" name="amount">
                     </div>
                     <div class="mb-3">
                       <label for="mutation" class="form-label">Mutation</label>
@@ -110,11 +110,11 @@
                     </div>
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                      <input type="date" class="form-control" id="exampleFormControlInput1" >
+                      <input type="date" class="form-control" id="date" name="date" >
                     </div>
                     <div class="mb-3">
                       <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <textarea class="form-control" id="" rows="3"></textarea>
                     </div>
                   </form>
                 </div>
@@ -143,7 +143,7 @@
          url: "/finance/getdatapayments",
          dataType: "json",
          success: function (data) {
-          document.getElementById("coba").value = data;
+          document.getElementById("amount").value = data;
          }
        });
     } else {

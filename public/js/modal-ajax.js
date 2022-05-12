@@ -11,7 +11,8 @@ $(function() {
 
 
     //modal client
-    $('.createnew').on('click', function() {
+    $(document).on('click','.createnew',function(){
+
         $('#formmodallabel').html('Add New Client');
         $('.modal-footer button[type=submit]').html('Add New Client')
 
@@ -28,7 +29,8 @@ $(function() {
 
     });
 
-    $('.tampilmodalubah').on('click', function() {
+    $(document).on('click','.tampilmodalubah',function(){
+
         $('#formmodallabel').html('Change existing Client');
         $('.modal-footer button[type=submit]').html('Change Client')
         
@@ -66,8 +68,8 @@ $(function() {
 
 
     //modal projects
+    $(document).on('click','.createnewp',function(){
 
-    $('.createnewp').on('click', function() {
         $('#formmodallabel').html('Add New Project');
         $('.modal-footer button[type=submit]').html('Add Project')
 
@@ -87,8 +89,8 @@ $(function() {
 
 
 
+    $(document).on('click','.tampilmodalubahp',function(){
 
-    $('.tampilmodalubahp').on('click', function() {
         $('#formmodallabel').html('Change existing Project');
         $('.modal-footer button[type=submit]').html('Change Project')
       
@@ -132,10 +134,13 @@ $(function() {
 
     });
 
-    $('.tampilmodalubaht').click(function () { 
+  
+
+    $(document).on('click','.tampilmodalubaht',function(){
         $('.modal-title').html('Change Task');
         $('.modal-footer button[type=submit]').html('Change')
-        var id = $(this).attr('data-id');
+        id = this.getAttribute('data-id');
+        console.log(id);
         $('.addupdatetasks').attr('action', 'tasks/update/'.concat(id));
         $.ajax({
             url: "/tasks/getTasksByid/".concat(id),
@@ -160,7 +165,6 @@ $(function() {
     $('.createnewdeveloper').on('click', function() {
         $('#formmodallabel').html('Add New Developer');
         $('.modal-footer button[type=submit]').html('Add')
-
         $('#name').val(null);
         $('#telephone_number').val(null);
         $('#account_number').val(null);
@@ -173,7 +177,8 @@ $(function() {
 
     });
 
-    $('.updatedeveloper').click(function () { 
+    $(document).on('click','.updatedeveloper',function(){
+
        $('#formmodallabel').html('Change existing Developer');
        $('.modal-footer button[type=submit]').html('Change Developer');
 
@@ -198,7 +203,8 @@ $(function() {
     });
 
     // modal salary
-    $('.createsalary').click(function(){
+    $(document).on('click','.createsalary',function(){
+
         $('.modal-title').html('Add Salary');
         $('.modal-footer button[type=submit]').html('Add ');
         $('#id').val('')
@@ -213,7 +219,9 @@ $(function() {
         // $('#addupdatesalary').attr('action', '/salary/store')
         
     });
-    $('.updatesalary').click(function () { 
+
+    $(document).on('click','.updatesalary',function(){
+
         $('.modal-title').html('Change existing Data Salary');
         $('.modal-footer button[type=submit]').html('Change Salary');
 
@@ -243,7 +251,8 @@ $(function() {
 
 
     //modal payments
-    $('#createpayments').click(function () { 
+    $(document).on('click','#createpayments',function(){
+
         $('.modal-title').html('Add Payments');
         $('.modal-footer button[type=submit]').html('Add new Payments');
         const id = $(this).attr('data-id');
@@ -257,7 +266,9 @@ $(function() {
 
     });
 
-    $('.updatepay').click(function () {
+    $(document).on('click','.updatepay',function(){
+
+    
         console.log('update payments click!'); 
         $('.modal-title').html('Change existing Data Payments');
         $('.modal-footer button[type=submit]').html('Change Payments');   
@@ -277,8 +288,8 @@ $(function() {
         
     });
     //modal category
+    $(document).on('click', "#createnewc",function(){
 
-    $("#createnewc").click(function(){
         console.log('modal buat Category')
 
         $('#modallabel').html('Add New Category');
@@ -288,7 +299,8 @@ $(function() {
         $('#addupdatecategory').attr('action', 'category/store');
     } );
 
-    $(".updatecategory").click(function(){
+
+    $(document).on('click', ".updatecategory",function(){
         console.log('modal ubah Category')
         $('#modallabel').html('Edit Existing category');
         $('.modal-footer button[type=submit]').html('Change Category');
@@ -308,7 +320,91 @@ $(function() {
             });
     })
 
-  
+    $(document).on('click', ".delete-category",function(){
+
+        $('.loading').show();
+
+        $('.true').hide();
+        $('.false').hide();
+        var id = this.getAttribute('dataid');
+        console.log(id);
+        $.ajax({
+            url: '/category/checkproject/'.concat(id),
+            success: function(data) {
+                var category = JSON.parse(data);
+                console.log(data);
+                if (category > 0){
+                    $('.loading').hide();
+                    $('.true').show();
+                    $('.false').hide();
+                } else {
+                    $('.loading').hide();
+                    $('.true').hide();
+                    $('.false').show();
+                }
+            }
+        });
+    })
+
+    //modal platform
+
+    $(document).on('click',"#createnew-p",function(){
+
+    
+        $('#labelmodal').html('Add New Platform');
+
+        $('#nama-platform').val(null);
+        $('#id-p').val(null);
+
+    } );
+
+    $(document).on('click',".edit-platform",function(){
+
+   
+        $('#labelmodal').html('Edit Existing Platform');
+        $('.modal-footer button[type=submit]').html('Change Platform');
+        var id = this.getAttribute('dataid');
+        console.log(id);
+        $.ajax({
+            url: '/platform/getPlatform/'.concat(id),
+            datatype: 'json',
+            success: function(data) {
+                var platform = JSON.parse(data);
+                console.log(platform);
+                $('#nama-platform').val(platform.name);
+                $('#id-p').val(platform.id);
+
+            }
+            });
+    })
+    
+    $(document).on('click',".delete-platform",function(){
+
+        $('.loading').show();
+
+        $('.true').hide();
+        $('.false').hide();
+        var id = this.getAttribute('dataid');
+        console.log(id);
+        $.ajax({
+            url: '/platform/checkproject/'.concat(id),
+            success: function(data) {
+                var platform = JSON.parse(data);
+                console.log(data);
+                if (platform > 0){
+                    $('.loading').hide();
+                    $('.true').show();
+                    $('.false').hide();
+                } else {
+                    $('.loading').hide();
+                    $('.true').hide();
+                    $('.false').show();
+                }
+            }
+        });
+    })
+
+
 
    
 });

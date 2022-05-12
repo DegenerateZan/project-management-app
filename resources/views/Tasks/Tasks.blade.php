@@ -110,7 +110,7 @@
                                           <div class="row mt-3">
                                             <div class="col-sm">
                                                 <label for="name" class="form-label">Task Name</label>
-                                                <input type="teks" id="name" name="name_tasks" class="form-control">
+                                                <input type="teks" id="name" name="name" class="form-control">
                                             </div>
                                           </div>
                                           <div class="row mt-3">

@@ -16,7 +16,7 @@ class DeveloperSeeder extends Seeder
     public function run()
     {
         DB::table('developers')->insert([
-            'name' => 'david mahubi',
+            'name_developer' => 'david mahubi',
             'account_number' => '68686868',
             'address' => 'Gambiran',
             'telephone_number' => '0889899',

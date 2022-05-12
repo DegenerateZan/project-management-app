@@ -25,13 +25,17 @@ class TasksController extends Controller
     // die;
     $developer = Developers::all();
     $p_date = date_format(new DateTime($project['deadline']), 'd M Y');
-
     $now = new DateTime();
-
     if($p_date < $now) {
     $p_late = true;
 }
 
+
+
+
+
+
+  skip:
     return view('tasks.tasks',[
       'project' => $project,
       'title' => 'Tasks',
@@ -48,7 +52,7 @@ class TasksController extends Controller
     $tasks = new Tasks();
     $tasks->developer_id = $request->developer_id;
     $tasks->project_id = $request->project_id;
-    $tasks->name = $request->name_tasks;
+    $tasks->name = $request->name;
     $tasks->description = $request->description;
     $tasks->task_status = $request->task_status;
     $tasks->deadline = $request->deadline;

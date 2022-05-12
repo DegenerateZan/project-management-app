@@ -98,13 +98,13 @@ class PaymentsController extends Controller
    }
    public function updatetopaidoff($id, $id_project){
         $updatepaidoff = Payment::find($id);
-        if ($updatepaidoff->update(array('status'=>true))) {
+        if ($updatepaidoff->update(array('payment_status'=>true))) {
             return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span class="text-success"> Paid off </span> Update Successfully!');
            }
    }
    public function updatetohasntpaidoff(Request $request ,$id, $id_project){
     $updatehasntpaidoff = Payment::find($id);
-    if ($updatehasntpaidoff->update(array('status'=>false))) {
+    if ($updatehasntpaidoff->update(array('payment_status'=>false))) {
         return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span style="color red"> Hasnt paid off </span> Update Successfully!');
        }
 }

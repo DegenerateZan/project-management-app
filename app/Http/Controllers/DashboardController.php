@@ -13,6 +13,7 @@ class DashboardController extends Controller
  public function index()
  {
 
+
     // set dashboard tasks %
     $tasksfinish = Tasks::where('task_status', 'Finish')->count();
     $taskall = Tasks::all()->count();
@@ -25,13 +26,15 @@ class DashboardController extends Controller
     
 
 
+
     return view('Dashboard.Dashboard',[
         "title" => "Dashboard",
         "project" => Project::all(),
         "totalprojects" => Project::count(),
         "developers" => Developers::count(),
         "finances" => Finance::all(),
-        "tasks" => $total
+        "task" => $total,
+        "tasks" =>Tasks::all()
         
          
 

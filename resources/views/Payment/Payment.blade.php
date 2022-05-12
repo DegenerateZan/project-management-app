@@ -68,7 +68,7 @@
                             <td>Rp.{{ number_format($payment->amount, '2',',','.') }}</td>
                             <td>{{ $payment->description }}</td>
                             <?php
-                            if($payment->status > 0){
+                            if($payment->payment_status > 0){
 
                               
                                $payment_status = '<span style="color: green">Paid Off</span>';
@@ -83,6 +83,7 @@
                                 <div class="btn-group" style="width: 60%">
                                     <div class="change-status btn btn-sm dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                       {!! $payment_status !!}
+                                      
                                     </div>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                       <li class="@if($p_status === true) disabled  @endif"><a class="dropdown-item" href="/payments/changetopaidoff/{{ $payment->id }}/{{ $project->id }} "><span style="color: green">Paid Off</span></a></li>
@@ -134,7 +135,7 @@
                             <input type="hidden" class="form-control" name="project_id" value="{{ $project->id }}" readonly>
                             <input type="text" class="form-control" value="{{ $project->name_project }}" readonly>
                             @endforeach
-                          </select>
+                       
                         </div>
                         <div class="col-sm">
                             <label for="projects">From Users :</label>

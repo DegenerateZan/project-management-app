@@ -9,6 +9,7 @@ class Developers extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $table = 'developers';
 
     // Fillable data only 
     protected $fillable = [
@@ -27,5 +28,9 @@ class Developers extends Model
     public function salary()
     {
         return $this->hasMany(Salary::class);
+    }
+    public function Tasks()
+    {
+        return $this->hasMany(Tasks::class);
     }
 }
