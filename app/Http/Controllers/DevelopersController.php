@@ -12,13 +12,12 @@ class DevelopersController extends Controller
    public function index()
    {
 
-    $developer = Developers::all();
+     
 
     return view('Developer.Developer',[
        
         "title" => "Developers",
-        "developers" => $developer
-
+        "developers" => Developers::all()
     ]);
    }
    public function getDeveloper($id)
@@ -31,7 +30,7 @@ class DevelopersController extends Controller
       //  dd($request);
 
          $request->validate([
-            'name' => 'required',
+            'name_developer' => 'required',
             'account_number' => 'required',
             'address' => 'required',
             'telephone_number' => 'required',
@@ -41,7 +40,7 @@ class DevelopersController extends Controller
 
          $developer = new Developers();
 
-         $developer->name_developer = $request->name;
+         $developer->name_developer = $request->name_developer;
          $developer->address = $request->address;
          $developer->account_number = $request->account_number;
          $developer->telephone_number = $request->telephone_number;
@@ -69,7 +68,11 @@ class DevelopersController extends Controller
    }
 
    public function update(Request $request, $id){
+      // var_dump($request['request']);
+      // die;
       $developer = Developers::find($id);
+      // print_r($developer);
+      // die;
       if ($developer->update($request->all())) {
          return redirect('/developers')->with('toast_success', 'Developer Update Successfully!');
       }

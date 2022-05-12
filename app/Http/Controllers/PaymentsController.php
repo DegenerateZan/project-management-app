@@ -8,13 +8,14 @@ use DateTime;
 use App\Models\Salary;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Nette\Utils\Json;
 
 class PaymentsController extends Controller
 {
     public function show($parameter){
         $project = Project::find($parameter);
-        $projects = Project::all();
+        $projects = Project::all()->where('id', $parameter);
         $payments = Payment::all()->where('project_id', $parameter);
         $p_date = date_format(new DateTime($project['deadline']), 'd M Y');
     
@@ -25,8 +26,8 @@ class PaymentsController extends Controller
     }
     
         return view('payment.payment',[
-          'project' => $project, // tampil 1 dari project
-          'projects' => $projects, // looping milih project
+          'project' => $project,
+          'projects' =>$projects, // tampil 1 dari projectooping milih project
           'title' => 'Payments',
           'payments' => $payments,
           'string_date' => $p_date,
@@ -63,11 +64,15 @@ class PaymentsController extends Controller
        $paymnets->user_id = $request->user_id;
        $paymnets->amount = $request->amount;
        $paymnets->date = $request->date;
-       $paymnets->payment_status = $request->status;
+       $paymnets->status = $request->status;
        $paymnets->description = $request->description;
        if ($paymnets->save()) {
         return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');    
        }
+   }
+   public function getdatapayment(){
+       $payments = DB::table('payments')->where('status', 1)->sum('amount');
+       echo json_decode($payments);
    }
    public function delete($id){
        $paymnets = Payment::find($id);
@@ -97,7 +102,7 @@ class PaymentsController extends Controller
             return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span class="text-success"> Paid off </span> Update Successfully!');
            }
    }
-   public function updatetohasntpaidoff($id, $id_project){
+   public function updatetohasntpaidoff(Request $request ,$id, $id_project){
     $updatehasntpaidoff = Payment::find($id);
     if ($updatehasntpaidoff->update(array('status'=>false))) {
         return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span style="color red"> Hasnt paid off </span> Update Successfully!');

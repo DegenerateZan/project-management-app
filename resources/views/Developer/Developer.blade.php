@@ -77,7 +77,7 @@
                                         @csrf
                                       <div class="container mt-3">
                                         <label for="dev-name" class="form-label">Dev. Name:</label>
-                                        <input type="text" id="name" name="name" class="form-control" required>
+                                        <input type="text" id="name" name="name_developer" class="form-control" required>
                                             <input type="hidden" name="id" id="id" value="" readonly>
                                       <div class="row mt-4">
                                           <div class="col-sm">

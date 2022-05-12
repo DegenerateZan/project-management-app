@@ -19,9 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger('developer_id');
             $table->string('name');
             $table->string('description');
-            $table->boolean('task_status');
+            $table->enum('task_status', ['Finish', 'Pending', 'On Progress']);
             $table->date('deadline');
-            $table->foreign('developer_id')->references('id')->on('developers');
+            $table->foreign('developer_id')->references('id')->on('developers')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

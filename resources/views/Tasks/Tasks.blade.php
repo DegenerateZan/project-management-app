@@ -10,7 +10,7 @@
             </div>
             <div class="card mb-4">
                 <div class="card-header">
-                    <div class="createnew float-right d-sm-flex align-items-center" style="padding: 5px" id="addtasks" data-bs-toggle="modal" data-bs-target="#modaltask">
+                    <div class="createnewt float-right d-sm-flex align-items-center" style="padding: 5px" id="addtasks" data-bs-toggle="modal" data-bs-target="#modaltask">
                         <span class="mr-2">Add Task</span>
                     <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
                 </div>
@@ -60,13 +60,9 @@
                         @foreach($tasks as $task)
                             <tr>
                                 <td>{{ $task->name }}</td>
-                                <td>{{ $task['name_developer'] }}</td>
+                                <td>{{ $task->name_developer }}</td>
                                 <td>{{ $task->description }}</td>
-                                @if ($task->task_status > 0)
-                                    <td>Finish</td>
-                                @else
-                                    <td>On Progress</td>
-                                @endif
+                                <td>{{ $task->task_status }}</td>
                                 <td>{{ $task->deadline }}</td>
 
                                 <td style="min-width: 100px">
@@ -132,8 +128,9 @@
                                           <label for="statupem"> Status :</label>
                                             <select name="task_status" id="status" class="form-control">
                                                 <option value="">Choose Status</option>
-                                                <option value="1">Finish</option>
-                                                <option value="0">On Progress</option>
+                                                <option value="Finish">Finish</option>
+                                                <option value="On Progress">On Progress</option>
+                                                <option value="Pending">Pending</option>
                                             </select>
                                             
                                         </div>

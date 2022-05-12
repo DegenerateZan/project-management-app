@@ -132,7 +132,7 @@
                         <label for="projects">From Projects :</label>
                             @foreach ($projects as $project)
                             <input type="hidden" class="form-control" name="project_id" value="{{ $project->id }}" readonly>
-                            <input type="text"  class="form-control" value="{{ $project->name_project }}" readonly>
+                            <input type="text" class="form-control" value="{{ $project->name_project }}" readonly>
                             @endforeach
                           </select>
                         </div>
@@ -167,8 +167,8 @@
                                 <option value="1">Paid off</option>
                                 <option value="0">Not yet paid off</option>
                             </select>
-                            
-    </div>
+     
+                       </div>
                           </div>
                            <div class="row">
       

@@ -68,7 +68,7 @@ Route::get('/tasks', 'false');
 Route::get('/tasks/from_project/{id}','show')->middleware('auth');
 Route::post('/tasks/from_project/tasks/update/{id}','update')->middleware('auth');
 Route::get('/tasks/getTasksByid/{id}','getTaskByid')->middleware('auth');
-Route::get('/tasks/store','store')->name('tasks.store');
+Route::post('/tasks/from_project/tasks/store','store')->name('tasks.store');
 Route::get('/tasks/deleted/{id}','deleted');
 Route::post('/tasks/store', 'store');
 });
@@ -94,6 +94,8 @@ Route::get('/salary/delete/{id}','delete')->name('salary.delete');
 });
 // finance
 Route::controller(FinanceController::class)->group(function(){
+Route::get('/finance/getdatapayments', 'getdatapayment');
+Route::get('finace/store', 'store');
 Route::get('/finances','index')->middleware('auth');
 });
 Route::controller(FinanceSettingController::class)->group(function(){
@@ -119,6 +121,7 @@ Route::controller(PlatformController::class)->group(function(){
 Route::get('/platform', 'index')->middleware('auth');
 Route::post('/platform/store', 'store')->middleware('auth')->name('platform.store');
 Route::get('/platform/delete/{id}', 'delete');
+Route::get('/platform/getPlatform/{id}', 'getPlatform');
 Route::get('/getDataProjectPlatform/{id}', 'getDataProjectPlatform');
 Route::post('/ProjectPlatform/update/{id}', 'ProjectPlatformUpdate');
 Route::get('/ProjectPlatform', 'ProjectPlatform')->middleware('auth');

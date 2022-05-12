@@ -18,7 +18,7 @@ function deleteplatform(){
             })
             .then((willDelete) => {
               if (willDelete) {
-                window.location = '/platform/delete/'.concat(id)
+                window.location = '/ProjectPlatform/deleted/'.concat(id)
               }
             });
            }
@@ -72,4 +72,24 @@ $(function(){
     });
  });
 
+    $('.createnewm').click(function(){
+      $('.modal-title').html('Add Platform')
+      $('.modal-footer button[type=submit]').html('Add')
+      $('#name').val(null)
+    });
+    $('.edit-platform').click(function () { 
+      var id = this.getAttribute('data-id')
+      $('.modal-title').html('Change Platform')
+      $('.modal-footer button[type=submit]').html('Change ')
+      $('.addupdateplatfromproject').attr('action' , '/platform/update/'.concat(id))
+      var id = this.getAttribute('data-id');
+      $.ajax({
+        url: "/platform/getPlatform/".concat(id),
+        dataType: "json",
+        success: function (data) {
+          $('#name').val(data.name)
+        }
+      });
+      
+    });
 });

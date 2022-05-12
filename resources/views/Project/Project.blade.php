@@ -9,12 +9,9 @@
         </div>
         <div class="card mb-4">
             <div class="card-header">
-            
-                
                 <div class="createnewp float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew" data-bs-toggle="modal" data-bs-target="#formmodalproject">
                     <span class="mr-2">Add Project</span>
                  <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
- 
              </div>
             </div>
             <div class="card-body" style="overflow-x:auto;"">

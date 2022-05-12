@@ -19,4 +19,8 @@ class Salary extends Model
     {
         return $this->belongsTo(Developers::class);
     }
+    public function finances()
+    {
+        return $this->morphMany(Finance::class, 'financetable');
+    }
 }

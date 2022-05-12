@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('client_id')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->string('name_project');
-            $table->decimal('price');
+            $table->decimal('price',50);
             $table->date('deadline');
             $table->date('manufacture_date');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');

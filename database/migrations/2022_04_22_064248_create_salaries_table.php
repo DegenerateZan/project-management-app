@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('developer_id');
-            $table->decimal('salary_amount');
-            $table->decimal('payroll_deducation');
-            $table->decimal('overtime_money');
+            $table->decimal('salary_amount',50);
+            $table->decimal('payroll_deducation',50);
+            $table->decimal('overtime_money',50);
             $table->boolean('payroll_status');
-            $table->decimal('total_salary_received');
+            $table->decimal('total_salary_received',50);
             $table->date('payroll_date');
             $table->foreign('developer_id')->references('id')->on('developers');
             $table->timestamps();

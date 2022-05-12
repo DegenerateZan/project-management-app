@@ -18,8 +18,11 @@ class TasksController extends Controller
 
  
   public function show($parameter){
+    
     $project = Project::find($parameter);
-    $tasks = Tasks::where('project_id' ,$parameter)->join('developers', 'tasks.developer_id', '=' , 'developers.id')->join('projects', 'tasks.project_id', '=' , 'projects.id')->get();
+    $tasks = Tasks::where('project_id' ,$parameter)->join('developers', 'tasks.developer_id', '=' , 'developers.id')->join('projects', 'tasks.project_id', '=' , 'projects.id')->select('developers.name_developer', 'projects.name_project','tasks.name', 'tasks.description', 'tasks.task_status', 'tasks.id', 'tasks.deadline')->get();
+    // print_r($tasks);
+    // die;
     $developer = Developers::all();
     $p_date = date_format(new DateTime($project['deadline']), 'd M Y');
 

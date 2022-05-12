@@ -34,6 +34,13 @@ class PlatformController extends Controller
         $platform = ProjectPlatfrom::where('paltform_id', $id)->count();
         echo json_encode($platform);
     }
+    public function update(Request $request, $id)
+    {
+        $platform = Platform::find($id);
+        if ($platform->update($request->all())) {
+            return redirect('/platform')->with('toast_success', 'Platform Update Successfully!');
+        }
+    }
 
     public function store(Request $request){
        $platform = new Platform();

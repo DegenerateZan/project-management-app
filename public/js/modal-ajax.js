@@ -119,26 +119,17 @@ $(function() {
         });
     });
     // modal tasks 
-    $('.tampilmodalubaht').click(function () { 
-        $('.modal-title').html('Change Task');
-        $('.modal-footer button[type=submit]').html('Change')
-        var id = $(this).attr('data-id');
-        $('.addupdatetasks').attr('action', 'tasks/update/'.concat(id));
-        $.ajax({
-            url: "/tasks/getTasksByid/".concat(id),
-            dataType: "json",
-            success: function (data) {
-                console.log(data);
-                $('#id').val(data.id);
-                $('#name').val(data.name)
-                $('#developer_id').val(data.developer_id)
-                $('#description').val(data.description)
-                $('#status').val(data.task_status)
-                $('#date').val(data.deadline)
+    $('.createnewt').click(function () { 
+        $('.modal-title').html('Add Task');
+        $('.modal-footer button[type=submit]').html('Add')
+        $('.addupdatetasks').attr('action', 'tasks/store');
+                $('#id').val(null);
+                $('#name').val(null)
+                $('#developer_id').val(null)
+                $('#description').val(null)
+                $('#status').val(null)
+                $('#date').val(null)
 
-           }
-        });
-        
     });
 
     $('.tampilmodalubaht').click(function () { 
@@ -269,7 +260,7 @@ $(function() {
     $('.updatepay').click(function () {
         console.log('update payments click!'); 
         $('.modal-title').html('Change existing Data Payments');
-        $('.modal-footer button[type=submit]').html('Change Payments');
+        $('.modal-footer button[type=submit]').html('Change Payments');   
         const id = $(this).attr('data-id');
         $('#addupdatepay').attr('action', '/payments/update/'.concat(id));
         $.ajax({
@@ -279,11 +270,8 @@ $(function() {
                 console.log(data);
                 $('#amount').val(data.amount)
                 $('#status').val(data.status)
-                $('#description').val(data.description)
-                
+                $('#description').val(data.description) 
                 $('#date').val(data.date)
-
-
             }
         });
         

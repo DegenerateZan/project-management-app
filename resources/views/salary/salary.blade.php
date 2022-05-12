@@ -138,7 +138,7 @@
                                       <div class="col-sm">
                                     <label for="totalreceivesalary"> Total Received Salary :</label>
                                     <div class="form-group d-flex">
-                                   <input type="text" class="form-control" id="total_salary_received" name="total_salary_received" value="{{ $salary->salary_amount - $salary->payroll_deducation + $salary->overtime_money}}">
+                                   <input type="text" class="form-control" id="total_salary_received" name="total_salary_received" >
                                   </div>
                                 </div>
                                 </div>
