@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('container')
+@section('container1')
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">

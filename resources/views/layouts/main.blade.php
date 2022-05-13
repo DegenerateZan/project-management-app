@@ -33,7 +33,7 @@
 
     <link rel="icon" type="image/x-icon" href="{{ $url.'/img/logo 1.png' }}">
 
-        
+        @yield('style')
     <style>
         
 
@@ -111,7 +111,7 @@
                 <!-- -->
                 {{-- tempat diletakanya template dinamis --}}
                 
-                    @yield('container')
+                    @yield('container1')
              
                 <!-- /.container-fluid -->
 

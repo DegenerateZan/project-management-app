@@ -15,10 +15,8 @@ return new class extends Migration
     {
         Schema::create('finances', function (Blueprint $table) {
             $table->id();
-            $table->decimal('amount');
-            $table->enum('mutation', ['Debit'], ['Credit']);
-            $table->string('financeable_type');
-            $table->unsignedBigInteger('financeable_id');
+            $table->decimal('amount',50);
+            $table->enum('mutation', ['Debit', 'Credit']);
             $table->string('description');
             $table->date('date');
             $table->timestamps();

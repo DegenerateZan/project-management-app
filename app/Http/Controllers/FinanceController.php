@@ -15,24 +15,38 @@ class FinanceController extends Controller
     {
         
         
-        $payments = DB::table('payments')->where('status', 1)->sum('amount');
-        $salary = DB::table('salaries')->where('payroll_status', 1)->sum('total_salary_received');
-        $total = $payments - $salary;
-        // dd($total);
+        $debit = Finance::latest()->first();
+        $Credit = Finance::where('mutation', 'Credit')->latest()->first();
         return view('Finance.Finance',[
             "title" => "Finance",
             "data" => Finance::all(),
-            "payments" => $payments,
-            "salary" => $salary,
-            "total" => $total
+            "debit" => $debit,
+            "credit" => $Credit,
+            // "total" => $total
         ]);
     }
+    public function formfinance(){
+        return view('Finance.from-finances',[
+            "title" => "From Finances"
+        ]);
+    }
+    public function getdatasalary(){
+        $salary = DB::table('salaries')->where('payroll_status', 1)->sum('total_salary_received');
+        echo json_encode($salary);
+    }
+
     public function getdatapayment(){
         $payments = DB::table('payments')->where('status', 1)->sum('amount');
         echo json_decode($payments);
     }
     public function store(Request $request){
-        dd($request);
+        // dd($request);
+       $finance = new Finance();
+       $finance->amount = $request->amount;
+       $finance->mutation = $request->mutation;
+       $finance->description = $request->description;
+       $finance->date = $request->date;
+       $finance->save();
     }
    
 
