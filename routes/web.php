@@ -95,7 +95,7 @@ Route::get('/salary/delete/{id}','delete')->name('salary.delete');
 // finance
 Route::controller(FinanceController::class)->group(function(){
 Route::get('/finance/getdatapayments', 'getdatapayment');
-Route::get('finace/store', 'store');
+Route::post('/finace/store', 'store')->name('finances.store');
 Route::get('/finances','index')->middleware('auth');
 });
 Route::controller(FinanceSettingController::class)->group(function(){

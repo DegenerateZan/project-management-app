@@ -49,7 +49,7 @@
             <!-- Find the JS file for the following chart at: src/js/charts/echarts/crm-revenue.js-->
             <!-- If you are not using gulp b fased workflow, you can find the transpiled code at: public/assets/js/theme.js-->
             <div class="card-header">
-              <div class="createnewp float-right d-sm-flex align-items-center" style="padding: 5px" id="financemodal" data-bs-toggle="modal" data-bs-target="#modalfinance">
+              <div class="createnewf float-right d-sm-flex align-items-center" style="padding: 5px" id="financemodal" data-bs-toggle="modal" data-bs-target="#modalfinance">
                 <span class="mr-2">Add Mutation</span>
              <i class="fas fa-plus-circle float-right " style="margin-left: 5px ;"></i>
             </div>
@@ -95,7 +95,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form action="finance/store" method="post">
+                  <form  action="/finace/store" class="addupdatefinances" method="post">
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label">Finance Amount</label>
                       <input type="text" class="form-control"id="amount" name="amount">
@@ -110,17 +110,17 @@
                     </div>
                     <div class="mb-3">
                       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                      <input type="date" class="form-control" id="date" name="date" >
+                      <input type="date" class="form-control" id="date" name >
                     </div>
                     <div class="mb-3">
                       <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                      <textarea class="form-control" id="" rows="3"></textarea>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Add</button>
+                  <button type="submit" class="btn btn-primary">Add</button>
                 </div>
               </div>
 
@@ -143,7 +143,7 @@
          url: "/finance/getdatapayments",
          dataType: "json",
          success: function (data) {
-          document.getElementById("amount").value = data;
+            document.getElementById("amount").value = data;
          }
        });
     } else {

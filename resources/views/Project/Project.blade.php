@@ -86,23 +86,20 @@
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                           <li>
-                                                              <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item" id="action" data-id="{{ $project->id }}">Edit</a>
-                                                          </li>              
-                                                          <li>
-                                                            <a href="#" class="btn text-danger deletepro dropdown-item" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()">Delete</a> 
-                                                        </li>
+                                                           <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item" id="action" data-id="{{ $project->id }}">Edit</a>
+                                                         </li>              
                                                         <li>
-                                                            <a href="/tasks/from_project/{{ $project->id }}" class=" dropdown-item">Show Tasks</a>
+                                                            <a href="#" class="btn text-danger deletepro dropdown-item" id="deletepro" data-id="{{ $project->id }}" data-name="{{ $project->name }}" onclick="deleteproject()">Delete</a> 
+                                                          </li>
+                                                         <li>
+                                                           <a href="/tasks/from_project/{{ $project->id }}" class=" dropdown-item">Show Tasks</a>
                                                             </li>
                                                             
-                                                            <li>
-                                                            <a href="/payments/from_project/{{ $project->id }}" class=" dropdown-item">Show Payments</a>
-                                                        </li>
+                                                          <li>
+                                                      <a href="/payments/from_project/{{ $project->id }}" class=" dropdown-item">Show Payments</a>
+                                               </li>
                                     </ul>
                                   </div>
-                                               
-
-
                                   {{-- <li>
                                     <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp" id="action" style="color: rgb(41, 0, 205)" data-id="{{ $project->id }}"><i class="fas fa-edit"></i>Edit</a>
                                 </li>
@@ -137,7 +134,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-6">
-
           <form id="buatubah" action="{{ route('project.store') }}" method="post" id="formbuatubah">
                      @csrf
                       <div class="container">
@@ -147,7 +143,6 @@
                                         @foreach ($clients as $client)
                                         <option value="{{ $client->id }}">{{ $client->name_client }}</option>
                                         @endforeach
-                                        
                                     </select>
                                     <input type="hidden" id="id" name="id">
                   <div class="row mt-3">
