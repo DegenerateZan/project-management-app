@@ -86,7 +86,7 @@
           <label for="country">Mutation</label>
         </div>
         <div class="col-75">
-          <select id="select-debit" name="mutation" required>
+          <select id="select-debit" name="mutation" onchange="myFunction()" required>
             <option value="">-- Select Mutation ---</option>
             <option value="Debit">Debit</option>
             <option value="Credit">Credit</option>
@@ -122,4 +122,31 @@
       </div>
     </form>
   </div>
+@endsection
+@section('script')
+    <script>
+    function myFunction(){
+       var mutation = document.getElementById("select-debit").value;
+    if (mutation === 'Debit') {
+       $.ajax({
+         url: "/finance/getdatapayments",
+         dataType: "json",
+         success: function (data) {
+            document.getElementById("amount").value = data;
+            console.log(data);
+         }
+       });
+    }
+    if (mutation === 'Credit') {
+        $.ajax({
+            url: "/finance/getdatasalary",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                document.getElementById("amount").value = data;
+            }
+        });
+    }
+}
+    </script>
 @endsection

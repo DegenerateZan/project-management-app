@@ -80,7 +80,7 @@ class ProjectController extends Controller{
            $request->validate([
               'client_id' => 'required',
               'category_id' => 'required',
-              'name' => 'required',
+              'name_project' => 'required',
               'deadline' => 'required',
               'manufacture_date' => 'required',
               'status' => 'required',
@@ -92,7 +92,7 @@ class ProjectController extends Controller{
   
            $projects->client_id = $request->client_id;
            $projects->category_id = $request->category_id;
-           $projects->name_project = $request->name;
+           $projects->name_project = $request->name_project;
            $projects->status = $request->status;
            $projects->deadline = $request->deadline;
            $projects->price = $request->price;

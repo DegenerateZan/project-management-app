@@ -55,9 +55,10 @@ Route::controller(PaymentsController::class)->group(function(){
 Route::get('/payments', 'false');
 Route::get('/payments/from_project/{id}','show')->middleware('auth');
 Route::post('/payments/store','store')->name('payments.store');
-Route::get('/payments/delete/{id}','delete');
+Route::get('/payments/from_project/payments/delete/{id}','delete');
 Route::post('/payments/update/{id}','update');
 Route::get('/payments/getdataPayments/{id}','getdataPayments');
+Route::get('/payments/getfinance/{id}','getfinance');
 Route::get('/payments/getPaymentsByidproject/{id}','getPaymentsByidproject');
 Route::get('/payments/changetopaidoff/{id}/{idproject}', "updatetopaidoff");
 Route::get('/payments/changetohasntpaidoff/{id}/{idproject}', 'updatetohasntpaidoff');
@@ -97,6 +98,9 @@ Route::controller(FinanceController::class)->group(function(){
 Route::get('/finance/getdatapayments', 'getdatapayment');
 Route::get('/finance/getdatasalary', 'getdatasalary');
 Route::get('/finances/formfinance', 'formfinance')->middleware('auth');
+Route::get('/finance/update/{id}','update');
+Route::get('/finance/delete/{id}','delete');
+Route::get('/finance/forms','formfinance')->middleware('auth');
 Route::post('/finace/store', 'store')->name('finances.store');
 Route::get('/finances','index')->middleware('auth');
 });

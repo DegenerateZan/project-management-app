@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('finances', function (Blueprint $table) {
             $table->id();
             $table->decimal('amount',50);
+            $table->integer('slug_pembayaran');
             $table->enum('mutation', ['Debit', 'Credit']);
             $table->string('description');
             $table->date('date');

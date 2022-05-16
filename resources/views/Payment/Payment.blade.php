@@ -68,7 +68,7 @@
                             <td>Rp.{{ number_format($payment->amount, '2',',','.') }}</td>
                             <td>{{ $payment->description }}</td>
                             <?php
-                            if($payment->payment_status > 0){
+                            if($payment->status > 0){
 
                               
                                $payment_status = '<span style="color: green">Paid Off</span>';
@@ -98,7 +98,7 @@
                                 <td>
                                     <span style="margin-left: -5%">
                                         <a  href="#" class="updatepay" data-id="{{ $payment->id }}" data-bs-toggle="modal" data-bs-target="#modalpayment"  id="updatepay" style="color: rgb(41, 0, 205)" ><i class="fas fa-edit"></i></a>
-                                        |<a href="#" class="btn text-danger deletepay" id="action" data-name="{{ $payment->project->name }}" data-id="{{ $payment->id }}" onclick="deletepay()"><i class="fas fa-trash-alt"></i></a>
+                                        |<a href="#" class="btn text-danger deletepay" id="action" data-name="{{ $payment->description }}" data-idp="{{ $payment->project_id }}" data-id="{{ $payment->id }}" onclick="deletepay()"><i class="fas fa-trash-alt"></i></a>
                                         </span>
                                 </td>
     
@@ -127,6 +127,7 @@
               </div>
                       
                       @csrf
+                      <input type="hidden"  name="slug_pembayaran" id="slug_pembayaran">
                       <div class="container">
                           <div class="row">
                           <div class="col-sm">

@@ -17,7 +17,7 @@
     }
 
     function checknewpaymentstatus($id){
-        if(DB::table('payments')->where(''));
+        if(DB::table('payments')->where('id', $id));
     }
 
 ?>

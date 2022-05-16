@@ -2,7 +2,8 @@ function deletepay(){
     $('.deletepay').click(function () { 
       var  name = $(this).attr('data-name');
       var id = $(this).attr('data-id');
-      
+      var idp  = this.getAttribute('data-idp');
+      console.log(idp);
       swal({
         title: "Are you sure?",
         text: "will delete data payments "+ name +"?" ,
@@ -12,7 +13,7 @@ function deletepay(){
       })
       .then((willDelete) => {
         if (willDelete) {
-          window.location = "payments/delete/".concat(id);
+          document.location.href = "payments/delete/".concat(id);
         }
       });  
         

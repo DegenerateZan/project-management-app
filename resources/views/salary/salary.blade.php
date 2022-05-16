@@ -94,7 +94,7 @@
                       <input type="hidden" name="id" id="id" value="" readonly>
                               <div class="container">
                                 <label for="developer_id">Developer</label>
-                                <select class="form-select" aria-label="Default select example" name="developer_id" id="developer_id">
+                                <select class="form-select" aria-label="Default select example" name="developer_id" id="developer_id" required>
                                     @foreach ($developers as $developer)
                                     <option value="{{ $developer->id }}">{{ $developer->name_developer }}</option>
                                     @endforeach
@@ -102,7 +102,7 @@
                               <div class="row mt-2">
                                   <div class="col-sm">
                                       <label for="salary-amount" class="form-label">Salary Amount :</label>
-                                      <input type="teks" id="salary_amount" name="salary_amount" class="form-control">
+                                      <input type="teks" id="salary_amount" name="salary_amount" class="form-control"required>
               
                                   </div>
                                    <!-- <div class="col-sm">
@@ -113,10 +113,10 @@
                               <div class="row mt-3">
                                   <div class="col-sm">
                                       <label for="deadlinetask" class="form-label">Payroll Deduction</label>
-                                      <input type="text" id="payroll_deducation" name="payroll_deducation" class="form-control">
+                                      <input type="text" id="payroll_deducation" name="payroll_deducation" class="form-control"required>
               </div>              <div class="col-sm">
                                   <label for="statupem">Payment Status :</label>
-                                    <select name="payroll_status" id="payroll_status" class="form-control" name="payroll_status">
+                                    <select name="payroll_status" id="payroll_status" class="form-control" name="payroll_status"required>
                                         <option value="">Choose Status</option>
                                         <option value="1">Paid off</option>
                                         <option value="0">Not yet paid off</option>
@@ -127,18 +127,18 @@
                                    <div class="row mt-3">
                                        <div class="col-sm">
                                            <label for="lembur"> Payroll Date :</label>
-                                           <input type="date" id="payroll_date" class="form-control" name="payroll_date">
+                                           <input type="date" id="payroll_date" class="form-control" name="payroll_date"required>
                                        </div>
                                  <div class="col-sm">
                                     <label for="lembur"> Overtime Money :</label>
-                                    <input type="text" id="overtime_money" class="form-control" name="overtime_money">
+                                    <input type="text" id="overtime_money" class="form-control" name="overtime_money"required>
                                 </div>
                                    </div>
                                   <div class="row mt-2">
                                       <div class="col-sm">
                                     <label for="totalreceivesalary"> Total Received Salary :</label>
                                     <div class="form-group d-flex">
-                                   <input type="text" class="form-control" id="total_salary_received" name="total_salary_received" >
+                                   <input type="text" class="form-control" id="total_salary_received" name="total_salary_received" required>
                                   </div>
                                 </div>
                                 </div>

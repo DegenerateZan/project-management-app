@@ -15,14 +15,16 @@ class FinanceController extends Controller
     {
         
         
-        $debit = Finance::latest()->first();
-        $Credit = Finance::where('mutation', 'Credit')->latest()->first();
+       $debit = Finance::all()->where('mutation', 'Debit')->sum('amount'); 
+       $credit = Finance::all()->where('mutation', 'Credit')->sum('amount');
+       $total = $debit - $credit;
         return view('Finance.Finance',[
             "title" => "Finance",
             "data" => Finance::all(),
             "debit" => $debit,
-            "credit" => $Credit,
-            // "total" => $total
+            "credit" => $credit,
+            "total" => $total
+           
         ]);
     }
     public function formfinance(){
@@ -48,6 +50,13 @@ class FinanceController extends Controller
        $finance->date = $request->date;
        $finance->save();
     }
-   
+  public function delete($id){
+
+      $finance = Finance::find($id);
+      if ($finance->delete()) {
+        return redirect('/finances')->with('toast_success', ' Data Finance Deleted Successfully!'); 
+      }
+
+  }
 
 }

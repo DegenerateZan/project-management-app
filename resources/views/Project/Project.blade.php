@@ -146,7 +146,7 @@
                   <div class="row mt-3">
                       <div class="col-sm">
                           <label for="project-name" class="form-label">Project Name :</label>
-                          <input type="text" id="name" name="name" class="form-control">
+                          <input type="text" id="name" name="name_project" class="form-control">
                       </div>
                       <div class="col-sm">`
                           <label for="category" class="form-label">Categori :</label>

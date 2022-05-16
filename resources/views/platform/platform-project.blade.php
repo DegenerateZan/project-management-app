@@ -80,14 +80,14 @@
                   @csrf
                   <input type="hidden" name="id" id="id" value="">
                   <label for="project_id" class="form-label">From Projects : </label>
-                  <select class="form-select"  name="project_id" id="project_id" aria-label="Default select example">
+                  <select class="form-select"  name="project_id" id="project_id" aria-label="Default select example" required>
                     <option selected>-- Select Project --</option>
                     @foreach ($project as $item)
                     <option value="{{ $item->id }}">{{ $item->name_project }}</option>
                     @endforeach
                   </select>
                   <label for="platform_id" class="form-label mt-3">Platforms</label>
-                  <select class="form-select" name="paltform_id"  id="platform_id" aria-label="Default select example">
+                  <select class="form-select" name="paltform_id"  id="platform_id" aria-label="Default select example" required>
                     <option selected>-- Select Platform --</option>
                     @foreach ($data as $item)
                     <option value="{{ $item->id }}">{{ $item->name }}</option>

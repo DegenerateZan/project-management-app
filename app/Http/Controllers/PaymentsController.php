@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Finance;
 use App\Models\Payment;
 use App\Models\Project;
 use DateTime;
@@ -58,33 +59,74 @@ class PaymentsController extends Controller
            "project_id" => "required",
            "user_id" => "required"
        ]);
-
-       $paymnets = new Payment();
-       $paymnets->project_id = $request->project_id;
-       $paymnets->user_id = $request->user_id;
-       $paymnets->amount = $request->amount;
-       $paymnets->date = $request->date;
-       $paymnets->status = $request->status;
-       $paymnets->description = $request->description;
-       if ($paymnets->save()) {
-        return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');    
-       }
+       
+          $slug = random_int(100000, 999999);
+          $payments = new Payment();
+          $payments->project_id = $request->project_id;
+          $payments->slug_pembayaran = $slug ;
+          $payments->user_id = $request->user_id;
+          $payments->amount = $request->amount;
+          $payments->date = $request->date;
+          $payments->status = $request->status;
+          $payments->description = $request->description;
+        //   dd($payments);
+          $payments->save();
+         
+        $id = $payments->id;
+        $data = Payment::find($id);
+        $status = $data->status;
+        if ($status === 1) {   
+            $finance = new Finance();
+            $finance->slug_pembayaran = $data->slug_pembayaran;
+            $finance->amount = $request->amount;
+            $finance->mutation = 'Debit';
+            $finance->description = $request->description;
+            $finance->date = $request->date; 
+            $finance->save();
+            return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');
+        }else{
+            return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');
+        }
+       
+        
+        
+       
+       
    }
    public function getdatapayment(){
        $payments = DB::table('payments')->where('status', 1)->sum('amount');
        echo json_decode($payments);
    }
+   
    public function delete($id){
        $paymnets = Payment::find($id);
-       if ($paymnets->delete()) {
-        return redirect('/payments')->with('toast_success', ' Data Payments Deleted Successfully!'); 
+       $data = $paymnets->slug_pembayaran;
+       $finance = Finance::where('slug_pembayaran', $data);
+       $finance->delete();
+       if ( $paymnets->delete() ) {
+           return redirect('/payments/from_project/'. $paymnets->project_id )->with('success', ' Data Payment Deleted Successfully!');
        }
+        
+       
    }
    public function update(Request $request, $id){
+    //    dd($request);
        $payments = Payment::find($id);
-       if ($payments->update($request->all())) {
-        return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!');
-       }
+       $payments->update($request->all());
+       $idP = $payments->id;
+       $data = Payment::find($idP);
+       $status = $data->status;
+       if ($status === 1) {
+        $finance = new Finance();
+        $finance->slug_pembayaran = $request->slug_pembayaran;
+        $finance->amount = $request->amount;
+        $finance->mutation = 'Debit';
+        $finance->description = $request->description;
+        $finance->date = $request->date; 
+        $finance->save();
+        return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!'); 
+    }
+
    }
    public function getdataPayments($id)
    {

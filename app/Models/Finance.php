@@ -11,6 +11,12 @@ class Finance extends Model
     protected $guarded = ['id'];
     public function finacetable()
     {
-
-    }    
+      return $this->morphTo();
+    }
+    public function salaries(){
+        return $this->hasMany(Salary::class);
+    }
+    public function payments(){
+      return $this->hasMany(Payment::class);
+    }
 }

@@ -24,7 +24,7 @@
                                 Total Revenue : </div>
                                   
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.
-                                   1000
+                                   0 {{-- {{  number_format($finances->amount, '2',',','.') }} --}}
                                 </div>
                                 
                         </div>
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: {{ $tasks }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: {{ $task }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>

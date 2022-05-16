@@ -280,6 +280,7 @@ $(function() {
             success: function (data) {
                 console.log(data);
                 $('#amount').val(data.amount)
+                $('#slug_pembayaran').val(data.slug_pembayaran)
                 $('#status').val(data.status)
                 $('#description').val(data.description) 
                 $('#date').val(data.date)
