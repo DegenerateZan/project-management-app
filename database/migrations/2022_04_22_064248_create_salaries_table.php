@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('developer_id');
             $table->decimal('salary_amount',50);
             $table->decimal('payroll_deducation',50);
+            $table->integer('slug_salaries');
             $table->decimal('overtime_money',50);
             $table->boolean('payroll_status');
             $table->decimal('total_salary_received',50);

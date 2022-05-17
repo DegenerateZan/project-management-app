@@ -67,34 +67,12 @@
        
                             <td>Rp.{{ number_format($payment->amount, '2',',','.') }}</td>
                             <td>{{ $payment->description }}</td>
-                            <?php
-                            if($payment->status > 0){
-
-                              
-                               $payment_status = '<span style="color: green">Paid Off</span>';
-                               $p_status = true;
-                            } else {
-                                $p_status = false;
-                                $payment_status = '<span style="color: red">Not Yet Paid Off</span>';
-                                }
-                                    ?>
-                             <td>
-                                
-                                <div class="btn-group" style="width: 60%">
-                                    <div class="change-status btn btn-sm dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                      {!! $payment_status !!}
-                                      
-                                    </div>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                      <li class="@if($p_status === true) disabled  @endif"><a class="dropdown-item" href="/payments/changetopaidoff/{{ $payment->id }}/{{ $project->id }} "><span style="color: green">Paid Off</span></a></li>
-                                      <li class=" @if($p_status === false) disabled @endif"><a class="dropdown-item" href="/payments/changetohasntpaidoff/{{ $payment->id }}/{{ $project->id }}"><span style="color: red">Not Yet Paid Off</span></a></li>
-                                    </ul>
-                                  </div>
-                                
-                                
-                                </td>
-                            <td>{{ $payment->date }}
-    
+                             @if ($payment->status === 1)
+                             <td class="text-success" >Paid Off</td>
+                             @else
+                            <td class="text-danger">Not yet paid off</td>
+                             @endif
+                            <td>{{ $payment->date }}</td>
                                 <td>
                                     <span style="margin-left: -5%">
                                         <a  href="#" class="updatepay" data-id="{{ $payment->id }}" data-bs-toggle="modal" data-bs-target="#modalpayment"  id="updatepay" style="color: rgb(41, 0, 205)" ><i class="fas fa-edit"></i></a>

@@ -110,12 +110,16 @@ class PaymentsController extends Controller
        
    }
    public function update(Request $request, $id){
-    //    dd($request);
        $payments = Payment::find($id);
-       $payments->update($request->all());
        $idP = $payments->id;
+       $payments->update($request->all());
        $data = Payment::find($idP);
        $status = $data->status;
+       if ($status === 0) {
+           $finance1 = Finance::where('slug_pembayaran',$request->slug_pembayaran);
+           $finance1->delete();
+           return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!'); 
+       }
        if ($status === 1) {
         $finance = new Finance();
         $finance->slug_pembayaran = $request->slug_pembayaran;
@@ -124,6 +128,12 @@ class PaymentsController extends Controller
         $finance->description = $request->description;
         $finance->date = $request->date; 
         $finance->save();
+        $slug_pembayaran = $finance->slug_pembayaran;
+        $finance = Finance::where('slug_pembayaran', $slug_pembayaran)->first()->count();
+        if ($finance > 1 ) {
+            $valid = Finance::where('slug_pembayaran', $slug_pembayaran)->first();
+            $valid->delete();
+        }
         return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!'); 
     }
 
@@ -138,16 +148,5 @@ class PaymentsController extends Controller
        $payments = Payment::where('project_id', $id)->count();
        echo json_encode($payments);
    }
-   public function updatetopaidoff($id, $id_project){
-        $updatepaidoff = Payment::find($id);
-        if ($updatepaidoff->update(array('status'=>true))) {
-            return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span class="text-success"> Paid off </span> Update Successfully!');
-           }
-   }
-   public function updatetohasntpaidoff(Request $request ,$id, $id_project){
-    $updatehasntpaidoff = Payment::find($id);
-    if ($updatehasntpaidoff->update(array('status'=>false))) {
-        return redirect('/payments/from_project/'. $id_project)->with('toast_success', ' Data Payment to <span style="color red"> Hasnt paid off </span> Update Successfully!');
-       }
-}
+  
 }

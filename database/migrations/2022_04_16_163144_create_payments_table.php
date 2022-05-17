@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('slug_pembayaran');
+            $table->integer('slug_salaries');
             $table->decimal('amount',50);
             $table->string('description');
             $table->boolean('status');
