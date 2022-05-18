@@ -20,5 +20,6 @@ class ProjectPlatfrom extends Model
     {
         return $this->hasMany(Platform::class);
     }
+    
 
 }

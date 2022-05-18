@@ -53,7 +53,7 @@
         
           <div class="tab-content">
             <div class="card-header">
-              Finance History
+              Finance History 
             </div>
             <table id="datatablesSimple">
               <thead>
@@ -81,14 +81,8 @@
                       <td>{{ $finance->date }}</td>
                   </tr>
                 @endforeach
-
               </tbody>
-          </table>
-
-
-          {{-- modal --}}
-        
-          {{-- akhir modal --}}
+            </table>
       </div>
         </div>
       </div>

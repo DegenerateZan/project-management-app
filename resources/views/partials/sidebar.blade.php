@@ -34,8 +34,8 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" id="projectsidebar" href="/projects" data-toggle="collapse" data-target="#collapsePagessettings" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-briefcase" id="i-project"></i>
-                    <span id="project">Projects</span>
+                    <i class="fas fa-fw fa-briefcase" id="i-Projects"></i>
+                    <span id="Projects">Projects</span>
                 </a>
                 <div id="collapsePagessettings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -61,9 +61,13 @@
                 <a class="nav-link collapsed" href="/finances" >
                     <i class="fas fa-fw fa-wallet" id="i-Finance"></i>
                     <span id="Finance">Finance</span>
-
                 </a>
-
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/Reports" >
+                    <i class="fas fa-fw fa-memo" id="i-Reports"></i>
+                    <span id="Reports">Reports</span>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/salary">

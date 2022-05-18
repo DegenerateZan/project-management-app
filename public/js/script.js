@@ -32,14 +32,14 @@ $(function() {
         $(namasectionicon).css("color", "black");
         $(namasection).css("font-weight", "bold");
 
-        if (prosession !== "project"){ 
+        if (prosession !== "Projects"){ 
 
         $("#collapsePagessettings").hide();
          };
 
     $("#projectsidebar").click(function(){  
-        console.log('project Di klik!')
-    if (prosession === "project"){
+        console.log('Projects Di klik!')
+    if (prosession === "Projects"){
         console.log('JS Prosession OK!')
 
             console.log('JS terdeteksi sedang di halama projek')

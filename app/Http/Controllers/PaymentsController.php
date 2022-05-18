@@ -28,7 +28,7 @@ class PaymentsController extends Controller
     
         return view('payment.payment',[
           'project' => $project,
-          'projects' =>$projects, // tampil 1 dari projectooping milih project
+          'projects' =>$projects, 
           'title' => 'Payments',
           'payments' => $payments,
           'string_date' => $p_date,
@@ -69,7 +69,6 @@ class PaymentsController extends Controller
           $payments->date = $request->date;
           $payments->status = $request->status;
           $payments->description = $request->description;
-        //   dd($payments);
           $payments->save();
          
         $id = $payments->id;
@@ -93,10 +92,6 @@ class PaymentsController extends Controller
        
        
    }
-   public function getdatapayment(){
-       $payments = DB::table('payments')->where('status', 1)->sum('amount');
-       echo json_decode($payments);
-   }
    
    public function delete($id){
        $paymnets = Payment::find($id);
@@ -104,7 +99,7 @@ class PaymentsController extends Controller
        $finance = Finance::where('code_debit_credit', $data);
        $finance->delete();
        if ( $paymnets->delete() ) {
-           return redirect('/payments/from_project/'. $paymnets->project_id )->with('success', ' Data Payment Deleted Successfully!');
+           return redirect('/payments/from_project/'. $paymnets->project_id )->with('toast_success', ' Data Payment Deleted Successfully!');
        }
         
        
@@ -143,10 +138,6 @@ class PaymentsController extends Controller
        $payments = Payment::find($id);
        return json_encode($payments);
    }
-   public function getPaymentsByidproject($id)
-   {
-       $payments = Payment::where('project_id', $id)->count();
-       echo json_encode($payments);
-   }
+  
   
 }

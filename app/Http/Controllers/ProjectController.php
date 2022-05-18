@@ -4,6 +4,9 @@ use App\Models\Project;
 use App\Models\Client;
 use App\Models\Category;
 use App\Models\Payment;
+use App\Models\Platform;
+use App\Models\ProjectPlatfrom;
+use App\Models\Tasks;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -23,39 +26,14 @@ class ProjectController extends Controller{
             
             foreach($payments as $payment){
                 
-                $id_p = $payment->project_id;
-                // if (!isset($i[$id_p][$loop])){
-                //     break;
-                // }
-                
+                $id_p = $payment->project_id; 
                 $payments_array[$id_p][$loop] = $payment->amount;
-                // var_dump($payments_array);
                 $loop++;
             }
-        //    die;
-            // foreach($projects as $project){
-            //     var_dump($project);
-            // }
-            // die;
-             
-        //     foreach($projects as $project){
-        //         // var_dump($project);
-                
-        //             foreach($payments as $payment){
-        //                 $id_p = $payment->project_id;
-        
-        //                 $payments_array[$id_p] = $payment->amount;
-        //                 echo $project->name . ' ' . $payments_array[$id_p] . ' ' . $id_p . '<br>' ;
-                        
-        //             }
- 
-        // }
-        //     die;
         skip:
         return view('Project.Project',[
-            'title' => 'project',
+            'title' => 'Projects',
             'projects' => $projects,
-            // 'payments_array' => '',
             'payments_array' => $payments_array,
             'clients' => Client::all(),
             'categories' => Category::all(),
@@ -68,6 +46,15 @@ class ProjectController extends Controller{
     }
     public function delete($id)
     {
+        $payments = Payment::where('project_id', $id)->count();
+        if ($payments > 0) {
+            return redirect('/projects')->with('toast_error', 'This project cannot be deleted because it has transactions!'); 
+            die;  
+        }
+        $task = Tasks::where('project_id', $id);
+        $task->delete();
+        $platfroms = ProjectPlatfrom::where('project_id', $id);
+        $platfroms->delete();
         $projects = Project::find($id);
         if($projects->delete()){
             return redirect('/projects')->with('toast_success', 'Projects Deleted Successfully!');  
@@ -76,7 +63,7 @@ class ProjectController extends Controller{
 
     public function store(Request $request)
     {
-        //  dd($request);
+
            $request->validate([
               'client_id' => 'required',
               'category_id' => 'required',

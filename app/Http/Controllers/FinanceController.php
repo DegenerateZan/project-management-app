@@ -27,36 +27,14 @@ class FinanceController extends Controller
            
         ]);
     }
-    public function formfinance(){
-        return view('Finance.from-finances',[
-            "title" => "From Finances"
+    public function report(){
+        return view('Finance.reports',[
+            "title" => "Reports"
         ]);
     }
-    public function getdatasalary(){
-        $salary = DB::table('salaries')->where('payroll_status', 1)->sum('total_salary_received');
-        echo json_encode($salary);
-    }
+  
 
-    public function getdatapayment(){
-        $payments = DB::table('payments')->where('status', 1)->sum('amount');
-        echo json_decode($payments);
-    }
-    public function store(Request $request){
-        // dd($request);
-       $finance = new Finance();
-       $finance->amount = $request->amount;
-       $finance->mutation = $request->mutation;
-       $finance->description = $request->description;
-       $finance->date = $request->date;
-       $finance->save();
-    }
-  public function delete($id){
-
-      $finance = Finance::find($id);
-      if ($finance->delete()) {
-        return redirect('/finances')->with('toast_success', ' Data Finance Deleted Successfully!'); 
-      }
-
-  }
+  
+   
 
 }

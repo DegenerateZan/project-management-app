@@ -10,8 +10,7 @@
 {{--  --}}
     <div class="card mb-4">
         <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            
+            <i class="fas fa-table me-1"></i> 
             <div class="createnewm float-right d-sm-flex align-items-center" style="padding: 5px" id="createnew-p" data-bs-toggle="modal" data-bs-target="#formmodalplatform">
                <span class="mr-2">Add Platform</span>
             <i class="fas fa-plus-circle float-right" style="margin-left: 5px ;"></i>

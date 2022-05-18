@@ -24,14 +24,12 @@ class SalaryController extends Controller
     }
     public function store(Request $request)
     {
-      // dd($request);
+     
       $request->validate([
-        // 'user_id' => 'required',
         'payroll_deducation' => 'required',
         'payroll_date' => 'required',
-        // 'payroll_status' => 'required',
       ]);
-      // input salaries
+     
       $slug = random_int(100000, 999999);
       $salary = new Salary();
       $salary->developer_id = $request->developer_id;
@@ -60,18 +58,6 @@ class SalaryController extends Controller
       }else{
         return redirect('/salary')->with('toast_success', 'Data Salary Failed Created Successfully!');
       }
-          // $finance = new Finance();
-          // $finance->amount = $request->total_sa2+lary_received;
-          // $finance->mutation = 'Credit';
-          // $finance->date = $request->payroll_date;
-          // $finance->code_debit_credit = $slug;
-          // $finance->description = 'Gaji Developer';
-          // $finance->save();
-          // return 'oke';
-          // die;
-      
-     
-      
     }
     
     public function delete($id)
@@ -115,12 +101,5 @@ class SalaryController extends Controller
         return redirect('/salary')->with('toast_success', 'Data Salary Update Successfully!');
        }
       }
-      
-
-     
-  
-    //  if($salary->update($request->all())){
-    //   return redirect('/salary')->with('toast_success', 'Data Salary Update Successfully!');
-    //  }
    }
 }
