@@ -234,6 +234,7 @@ $(function() {
                 console.log(data);
                $('#id').val(data.id)
                $('#user_id').val(data.user_id)
+               $('#slug_salaries').val(data.slug_salaries)
                $('#salary_amount').val(data.salary_amount)
                $('#payroll_deducation').val(data.payroll_deducation)
                $('#developer_id').val(data.developer_id)

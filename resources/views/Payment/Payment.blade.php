@@ -105,7 +105,7 @@
               </div>
                       
                       @csrf
-                      <input type="hidden"  name="slug_pembayaran" id="slug_pembayaran">
+                      <input type="hidden"  name="code_debit_credit" id="slug_pembayaran">
                       <div class="container">
                           <div class="row">
                           <div class="col-sm">

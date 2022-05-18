@@ -24,7 +24,8 @@ class DashboardController extends Controller
     }else{
         $total = 0;
     }
-    $finance = Finance::where('mutation', 'Debit')->latest()->first();
+    $finance = DB::table('finances')->where('mutation', 'Debit')->sum('amount');
+   
 
 
 

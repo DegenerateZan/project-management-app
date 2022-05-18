@@ -24,7 +24,7 @@
                                 Total Revenue : </div>
                                   
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.
-                                   0 {{-- {{  number_format($finances->amount, '2',',','.') }} --}}
+                                    {{  number_format($finances, '2',',','.') }}
                                 </div>
                                 
                         </div>

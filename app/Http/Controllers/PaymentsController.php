@@ -77,7 +77,7 @@ class PaymentsController extends Controller
         $status = $data->status;
         if ($status === 1) {   
             $finance = new Finance();
-            $finance->slug_pembayaran = $data->slug_pembayaran;
+            $finance->code_debit_credit = $data->slug_pembayaran;
             $finance->amount = $request->amount;
             $finance->mutation = 'Debit';
             $finance->description = $request->description;
@@ -101,7 +101,7 @@ class PaymentsController extends Controller
    public function delete($id){
        $paymnets = Payment::find($id);
        $data = $paymnets->slug_pembayaran;
-       $finance = Finance::where('slug_pembayaran', $data);
+       $finance = Finance::where('code_debit_credit', $data);
        $finance->delete();
        if ( $paymnets->delete() ) {
            return redirect('/payments/from_project/'. $paymnets->project_id )->with('success', ' Data Payment Deleted Successfully!');
@@ -116,22 +116,22 @@ class PaymentsController extends Controller
        $data = Payment::find($idP);
        $status = $data->status;
        if ($status === 0) {
-           $finance1 = Finance::where('slug_pembayaran',$request->slug_pembayaran);
+           $finance1 = Finance::where('code_debit_credit',$request->code_debit_credit);
            $finance1->delete();
            return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!'); 
        }
        if ($status === 1) {
         $finance = new Finance();
-        $finance->slug_pembayaran = $request->slug_pembayaran;
+        $finance->code_debit_credit = $request->code_debit_credit;
         $finance->amount = $request->amount;
         $finance->mutation = 'Debit';
         $finance->description = $request->description;
-        $finance->date = $request->date; 
+        $finance->date = $request->date;
         $finance->save();
-        $slug_pembayaran = $finance->slug_pembayaran;
-        $finance = Finance::where('slug_pembayaran', $slug_pembayaran)->first()->count();
+        $slug_pembayaran = $finance->code_debit_credit;
+        $finance = Finance::where('code_debit_credit', $slug_pembayaran)->latest()->count();
         if ($finance > 1 ) {
-            $valid = Finance::where('slug_pembayaran', $slug_pembayaran)->first();
+            $valid = Finance::where('code_debit_credit', $slug_pembayaran)->first();
             $valid->delete();
         }
         return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!'); 

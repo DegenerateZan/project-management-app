@@ -55,9 +55,9 @@
                             <td>Rp. {{ number_format($salary->overtime_money,  '2',',','.') }}</td>
                             <td>Rp. {{ number_format($salary->total_salary_received , '2',',','.') }}</td>
                             @if ($salary->payroll_status > 0 ) 
-                                <td>Paid off</td>
+                                <td class="text-success">Paid off</td>
                             @else
-                            <td>Not yet paid off</td>
+                            <td class="text-danger">Not yet paid off</td>
                             @endif
                             <td>{{ $salary->payroll_date }}</td>
                             <td>
@@ -88,10 +88,10 @@
                       <div class="row">
                         <div class="col-sm">
                         </div>
-            
-                      </div>
+                    </div>
                    
                       <input type="hidden" name="id" id="id" value="" readonly>
+                      <input type="hidden" name="slug_salaries"  id="slug_salaries">
                               <div class="container">
                                 <label for="developer_id">Developer</label>
                                 <select class="form-select" aria-label="Default select example" name="developer_id" id="developer_id" required>
