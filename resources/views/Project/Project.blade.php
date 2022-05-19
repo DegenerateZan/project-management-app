@@ -66,7 +66,8 @@
                             <?php
 
                             if($total < $project->price) {
-                                $payment_status = "<span class='text-warning'>Hasn't Paid off</span>";
+                                $payment_status = "<span class='text-warning'>
+                                  </span>";
                             } else {
                                 $payment_status = "<span class='text-success'>Paid off</span>";
                             }

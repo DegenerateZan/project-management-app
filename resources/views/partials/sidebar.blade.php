@@ -65,7 +65,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/Reports" >
-                    <i class="fas fa-fw fa-memo" id="i-Reports"></i>
+                    <i class="fa fa-book"  id="i-Reports" ></i>
                     <span id="Reports">Reports</span>
                 </a>
             </li>

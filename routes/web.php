@@ -19,6 +19,7 @@ use App\Http\Controllers\VerifyController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\RecoveryController;
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\SalaryController;
 use App\Http\Controllers\TaskController;
 use App\Models\Category;
@@ -97,13 +98,16 @@ Route::controller(FinanceController::class)->group(function(){
 Route::get('/finance/getdatapayments', 'getdatapayment');
 Route::get('/finance/getdatasalary', 'getdatasalary');
 Route::get('/finances/formfinance', 'formfinance')->middleware('auth');
-Route::get('/Reports', 'report')->middleware('auth');
 Route::get('/finance/forms','formfinance')->middleware('auth');
 Route::post('/finace/store', 'store')->name('finances.store');
 Route::get('/finances','index')->middleware('auth');
 });
 Route::controller(FinanceSettingController::class)->group(function(){
 Route::get('/financessettins','index');
+});
+// Reports
+Route::controller(ReportsController::class)->group(function(){
+    Route::get('/Reports', 'index')->middleware('auth');
 });
 // login
 Route::controller(LoginController::class)->group(function(){

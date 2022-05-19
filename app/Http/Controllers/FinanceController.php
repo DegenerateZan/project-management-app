@@ -27,13 +27,6 @@ class FinanceController extends Controller
            
         ]);
     }
-    public function report(){
-        return view('Finance.reports',[
-            "title" => "Reports"
-        ]);
-    }
-  
-
   
    
 
