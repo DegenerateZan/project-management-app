@@ -55,8 +55,22 @@
                     <span id="Payments">Payments</span>
 
                 </a>
-
+            
             </li> --}}
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fa fa-book"  rgb(0, 183, 255)"></i>
+                    <span>Repost</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/Reports">Project</a>
+                        <a class="collapse-item" href="/TransactionPorject">Transaction Project</a>
+                        <a class="collapse-item" href="/TransactionSalary">Transaction Salary</a>
+
+                    </div>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/finances" >
                     <i class="fas fa-fw fa-wallet" id="i-Finance"></i>
@@ -64,17 +78,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/Reports" >
-                    <i class="fa fa-book"  id="i-Reports" ></i>
-                    <span id="Reports">Reports</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link collapsed" href="/salary">
                     <i class="fas fa-hand-holding-usd" id="i-salary"></i>
                     <span id="Salary ">Salary</span>
                 </a>
-
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/developers" >
@@ -94,25 +101,18 @@
             <!-- Heading -->
 
 
-
+              {{-- fas fa-sign-in-alt --}}
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-sign-in-alt"  rgb(0, 183, 255)"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="/recovery">Forgot Password</a>
-
-                    </div>
-                </div>
-            </li>
+         
 
             <!-- Nav Item - Charts -->
 
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/recovery" >
+                    <i class="fas fa-sign-in-alt" id="i-Recovery"></i>
+                    <span id="Recovery">Change Password</span>
+                </a>
+            </li>
             <!-- Nav Item - Tables -->
     
 

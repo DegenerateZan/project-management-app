@@ -108,6 +108,8 @@ Route::get('/financessettins','index');
 // Reports
 Route::controller(ReportsController::class)->group(function(){
     Route::get('/Reports', 'index')->middleware('auth');
+    Route::get('/TransactionPorject', 'TransactionPorject')->middleware('auth');
+    Route::get('/TransactionSalary', 'TransactionSalary')->middleware('auth');
 });
 // login
 Route::controller(LoginController::class)->group(function(){

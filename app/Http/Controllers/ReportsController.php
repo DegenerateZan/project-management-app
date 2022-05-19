@@ -28,13 +28,25 @@ class ReportsController extends Controller
                 $loop++;
             }
             skip:
-        return view('finance.reports',[
+        return view('repost.reports',[
 
             "title" => 'Reports',
              "projects" => $projects,
              "payments_data" => $payments_array
              
 
+        ]);
+    }
+    public function TransactionSalary()
+    {
+        return view('repost.transaction-salary',[
+            "title" => 'Transaction Salary'
+        ]);
+    }
+    public function TransactionPorject()
+    {
+        return view('repost.transaction-project',[
+            "title" => 'Transaction Project'
         ]);
     }
 }
