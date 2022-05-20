@@ -8,6 +8,19 @@
 {{--  --}}
     <div class="card mb-4">
         <div class="card-header">
+            <div class="dropdown" style="float: right;">
+                <button class="btn dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li>
+                                       <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item text-success" id="action" data-id="">Bas Been Paid</a>
+                                     </li>              
+                                    <li>
+                                        <a href="#" class="btn text-danger  dropdown-item" id="deletepro" >Haven't Paid Yet</a> 
+                              </li>
+                </ul>
+          </div>
             <i class="fas fa-table me-1"></i>
             Transaction Project
         </div>
