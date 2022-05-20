@@ -56,24 +56,18 @@
                             <td>{{ $project->name_project }}</td>
                             <td>{{ $project->category->name }}</td>
                             <td>Rp.{{ number_format($project->price, '2',',','.') }}</td>
-                            <?php $total= 0; // total semua payment dari project tertentu yang status nya sudah selesai
+                            <?php $total= 0;
                             if(isset($payments_array[$id_row])){
                             foreach($payments_array[$id_row] as $payment){ 
                                 $total = $total + $payment;}
                             }?>
                             <td>Rp.{{ number_format($total, '2',',','.') }}</td>
                             <td>Rp.{{ number_format($project->price - $total, '2',',','.') }}</td>
-                            <?php
-
-                            if($total < $project->price) {
-                                $payment_status = "<span class='text-warning'>
-                                  </span>";
-                            } else {
-                                $payment_status = "<span class='text-success'>Paid off</span>";
-                            }
-
-                            ?>
-                            <td><?= $payment_status ?></td>
+                            @if ($total > $project->price)
+                            <td class="text-success">Paid Off</td>
+                            @else
+                            <td class="text-danger">Not Yet Paid Off</td>
+                            @endif
                             <td>{{ $project->status }}</td>
                             <td>{{ $project->deadline }}</td>
                             <td>{{ $project->manufacture_date }}

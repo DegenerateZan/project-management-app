@@ -46,7 +46,7 @@
                 </tfoot>
                 <tbody>
                   <?php $i=1  ?>
-                  {{-- @foreach ($projects as $project) --}}
+                  {{-- @foreach ($data as $item) --}}
                   <tr>
                      <td>{{ $i }}</td>
                   </tr>     
