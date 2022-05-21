@@ -14,13 +14,13 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li>
-                                       <a  href="/TransactionPorject"  class="dropdown-item text-primary" id="action"  >All</a>
+                                       <a  href="/TransactionSalary"  class="dropdown-item text-primary" id="action"  >All</a>
                                   </li> 
                                       <li>
-                                       <a  href="/TransactionPorject/BasBeenPaidp" class="dropdown-item text-success" id="action" >Bas Been Paid</a>
+                                       <a  href="/TransactionSalary/BasBeenPaids" class="dropdown-item text-success" id="action" >Bas Been Paid</a>
                                      </li>              
                                     <li>
-                                   <a href="/TransactionPorject/HaventPaidYetp" class="btn text-danger  dropdown-item" id="deletepro" >Haven't Paid Yet</a> 
+                                   <a href="/TransactionSalary/HaventPaidYets" class="btn text-danger  dropdown-item" id="deletepro" >Haven't Paid Yet</a> 
                              </li>
                 </ul>
           </div>
@@ -52,7 +52,7 @@
                   @foreach ($data as $item)
                   <tr>
                      <td>{{ $i }}</td>
-                     <td>{{ $item->developer->name_developer }}</td>
+                     <td>{{ $item->name_developer }}</td>
                      <td>{{ number_format($item->total_salary_received, '2',',','.')}}</td>
                      @if ($item->payroll_status === 1)
                          <td class="text-success">Paid Off</td>

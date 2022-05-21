@@ -112,6 +112,8 @@ Route::controller(ReportsController::class)->group(function(){
     Route::get('/TransactionPorject/HaventPaidYetp', 'HaventPaidYetp')->middleware('auth');
     Route::get('/TransactionPorject/BasBeenPaidp', 'BasBeenPaidp')->middleware('auth');
     Route::get('/TransactionSalary', 'TransactionSalary')->middleware('auth');
+    Route::get('/TransactionSalary/BasBeenPaids', 'BasBeenPaids')->middleware('auth');
+    Route::get('/TransactionSalary/HaventPaidYets', 'HaventPaidYets')->middleware('auth');
 });
 // login
 Route::controller(LoginController::class)->group(function(){

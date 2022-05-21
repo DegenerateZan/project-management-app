@@ -68,7 +68,13 @@
                             @else
                             <td class="text-danger">Not Yet Paid Off</td>
                             @endif
-                            <td>{{ $project->status }}</td>
+                            @if ($project->status === 'On Progress')
+                                <td class="text-warning">On Progress</td>
+                            @elseif ($project->status === 'Pending')
+                                <td class="text-danger">Pending</td>
+                            @else
+                               <td class="text-success">Finish</td>
+                            @endif
                             <td>{{ $project->deadline }}</td>
                             <td>{{ $project->manufacture_date }}
                             

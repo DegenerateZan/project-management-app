@@ -74,14 +74,16 @@ class ReportsController extends Controller
     {
         return view('repost.transaction-salary',[
 
-            "title" => "Trasanction Salary"
+            "title" => "Trasanction Salary",
+            "data" =>  DB::table('salaries')->join('developers', 'salaries.developer_id', '=' , 'developers.id')->select('developers.name_developer','salaries.payroll_date', 'salaries.total_salary_received', 'salaries.payroll_status')->where('salaries.payroll_status', '=' , 1)->get()
         ]);
     }
     public function HaventPaidYets()
     {
         return view('repost.transaction-salary',[
 
-            "title" => "Trasanction Salary"
+            "title" => "Trasanction Salary",
+            "data" => DB::table('salaries')->join('developers', 'salaries.developer_id', '=' , 'developers.id')->select('developers.name_developer','salaries.payroll_date', 'salaries.total_salary_received', 'salaries.payroll_status')->where('salaries.payroll_status', '=' , 0)->get()
         ]);
     }
 
