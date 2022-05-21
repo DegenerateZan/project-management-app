@@ -13,12 +13,15 @@
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                       <a  href="/TransactionPorject"  class="dropdown-item text-primary" id="action"  >All</a>
+                                  </li> 
                                       <li>
-                                       <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item text-success" id="action" data-id="">Bas Been Paid</a>
+                                       <a  href="/TransactionPorject/BasBeenPaidp" class="dropdown-item text-success" id="action" >Bas Been Paid</a>
                                      </li>              
                                     <li>
-                                        <a href="#" class="btn text-danger  dropdown-item" id="deletepro" >Haven't Paid Yet</a> 
-                                 </li>
+                                   <a href="/TransactionPorject/HaventPaidYetp" class="btn text-danger  dropdown-item" id="deletepro" >Haven't Paid Yet</a> 
+                             </li>
                 </ul>
           </div>
             <i class="fas fa-table me-1"></i>
@@ -46,12 +49,20 @@
                 </tfoot>
                 <tbody>
                   <?php $i=1  ?>
-                  {{-- @foreach ($data as $item) --}}
+                  @foreach ($data as $item)
                   <tr>
                      <td>{{ $i }}</td>
+                     <td>{{ $item->developer->name_developer }}</td>
+                     <td>{{ number_format($item->total_salary_received, '2',',','.')}}</td>
+                     @if ($item->payroll_status === 1)
+                         <td class="text-success">Paid Off</td>
+                     @else
+                         <td class="text-danger">Not Yet Paid Off</td>
+                     @endif
+                     <td>{{ $item->payroll_date }}</td>
                   </tr>     
                   <?php $i++ ?>
-                  {{-- @endforeach --}}
+                  @endforeach
                 </tbody>
             </table>
         </div>

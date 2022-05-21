@@ -13,11 +13,14 @@
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                       <a  href="/TransactionPorject"  class="dropdown-item text-primary" id="action"  >All</a>
+                                  </li> 
                                       <li>
-                                       <a  href="#" data-bs-toggle="modal" data-bs-target="#formmodalproject" class="tampilmodalubahp dropdown-item text-success" id="action" data-id="">Bas Been Paid</a>
+                                       <a  href="/TransactionPorject/BasBeenPaidp" class="dropdown-item text-success" id="action" >Bas Been Paid</a>
                                      </li>              
                                     <li>
-                                   <a href="#" class="btn text-danger  dropdown-item" id="deletepro" >Haven't Paid Yet</a> 
+                                   <a href="/TransactionPorject/HaventPaidYetp" class="btn text-danger  dropdown-item" id="deletepro" >Haven't Paid Yet</a> 
                              </li>
                 </ul>
           </div>
@@ -50,7 +53,7 @@
                   <tr>
                      <td>{{ $i }}</td>
                      <td>{{ $item->project->name_project }}</td>
-                     <td>{{ $item->amount}}</td>
+                     <td>{{ number_format($item->amount, '2',',','.')}}</td>
                      <td>{{ $item->description }}</td>
                      @if ($item->status === 1 )
                          <td class="text-success">Bas Been Paid</td>

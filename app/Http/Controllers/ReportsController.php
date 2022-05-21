@@ -40,7 +40,7 @@ class ReportsController extends Controller
     }
     public function TransactionSalary()
     {
-        $salary = Salary::all();
+        $salary = Salary::with('developer')->get();
         return view('repost.transaction-salary',[
             "title" => 'Transaction Salary',
             "data" => $salary
@@ -58,14 +58,16 @@ class ReportsController extends Controller
     {
         return view('repost.transaction-project',[
 
-            "title" => "Trasanction Project"
+            "title" => "Trasanction Project",
+            "data" => Payment::with('project')->where('status', 0)->get()
         ]);
     }
     public function BasBeenPaidp()
     {
         return view('repost.transaction-project',[
 
-            "title" => "Trasanction Project"
+            "title" => "Trasanction Project",
+            "data" => Payment::with('project')->where('status', 1)->get()
         ]);
     }
     public function BasBeenPaids()

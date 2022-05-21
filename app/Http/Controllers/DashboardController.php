@@ -24,8 +24,9 @@ class DashboardController extends Controller
     }else{
         $total = 0;
     }
-    $finance = DB::table('finances')->where('mutation', 'Debit')->sum('amount');
-   
+    $debit = DB::table('finances')->where('mutation', 'Debit')->sum('amount');
+    $credit = DB::table('finances')->where('mutation', 'Credit')->sum('amount');
+    $total_debit_credit = $debit - $credit;
 
 
 
@@ -34,7 +35,7 @@ class DashboardController extends Controller
         "project" => Project::all(),
         "totalprojects" => Project::count(),
         "developers" => Developers::count(),
-        "finances" => $finance,
+        "finances" => $total_debit_credit,
         "task" => $total,
         "tasks" =>Tasks::all()
         

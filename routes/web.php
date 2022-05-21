@@ -109,6 +109,8 @@ Route::get('/financessettins','index');
 Route::controller(ReportsController::class)->group(function(){
     Route::get('/Reports', 'index')->middleware('auth');
     Route::get('/TransactionPorject', 'TransactionPorject')->middleware('auth');
+    Route::get('/TransactionPorject/HaventPaidYetp', 'HaventPaidYetp')->middleware('auth');
+    Route::get('/TransactionPorject/BasBeenPaidp', 'BasBeenPaidp')->middleware('auth');
     Route::get('/TransactionSalary', 'TransactionSalary')->middleware('auth');
 });
 // login
