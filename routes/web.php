@@ -40,6 +40,9 @@ use App\Models\ProjectPlatfrom;
 // dasboard
 Route::controller(DashboardController::class)->group(function(){
 Route::get('/','index')->middleware('auth');
+Route::get('/DashboardProject/OnProgress', 'PorjectOnprogres')->middleware('auth');
+Route::get('/DashboardProject/Pending', 'ProjectPending')->middleware('auth');
+Route::get('/DashboardProject/Finish', 'ProjectFinish')->middleware('auth');
 });
 // project
 Route::controller(ProjectController::class)->group(function(){

@@ -118,9 +118,28 @@
         <!-- Area Chart -->
         <div class="col-xl-8 col-lg-7">
             <div class="card shadow mb-4 h-auto">
-                <!-- Card Header - Dropdown -->
+               
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Project</h6>
+                    <div class="dropdown">
+                        <button class="btn dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                         <li>
+                                           <a href="/" class=" dropdown-item text-primary">All</a>
+                                         </li>
+                                              <li>
+                                               <a  href="/DashboardProject/OnProgress"  class="dropdown-item text-warning" id="action" data-id="">On Progress</a>
+                                             </li>              
+                                            <li>
+                                                <a href="/DashboardProject/Pending" class=" text-danger dropdown-item">Pending</a> 
+                                              </li>
+                                             <li>
+                                               <a href="/DashboardProject/Finish" class=" dropdown-item text-sucesss">Finish</a>
+                                                </li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- Card Body -->
                     

@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+
+  
+
  public function index()
  {
 
@@ -43,4 +46,74 @@ class DashboardController extends Controller
 
     ]);
  }
+    public function PorjectOnprogres()
+    {
+        $tasksfinish = Tasks::where('task_status', 'Finish')->count();
+        $taskall = Tasks::all()->count();
+        if ($taskall > 0) {
+            $result = $tasksfinish / $taskall * 100;
+            $total = ceil($result);
+        }else{
+            $total = 0;
+        }
+        $debit = DB::table('finances')->where('mutation', 'Debit')->sum('amount');
+        $credit = DB::table('finances')->where('mutation', 'Credit')->sum('amount');
+        $total_debit_credit = $debit - $credit;
+        return view('Dashboard.Dashboard', [
+              "title" =>  "Dashboard",
+              "project" => Project::where('status' , 'On Progress')->get(),
+              "totalprojects" => Project::count(),
+              "developers" => Developers::count(),
+              "finances" => $total_debit_credit,
+               "task" => $total,
+               "tasks" =>Tasks::all()
+        ]);
+    }
+    public function ProjectPending()
+    {
+        $tasksfinish = Tasks::where('task_status', 'Finish')->count();
+        $taskall = Tasks::all()->count();
+        if ($taskall > 0) {
+            $result = $tasksfinish / $taskall * 100;
+            $total = ceil($result);
+        }else{
+            $total = 0;
+        }
+        $debit = DB::table('finances')->where('mutation', 'Debit')->sum('amount');
+        $credit = DB::table('finances')->where('mutation', 'Credit')->sum('amount');
+        $total_debit_credit = $debit - $credit;
+        return view('Dashboard.Dashboard', [
+            "title" =>  "Dashboard",
+            "project" => Project::where('status' , 'Pending')->get(),
+            "totalprojects" => Project::count(),
+            "developers" => Developers::count(),
+            "finances" => $total_debit_credit,
+             "task" => $total,
+             "tasks" =>Tasks::all()
+        ]);
+    }
+    public function ProjectFinish()
+    {
+        $tasksfinish = Tasks::where('task_status', 'Finish')->count();
+        $taskall = Tasks::all()->count();
+        if ($taskall > 0) {
+            $result = $tasksfinish / $taskall * 100;
+            $total = ceil($result);
+        }else{
+            $total = 0;
+        }
+        $debit = DB::table('finances')->where('mutation', 'Debit')->sum('amount');
+        $credit = DB::table('finances')->where('mutation', 'Credit')->sum('amount');
+        $total_debit_credit = $debit - $credit;
+        return view('Dashboard.Dashboard', [
+            "title" =>  "Dashboard",
+            "project" => Project::where('status' , 'Finish')->get(),
+            "totalprojects" => Project::count(),
+            "developers" => Developers::count(),
+            "finances" => $total_debit_credit,
+             "task" => $total,
+             "tasks" =>Tasks::all()
+
+        ]);
+    }
 }
