@@ -111,6 +111,8 @@ Route::get('/financessettins','index');
 // Reports
 Route::controller(ReportsController::class)->group(function(){
     Route::get('/Reports', 'index')->middleware('auth');
+    Route::get('/Repost/Project/PaidOff', 'ProjectPaidOff')->middleware('auth');
+    Route::get('/Repost/Project/NotYetPaidOff', 'NotYetPaidOff')->middleware('auth');
     Route::get('/TransactionPorject', 'TransactionPorject')->middleware('auth');
     Route::get('/TransactionPorject/HaventPaidYetp', 'HaventPaidYetp')->middleware('auth');
     Route::get('/TransactionPorject/BasBeenPaidp', 'BasBeenPaidp')->middleware('auth');

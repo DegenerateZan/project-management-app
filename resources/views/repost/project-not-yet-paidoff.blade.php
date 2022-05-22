@@ -48,35 +48,36 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                  <?php $i=1  ?>
-                  @foreach ($projects as $project)
-                  <?php $id_p = $project->id; ?>
-                  <tr>
-                     <td>{{ $i }}</td>
-                     <td>{{ $project->name_project }}</td>
-                     <td>Rp.{{ number_format($project->price, '2',',','.') }}</td>
-                     <?php $total = 0;
-                     if (isset($payments_data[$id_p])) {
-                         foreach ($payments_data[$id_p] as $payment) {
-                             $total = $total + $payment;
-                         } 
-                         }?>
-                     <td>Rp.{{ number_format($total, '2',',','.') }}</td>
-                     <td>Rp.{{ number_format($project->price - $total, '2',',','.') }}</td>
-                     @if ($total > $project->price)
-                         <td class="text-success">Paid Off</td>
-                     @else
-                         <td class="text-danger">Not Paid Off</td>
-                     @endif
-                  </tr>     
-                  <?php $i++ ?>
-                  @endforeach
+                    @foreach ($project as $data)
+                    <?php $id_p = $data->id; 
+                          $price = $data->price;
+                    ?>
+                    <?php $total = 0;
+                    if (isset($payments_data[$id_p])) {
+                        foreach ($payments_data[$id_p] as $payment) {
+                            $total = $total + $payment;
+                        } 
+                        }?>
+                    @endforeach
+                    @if ($total < $price)
+                    <?php $i=1  ?>
+                    <tr>
+                       <td>{{ $i }}</td>
+                       <td>{{ $data->name_project }}</td>
+                       <td>Rp.{{ number_format($data->price, '2',',','.') }}</td>
+                       <td>Rp.{{ number_format($total, '2',',','.') }}</td>
+                       <td>Rp.{{ number_format($data->price - $total, '2',',','.') }}</td>
+                       <td class="text-danger">Not Paid Off</td>
+                    </tr>     
+                    <?php $i++ ?> 
+                    @else
+                      
+                    @endif
                 </tbody>
             </table>
         </div>
     </div>
   </div>
 
-
-@include('sweetalert::alert')
 @endsection
+
