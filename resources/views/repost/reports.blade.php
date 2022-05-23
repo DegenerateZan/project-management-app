@@ -61,9 +61,22 @@
                              $total = $total + $payment;
                          } 
                          }?>
+                          <?php
+                          $remaining = $project->price - $total;
+                          if ($remaining < $project->price) {
+                              $remainder = $project->price - $total ;
+                              if($total > $project->price){
+                                  $remainder = null;
+                              }
+                          }else{
+                              $remainder = $project->price - $total ;
+                          }
+      
+                                                     
+                          ?>
                      <td>Rp.{{ number_format($total, '2',',','.') }}</td>
-                     <td>Rp.{{ number_format($project->price - $total, '2',',','.') }}</td>
-                     @if ($total > $project->price)
+                     <td>Rp.{{ number_format($remainder, '2',',','.') }}</td>
+                     @if ($project->status_payments > 0)
                          <td class="text-success">Paid Off</td>
                      @else
                          <td class="text-danger">Not Paid Off</td>

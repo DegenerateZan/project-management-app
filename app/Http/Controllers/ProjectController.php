@@ -63,6 +63,7 @@ class ProjectController extends Controller{
 
     public function store(Request $request)
     {
+        // dd($request);
 
            $request->validate([
               'client_id' => 'required',
@@ -78,6 +79,7 @@ class ProjectController extends Controller{
            $projects = new Project();
   
            $projects->client_id = $request->client_id;
+           $projects->status_payments = 0;
            $projects->category_id = $request->category_id;
            $projects->name_project = $request->name_project;
            $projects->status = $request->status;
@@ -116,6 +118,8 @@ class ProjectController extends Controller{
 
 
      }
+         
+     
 }
 
 

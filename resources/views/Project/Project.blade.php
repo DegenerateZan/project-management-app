@@ -60,11 +60,26 @@
                             if(isset($payments_array[$id_row])){
                             foreach($payments_array[$id_row] as $payment){ 
                                 $total = $total + $payment;}
-                            }?>
+                            }
+                            $remaining = $project->price - $total;
+
+                            ?>
                             <td>Rp.{{ number_format($total, '2',',','.') }}</td>
-                            <td>Rp.{{ number_format($project->price - $total, '2',',','.') }}</td>
-                            @if ($total > $project->price)
-                            <td class="text-success">Paid Off</td>
+                            <?php
+                            if ($remaining < $project->price) {
+                                $remainder = $project->price - $total ;
+                                if($total > $project->price){
+                                    $remainder = null;
+                                }
+                            }else{
+                                $remainder = $project->price - $total ;
+                            }
+        
+                                                       
+                            ?>
+                            <td>Rp.{{ number_format($remainder, '2',',','.') }}</td>
+                            @if ($project->status_payments > 0)
+                                <td class="text-success">Paid Off</td>
                             @else
                             <td class="text-danger">Not Yet Paid Off</td>
                             @endif
@@ -119,6 +134,8 @@
         <div class="modal-body p-6">
           <form id="buatubah" action="{{ route('project.store') }}" method="post" id="formbuatubah">
                      @csrf
+                     <input type="hidden" id="id" name="id">
+                     {{-- <input type="hidden" name="status_payments" id="status_payments" value="0"> --}}
                       <div class="container">
                         <label for="client-project" class="form-label">From Client:</label>
                         <select id="client_id" class="form-control" name="client_id" required >
@@ -127,7 +144,6 @@
                                         <option value="{{ $client->id }}">{{ $client->name_client }}</option>
                                         @endforeach
                                     </select>
-                                    <input type="hidden" id="id" name="id">
                   <div class="row mt-3">
                       <div class="col-sm">
                           <label for="project-name" class="form-label">Project Name :</label>

@@ -70,7 +70,7 @@ class PaymentsController extends Controller
           $payments->status = $request->status;
           $payments->description = $request->description;
           $payments->save();
-         
+        $id_p = $payments->project_id;
         $id = $payments->id;
         $data = Payment::find($id);
         $status = $data->status;
@@ -82,11 +82,24 @@ class PaymentsController extends Controller
             $finance->description = $request->description;
             $finance->date = $request->date; 
             $finance->save();
-            return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');
-        }else{
-            return redirect('/payments/from_project/'. $request->project_id )->with('success', ' Data Payment Created Successfully!');
         }
-       
+        $project_data = Project::find($id_p);
+        $price = $project_data->price;
+        $amount = DB::table('payments')->where('project_id', $id_p)->where('status', 1)->sum('amount');
+        if ($amount > $price) {
+            $project_data->update(array('status_payments' => 1 ));
+            return redirect('/payments/from_project/'. $id_p )->with('toast_success', ' Data Payment Creadted Successfully!');
+        }
+        if ($amount < $price) {
+            $project_data->update(array('status_payments' => 0 ));
+            return redirect('/payments/from_project/'. $id_p )->with('toast_success', ' Data Payment Creadted Successfully!');
+        }
+        if ($amount === $price) {
+            $project_data->update(array('status_payments' => 1 ));
+            return redirect('/payments/from_project/'. $id_p )->with('toast_success', ' Data Payment Creadted Successfully!');
+        }
+
+      
         
         
        
@@ -95,14 +108,26 @@ class PaymentsController extends Controller
    
    public function delete($id){
        $paymnets = Payment::find($id);
+       $id_p = $paymnets->project_id;
+       $data_project = Project::find($id_p);
+       $price = $data_project->price;
        $data = $paymnets->slug_pembayaran;
        $finance = Finance::where('code_debit_credit', $data);
+       $amount = DB::table('payments')->where('project_id', $id_p)->where('status', 1)->sum('amount');
        $finance->delete();
-       if ( $paymnets->delete() ) {
-           return redirect('/payments/from_project/'. $paymnets->project_id )->with('toast_success', ' Data Payment Deleted Successfully!');
+       $paymnets->delete();
+       if ($amount < $price) {
+           $data_project->update(array('status_payments' => 0));
+           return redirect('/payments/from_project/'. $id_p)->with('toast_success', ' Data Payments deletd Successfully!'); 
        }
-        
-       
+       if ($amount > $price) {
+        $data_project->update(array('status_payments' => 0));
+        return redirect('/payments/from_project/'. $id_p)->with('toast_success', ' Data Payments deletd Successfully!'); 
+    }
+    if ($amount === $price) {
+        $data_project->update(array('status_payments' => 1));
+        return redirect('/payments/from_project/'. $id_p)->with('toast_success', ' Data Payments deletd Successfully!'); 
+    }
    }
    public function update(Request $request, $id){
        $payments = Payment::find($id);
@@ -110,6 +135,7 @@ class PaymentsController extends Controller
        $payments->update($request->all());
        $data = Payment::find($idP);
        $status = $data->status;
+       $id_project = $data->project_id;
        if ($status === 0) {
            $finance1 = Finance::where('code_debit_credit',$request->code_debit_credit);
            $finance1->delete();
@@ -129,7 +155,19 @@ class PaymentsController extends Controller
             $valid = Finance::where('code_debit_credit', $slug_pembayaran)->first();
             $valid->delete();
         }
-        return redirect('/payments/from_project/'. $request->project_id)->with('toast_success', ' Data Payments Update Successfully!'); 
+       $amount = DB::table('payments')->where('project_id', $id_project)->where('status', 1)->sum('amount');
+       $project_data = Project::find($id_project);
+       $price = $project_data->price;
+       if ($amount < $price) {
+           $project_data->update(array('status_payments' => 0));
+        } 
+        if ($amount > $price) {
+            $project_data->update(array('status_payments' => 1));
+        }
+        if ($amount === $price) {
+            $project_data->update(array('status_payments' => 1));
+        }
+        return redirect('/payments/from_project/'. $project_data->id)->with('toast_success', ' Data Payments Update Successfully!');
     }
 
    }
