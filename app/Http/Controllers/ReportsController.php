@@ -88,7 +88,7 @@ class ReportsController extends Controller
     }
     public function ProjectPaidOff()
     {
-        $projects = Project::all();
+        $projects = Project::where('status_payments', 1)->get();
         $payments_count = Payment::where('status', '1')->count();
         $payments = Payment::where('status', '1')->get();
         $loop = 1;
@@ -104,22 +104,20 @@ class ReportsController extends Controller
                 $payments_array[$id_p][$loop] = $payment->amount;
                 $loop++;
             }
-            $data = Project::all();
             skip:
-        return view('repost.project-paidoff',[
+        return view('repost.reports',[
 
             "title" => 'Reports',
              "projects" => $projects,
              "payments_data" => $payments_array,
-             "project" => $data
-
+             
              
 
         ]);
     }
     public function NotYetPaidOff()
     {
-        $projects = Project::all();
+        $projects = Project::where('status_payments', 0)->get();
         $payments_count = Payment::where('status', '1')->count();
         $payments = Payment::where('status', '1')->get();
         $loop = 1;
@@ -135,14 +133,12 @@ class ReportsController extends Controller
                 $payments_array[$id_p][$loop] = $payment->amount;
                 $loop++;
             }
-            $data = Project::all();
             skip:
-        return view('repost.project-not-yet-paidoff',[
+        return view('repost.reports',[
 
             "title" => 'Reports',
              "projects" => $projects,
              "payments_data" => $payments_array,
-             "project" => $data
 
              
 
