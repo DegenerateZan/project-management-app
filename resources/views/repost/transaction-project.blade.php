@@ -6,9 +6,12 @@
       <span class="mr-4">Repost / Transaction Project</span>
     </div>
 {{--  --}}
-    <div class="card mb-4">
+<div class="mb-4 " style="margin-left:90%;">
+    <a href="{{ $url }}" class="btn btn-primary" style="border-radius: 5px;">Convert To PDF</a> 
+</div>
+    <div class="card mb-4" style="">
         <div class="card-header">
-            <div class="dropdown" style="float: right;">
+            <div class="dropdown  float-right d-sm-flex align-items-center" >
                 <button class="btn dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                 </button>
@@ -24,11 +27,12 @@
                              </li>
                 </ul>
           </div>
+         
             <i class="fas fa-table me-1"></i>
             Transaction Project
         </div>
-        <div class="card-body" style="overflow-x:auto;">
-            <table id="datatablesSimple">
+        <div class="card-body" style="overflow-x:auto; ">
+                <table id="datatablesSimple" >
                 <thead>
                     <tr>
                         <th data-sortable="false">No.</th>

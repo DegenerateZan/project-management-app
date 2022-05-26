@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Payment;
 use App\Models\Project;
 use App\Models\Salary;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 class ReportsController extends Controller
 {
     public function index(){
@@ -50,6 +52,7 @@ class ReportsController extends Controller
     {
         $payment = Payment::with('project')->get();
         return view('repost.transaction-project',[
+            "url" => "/payments/pdfpayments_all",
             "title" => 'Transaction Project',
             "data" => $payment
         ]);
@@ -57,15 +60,15 @@ class ReportsController extends Controller
     public function HaventPaidYetp()
     {
         return view('repost.transaction-project',[
-
             "title" => "Trasanction Project",
+            "url" => "/payments/pdfpayments_notpaidoff",
             "data" => Payment::with('project')->where('status', 0)->get()
         ]);
     }
     public function BasBeenPaidp()
     {
         return view('repost.transaction-project',[
-
+            "url" => "/payments/pdfpayments_paidoff",
             "title" => "Trasanction Project",
             "data" => Payment::with('project')->where('status', 1)->get()
         ]);
@@ -144,5 +147,25 @@ class ReportsController extends Controller
 
         ]);
     }
-
+    
+    public function pdf_document_payments_all()
+    {
+        $data = Payment::with('project')->get();
+        $pdf = PDF::loadView('repost.pdf.transaction-payments-all',["data" => $data]);
+        return $pdf->download('payments_all.pdf');
+    }
+    public function pdf_document_payments_paidoff()
+    {
+        $data = Payment::with('project')->where('payments.status', 1)->get();
+        $pdf = PDF::loadView('repost.pdf.transaction-payments-paidoff',["data" => $data]);
+        return $pdf->stream();
+    }
+    public function pdf_document_payments_notpaidoff()
+    {
+        $data = Payment::with('project')->where('payments.status', 0)->get();
+        $pdf = PDF::loadView('repost.pdf.transaction-payments-paidoff',["data" => $data]);
+        return $pdf->stream();
+    }
+ 
+ 
 }

@@ -111,14 +111,21 @@ Route::get('/financessettins','index');
 // Reports
 Route::controller(ReportsController::class)->group(function(){
     Route::get('/Reports', 'index')->middleware('auth');
+    // projects
     Route::get('/Repost/Project/PaidOff', 'ProjectPaidOff')->middleware('auth');
     Route::get('/Repost/Project/NotYetPaidOff', 'NotYetPaidOff')->middleware('auth');
+    // payments
     Route::get('/TransactionPorject', 'TransactionPorject')->middleware('auth');
     Route::get('/TransactionPorject/HaventPaidYetp', 'HaventPaidYetp')->middleware('auth');
     Route::get('/TransactionPorject/BasBeenPaidp', 'BasBeenPaidp')->middleware('auth');
+    // salary
     Route::get('/TransactionSalary', 'TransactionSalary')->middleware('auth');
     Route::get('/TransactionSalary/BasBeenPaids', 'BasBeenPaids')->middleware('auth');
     Route::get('/TransactionSalary/HaventPaidYets', 'HaventPaidYets')->middleware('auth');
+    // pdf
+    Route::get('/payments/pdfpayments_all', 'pdf_document_payments_all')->middleware('auth');
+    Route::get('/payments/pdfpayments_paidoff', 'pdf_document_payments_paidoff')->middleware('auth');
+    Route::get('/payments/pdfpayments_notpaidoff', 'pdf_document_payments_notpaidoff')->middleware('auth');
 });
 // login
 Route::controller(LoginController::class)->group(function(){

@@ -50,7 +50,7 @@ class PaymentsController extends Controller
         ";
         die;
       }
-
+    
 
    public function store(Request $request)
    {
