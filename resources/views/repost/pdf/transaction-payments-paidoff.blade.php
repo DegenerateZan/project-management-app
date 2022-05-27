@@ -21,8 +21,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 h2{
   font-family: Arial, Helvetica, sans-serif;

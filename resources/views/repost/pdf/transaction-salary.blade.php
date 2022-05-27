@@ -32,29 +32,27 @@ h2{
 <body>
 
 
-<h2>Reports Payments</h2>
+<h2>Reports Salary</h2>
 <table id="customers">
   <tr>
     <th>No.</th>
-    <th>From Project</th>
+    <th>Name Developer</th>
     <th>Amount</th>
-    <th>Desciption Payment</th>
-    <th>Payment Status</th>
-    <th>Payment Date</th>
+    <th>Status</th>
+    <th>Date</th>
   </tr>
   <?php $i=1; ?>
   @foreach ($data as $item)    
   <tr>
     <td>{{ $i }}</td>
-    <td>{{ $item->project->name_project }}</td>
-    <td>Rp.{{ number_format($item->amount, '2',',','.') }}</td>
-    <td>{{ $item->description }}</td>
-    @if ($item->status === 1)
+    <td>{{ $item->developer->name_developer }}</td>
+    <td>Rp.{{ number_format($item->total_salary_received, '2',',','.') }}</td>
+    @if ($item->payroll_status === 1)
         <td style="color: #04AA6D">Paid Off</td>
     @else
         <td style="color: red">No Yet Paid</td>
     @endif
-    <td>{{ $item->date }}</td>
+    <td>{{ $item->payroll_date }}</td>
   </tr>
   <?php $i++; ?>
   @endforeach

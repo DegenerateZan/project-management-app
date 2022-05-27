@@ -122,10 +122,12 @@ Route::controller(ReportsController::class)->group(function(){
     Route::get('/TransactionSalary', 'TransactionSalary')->middleware('auth');
     Route::get('/TransactionSalary/BasBeenPaids', 'BasBeenPaids')->middleware('auth');
     Route::get('/TransactionSalary/HaventPaidYets', 'HaventPaidYets')->middleware('auth');
-    // pdf
+    // pdf payments
     Route::get('/payments/pdfpayments_all', 'pdf_document_payments_all')->middleware('auth');
     Route::get('/payments/pdfpayments_paidoff', 'pdf_document_payments_paidoff')->middleware('auth');
     Route::get('/payments/pdfpayments_notpaidoff', 'pdf_document_payments_notpaidoff')->middleware('auth');
+    // pdf salary
+    Route::get('/salary/pdf_all','pdf_document_salary_all')->middleware('auth');
 });
 // login
 Route::controller(LoginController::class)->group(function(){
