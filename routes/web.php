@@ -126,6 +126,7 @@ Route::controller(ReportsController::class)->group(function(){
     Route::get('/payments/pdfpayments_all', 'pdf_document_payments_all')->middleware('auth');
     Route::get('/payments/pdfpayments_paidoff', 'pdf_document_payments_paidoff')->middleware('auth');
     Route::get('/payments/pdfpayments_notpaidoff', 'pdf_document_payments_notpaidoff')->middleware('auth');
+Route::get('/payments/pdf_documnent_project', 'pdf_documnent_project')->middleware('auth');
 });
 // login
 Route::controller(LoginController::class)->group(function(){

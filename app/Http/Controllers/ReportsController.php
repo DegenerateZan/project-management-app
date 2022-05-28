@@ -166,6 +166,23 @@ class ReportsController extends Controller
         $pdf = PDF::loadView('repost.pdf.transaction-payments-paidoff',["data" => $data]);
         return $pdf->stream();
     }
+    public function pdf_documnent_project()
+    {
+       $project = Project::all();
+       $payments_count = Payment::where('status', 1)->count();
+       $payments = Payment::where('status', 1)->get();
+       $loop = 1;
+       if ($payments_count > 0) {
+          
+       }else {
+        return redirect('/Reports')->with('toast_error', 'Not Transaction!'); 
+       }
+       foreach ($payments as $payment) {
+             $id_p = $project->id;
+             $paymenyt_array[$id_p][$loop] = $payment->amount;
+                       
+       }
+    }
  
  
 }

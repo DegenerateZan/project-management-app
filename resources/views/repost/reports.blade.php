@@ -48,7 +48,7 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                  <?php $i=1  ?>
+                  <?php $i=1;  ?>
                   @foreach ($projects as $project)
                   <?php $id_p = $project->id; ?>
                   <tr>
@@ -69,7 +69,7 @@
                                   $remainder = null;
                               }
                           }else{
-                              $remainder = $project->price - $total ;
+                              $remainder = $project->price - $total;
                           }
       
                                                      
