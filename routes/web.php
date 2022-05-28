@@ -126,12 +126,13 @@ Route::controller(ReportsController::class)->group(function(){
     Route::get('/payments/pdfpayments_all', 'pdf_document_payments_all')->middleware('auth');
     Route::get('/payments/pdfpayments_paidoff', 'pdf_document_payments_paidoff')->middleware('auth');
     Route::get('/payments/pdfpayments_notpaidoff', 'pdf_document_payments_notpaidoff')->middleware('auth');
-<<<<<<< HEAD
-Route::get('/payments/pdf_documnent_project', 'pdf_documnent_project')->middleware('auth');
-=======
+    Route::get('/payments/pdf_documnent_project', 'pdf_documnent_project')->middleware('auth');
+
     // pdf salary
     Route::get('/salary/pdf_all','pdf_document_salary_all')->middleware('auth');
->>>>>>> 9258d2659375bb55702a010db51ba21f61bc636b
+    Route::get('/salary/pdf_paid_off','pdf_document_salary_paid_off')->middleware('auth');
+    Route::get('/salary/pdf_not_paid_off','pdf_document_salary_not_paid_off')->middleware('auth');
+
 });
 // login
 Route::controller(LoginController::class)->group(function(){
