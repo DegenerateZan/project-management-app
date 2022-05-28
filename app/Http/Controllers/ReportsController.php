@@ -44,6 +44,7 @@ class ReportsController extends Controller
     {
         $salary = Salary::with('developer')->get();
         return view('repost.transaction-salary',[
+            "url" => "/salary/pdf_all",
             "title" => 'Transaction Salary',
             "data" => $salary
         ]);
@@ -76,9 +77,9 @@ class ReportsController extends Controller
     public function BasBeenPaids()
     {
         return view('repost.transaction-salary',[
-
+            "url" => "/salary/pdf_all",
             "title" => "Trasanction Salary",
-            "data" =>  DB::table('salaries')->join('developers', 'salaries.developer_id', '=' , 'developers.id')->select('developers.name_developer','salaries.payroll_date', 'salaries.total_salary_received', 'salaries.payroll_status')->where('salaries.payroll_status', '=' , 1)->get()
+            "data" =>  Salary::with('developer')->where('payroll_status', 1)->get()
         ]);
     }
     public function HaventPaidYets()
@@ -158,13 +159,19 @@ class ReportsController extends Controller
     {
         $data = Payment::with('project')->where('payments.status', 1)->get();
         $pdf = PDF::loadView('repost.pdf.transaction-payments-paidoff',["data" => $data]);
-        return $pdf->stream();
+        return $pdf->download('payments_paidoff.pdf');
     }
     public function pdf_document_payments_notpaidoff()
     {
         $data = Payment::with('project')->where('payments.status', 0)->get();
-        $pdf = PDF::loadView('repost.pdf.transaction-payments-paidoff',["data" => $data]);
-        return $pdf->stream();
+        $pdf = PDF::loadView('repost.pdf.transaction-payments-notyetpaidoff',["data" => $data]);
+        return $pdf->download('payments_notpaidoff.pdf');
+    }
+    public function pdf_document_salary_all()
+    {
+        $data = Salary::with('developer')->get();
+        $pdf = PDF::loadVIew('repost.pdf.transaction-salary', ['data' => $data]);
+        return $pdf->stream(); 
     }
     public function pdf_documnent_project()
     {

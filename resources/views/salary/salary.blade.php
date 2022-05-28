@@ -29,7 +29,6 @@
                             <th data-sortable="false">Total Salary Received</th>
                             <th data-sortable="false">Status</th>
                             <th data-sortable="false">Payroll Date</th>
-                            <th data-sortable="false"></th> 
                         </tr>
                     </thead>
                     <tfoot>

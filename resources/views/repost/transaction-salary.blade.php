@@ -5,7 +5,9 @@
         <h1 class="h3 mb-0 text-gray-800">Transaction Salary</h1>
       <span class="mr-4">Repost / Data Transaction Salary</span>
     </div>
-{{--  --}}
+    <div class="mb-4 " style="margin-left:90%;">
+        <a href="{{ $url }}" class="btn btn-primary" style="border-radius: 5px;">Convert To PDF</a> 
+    </div>
     <div class="card mb-4">
         <div class="card-header">
             <div class="dropdown" style="float: right;">
@@ -52,7 +54,7 @@
                   @foreach ($data as $item)
                   <tr>
                      <td>{{ $i }}</td>
-                     <td>{{ $item->name_developer }}</td>
+                     <td>{{ $item->developer->name_developer }}</td>
                      <td>{{ number_format($item->total_salary_received, '2',',','.')}}</td>
                      @if ($item->payroll_status === 1)
                          <td class="text-success">Paid Off</td>
