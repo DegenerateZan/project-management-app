@@ -55,7 +55,7 @@
                   <tr>
                      <td>{{ $i }}</td>
                      <td>{{ $item->developer->name_developer }}</td>
-                     <td>{{ number_format($item->total_salary_received, '2',',','.')}}</td>
+                     <td>Rp.{{ number_format($item->total_salary_received, '2',',','.')}}</td>
                      @if ($item->payroll_status === 1)
                          <td class="text-success">Paid Off</td>
                      @else

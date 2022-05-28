@@ -32,10 +32,10 @@ class ReportsController extends Controller
             }
             skip:
         return view('repost.reports',[
-
+            "url" => "/projects/pdf_document_project_all",
             "title" => 'Reports',
-             "projects" => $projects,
-             "payments_data" => $payments_array
+            "projects" => $projects,
+            "payments_data" => $payments_array
              
 
         ]);
@@ -77,7 +77,7 @@ class ReportsController extends Controller
     public function BasBeenPaids()
     {
         return view('repost.transaction-salary',[
-            "url" => "/salary/pdf_all",
+            "url" => "/salary/pdf_paid_off",
             "title" => "Trasanction Salary",
             "data" =>  Salary::with('developer')->where('payroll_status', 1)->get()
         ]);
@@ -85,9 +85,9 @@ class ReportsController extends Controller
     public function HaventPaidYets()
     {
         return view('repost.transaction-salary',[
-
+            "url" => "/salary/pdf_not_paid_off",
             "title" => "Trasanction Salary",
-            "data" => DB::table('salaries')->join('developers', 'salaries.developer_id', '=' , 'developers.id')->select('developers.name_developer','salaries.payroll_date', 'salaries.total_salary_received', 'salaries.payroll_status')->where('salaries.payroll_status', '=' , 0)->get()
+            "data" => Salary::with('developer')->where('payroll_status', 0)->get()
         ]);
     }
     public function ProjectPaidOff()
@@ -110,7 +110,7 @@ class ReportsController extends Controller
             }
             skip:
         return view('repost.reports',[
-
+            "url" => "/projects/pdf_document_project_all",
             "title" => 'Reports',
              "projects" => $projects,
              "payments_data" => $payments_array,
@@ -139,7 +139,7 @@ class ReportsController extends Controller
             }
             skip:
         return view('repost.reports',[
-
+            "url" => "/projects/pdf_document_project_all",
             "title" => 'Reports',
              "projects" => $projects,
              "payments_data" => $payments_array,
@@ -173,11 +173,29 @@ class ReportsController extends Controller
         $pdf = PDF::loadVIew('repost.pdf.transaction-salary', ['data' => $data]);
         return $pdf->stream(); 
     }
+
+    public function pdf_document_salary_paid_off()
+    {
+        $data = Salary::with('developer')->where('payroll_status',1)->get();
+        $pdf = PDF::loadView('repost.pdf.transaction-salary-paidoff',["data" => $data]);
+        return $pdf->stream();
+
+    }
+    public function pdf_document_salary_not_paid_off()
+    {
+        $data = Salary::with('developer')->where('payroll_status', 0)->get();
+        $pdf = PDF::loadView('repost.pdf.transaction-salary-not-paidoff',["data" => $data]);
+        return $pdf->stream();
+    }
+
+
+
+
     public function pdf_documnent_project()
     {
        $project = Project::all();
        $payments_count = Payment::where('status', 1)->count();
-       $payments = Payment::where('status', 1)->get();
+       $payments = Payment::all();
        $loop = 1;
        if ($payments_count > 0) {
           
@@ -185,11 +203,18 @@ class ReportsController extends Controller
         return redirect('/Reports')->with('toast_error', 'Not Transaction!'); 
        }
        foreach ($payments as $payment) {
-             $id_p = $project->id;
-             $paymenyt_array[$id_p][$loop] = $payment->amount;
-                       
-       }
+             $id_p = $payment->project_id;
+             $payment_array[$id_p][$loop] = $payment->amount;
+             $loop++;  
+            }
+            $pdf = PDF::loadView('repost.pdf.transaction-project_all',[
+                "projects" => $project,
+                "payment_data" => $payment_array
+            ]); 
+            return $pdf->stream();
+    
     }
+
  
  
 }

@@ -84,7 +84,11 @@ class SalaryController extends Controller
      $salary->update($request->all());
      $slug_salaries = $salary->slug_salaries;
      $status = $salary->payroll_status;
-     
+     if ($status < 1) {
+      $salary_last = Finance::where('code_debit_credit', $slug_salaries);
+      $salary_last->delete();
+      return redirect('/salary')->with('toast_success', 'Data Salary Update Successfully!');
+    }
      if ($status > 0) {
        $add_finance = new Finance();
        $add_finance->amount = $salary->total_salary_received;
@@ -99,7 +103,10 @@ class SalaryController extends Controller
         $data = Finance::where('code_debit_credit', $code_credit)->first();
         $data->delete();
         return redirect('/salary')->with('toast_success', 'Data Salary Update Successfully!');
+       }else{
+        return redirect('/salary')->with('toast_success', 'Data Salary Update Successfully!');
        }
+      
       }
    }
 }

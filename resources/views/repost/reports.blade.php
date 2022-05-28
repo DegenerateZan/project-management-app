@@ -7,6 +7,9 @@
         <h1 class="h3 mb-0 text-gray-800">Repost</h1>
       <span class="mr-4">Repost / Data Project</span>
     </div>
+    <div class="mb-4 " style="margin-left:90%;">
+        <a href="{{ $url }}" class="btn btn-primary" style="border-radius: 5px;">Convert To PDF</a> 
+    </div>
 {{--  --}}
     <div class="card mb-4">
         <div class="card-header">
