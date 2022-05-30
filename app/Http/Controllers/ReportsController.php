@@ -40,6 +40,7 @@ class ReportsController extends Controller
 
         ]);
     }
+    // salary
     public function TransactionSalary()
     {
         $salary = Salary::with('developer')->get();
@@ -49,6 +50,7 @@ class ReportsController extends Controller
             "data" => $salary
         ]);
     }
+    // projects
     public function TransactionPorject()
     {
         $payment = Payment::with('project')->get();
@@ -58,6 +60,7 @@ class ReportsController extends Controller
             "data" => $payment
         ]);
     }
+    // paidoff and not paidoff project transaction
     public function HaventPaidYetp()
     {
         return view('repost.transaction-project',[
@@ -74,6 +77,7 @@ class ReportsController extends Controller
             "data" => Payment::with('project')->where('status', 1)->get()
         ]);
     }
+    // paidoff and not paidoff salary
     public function BasBeenPaids()
     {
         return view('repost.transaction-salary',[
@@ -89,7 +93,8 @@ class ReportsController extends Controller
             "title" => "Trasanction Salary",
             "data" => Salary::with('developer')->where('payroll_status', 0)->get()
         ]);
-    }
+    }  
+    // paidoff and not paidoff project 
     public function ProjectPaidOff()
     {
         $projects = Project::where('status_payments', 1)->get();
@@ -110,7 +115,7 @@ class ReportsController extends Controller
             }
             skip:
         return view('repost.reports',[
-            "url" => "/projects/pdf_document_project_all",
+            "url" => "/projects/pdf_document_project_paidoff",
             "title" => 'Reports',
              "projects" => $projects,
              "payments_data" => $payments_array,
@@ -139,7 +144,7 @@ class ReportsController extends Controller
             }
             skip:
         return view('repost.reports',[
-            "url" => "/projects/pdf_document_project_all",
+            "url" => "/projects/pdf_document_project_not_paidoff",
             "title" => 'Reports',
              "projects" => $projects,
              "payments_data" => $payments_array,
@@ -148,6 +153,7 @@ class ReportsController extends Controller
 
         ]);
     }
+    // pdf convert
     
     public function pdf_document_payments_all()
     {
@@ -213,6 +219,62 @@ class ReportsController extends Controller
             ]); 
             return $pdf->stream();
     
+    }
+    public function pdf_documnent_project_not_paidoff()
+    {
+        $project = Project::where('status_payments', 0)->get();
+        // dd($project);
+        $payments_count = Payment::where('status', '1')->count();
+        $payments = Payment::where('status', '1')->get();
+        $loop = 1;
+
+            if ($payments_count < 1){
+            $payments_array = null;
+            goto skip;
+            }
+            
+            foreach($payments as $payment){
+                
+                $id_p = $payment->project_id; 
+                $payments_array[$id_p][$loop] = $payment->amount;
+                $loop++;
+            }
+            skip:
+            $pdf = PDF::loadView('repost.pdf.transaction-project-not-paidoff',[
+                "payments_data" => $payments_array,
+                "projects" => $project,
+                "title" => "pdf_documnent_project_not_paidoff"
+            ]);
+            return $pdf->stream();
+        
+    }
+    public function pdf_documnent_project_paidoff()
+    {
+        $project = Project::where('status_payments', 1)->get();
+        // dd($project);
+        $payments_count = Payment::where('status', '1')->count();
+        $payments = Payment::where('status', '1')->get();
+        $loop = 1;
+
+            if ($payments_count < 1){
+            $payments_array = null;
+            goto skip;
+            }
+            
+            foreach($payments as $payment){
+                
+                $id_p = $payment->project_id; 
+                $payments_array[$id_p][$loop] = $payment->amount;
+                $loop++;
+            }
+            skip:
+            $pdf = PDF::loadView('repost.pdf.transaction-project-paidoff',[
+                "payments_data" => $payments_array,
+                "projects" => $project,
+                "title" => "pdf_documnent_project_paidoff"
+            ]);
+            return $pdf->stream();
+        
     }
 
  

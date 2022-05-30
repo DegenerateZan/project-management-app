@@ -134,6 +134,9 @@ Route::controller(ReportsController::class)->group(function(){
     Route::get('/salary/pdf_not_paid_off','pdf_document_salary_not_paid_off')->middleware('auth');
     // pdf projects
     Route::get('/projects/pdf_document_project_all', 'pdf_documnent_project')->middleware('auth');
+    Route::get('/projects/pdf_document_project_not_paidoff', 'pdf_documnent_project_not_paidoff')->middleware('auth');
+    Route::get('/projects/pdf_document_project_paidoff', 'pdf_documnent_project_paidoff')->middleware('auth');
+
 
 });
 // login

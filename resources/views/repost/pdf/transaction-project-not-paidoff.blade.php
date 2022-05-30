@@ -71,9 +71,9 @@ h2{
      <td>Rp.{{ number_format($total, '2',',','.') }}</td>
      <td>Rp.{{ number_format($remainder, '2',',','.') }}</td>
      @if ($project->status_payments > 0)
-         <td style="color: #04AA6D;">Paid Off</td>
+         <td style="color:#04AA6D">Paid Off</td>
      @else
-         <td style="color: red;">Not Paid Off</td>
+         <td style="color: red">Not Paid Off</td>
      @endif
   </tr>     
   <?php $i++ ?>
