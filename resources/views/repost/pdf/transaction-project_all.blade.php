@@ -36,11 +36,11 @@ h2{
 <table id="customers">
   <tr>
     <th>No.</th>
-    <th>From Project</th>
-    <th>Amount</th>
-    <th>Desciption Payment</th>
+    <th>Project Name</th>
+    <th>Project Price</th>
+    <th>Has Been Paid</th>
+    <th>Remaining Project Price</th>
     <th>Payment Status</th>
-    <th>Payment Date</th>
   </tr>
   <?php $i=1;  ?>
   @foreach ($projects as $project)

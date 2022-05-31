@@ -159,19 +159,19 @@ class ReportsController extends Controller
     {
         $data = Payment::with('project')->get();
         $pdf = PDF::loadView('repost.pdf.transaction-payments-all',["data" => $data]);
-        return $pdf->download('payments_all.pdf');
+        return $pdf->stream();
     }
     public function pdf_document_payments_paidoff()
     {
         $data = Payment::with('project')->where('payments.status', 1)->get();
         $pdf = PDF::loadView('repost.pdf.transaction-payments-paidoff',["data" => $data]);
-        return $pdf->download('payments_paidoff.pdf');
+        return $pdf->stream();
     }
     public function pdf_document_payments_notpaidoff()
     {
         $data = Payment::with('project')->where('payments.status', 0)->get();
         $pdf = PDF::loadView('repost.pdf.transaction-payments-notyetpaidoff',["data" => $data]);
-        return $pdf->download('payments_notpaidoff.pdf');
+        return  $pdf->stream();
     }
     public function pdf_document_salary_all()
     {
@@ -251,7 +251,6 @@ class ReportsController extends Controller
     public function pdf_documnent_project_paidoff()
     {
         $project = Project::where('status_payments', 1)->get();
-        // dd($project);
         $payments_count = Payment::where('status', '1')->count();
         $payments = Payment::where('status', '1')->get();
         $loop = 1;
